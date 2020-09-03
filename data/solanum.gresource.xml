@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/gnome/Solanum">
+    <file alias="menu.ui">ui/menu.ui</file>
+    <file alias="style.css">ui/style.css</file>
+    <file>gtk/help-overlay.ui</file>
+    <file alias="chime.ogg">sounds/io.gnome.Solanum-chime.ogg</file>
+  </gresource>
+</gresources>

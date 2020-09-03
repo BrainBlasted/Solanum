@@ -1,0 +1,5 @@
+pub static APP_ID: &str = @APP_ID@;
+pub static COPYRIGHT: &str = @COPYRIGHT@;
+pub static PKGDATADIR: &str = @PKGDATADIR@;
+pub static VERSION: &str = @VERSION@;
+pub static LOCALEDIR: &str = @LOCALEDIR@;
