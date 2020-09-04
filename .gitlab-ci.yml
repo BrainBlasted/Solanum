@@ -1,0 +1,42 @@
+include: 'https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml'
+
+stages:
+  - check
+  - test
+  - deploy
+
+variables:
+    BUNDLE: "io.gnome.Solanum.flatpak"
+    MANIFEST_PATH: "io.gnome.Solanum.json"
+    FLATPAK_MODULE: "solanum"
+    FLATPAK_IMAGE: "registry.gitlab.gnome.org/gnome/gnome-runtime-images/rust_bundle:3.36"
+
+.flatpak_cache_template: &flatpak_cache
+    cache:
+        key: "flatpak"
+        paths:
+          - .flatpak-builder/cache/
+          - _build/target/
+
+check:
+    image: "registry.gitlab.com/alatiera/rustfmt-oci-image/rustfmt:stable"
+    stage: "check"
+    script:
+        # Create blank versions of our configured files
+        # so rustfmt does not yell about non-existent files or completely empty files
+        - echo -e "" >> src/config.rs
+        - rustc -Vv && cargo -Vv
+        - cargo --version
+        - cargo fmt --all -- --check
+
+flatpak:
+  extends: '.flatpak'
+  image: "$FLATPAK_IMAGE"
+  variables:
+    RUNTIME_REPO: 'https://nightly.gnome.org/gnome-nightly.flatpakrepo'
+    APP_ID: "io.gnome.Solanum"
+
+# nightly:
+#   extends: '.publish_nightly'
+#   dependencies: ['flatpak']
+#   needs: ['flatpak']
