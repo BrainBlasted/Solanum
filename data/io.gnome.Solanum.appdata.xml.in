@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-	<id>io.gnome.Solanum.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-or-later</project_license>
-	<description>
-	</description>
+<!-- Copyright 2020 Chirstopher Davis <christopherdavis@gnome.org> -->
+<component type="desktop-application">
+  <id>io.gnome.Solanum</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Solanum</name>
+  <summary>A pomodoro timer for GNOME</summary>
+  <description>
+    <p>
+      Solanum is a pomodoro timer for the GNOME desktop. Work in 4 sessions,
+      with breaks in between each session and one long break after all 4.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot>
+      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/raw/master/data/screenshots/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">io.gnome.Solanum.desktop</launchable>
+  <url type="homepage">https://gitlab.gnome.org/BrainBlasted/Solanum</url>
+  <url type="bugtracker">https://gitlab.gnome.org/BrainBlasted/Solanum/-/issues</url>
+  <url type="donation">https://patreon.com/chrisgnome</url>
+  <releases>
+    <release version="0.1.0" date="2020-09-03"/>
+  </releases>
+  <kudos>
+    <kudo>ModernToolkit</kudo>
+    <kudo>HiDpiIcon</kudo>
+  </kudos>
+  <content_rating type="oars-1.1" />
+  <provides>io.gnome.Solanum.desktop</provides>
 </component>
