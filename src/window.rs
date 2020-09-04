@@ -17,7 +17,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 use gio::prelude::*;
 use gtk::prelude::*;
 
@@ -114,12 +113,23 @@ impl ObjectImpl for SolanumWindowPriv {
         timer_label.set_attributes(Some(&attrs));
         add_style_class!(timer_label, &["blinking", "timer_label"]);
 
-        let timer_button  = gtk::Button::new();
-        let image = gtk::Image::from_icon_name(Some("media-playback-start-symbolic"), gtk::IconSize::Button);
+        let timer_button = gtk::Button::new();
+        let image = gtk::Image::from_icon_name(
+            Some("media-playback-start-symbolic"),
+            gtk::IconSize::Button,
+        );
         timer_button.add(&image);
         timer_button.set_halign(gtk::Align::Center);
         timer_button.set_action_name(Some("win.toggle-timer"));
-        add_style_class!(timer_button, &["pill_button", "large_button", "suggested-action", "play_button"]);
+        add_style_class!(
+            timer_button,
+            &[
+                "pill_button",
+                "large_button",
+                "suggested-action",
+                "play_button"
+            ]
+        );
 
         vbox.add(&lap_label);
         vbox.add(&timer_label);
@@ -148,31 +158,31 @@ impl ObjectImpl for SolanumWindowPriv {
 
         // Set up (Sender, Receiver) of actions for the timer
         let (tx, rx) = glib::MainContext::channel::<TimerActions>(glib::PRIORITY_DEFAULT);
-        self.timer.set(Timer::new(POMODORO_SECONDS, tx)).expect("Could not initialize timer");
+        self.timer
+            .set(Timer::new(POMODORO_SECONDS, tx))
+            .expect("Could not initialize timer");
         let min = POMODORO_SECONDS / 60;
         let secs = POMODORO_SECONDS % 60;
         timer_label.set_label(&format!("{:>02}∶{:>02}.0", min, secs));
         // The receiver will get certain actions from the Timer and run operations on the Window
-        rx.attach(None, move |action| {
-            match action {
-                TimerActions::CountdownUpdate(min, sec, milli) => w.update_countdown(min, sec, milli),
-                TimerActions::Lap(lap_type) => w.next_lap(lap_type),
-            }
+        rx.attach(None, move |action| match action {
+            TimerActions::CountdownUpdate(min, sec, milli) => w.update_countdown(min, sec, milli),
+            TimerActions::Lap(lap_type) => w.next_lap(lap_type),
         });
 
-        self.widgets.set(Widgets {
-            menu_button,
-            lap_label,
-            timer_label,
-            timer_button,
-        })
-        .expect("Could not set widget state for main window");
+        self.widgets
+            .set(Widgets {
+                menu_button,
+                lap_label,
+                timer_label,
+                timer_button,
+            })
+            .expect("Could not set widget state for main window");
 
         // Set icons for shell
         gtk::Window::set_default_icon_name(config::APP_ID);
     }
 }
-
 
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls
@@ -215,16 +225,25 @@ impl SolanumWindow {
 
     // Set up actions on the Window itself
     fn setup_actions(&self) {
-        action!(self, "menu", clone!(@weak self as win => move |_, _| {
-            let widgets = win.get_widgets();
-            widgets.menu_button.get_popover().unwrap().popup();
-        }));
+        action!(
+            self,
+            "menu",
+            clone!(@weak self as win => move |_, _| {
+                let widgets = win.get_widgets();
+                widgets.menu_button.get_popover().unwrap().popup();
+            })
+        );
 
         // Stateful actions allow us to set a state each time an action is activated
         let timer_on = false;
-        stateful_action!(self, "toggle-timer", timer_on, clone!(@weak self as win => move |a, v| {
-            win.on_timer_toggled(a, v)
-        }));
+        stateful_action!(
+            self,
+            "toggle-timer",
+            timer_on,
+            clone!(@weak self as win => move |a, v| {
+                win.on_timer_toggled(a, v)
+            })
+        );
     }
 
     fn update_countdown(&self, min: u32, sec: u32, milli: u32) -> glib::Continue {
@@ -236,15 +255,13 @@ impl SolanumWindow {
 
     // Callback to run whenever the timer is toggled - by button or action
     fn on_timer_toggled(&self, action: &gio::SimpleAction, _variant: Option<&glib::Variant>) {
-        let action_state: bool = action.get_state()
-            .unwrap()
-            .get()
-            .unwrap();
+        let action_state: bool = action.get_state().unwrap().get().unwrap();
         let timer_on = !action_state;
         action.set_state(&timer_on.to_variant());
 
         let widgets = self.get_widgets();
-        let timer_image = widgets.timer_button
+        let timer_image = widgets
+            .timer_button
             .get_child()
             .unwrap()
             .downcast::<gtk::Image>()
@@ -253,13 +270,15 @@ impl SolanumWindow {
 
         if timer_on {
             timer.start();
-            timer_image.set_from_icon_name(Some("media-playback-pause-symbolic"), gtk::IconSize::Button);
+            timer_image
+                .set_from_icon_name(Some("media-playback-pause-symbolic"), gtk::IconSize::Button);
             add_style_class!(widgets.timer_label, @blue_text);
             remove_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_button, &["suggested-action"]);
         } else {
             timer.stop();
-            timer_image.set_from_icon_name(Some("media-playback-start-symbolic"), gtk::IconSize::Button);
+            timer_image
+                .set_from_icon_name(Some("media-playback-start-symbolic"), gtk::IconSize::Button);
             add_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_label, @blue_text);
             add_style_class!(widgets.timer_button, &["suggested-action"]);
@@ -282,11 +301,10 @@ impl SolanumWindow {
                 println!("{:?}", e);
             }
 
-
             pipeline.get_bus().map(|b| {
                 let _ = b.timed_pop_filtered(
                     gstreamer::ClockTime::none(),
-                    &[gstreamer::MessageType::Error, gstreamer::MessageType::Eos]
+                    &[gstreamer::MessageType::Error, gstreamer::MessageType::Eos],
                 );
             });
 
@@ -299,8 +317,16 @@ impl SolanumWindow {
             let notif = gio::Notification::new(&i18n("Solanum"));
             // Set notification text based on lap type
             let (title, body, button) = match lap_type {
-                LapType::Pomodoro => (i18n("Back to Work") , i18n("Ready to keep working?"), i18n("Start Working")),
-                LapType::Break => (i18n("Break Time"), i18n("Stretch your legs, and drink some water."), i18n("Start Break")),
+                LapType::Pomodoro => (
+                    i18n("Back to Work"),
+                    i18n("Ready to keep working?"),
+                    i18n("Start Working"),
+                ),
+                LapType::Break => (
+                    i18n("Break Time"),
+                    i18n("Stretch your legs, and drink some water."),
+                    i18n("Start Break"),
+                ),
             };
             notif.set_title(&title);
             notif.set_body(Some(&body));
@@ -329,7 +355,7 @@ impl SolanumWindow {
                 label.set_label(&i18n_f("Lap {}", &[&lap_number.get().to_string()]));
                 timer.set_duration(POMODORO_SECONDS);
                 self.set_timer_label_from_secs(POMODORO_SECONDS);
-            },
+            }
             LapType::Break => {
                 if lap_number.get() >= POMODOROS_UNTIL_LONG_BREAK {
                     lap_number.set(1);
@@ -348,4 +374,3 @@ impl SolanumWindow {
         glib::Continue(true)
     }
 }
-

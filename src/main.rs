@@ -17,11 +17,10 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 #[macro_use]
 extern crate glib;
-extern crate gtk;
 extern crate gio;
+extern crate gtk;
 
 #[macro_use]
 extern crate gtk_macros;
@@ -75,4 +74,3 @@ fn main() {
     let ret = app.run(&std::env::args().collect::<Vec<_>>());
     std::process::exit(ret);
 }
-

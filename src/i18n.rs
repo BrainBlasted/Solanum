@@ -17,7 +17,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 use gettextrs::gettext;
 use gettextrs::ngettext;
 use gettextrs::npgettext;

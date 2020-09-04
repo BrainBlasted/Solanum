@@ -17,7 +17,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 macro_rules! add_style_class {
     ($widget:expr, @$name:ident) => {{
         let ctx = $widget.get_style_context();

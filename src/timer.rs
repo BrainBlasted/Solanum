@@ -17,7 +17,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 use glib::prelude::*;
 use glib::subclass;
 use glib::subclass::prelude::*;
@@ -27,7 +26,7 @@ use glib::translate::*;
 // while actually referencing them across threads. A `Mutex` allows for interior
 // mutablility across threads.
 use std::sync::{Arc, Mutex};
-use std::time::{Instant, Duration};
+use std::time::{Duration, Instant};
 
 // OnceCell allows for a "nullable" field in a simple way.
 use once_cell::sync::OnceCell;
@@ -108,7 +107,10 @@ impl Timer {
         let priv_ = obj.get_private();
 
         obj.set_duration(duration);
-        priv_.sender.set(sender).expect("Could not initialize sender");
+        priv_
+            .sender
+            .set(sender)
+            .expect("Could not initialize sender");
 
         obj
     }
@@ -140,36 +142,39 @@ impl Timer {
         let tx = priv_.sender.clone();
         let lt = &priv_.lap_type;
         // Every 40 milliseconds, loop to update the timer
-        glib::timeout_add(40, clone!(@weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
-            let state = s.lock().unwrap();
-            let instant = i.lock().unwrap();
-            let duration = d.lock().unwrap();
-            let sender = tx.get().unwrap();
-            let mut lap_type = lt.lock().unwrap();
+        glib::timeout_add(
+            40,
+            clone!(@weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
+                let state = s.lock().unwrap();
+                let instant = i.lock().unwrap();
+                let duration = d.lock().unwrap();
+                let sender = tx.get().unwrap();
+                let mut lap_type = lt.lock().unwrap();
 
-            if *state == TimerState::Running {
-                if let Some(instant) = *instant {
-                    let elapsed = instant.elapsed();
-                    if let Some(difference) = duration.checked_sub(elapsed) {
-                        let msm = duration_to_msm(difference);
-                        let _ = sender.send(TimerActions::CountdownUpdate(msm.0, msm.1, msm.2));
-                        return glib::Continue(true);
-                    } else {
-                        let new_lt = {
-                            if *lap_type == LapType::Pomodoro {
-                                LapType::Break
-                            } else {
-                                LapType::Pomodoro
-                            }
-                        };
-                        *lap_type = new_lt;
-                        let _ = sender.send(TimerActions::Lap(new_lt));
-                        return glib::Continue(false);
+                if *state == TimerState::Running {
+                    if let Some(instant) = *instant {
+                        let elapsed = instant.elapsed();
+                        if let Some(difference) = duration.checked_sub(elapsed) {
+                            let msm = duration_to_msm(difference);
+                            let _ = sender.send(TimerActions::CountdownUpdate(msm.0, msm.1, msm.2));
+                            return glib::Continue(true);
+                        } else {
+                            let new_lt = {
+                                if *lap_type == LapType::Pomodoro {
+                                    LapType::Break
+                                } else {
+                                    LapType::Pomodoro
+                                }
+                            };
+                            *lap_type = new_lt;
+                            let _ = sender.send(TimerActions::Lap(new_lt));
+                            return glib::Continue(false);
+                        }
                     }
                 }
-            }
-            glib::Continue(false)
-        }));
+                glib::Continue(false)
+            }),
+        );
     }
 
     pub fn stop(&self) {

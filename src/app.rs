@@ -17,7 +17,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-
 use gio::prelude::*;
 use gtk::prelude::*;
 use gtk_macros::*;
@@ -63,7 +62,6 @@ impl ObjectImpl for SolanumApplicationPriv {
     glib_object_impl!();
 }
 
-
 impl ApplicationImpl for SolanumApplicationPriv {
     fn activate(&self, _application: &gio::Application) {
         let window = self.window.get().expect("Could not get main window");
@@ -77,7 +75,10 @@ impl ApplicationImpl for SolanumApplicationPriv {
 
         application.set_resource_base_path(Some("/io/gnome/Solanum/"));
 
-        let app = application.clone().downcast::<SolanumApplication>().unwrap();
+        let app = application
+            .clone()
+            .downcast::<SolanumApplication>()
+            .unwrap();
         let window = SolanumWindow::new(&app);
         window.set_title(&i18n("Solanum"));
         window.set_icon_name(Some(&config::APP_ID.to_owned()));
@@ -106,10 +107,13 @@ glib_wrapper! {
 impl SolanumApplication {
     // Create the finalized, subclassed SolanumApplication
     pub fn new() -> Self {
-        glib::Object::new(Self::static_type(), &[
-            ("application-id", &config::APP_ID.to_owned()),
-            ("flags", &ApplicationFlags::empty())
-        ])
+        glib::Object::new(
+            Self::static_type(),
+            &[
+                ("application-id", &config::APP_ID.to_owned()),
+                ("flags", &ApplicationFlags::empty()),
+            ],
+        )
         .unwrap()
         .downcast()
         .unwrap()
@@ -122,18 +126,30 @@ impl SolanumApplication {
 
     // Sets up gio::SimpleActions for the Application
     fn setup_actions(&self) {
-        action!(self, "about", clone!(@strong self as app => move |_, _| {
-            app.show_about();
-        }));
+        action!(
+            self,
+            "about",
+            clone!(@strong self as app => move |_, _| {
+                app.show_about();
+            })
+        );
 
-        action!(self, "quit", clone!(@strong self as app => move |_, _| {
-            app.quit();
-        }));
+        action!(
+            self,
+            "quit",
+            clone!(@strong self as app => move |_, _| {
+                app.quit();
+            })
+        );
 
-        action!(self, "toggle-timer", clone!(@strong self as app => move |_, _| {
-            let win = app.get_main_window();
-            win.activate_action("toggle-timer", None);
-        }));
+        action!(
+            self,
+            "toggle-timer",
+            clone!(@strong self as app => move |_, _| {
+                let win = app.get_main_window();
+                win.activate_action("toggle-timer", None);
+            })
+        );
     }
 
     // Sets up keyboard shortcuts
