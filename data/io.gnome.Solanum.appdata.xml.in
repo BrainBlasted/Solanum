@@ -14,7 +14,7 @@
   </description>
   <screenshots>
     <screenshot>
-      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/raw/master/data/screenshots/screenshot.png</image>
+      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">io.gnome.Solanum.desktop</launchable>
