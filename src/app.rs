@@ -162,7 +162,10 @@ impl SolanumApplication {
     fn show_about(&self) {
         let window = self.get_active_window();
         let authors = vec!["Christopher Davis <christopherdavis@gnome.org>"];
-        let artists = vec!["Miredly Sound https://soundcloud.com/mired"];
+        let artists = vec![
+            "Tobias Bernard https://tobiasbernard.com",
+            "Miredly Sound https://soundcloud.com/mired"
+        ];
 
         let dialog = gtk::AboutDialog::new();
         dialog.set_authors(&authors);
