@@ -48,6 +48,11 @@ distribution, you can use the following:
 ninja -C _build install 
 ```
 
+## Conduct
+
+Solanum operates under the GNOME Code Of Conduct. See the full
+text of the Code Of Conduct [here](code-of-conduct.md).
+
 
 ## License information
 ```
