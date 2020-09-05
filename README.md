@@ -1,5 +1,7 @@
 # Solanum
 
+![Screenshot of Solanum](data/screenshots/screenshot.png)
+
 Solanum is a [pomodoro timer](https://en.wikipedia.org/wiki/Pomodoro_Technique) for the GNOME desktop. It keeps you on track, with frequent short breaks, and a long break after sessions of productivity.
 
 ## Building
