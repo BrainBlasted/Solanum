@@ -37,3 +37,9 @@ cargo_sources = files(
 subdir('src')
 
 meson.add_install_script('build-aux/meson/postinstall.py')
+meson.add_dist_script(
+  'build-aux/meson/dist-vendor.sh',
+  join_paths(meson.build_root(), 'meson-dist', meson.project_name() + '-' + meson.project_version()),
+  meson.source_root()
+)
+
