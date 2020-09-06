@@ -164,7 +164,7 @@ impl SolanumApplication {
         let authors = vec!["Christopher Davis <christopherdavis@gnome.org>"];
         let artists = vec![
             "Tobias Bernard https://tobiasbernard.com",
-            "Miredly Sound https://soundcloud.com/mired"
+            "Miredly Sound https://soundcloud.com/mired",
         ];
 
         let dialog = gtk::AboutDialog::new();
