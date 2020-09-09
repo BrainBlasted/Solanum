@@ -1,6 +1,6 @@
-data/io.gnome.Solanum.desktop.in
-data/io.gnome.Solanum.appdata.xml.in
-data/io.gnome.Solanum.gschema.xml
+data/org.gnome.Solanum.desktop.in
+data/org.gnome.Solanum.appdata.xml.in
+data/org.gnome.Solanum.gschema.xml
 data/ui/menu.ui
 src/app.rs
 src/window.rs

@@ -3,11 +3,11 @@ desktop_conf.set('APP_ID', app_id)
 desktop_file = i18n.merge_file(
   'desktop',
   input: configure_file(
-    input: 'io.gnome.Solanum.desktop.in.in',
-    output: 'io.gnome.Solanum.desktop.in',
+    input: 'org.gnome.Solanum.desktop.in.in',
+    output: 'org.gnome.Solanum.desktop.in',
     configuration: desktop_conf
   ),
-  output: 'io.gnome.Solanum.desktop',
+  output: 'org.gnome.Solanum.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -22,8 +22,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 'io.gnome.Solanum.appdata.xml.in',
-  output: 'io.gnome.Solanum.appdata.xml',
+  input: 'org.gnome.Solanum.appdata.xml.in',
+  output: 'org.gnome.Solanum.appdata.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(solanum_datadir, 'appdata')
@@ -36,7 +36,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('io.gnome.Solanum.gschema.xml',
+install_data('org.gnome.Solanum.gschema.xml',
   install_dir: join_paths(solanum_datadir, 'glib-2.0', 'schemas')
 )
 

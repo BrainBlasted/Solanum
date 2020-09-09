@@ -83,7 +83,7 @@ impl ObjectImpl for SolanumWindowPriv {
     fn constructed(&self, obj: &glib::Object) {
         self.parent_constructed(obj);
 
-        let builder = gtk::Builder::from_resource("/io/gnome/Solanum/menu.ui");
+        let builder = gtk::Builder::from_resource("/org/gnome/Solanum/menu.ui");
 
         let count = self.pomodoro_count.clone().into_inner();
 
@@ -295,7 +295,7 @@ impl SolanumWindow {
 
     // TODO: Figure out how to do this without freezing the UI
     fn chime(&self) {
-        let uri = String::from("resource:///io/gnome/Solanum/chime.ogg");
+        let uri = String::from("resource:///org/gnome/Solanum/chime.ogg");
         let _ = gstreamer::parse_launch(&format!("playbin uri={}", uri)).map(|pipeline| {
             if let Err(e) = pipeline.set_state(gstreamer::State::Playing) {
                 println!("{:?}", e);

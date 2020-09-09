@@ -62,7 +62,7 @@ fn main() {
 
     // Set up CSS
     let provider = gtk::CssProvider::new();
-    provider.load_from_resource("/io/gnome/Solanum/style.css");
+    provider.load_from_resource("/org/gnome/Solanum/style.css");
     gtk::StyleContext::add_provider_for_screen(
         &gdk::Screen::get_default().unwrap(),
         &provider,

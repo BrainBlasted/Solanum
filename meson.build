@@ -23,7 +23,7 @@ solanum_localedir = join_paths(solanum_prefix, get_option('localedir'))
 solanum_datadir = join_paths(solanum_prefix, get_option('datadir'))
 solanum_pkgdatadir = join_paths(solanum_datadir, meson.project_name())
 
-app_id = 'io.gnome.Solanum'
+app_id = 'org.gnome.Solanum'
 copyright = '2020'
 
 subdir('data')

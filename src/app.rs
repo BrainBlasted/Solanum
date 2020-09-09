@@ -73,7 +73,7 @@ impl ApplicationImpl for SolanumApplicationPriv {
     fn startup(&self, application: &gio::Application) {
         self.parent_startup(application);
 
-        application.set_resource_base_path(Some("/io/gnome/Solanum/"));
+        application.set_resource_base_path(Some("/org/gnome/Solanum/"));
 
         let app = application
             .clone()
