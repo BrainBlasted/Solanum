@@ -46,6 +46,7 @@ static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
 
 #[derive(Clone, Debug)]
 struct Widgets {
+    handle: libhandy::WindowHandle,
     menu_button: gtk::MenuButton,
     lap_label: gtk::Label,
     timer_label: gtk::Label,
@@ -147,8 +148,11 @@ impl ObjectImpl for SolanumWindowPriv {
 
         vbox2.set_property_width_request(360);
 
+        let handle = libhandy::WindowHandle::new();
+        handle.add(&vbox2);
+
         let window = obj.clone().downcast::<gtk::ApplicationWindow>().unwrap();
-        window.add(&vbox2);
+        window.add(&handle);
         window.set_default_size(600, 300);
         window.set_can_focus(false);
         remove_style_class!(window, &["solid-csd"]);
@@ -172,6 +176,7 @@ impl ObjectImpl for SolanumWindowPriv {
 
         self.widgets
             .set(Widgets {
+                handle,
                 menu_button,
                 lap_label,
                 timer_label,
