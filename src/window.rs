@@ -29,8 +29,6 @@ use gtk::subclass::prelude::*;
 
 use libhandy::subclass::prelude::ApplicationWindowImpl as HdyApplicationWindowImpl;
 
-use gstreamer::prelude::*;
-
 use once_cell::unsync::OnceCell;
 
 use std::cell::Cell;
@@ -43,6 +41,8 @@ static POMODORO_SECONDS: u64 = 1500; // == 25 Minutes
 static SHORT_BREAK_SECONDS: u64 = 300; // == 5 minutes
 static LONG_BREAK_SECONDS: u64 = 900; // == 15 minutes
 static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
+
+static CHIME_URI: &'static str = "resource:///org/gnome/Solanum/chime.ogg";
 
 #[derive(Clone, Debug)]
 struct Widgets {
@@ -60,6 +60,7 @@ pub struct SolanumWindowPriv {
     pomodoro_count: Cell<u32>,
     timer: OnceCell<Timer>,
     lap_type: Cell<LapType>,
+    player: gstreamer_player::Player,
 }
 
 impl ObjectSubclass for SolanumWindowPriv {
@@ -76,6 +77,7 @@ impl ObjectSubclass for SolanumWindowPriv {
             pomodoro_count: Cell::new(1),
             timer: OnceCell::new(),
             lap_type: Cell::new(LapType::Pomodoro),
+            player: gstreamer_player::Player::new(None, None),
         }
     }
 }
@@ -370,23 +372,10 @@ impl SolanumWindow {
         label.set_label(&format!("{:>02}∶{:>02}.0", min, secs));
     }
 
-    // TODO: Figure out how to do this without freezing the UI
-    fn chime(&self) {
-        let uri = String::from("resource:///org/gnome/Solanum/chime.ogg");
-        let _ = gstreamer::parse_launch(&format!("playbin uri={}", uri)).map(|pipeline| {
-            if let Err(e) = pipeline.set_state(gstreamer::State::Playing) {
-                println!("{:?}", e);
-            }
-
-            pipeline.get_bus().map(|b| {
-                let _ = b.timed_pop_filtered(
-                    gstreamer::ClockTime::none(),
-                    &[gstreamer::MessageType::Error, gstreamer::MessageType::Eos],
-                );
-            });
-
-            let _ = pipeline.set_state(gstreamer::State::Null);
-        });
+    fn play_sound(&self, uri: &str) {
+        let player = &self.get_private().player;
+        player.set_uri(uri);
+        player.play();
     }
 
     fn send_notifcation(&self, lap_type: LapType) {
@@ -412,7 +401,7 @@ impl SolanumWindow {
             let app = self.get_application().unwrap();
             app.send_notification(Some("timer-notif"), &notif);
         }
-        self.chime();
+        self.play_sound(CHIME_URI);
     }
 
     // Pause the timer and move to the next lap
