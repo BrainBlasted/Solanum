@@ -1,7 +1,7 @@
 conf = configuration_data()
 conf.set_quoted('APP_ID', app_id)
 conf.set_quoted('COPYRIGHT', copyright)
-conf.set_quoted('VERSION', meson.project_version())
+conf.set_quoted('VERSION', solanum_version)
 conf.set_quoted('LOCALEDIR', solanum_localedir)
 conf.set_quoted('PKGDATADIR', solanum_pkgdatadir)
 

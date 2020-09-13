@@ -23,8 +23,24 @@ solanum_localedir = join_paths(solanum_prefix, get_option('localedir'))
 solanum_datadir = join_paths(solanum_prefix, get_option('datadir'))
 solanum_pkgdatadir = join_paths(solanum_datadir, meson.project_name())
 
-app_id = 'org.gnome.Solanum'
 copyright = '2020'
+profile = ''
+name_suffix = ''
+version_suffix = ''
+
+if get_option('profile') == 'development'
+  profile = '.Devel'
+  name_suffix = ' ☢'
+  vcs_tag = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
+  if vcs_tag == ''
+    version_suffix = '-devel'
+  else
+    version_suffix = '-@0@'.format(vcs_tag)
+  endif
+endif
+
+app_id = 'org.gnome.Solanum@0@'.format(profile)
+solanum_version = meson.project_version() + version_suffix
 
 subdir('data')
 subdir('po')

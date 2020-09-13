@@ -6,8 +6,8 @@ stages:
   - deploy
 
 variables:
-    BUNDLE: "org.gnome.Solanum.flatpak"
-    MANIFEST_PATH: "org.gnome.Solanum.json"
+    BUNDLE: "org.gnome.Solanum.Devel.flatpak"
+    MANIFEST_PATH: "org.gnome.Solanum.Devel.json"
     FLATPAK_MODULE: "solanum"
     FLATPAK_IMAGE: "registry.gitlab.gnome.org/gnome/gnome-runtime-images/rust_bundle:3.36"
 
@@ -34,7 +34,7 @@ flatpak:
   image: "$FLATPAK_IMAGE"
   variables:
     RUNTIME_REPO: 'https://nightly.gnome.org/gnome-nightly.flatpakrepo'
-    APP_ID: "org.gnome.Solanum"
+    APP_ID: "org.gnome.Solanum.Devel"
 
 # nightly:
 #   extends: '.publish_nightly'
