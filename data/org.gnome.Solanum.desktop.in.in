@@ -5,5 +5,7 @@ Exec=solanum
 Icon=@APP_ID@
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=GTK;GNOME;Utility;
 StartupNotify=true
+Keywords=Pomodoro;Timer;Productivity;
+
