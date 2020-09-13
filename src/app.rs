@@ -150,6 +150,15 @@ impl SolanumApplication {
                 win.activate_action("toggle-timer", None);
             })
         );
+
+        action!(
+            self,
+            "skip",
+            clone!(@strong self as app => move |_, _| {
+                let win = app.get_main_window();
+                win.activate_action("skip", None);
+            })
+        );
     }
 
     // Sets up keyboard shortcuts

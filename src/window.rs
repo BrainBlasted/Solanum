@@ -51,6 +51,7 @@ struct Widgets {
     lap_label: gtk::Label,
     timer_label: gtk::Label,
     timer_button: gtk::Button,
+    skip_button: gtk::Button,
 }
 
 #[derive(Debug)]
@@ -58,6 +59,7 @@ pub struct SolanumWindowPriv {
     widgets: OnceCell<Widgets>,
     pomodoro_count: Cell<u32>,
     timer: OnceCell<Timer>,
+    lap_type: Cell<LapType>,
 }
 
 impl ObjectSubclass for SolanumWindowPriv {
@@ -73,6 +75,7 @@ impl ObjectSubclass for SolanumWindowPriv {
             widgets: OnceCell::new(),
             pomodoro_count: Cell::new(1),
             timer: OnceCell::new(),
+            lap_type: Cell::new(LapType::Pomodoro),
         }
     }
 }
@@ -114,13 +117,14 @@ impl ObjectImpl for SolanumWindowPriv {
         timer_label.set_attributes(Some(&attrs));
         add_style_class!(timer_label, &["blinking", "timer_label"]);
 
+        let hbox = gtk::Box::new(gtk::Orientation::Horizontal, 12);
+
         let timer_button = gtk::Button::new();
-        let image = gtk::Image::from_icon_name(
+        let timer_image = gtk::Image::from_icon_name(
             Some("media-playback-start-symbolic"),
             gtk::IconSize::Button,
         );
-        timer_button.add(&image);
-        timer_button.set_halign(gtk::Align::Center);
+        timer_button.add(&timer_image);
         timer_button.set_action_name(Some("win.toggle-timer"));
         add_style_class!(
             timer_button,
@@ -128,13 +132,27 @@ impl ObjectImpl for SolanumWindowPriv {
                 "pill_button",
                 "large_button",
                 "suggested-action",
-                "play_button"
+                "timer_button"
             ]
         );
 
+        let skip_button = gtk::Button::new();
+        let skip_image =
+            gtk::Image::from_icon_name(Some("media-seek-forward-symbolic"), gtk::IconSize::Button);
+        skip_button.add(&skip_image);
+        skip_button.set_action_name(Some("win.skip"));
+        add_style_class!(
+            skip_button,
+            &["pill_button", "large_button", "timer_button"]
+        );
+
+        hbox.add(&timer_button);
+        hbox.add(&skip_button);
+        hbox.set_halign(gtk::Align::Center);
+
         vbox.add(&lap_label);
         vbox.add(&timer_label);
-        vbox.add(&timer_button);
+        vbox.add(&hbox);
 
         let menu_button = gtk::MenuButton::new();
         let image = gtk::Image::from_icon_name(Some("open-menu-symbolic"), gtk::IconSize::Button);
@@ -181,6 +199,7 @@ impl ObjectImpl for SolanumWindowPriv {
                 lap_label,
                 timer_label,
                 timer_button,
+                skip_button,
             })
             .expect("Could not set widget state for main window");
 
@@ -249,6 +268,55 @@ impl SolanumWindow {
                 win.on_timer_toggled(a, v)
             })
         );
+
+        action!(
+            self,
+            "skip",
+            clone!(@weak self as win => move |_, _| {
+                win.skip();
+            })
+        );
+    }
+
+    fn skip(&self) {
+        let priv_ = self.get_private();
+        let label = self.get_widgets().lap_label;
+        let lap_type = priv_.lap_type.get();
+        let lap_number = &priv_.pomodoro_count;
+        let timer = priv_.timer.get().unwrap();
+
+        let next_lap = if lap_type == LapType::Pomodoro {
+            LapType::Break
+        } else {
+            LapType::Pomodoro
+        };
+
+        priv_.lap_type.replace(next_lap);
+
+        match next_lap {
+            LapType::Pomodoro => {
+                label.set_label(&i18n_f("Lap {}", &[&lap_number.get().to_string()]));
+                timer.set_duration(POMODORO_SECONDS);
+                self.set_timer_label_from_secs(POMODORO_SECONDS);
+            }
+            LapType::Break => {
+                if lap_number.get() >= POMODOROS_UNTIL_LONG_BREAK {
+                    lap_number.set(1);
+                    label.set_label(&i18n("Long Break"));
+                    timer.set_duration(LONG_BREAK_SECONDS);
+                    self.set_timer_label_from_secs(LONG_BREAK_SECONDS);
+                } else {
+                    lap_number.set(lap_number.get() + 1);
+                    label.set_label(&i18n("Short Break"));
+                    timer.set_duration(SHORT_BREAK_SECONDS);
+                    self.set_timer_label_from_secs(SHORT_BREAK_SECONDS);
+                }
+            }
+        };
+
+        if !self.is_active() {
+            self.present();
+        }
     }
 
     fn update_countdown(&self, min: u32, sec: u32, milli: u32) -> glib::Continue {
@@ -263,6 +331,8 @@ impl SolanumWindow {
         let action_state: bool = action.get_state().unwrap().get().unwrap();
         let timer_on = !action_state;
         action.set_state(&timer_on.to_variant());
+
+        let skip = self.lookup_action("skip").unwrap();
 
         let widgets = self.get_widgets();
         let timer_image = widgets
@@ -280,6 +350,7 @@ impl SolanumWindow {
             add_style_class!(widgets.timer_label, @blue_text);
             remove_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_button, &["suggested-action"]);
+            let _ = skip.set_property("enabled", &false);
         } else {
             timer.stop();
             timer_image
@@ -287,6 +358,7 @@ impl SolanumWindow {
             add_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_label, @blue_text);
             add_style_class!(widgets.timer_button, &["suggested-action"]);
+            let _ = skip.set_property("enabled", &true);
         }
     }
 
@@ -336,6 +408,7 @@ impl SolanumWindow {
             notif.set_title(&title);
             notif.set_body(Some(&body));
             notif.add_button(&button, "app.toggle-timer");
+            notif.add_button(&i18n("Skip"), "app.skip");
             let app = self.get_application().unwrap();
             app.send_notification(Some("timer-notif"), &notif);
         }
@@ -347,6 +420,7 @@ impl SolanumWindow {
         let priv_ = self.get_private();
         let label = self.get_widgets().lap_label;
         let timer = priv_.timer.get().unwrap();
+        priv_.lap_type.set(lap_type);
 
         // This stops the timer and sets the styling we need
         let action = self.lookup_action("toggle-timer").unwrap();
