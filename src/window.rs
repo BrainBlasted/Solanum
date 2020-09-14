@@ -43,6 +43,7 @@ static LONG_BREAK_SECONDS: u64 = 900; // == 15 minutes
 static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
 
 static CHIME_URI: &'static str = "resource:///org/gnome/Solanum/chime.ogg";
+static BEEP_URI: &'static str = "resource:///org/gnome/Solanum/beep.ogg";
 
 #[derive(Clone, Debug)]
 struct Widgets {
@@ -347,6 +348,7 @@ impl SolanumWindow {
 
         if timer_on {
             timer.start();
+            self.play_sound(BEEP_URI);
             timer_image
                 .set_from_icon_name(Some("media-playback-pause-symbolic"), gtk::IconSize::Button);
             add_style_class!(widgets.timer_label, @blue_text);
