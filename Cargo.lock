@@ -845,7 +845,7 @@ checksum = "c111b5bd5695e56cffe5129854aa230b39c93a305372fdbb2668ca2394eea9f8"
 
 [[package]]
 name = "solanum"
-version = "1.0.0"
+version = "1.1.0"
 dependencies = [
  "gdk",
  "gettext-rs",

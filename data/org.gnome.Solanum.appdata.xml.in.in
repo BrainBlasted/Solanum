@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2020 Chirstopher Davis <christopherdavis@gnome.org> -->
+<!-- Copyright 2020 Christopher Davis <christopherdavis@gnome.org> -->
 <component type="desktop-application">
   <id>@APP_ID@</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <name>Solanum</name>
-  <summary>A pomodoro timer for GNOME</summary>
+  <summary>Balance working time and break time</summary>
   <description>
     <p>
-      Solanum is a pomodoro timer for the GNOME desktop. Work in 4 sessions,
+      Solanum is a time tracking app that uses the pomodoro technique. Work in 4 sessions,
       with breaks in between each session and one long break after all 4.
     </p>
   </description>
   <screenshots>
     <screenshot>
-      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot.png</image>
+      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot-1.png</image>
+      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot-2.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">@APP_ID@.desktop</launchable>
@@ -22,12 +23,24 @@
   <url type="bugtracker">https://gitlab.gnome.org/BrainBlasted/Solanum/-/issues</url>
   <url type="donation">https://patreon.com/chrisgnome</url>
   <releases>
+    <release version="1.1.0" date="2020-09-14">
+      <description>
+        <p>The second stable release of Solanum brings UI tweaks, usability improvements, and new features:</p>
+        <ul>
+          <li>A skip button has been added, so you can use other time tracking methods in addition to Solanum.</li>
+          <li>The start button now plays a small chime, so you know that Solanum will give auditory cues as you work.</li>
+          <li>Keywords have been added so Solanum can be found more easily on your desktop.</li>
+          <li>The entire window is now draggable instead of just the top.</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.1" date="2020-09-09"/>
     <release version="1.0.0" date="2020-09-05"/>
   </releases>
   <kudos>
     <kudo>ModernToolkit</kudo>
     <kudo>HiDpiIcon</kudo>
+    <kudo>Notifications</kudo>
   </kudos>
   <content_rating type="oars-1.1" />
   <provides>org.gnome.Solanum.desktop</provides>
