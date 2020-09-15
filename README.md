@@ -1,7 +1,7 @@
 # Solanum
 
 <p align="center">
-<img src="https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot.png" alt="Screenshot of Solanum"/>
+<img src="https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot-1.png" alt="Screenshot of Solanum"/>
 </p>
 
 Solanum is a [pomodoro timer](https://en.wikipedia.org/wiki/Pomodoro_Technique) for the GNOME desktop. It keeps you on track, with frequent short breaks, and a long break after sessions of productivity.
