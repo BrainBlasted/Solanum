@@ -39,7 +39,7 @@ pub enum LapType {
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub enum TimerActions {
-    CountdownUpdate(u32, u32, u32),
+    CountdownUpdate(u32, u32),
     Lap(LapType),
 }
 
@@ -141,9 +141,9 @@ impl Timer {
         let d = &priv_.duration;
         let tx = priv_.sender.clone();
         let lt = &priv_.lap_type;
-        // Every 40 milliseconds, loop to update the timer
+        // Every 100 milliseconds, loop to update the timer
         glib::timeout_add(
-            40,
+            100,
             clone!(@weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
                 let state = s.lock().unwrap();
                 let instant = i.lock().unwrap();
@@ -155,8 +155,8 @@ impl Timer {
                     if let Some(instant) = *instant {
                         let elapsed = instant.elapsed();
                         if let Some(difference) = duration.checked_sub(elapsed) {
-                            let msm = duration_to_msm(difference);
-                            let _ = sender.send(TimerActions::CountdownUpdate(msm.0, msm.1, msm.2));
+                            let msm = duration_to_ms(difference);
+                            let _ = sender.send(TimerActions::CountdownUpdate(msm.0, msm.1));
                             return glib::Continue(true);
                         } else {
                             let new_lt = {
@@ -195,18 +195,15 @@ impl Timer {
     }
 }
 
-fn duration_to_msm(duration: Duration) -> (u32, u32, u32) {
+fn duration_to_ms(duration: Duration) -> (u32, u32) {
     use std::convert::TryInto;
 
-    let mut milli = duration.as_millis();
-    let minutes = milli / 60000;
-    milli = milli % 60000;
-    let seconds = milli / 1000;
-    milli = milli % 1000;
+    let mut seconds = duration.as_secs();
+    let minutes = seconds / 60;
+    seconds = seconds % 60;
 
     let minutes = minutes.try_into().unwrap();
     let seconds = seconds.try_into().unwrap();
-    let milli = milli.try_into().unwrap();
 
-    (minutes, seconds, milli)
+    (minutes, seconds)
 }

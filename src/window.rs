@@ -188,10 +188,10 @@ impl ObjectImpl for SolanumWindowPriv {
             .expect("Could not initialize timer");
         let min = POMODORO_SECONDS / 60;
         let secs = POMODORO_SECONDS % 60;
-        timer_label.set_label(&format!("{:>02}∶{:>02}.0", min, secs));
+        timer_label.set_label(&format!("{:>02}∶{:>02}", min, secs));
         // The receiver will get certain actions from the Timer and run operations on the Window
         rx.attach(None, move |action| match action {
-            TimerActions::CountdownUpdate(min, sec, milli) => w.update_countdown(min, sec, milli),
+            TimerActions::CountdownUpdate(min, sec) => w.update_countdown(min, sec),
             TimerActions::Lap(lap_type) => w.next_lap(lap_type),
         });
 
@@ -322,10 +322,10 @@ impl SolanumWindow {
         }
     }
 
-    fn update_countdown(&self, min: u32, sec: u32, milli: u32) -> glib::Continue {
+    fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
         let widgets = self.get_widgets();
         let label = widgets.timer_label;
-        label.set_label(&format!("{:>02}∶{:>02}.{}", min, sec, milli / 100));
+        label.set_label(&format!("{:>02}∶{:>02}", min, sec));
         glib::Continue(true)
     }
 
@@ -371,7 +371,7 @@ impl SolanumWindow {
         let label = self.get_widgets().timer_label;
         let min = secs / 60;
         let secs = secs % 60;
-        label.set_label(&format!("{:>02}∶{:>02}.0", min, secs));
+        label.set_label(&format!("{:>02}∶{:>02}", min, secs));
     }
 
     fn play_sound(&self, uri: &str) {
