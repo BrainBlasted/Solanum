@@ -9,7 +9,7 @@ variables:
     BUNDLE: "org.gnome.Solanum.Devel.flatpak"
     MANIFEST_PATH: "org.gnome.Solanum.Devel.json"
     FLATPAK_MODULE: "solanum"
-    FLATPAK_IMAGE: "registry.gitlab.gnome.org/gnome/gnome-runtime-images/rust_bundle:3.36"
+    FLATPAK_IMAGE: "registry.gitlab.gnome.org/gnome/gnome-runtime-images/rust_bundle:master"
 
 .flatpak_cache_template: &flatpak_cache
     cache:
