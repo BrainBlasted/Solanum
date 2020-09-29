@@ -42,8 +42,8 @@ static SHORT_BREAK_SECONDS: u64 = 300; // == 5 minutes
 static LONG_BREAK_SECONDS: u64 = 900; // == 15 minutes
 static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
 
-static CHIME_URI: &'static str = "resource:///org/gnome/Solanum/chime.ogg";
-static BEEP_URI: &'static str = "resource:///org/gnome/Solanum/beep.ogg";
+static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
+static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
 
 #[derive(Clone, Debug)]
 struct Widgets {
@@ -178,7 +178,7 @@ impl ObjectImpl for SolanumWindowPriv {
         window.set_can_focus(false);
         remove_style_class!(window, &["solid-csd"]);
 
-        let w = window.clone().downcast::<SolanumWindow>().unwrap();
+        let w = window.downcast::<SolanumWindow>().unwrap();
         w.setup_actions();
 
         // Set up (Sender, Receiver) of actions for the timer
@@ -246,8 +246,7 @@ impl SolanumWindow {
 
     fn get_widgets(&self) -> Widgets {
         let priv_ = self.get_private();
-        let widgets = priv_.widgets.clone().into_inner().unwrap();
-        widgets
+        priv_.widgets.clone().into_inner().unwrap()
     }
 
     // Set up actions on the Window itself

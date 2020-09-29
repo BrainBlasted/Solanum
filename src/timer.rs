@@ -200,7 +200,7 @@ fn duration_to_ms(duration: Duration) -> (u32, u32) {
 
     let mut seconds = duration.as_secs();
     let minutes = seconds / 60;
-    seconds = seconds % 60;
+    seconds %= 60;
 
     let minutes = minutes.try_into().unwrap();
     let seconds = seconds.try_into().unwrap();
