@@ -12,10 +12,12 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
-        "--env=GST_DEBUG=3"
+        "--env=GST_DEBUG=3",
+        "--env=G_ENABLE_DIAGNOSTIC=1"
     ],
     "build-options" : {
         "append-path" : "/usr/lib/sdk/rust-stable/bin",
+        "cflags" : "-DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED",
         "build-args" : [
             "--share=network"
         ],
