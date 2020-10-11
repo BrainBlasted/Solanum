@@ -14,14 +14,18 @@
   </description>
   <screenshots>
     <screenshot>
-      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot-1.png</image>
-      <image type="source">https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot-2.png</image>
+      <image type="source">https://gitlab.gnome.org/World/Solanum/-/raw/main/data/screenshots/screenshot-1.png</image>
+      <image type="source">https://gitlab.gnome.org/World/Solanum/-/raw/main/data/screenshots/screenshot-2.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">@APP_ID@.desktop</launchable>
-  <url type="homepage">https://gitlab.gnome.org/BrainBlasted/Solanum</url>
-  <url type="bugtracker">https://gitlab.gnome.org/BrainBlasted/Solanum/-/issues</url>
+  <url type="homepage">https://gitlab.gnome.org/World/Solanum</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/Solanum/-/issues</url>
   <url type="donation">https://patreon.com/chrisgnome</url>
+  <!-- Translators: please do NOT translate this -->
+  <developer_name>Christopher Davis</developer_name>
+  <update_contact>christopherdavis_at_gnome.org</update_contact>
+  <translation type="gettext">solanum</translation>
   <releases>
     <release version="1.1.0" date="2020-09-14">
       <description>
