@@ -5,9 +5,7 @@ project('solanum',
                    ],
 )
 
-dependency('gtk+-3.0', version: '>= 3.24')
-dependency('libhandy-1', version: '>= 1.0.0')
-
+dependency('gtk4', version: '>= 3.92')
 dependency('gstreamer-1.0', version: '>= 1.16')
 dependency('gstreamer-base-1.0', version: '>= 1.16')
 dependency('gstreamer-audio-1.0', version: '>= 1.16')

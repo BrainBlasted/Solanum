@@ -58,14 +58,12 @@ impl ObjectSubclass for SolanumApplicationPriv {
 }
 
 // *Impl traits implement any vfuncs when subclassing a GObject
-impl ObjectImpl for SolanumApplicationPriv {
-    glib_object_impl!();
-}
+impl ObjectImpl for SolanumApplicationPriv {}
 
 impl ApplicationImpl for SolanumApplicationPriv {
     fn activate(&self, _application: &gio::Application) {
         let window = self.window.get().expect("Could not get main window");
-        window.show_all();
+        window.show();
         window.present();
     }
 
@@ -186,7 +184,7 @@ impl SolanumApplication {
         dialog.set_wrap_license(true);
         dialog.set_version(Some(config::VERSION));
         dialog.set_website(Some("https://www.patreon.com/chrisgnome"));
-        dialog.set_website_label(Some(&i18n("Donate on Patreon")));
+        dialog.set_website_label(&i18n("Donate on Patreon"));
         dialog.set_copyright(Some(
             format!("\u{A9} {} Christopher Davis, et al.", config::COPYRIGHT).as_str(),
         ));
@@ -196,9 +194,6 @@ impl SolanumApplication {
             dialog.set_modal(true);
         }
 
-        dialog.connect_response(move |d, _| {
-            d.close();
-        });
-        dialog.show_all();
+        dialog.show();
     }
 }

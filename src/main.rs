@@ -19,15 +19,13 @@
 
 #[macro_use]
 extern crate glib;
-extern crate gio;
-extern crate gtk;
+extern crate gtk4 as gtk;
 
 #[macro_use]
 extern crate gtk_macros;
 
 use gettextrs::*;
 use gio::prelude::*;
-use gtk::prelude::*;
 
 mod app;
 mod config;
@@ -43,7 +41,6 @@ use crate::app::SolanumApplication;
 fn main() {
     // Initiialize gtk, gstreamer, and libhandy.
     gtk::init().expect("Failed to initialize gstreamer");
-    libhandy::init();
     gstreamer::init().expect("Failed to initialize gstreamer");
 
     // Set up translations
@@ -63,8 +60,8 @@ fn main() {
     // Set up CSS
     let provider = gtk::CssProvider::new();
     provider.load_from_resource("/org/gnome/Solanum/style.css");
-    gtk::StyleContext::add_provider_for_screen(
-        &gdk::Screen::get_default().unwrap(),
+    gtk::StyleContext::add_provider_for_display(
+        &gdk4::Display::get_default().unwrap(),
         &provider,
         600,
     );

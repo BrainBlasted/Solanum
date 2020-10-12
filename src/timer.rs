@@ -83,9 +83,7 @@ impl ObjectSubclass for TimerPriv {
     }
 }
 
-impl ObjectImpl for TimerPriv {
-    glib_object_impl!();
-}
+impl ObjectImpl for TimerPriv {}
 
 glib_wrapper! {
     pub struct Timer(
@@ -143,7 +141,7 @@ impl Timer {
         let lt = &priv_.lap_type;
         // Every 100 milliseconds, loop to update the timer
         glib::timeout_add(
-            100,
+            std::time::Duration::from_millis(100),
             clone!(@weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
                 let state = s.lock().unwrap();
                 let instant = i.lock().unwrap();

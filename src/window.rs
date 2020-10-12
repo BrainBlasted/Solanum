@@ -25,9 +25,8 @@ use glib::clone;
 use glib::subclass;
 use glib::subclass::prelude::*;
 use glib::translate::*;
+use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
-
-use libhandy::subclass::prelude::ApplicationWindowImpl as HdyApplicationWindowImpl;
 
 use once_cell::unsync::OnceCell;
 
@@ -47,7 +46,7 @@ static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
 
 #[derive(Clone, Debug)]
 struct Widgets {
-    handle: libhandy::WindowHandle,
+    handle: gtk::WindowHandle,
     menu_button: gtk::MenuButton,
     lap_label: gtk::Label,
     timer_label: gtk::Label,
@@ -66,7 +65,7 @@ pub struct SolanumWindowPriv {
 
 impl ObjectSubclass for SolanumWindowPriv {
     const NAME: &'static str = "SolanumWindow";
-    type ParentType = libhandy::ApplicationWindow;
+    type ParentType = gtk::ApplicationWindow;
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
@@ -84,8 +83,6 @@ impl ObjectSubclass for SolanumWindowPriv {
 }
 
 impl ObjectImpl for SolanumWindowPriv {
-    glib_object_impl!();
-
     // After the widget is constructed we want to initialize & add it's children
     fn constructed(&self, obj: &glib::Object) {
         self.parent_constructed(obj);
@@ -94,6 +91,9 @@ impl ObjectImpl for SolanumWindowPriv {
 
         let count = self.pomodoro_count.clone().into_inner();
 
+        let dummy_titlebar = gtk::Box::new(gtk::Orientation::Horizontal, 0);
+        dummy_titlebar.set_visible(false);
+
         let vbox = gtk::Box::new(gtk::Orientation::Vertical, 6);
         vbox.set_can_focus(false);
         vbox.set_vexpand(true);
@@ -101,13 +101,29 @@ impl ObjectImpl for SolanumWindowPriv {
         vbox.set_margin_top(72);
         add_style_class!(vbox, @main_box);
 
-        let headerbar = libhandy::HeaderBar::new();
-        libhandy::HeaderBarExt::set_show_close_button(&headerbar, true);
-        add_style_class!(headerbar, @transparent_headerbar);
+        let titlebox = gtk::Box::new(gtk::Orientation::Horizontal, 0);
+        let start_control = gtk::WindowControlsBuilder::new()
+            .side(gtk::PackType::Start)
+            .halign(gtk::Align::Start)
+            .hexpand(true)
+            .margin_top(6)
+            .margin_start(6)
+            .margin_bottom(6)
+            .build();
+        let end_control = gtk::WindowControlsBuilder::new()
+            .side(gtk::PackType::End)
+            .halign(gtk::Align::End)
+            .hexpand(true)
+            .margin_top(6)
+            .margin_end(6)
+            .margin_bottom(6)
+            .build();
+        titlebox.prepend(&start_control);
+        titlebox.append(&end_control);
 
         let vbox2 = gtk::Box::new(gtk::Orientation::Vertical, 6);
-        vbox2.add(&headerbar);
-        vbox2.add(&vbox);
+        vbox2.append(&titlebox);
+        vbox2.append(&vbox);
 
         let lap_label = gtk::Label::new(Some(&i18n_f("Lap {}", &[&count.to_string()])));
         lap_label.set_can_focus(false);
@@ -122,12 +138,7 @@ impl ObjectImpl for SolanumWindowPriv {
 
         let hbox = gtk::Box::new(gtk::Orientation::Horizontal, 12);
 
-        let timer_button = gtk::Button::new();
-        let timer_image = gtk::Image::from_icon_name(
-            Some("media-playback-start-symbolic"),
-            gtk::IconSize::Button,
-        );
-        timer_button.add(&timer_image);
+        let timer_button = gtk::Button::from_icon_name(Some("media-playback-start-symbolic"));
         timer_button.set_action_name(Some("win.toggle-timer"));
         add_style_class!(
             timer_button,
@@ -139,41 +150,41 @@ impl ObjectImpl for SolanumWindowPriv {
             ]
         );
 
-        let skip_button = gtk::Button::new();
-        let skip_image =
-            gtk::Image::from_icon_name(Some("media-seek-forward-symbolic"), gtk::IconSize::Button);
-        skip_button.add(&skip_image);
+        let skip_button = gtk::Button::from_icon_name(Some("media-seek-forward-symbolic"));
         skip_button.set_action_name(Some("win.skip"));
         add_style_class!(
             skip_button,
             &["pill_button", "large_button", "timer_button"]
         );
 
-        hbox.add(&timer_button);
-        hbox.add(&skip_button);
+        hbox.append(&timer_button);
+        hbox.append(&skip_button);
         hbox.set_halign(gtk::Align::Center);
 
-        vbox.add(&lap_label);
-        vbox.add(&timer_label);
-        vbox.add(&hbox);
+        vbox.append(&lap_label);
+        vbox.append(&timer_label);
+        vbox.append(&hbox);
 
         let menu_button = gtk::MenuButton::new();
-        let image = gtk::Image::from_icon_name(Some("open-menu-symbolic"), gtk::IconSize::Button);
-        menu_button.add(&image);
+        menu_button.set_icon_name("open-menu-symbolic");
         let app_menu = get_widget!(builder, gio::MenuModel, @app_menu);
         menu_button.set_menu_model(Some(&app_menu));
-        menu_button.set_property_margin(24);
+        menu_button.set_margin_start(24);
+        menu_button.set_margin_end(24);
+        menu_button.set_margin_top(24);
+        menu_button.set_margin_bottom(24);
         menu_button.set_halign(gtk::Align::End);
         add_style_class!(menu_button, @pill_button);
-        vbox2.add(&menu_button);
+        vbox2.append(&menu_button);
 
         vbox2.set_property_width_request(360);
 
-        let handle = libhandy::WindowHandle::new();
-        handle.add(&vbox2);
+        let handle = gtk::WindowHandle::new();
+        handle.set_child(Some(&vbox2));
 
         let window = obj.clone().downcast::<gtk::ApplicationWindow>().unwrap();
-        window.add(&handle);
+        window.set_titlebar(Some(&dummy_titlebar));
+        window.set_child(Some(&handle));
         window.set_default_size(600, 300);
         window.set_can_focus(false);
         remove_style_class!(window, &["solid-csd"]);
@@ -214,18 +225,21 @@ impl ObjectImpl for SolanumWindowPriv {
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls
 impl WidgetImpl for SolanumWindowPriv {}
-impl ContainerImpl for SolanumWindowPriv {}
-impl BinImpl for SolanumWindowPriv {}
-impl WindowImpl for SolanumWindowPriv {}
+impl WindowImpl for SolanumWindowPriv {
+    fn close_request(&self, window: &gtk::Window) -> glib::signal::Inhibit {
+        let app = window.get_application().unwrap();
+        app.quit();
+        glib::signal::Inhibit(true)
+    }
+}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
-impl HdyApplicationWindowImpl for SolanumWindowPriv {}
 
 glib_wrapper! {
     pub struct SolanumWindow(
         Object<subclass::simple::InstanceStruct<SolanumWindowPriv>,
         subclass::simple::ClassStruct<SolanumWindowPriv>,
-        SimpleAppWindowClass>)
-        @extends gtk::Widget, gtk::Container, gtk::Bin, gtk::Window, gtk::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
+        SolanumWindowClass>)
+        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
 
     match fn {
         get_type => || SolanumWindowPriv::get_type().to_glib(),
@@ -348,16 +362,14 @@ impl SolanumWindow {
         if timer_on {
             timer.start();
             self.play_sound(BEEP_URI);
-            timer_image
-                .set_from_icon_name(Some("media-playback-pause-symbolic"), gtk::IconSize::Button);
+            timer_image.set_from_icon_name(Some("media-playback-pause-symbolic"));
             add_style_class!(widgets.timer_label, @blue_text);
             remove_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_button, &["suggested-action"]);
             let _ = skip.set_property("enabled", &false);
         } else {
             timer.stop();
-            timer_image
-                .set_from_icon_name(Some("media-playback-start-symbolic"), gtk::IconSize::Button);
+            timer_image.set_from_icon_name(Some("media-playback-start-symbolic"));
             add_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_label, @blue_text);
             add_style_class!(widgets.timer_button, &["suggested-action"]);

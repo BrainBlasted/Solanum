@@ -7,10 +7,9 @@
   padding: 12px;
 }
 
-.pill_button {
+.pill_button, .pill_button > button {
   padding: 4px;
   border-radius: 9999px;
-  -gtk-outline-radius: 9999px;
   min-width: 24px;
   min-height: 24px;
 }
@@ -54,3 +53,5 @@
 .blue_text {
   color: @theme_selected_bg_color;
 }
+
+window:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) { border-radius: 8px; }
