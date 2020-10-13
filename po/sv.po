@@ -1,0 +1,131 @@
+# Swedish translation for solanum.
+# Copyright © 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-10-13 13:36+0000\n"
+"PO-Revision-Date: 2020-10-13 22:05+0200\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Balansera arbetstid och rast"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum är ett program för tidshantering som använder pomodorotekniken. "
+"Arbeta i fyra sessioner, med raster mellan varje session och en lång rast "
+"efter alla fyra."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Tidtagare;Produktivitet;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Allmänna kortkommandon"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Visa primär meny"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Visa tangentbordsgenvägar"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avsluta"
+
+#: data/ui/menu.ui:8
+msgid "_Keyboard Shortcuts"
+msgstr "_Tangentbordsgenvägar"
+
+#: data/ui/menu.ui:12
+msgid "_About Solanum"
+msgstr "_Om Solanum"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "En pomodorotidtagare för GNOME"
+
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr ""
+"Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>"
+
+#: src/app.rs:189
+msgid "Donate on Patreon"
+msgstr "Donera på Patreon"
+
+#: src/window.rs:112 src/window.rs:300 src/window.rs:424
+msgid "Lap {}"
+msgstr "Varv {}"
+
+#: src/window.rs:307 src/window.rs:431
+msgid "Long Break"
+msgstr "Lång rast"
+
+#: src/window.rs:312 src/window.rs:436
+msgid "Short Break"
+msgstr "Kort rast"
+
+#: src/window.rs:388
+msgid "Back to Work"
+msgstr "Tillbaka till arbetet"
+
+#: src/window.rs:389
+msgid "Ready to keep working?"
+msgstr "Redo att fortsätta arbeta?"
+
+#: src/window.rs:390
+msgid "Start Working"
+msgstr "Börja arbeta"
+
+#: src/window.rs:393
+msgid "Break Time"
+msgstr "Rastdags"
+
+#: src/window.rs:394
+msgid "Stretch your legs, and drink some water."
+msgstr "Sträck på benen och drick lite vatten."
+
+#: src/window.rs:395
+msgid "Start Break"
+msgstr "Starta rast"
+
+#: src/window.rs:401
+msgid "Skip"
+msgstr "Hoppa över"
