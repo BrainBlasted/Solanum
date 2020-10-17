@@ -1,0 +1,126 @@
+# Indonesian translation for solanum.
+# Copyright (C) 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Andika Triwidada <atriwidada@gnome.org>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-10-14 07:54+0000\n"
+"PO-Revision-Date: 2020-10-17 17:34+0700\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Menyeimbangkan waktu kerja dan waktu istirahat"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum adalah aplikasi pelacakan waktu yang menggunakan teknik pomodoro. "
+"Bekerja dalam 4 sesi, dengan istirahat di antara setiap sesi dan satu "
+"istirahat panjang setelah semua 4."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Produktivitas;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Pintasan Umum"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Perlihatkan Menu Utama"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Tampilkan Pintasan Papan Tik"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Keluar"
+
+#: data/ui/menu.ui:8
+msgid "_Keyboard Shortcuts"
+msgstr "Pintasan Papan Ti_k"
+
+#: data/ui/menu.ui:12
+msgid "_About Solanum"
+msgstr "Tent_ang Solanum"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "Timer pomodoro untuk GNOME"
+
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2020"
+
+#: src/app.rs:189
+msgid "Donate on Patreon"
+msgstr "Donasi di Patreon"
+
+#: src/window.rs:112 src/window.rs:300 src/window.rs:424
+msgid "Lap {}"
+msgstr "Putaran {}"
+
+#: src/window.rs:307 src/window.rs:431
+msgid "Long Break"
+msgstr "Rehat Panjang"
+
+#: src/window.rs:312 src/window.rs:436
+msgid "Short Break"
+msgstr "Rehat Pendek"
+
+#: src/window.rs:388
+msgid "Back to Work"
+msgstr "Kembali Bekerja"
+
+#: src/window.rs:389
+msgid "Ready to keep working?"
+msgstr "Siap untuk terus bekerja?"
+
+#: src/window.rs:390
+msgid "Start Working"
+msgstr "Mulai Bekerja"
+
+#: src/window.rs:393
+msgid "Break Time"
+msgstr "Waktu Istirahat"
+
+#: src/window.rs:394
+msgid "Stretch your legs, and drink some water."
+msgstr "Regangkan kakimu, dan minumlah air."
+
+#: src/window.rs:395
+msgid "Start Break"
+msgstr "Mulai Istirahat"
+
+#: src/window.rs:401
+msgid "Skip"
+msgstr "Lewati"
