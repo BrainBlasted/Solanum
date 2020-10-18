@@ -1,0 +1,127 @@
+# Finnish translation for solanum.
+# Copyright (C) 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-10-18 10:48+0000\n"
+"PO-Revision-Date: 2020-10-18 20:05+0300\n"
+"Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Löydä kultainen keskitie työ- ja taukoajan välille"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum on ajanseurantasovellus, jossa käytetään pomodoro-tekniikkaa. "
+"Työskentele neljässä vuorossa, pidä tauko vuorojen välillä ja yksi pidempi "
+"tauko kaikkien neljän vuoron jälkeen."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;tuottavuus;ajastin;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Yleiset pikanäppäimet"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Näytä ensisijainen valikko"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Näytä pikanäppäimet"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Lopeta"
+
+#: data/ui/menu.ui:8
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: data/ui/menu.ui:12
+msgid "_About Solanum"
+msgstr "_Tietoja - Solanum"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "Pomodoro-ajastin Gnomelle"
+
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: src/app.rs:189
+msgid "Donate on Patreon"
+msgstr "Lahjoita Patreonissa"
+
+#: src/window.rs:112 src/window.rs:300 src/window.rs:424
+msgid "Lap {}"
+msgstr "Kierros {}"
+
+#: src/window.rs:307 src/window.rs:431
+msgid "Long Break"
+msgstr "Pitkä tauko"
+
+#: src/window.rs:312 src/window.rs:436
+msgid "Short Break"
+msgstr "Lyhyt tauko"
+
+#: src/window.rs:388
+msgid "Back to Work"
+msgstr "Takaisin töihin"
+
+#: src/window.rs:389
+msgid "Ready to keep working?"
+msgstr "Valmiina jatkamaan töitä?"
+
+#: src/window.rs:390
+msgid "Start Working"
+msgstr "Aloita työskentely"
+
+#: src/window.rs:393
+msgid "Break Time"
+msgstr "Tauon aika"
+
+#: src/window.rs:394
+msgid "Stretch your legs, and drink some water."
+msgstr "Venyttele jalkojasi ja ota lasillinen vettä."
+
+#: src/window.rs:395
+msgid "Start Break"
+msgstr "Aloita tauko"
+
+#: src/window.rs:401
+msgid "Skip"
+msgstr "Ohita"
