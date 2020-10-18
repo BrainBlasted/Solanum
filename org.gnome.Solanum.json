@@ -1,13 +1,14 @@
 {
     "app-id" : "org.gnome.Solanum",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.36",
+    "runtime-version" : "3.38",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
     "command" : "solanum",
     "finish-args" : [
+        "--device=dri",
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
@@ -38,23 +39,30 @@
     ],
     "modules" : [
         {
-            "name" : "libhandy",
-            "buildsystem": "meson",
+            "name" : "gtk4",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dintrospection=disabled",
+                "-Ddemos=false",
+                "-Dbuild-examples=false",
+                "-Dbuild-tests=false"
+            ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.0.0/libhandy-1.0.0.tar.gz",
-                    "sha256" : "dc1fff98cbc72a492d1adb489ee1b00e43ab4ac14c983c855ef3df435bbbda27"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
+                    "tag" : "3.99.3"
                 }
             ]
         },
         {
             "name" : "solanum",
+            "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/BrainBlasted/Solanum.git",
+                    "url" : "https://gitlab.gnome.org/World/Solanum.git",
                     "tag" : "v1.1.0"
                 }
             ]
