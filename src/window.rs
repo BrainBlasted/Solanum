@@ -95,7 +95,6 @@ impl ObjectImpl for SolanumWindowPriv {
         dummy_titlebar.set_visible(false);
 
         let vbox = gtk::Box::new(gtk::Orientation::Vertical, 6);
-        vbox.set_can_focus(false);
         vbox.set_vexpand(true);
         vbox.set_valign(gtk::Align::Center);
         vbox.set_margin_top(72);
@@ -126,7 +125,6 @@ impl ObjectImpl for SolanumWindowPriv {
         vbox2.append(&vbox);
 
         let lap_label = gtk::Label::new(Some(&i18n_f("Lap {}", &[&count.to_string()])));
-        lap_label.set_can_focus(false);
         add_style_class!(lap_label, @lap_label);
 
         let timer_label = gtk::Label::new(None);
@@ -186,7 +184,6 @@ impl ObjectImpl for SolanumWindowPriv {
         window.set_titlebar(Some(&dummy_titlebar));
         window.set_child(Some(&handle));
         window.set_default_size(600, 300);
-        window.set_can_focus(false);
         remove_style_class!(window, &["solid-csd"]);
 
         let w = window.downcast::<SolanumWindow>().unwrap();
