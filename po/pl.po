@@ -1,0 +1,130 @@
+# Polish translation for solanum.
+# Copyright © 2020 the solanum authors.
+# This file is distributed under the same license as the solanum package.
+# Piotr Drąg <piotrdrag@gmail.com>, 2020.
+# Aviary.pl <community-poland@mozilla.org>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-10-17 10:35+0000\n"
+"PO-Revision-Date: 2020-10-18 12:44+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Równowaga między czasem pracy a przerwami"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum to program do planowania czasu używający techniki Pomodoro. Podziel "
+"pracę na cztery sesje, z przerwami między każdą sesją lub jedną długą "
+"przerwą po wszystkich czterech."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Minutnik;Timer;Czas;Produktywność;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Ogólne skróty"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Wyświetlenie głównego menu"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Wyświetlenie skrótów klawiszowych"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Zakończenie działania"
+
+#: data/ui/menu.ui:8
+msgid "_Keyboard Shortcuts"
+msgstr "_Skróty klawiszowe"
+
+#: data/ui/menu.ui:12
+msgid "_About Solanum"
+msgstr "_O programie"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "Minutnik Pomodoro dla środowiska GNOME"
+
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr ""
+"Piotr Drąg <piotrdrag@gmail.com>, 2020\n"
+"Aviary.pl <community-poland@mozilla.org>, 2020"
+
+#: src/app.rs:189
+msgid "Donate on Patreon"
+msgstr "Wspomóż na Patreonie"
+
+#: src/window.rs:112 src/window.rs:300 src/window.rs:424
+msgid "Lap {}"
+msgstr "{}. runda"
+
+#: src/window.rs:307 src/window.rs:431
+msgid "Long Break"
+msgstr "Długa przerwa"
+
+#: src/window.rs:312 src/window.rs:436
+msgid "Short Break"
+msgstr "Krótka przerwa"
+
+#: src/window.rs:388
+msgid "Back to Work"
+msgstr "Powrót do pracy"
+
+#: src/window.rs:389
+msgid "Ready to keep working?"
+msgstr "Wracamy do pracy?"
+
+#: src/window.rs:390
+msgid "Start Working"
+msgstr "Zacznij pracę"
+
+#: src/window.rs:393
+msgid "Break Time"
+msgstr "Czas na przerwę"
+
+#: src/window.rs:394
+msgid "Stretch your legs, and drink some water."
+msgstr "Rozciągnij nogi i napij się wody."
+
+#: src/window.rs:395
+msgid "Start Break"
+msgstr "Zacznij przerwę"
+
+#: src/window.rs:401
+msgid "Skip"
+msgstr "Pomiń"
