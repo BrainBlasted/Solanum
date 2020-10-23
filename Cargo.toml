@@ -11,12 +11,12 @@ gstreamer = "0.16.3"
 gstreamer-player = "0.16.3"
 
 [dependencies.gtk4]
+# TODO: Use from https://github.com/gtk-rs/gtk/ when this branch is merged
 git = "https://github.com/bilelmoussaoui/gtk4"
 branch = "bilelmoussaoui/update"
 
 [dependencies.gdk4]
-git = "https://github.com/bilelmoussaoui/gdk4"
-branch = "bilelmoussaoui/update"
+git = "https://github.com/gtk-rs/gdk4"
 
 [dependencies.gio]
 git = "https://github.com/gtk-rs/gio"
