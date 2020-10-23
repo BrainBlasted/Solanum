@@ -180,13 +180,13 @@ impl ObjectImpl for SolanumWindowPriv {
         let handle = gtk::WindowHandle::new();
         handle.set_child(Some(&vbox2));
 
-        let window = obj.clone().downcast::<gtk::ApplicationWindow>().unwrap();
+        let window = obj.downcast_ref::<gtk::ApplicationWindow>().unwrap();
         window.set_titlebar(Some(&dummy_titlebar));
         window.set_child(Some(&handle));
         window.set_default_size(600, 300);
         remove_style_class!(window, &["solid-csd"]);
 
-        let w = window.downcast::<SolanumWindow>().unwrap();
+        let w = window.downcast_ref::<SolanumWindow>().unwrap();
         w.setup_actions();
 
         // Set up (Sender, Receiver) of actions for the timer
@@ -198,10 +198,13 @@ impl ObjectImpl for SolanumWindowPriv {
         let secs = POMODORO_SECONDS % 60;
         timer_label.set_label(&format!("{:>02}∶{:>02}", min, secs));
         // The receiver will get certain actions from the Timer and run operations on the Window
-        rx.attach(None, move |action| match action {
-            TimerActions::CountdownUpdate(min, sec) => w.update_countdown(min, sec),
-            TimerActions::Lap(lap_type) => w.next_lap(lap_type),
-        });
+        rx.attach(
+            None,
+            clone!(@weak w => @default-return glib::Continue(true), move |action| match action {
+                TimerActions::CountdownUpdate(min, sec) => w.update_countdown(min, sec),
+                TimerActions::Lap(lap_type) => w.next_lap(lap_type),
+            }),
+        );
 
         self.widgets
             .set(Widgets {
@@ -222,13 +225,7 @@ impl ObjectImpl for SolanumWindowPriv {
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls
 impl WidgetImpl for SolanumWindowPriv {}
-impl WindowImpl for SolanumWindowPriv {
-    fn close_request(&self, window: &gtk::Window) -> glib::signal::Inhibit {
-        let app = window.get_application().unwrap();
-        app.quit();
-        glib::signal::Inhibit(true)
-    }
-}
+impl WindowImpl for SolanumWindowPriv {}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
 
 glib_wrapper! {

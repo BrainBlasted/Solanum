@@ -22,6 +22,7 @@ use gtk::prelude::*;
 use gtk_macros::*;
 
 use glib::clone;
+use glib::WeakRef;
 
 use gio::ApplicationFlags;
 use glib::subclass;
@@ -38,7 +39,7 @@ use crate::window::SolanumWindow;
 // Private struct for SolanumApplication, containing struct fields
 #[derive(Debug)]
 pub struct SolanumApplicationPriv {
-    window: OnceCell<SolanumWindow>,
+    window: OnceCell<WeakRef<SolanumWindow>>,
 }
 
 // Definite the GObject information for SolanumApplication
@@ -62,7 +63,12 @@ impl ObjectImpl for SolanumApplicationPriv {}
 
 impl ApplicationImpl for SolanumApplicationPriv {
     fn activate(&self, _application: &gio::Application) {
-        let window = self.window.get().expect("Could not get main window");
+        let window = self
+            .window
+            .get()
+            .expect("Could not get main window")
+            .upgrade()
+            .expect("Could not upgrade main window");
         window.show();
         window.present();
     }
@@ -81,7 +87,7 @@ impl ApplicationImpl for SolanumApplicationPriv {
         window.set_title(&i18n("Solanum"));
         window.set_icon_name(Some(&config::APP_ID.to_owned()));
         self.window
-            .set(window)
+            .set(window.downgrade())
             .expect("Failed to init applciation window");
 
         app.setup_actions();
@@ -117,9 +123,9 @@ impl SolanumApplication {
         .unwrap()
     }
 
-    fn get_main_window(&self) -> &SolanumWindow {
+    fn get_main_window(&self) -> SolanumWindow {
         let priv_ = SolanumApplicationPriv::from_instance(self);
-        priv_.window.get().unwrap()
+        priv_.window.get().unwrap().clone().upgrade().unwrap()
     }
 
     // Sets up gio::SimpleActions for the Application
