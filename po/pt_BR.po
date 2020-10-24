@@ -1,0 +1,128 @@
+# Brazilian Portuguese translation for solanum.
+# Copyright (C) 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Gabriel Longo <gabriel.longo.gabriel@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-10-18 17:05+0000\n"
+"PO-Revision-Date: 2020-10-22 13:26-0300\n"
+"Last-Translator: Gabriel Longo <gabriel.longo.gabriel@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.38.0\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Balanceie o tempo de trabalho e intervalo"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum é um aplicativo de monitoramento de tempo que faz uso da técnica "
+"Pomodoro. Trabalhe em quatro sessões com intervalos curtos entre cada uma "
+"delas e um intervalo longo depois um ciclo completo."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Temporizador;Produtividade;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Atalhos gerais"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Exibe o menu principal"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Exibe os atalhos de teclado"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Fecha"
+
+#: data/ui/menu.ui:8
+msgid "_Keyboard Shortcuts"
+msgstr "_Atalhos de teclado"
+
+#: data/ui/menu.ui:12
+msgid "_About Solanum"
+msgstr "_Sobre o Solanum"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "Um temporizador Pomodoro para o GNOME"
+
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Gabriel Longo <gabriel.longo.gabriel@gmail.com>"
+
+#: src/app.rs:189
+msgid "Donate on Patreon"
+msgstr "Faça uma doação no Patreon"
+
+# Em uma tradução livre, "Sessão" parece se enquadrar melhor a proposta do aplicativo do que "Volta". Talvez traduzir para série ou rodada?
+#: src/window.rs:112 src/window.rs:300 src/window.rs:424
+msgid "Lap {}"
+msgstr "Sessão {}"
+
+#: src/window.rs:307 src/window.rs:431
+msgid "Long Break"
+msgstr "Intervalo longo"
+
+#: src/window.rs:312 src/window.rs:436
+msgid "Short Break"
+msgstr "Intervalo curto"
+
+#: src/window.rs:388
+msgid "Back to Work"
+msgstr "Voltar ao trabalho"
+
+#: src/window.rs:389
+msgid "Ready to keep working?"
+msgstr "Pronto para voltar ao trabalho?"
+
+#: src/window.rs:390
+msgid "Start Working"
+msgstr "Começar a trabalhar"
+
+#: src/window.rs:393
+msgid "Break Time"
+msgstr "Intervalo"
+
+#: src/window.rs:394
+msgid "Stretch your legs, and drink some water."
+msgstr "Hidrate-se e estique suas pernas!"
+
+#: src/window.rs:395
+msgid "Start Break"
+msgstr "Começar intervalo"
+
+#: src/window.rs:401
+msgid "Skip"
+msgstr "Pular"
