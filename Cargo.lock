@@ -638,7 +638,7 @@ checksum = "1874c48e670519ce192093ac906c08a6dde7cb2d18b28722ef237726a39c3a63"
 [[package]]
 name = "gtk4"
 version = "0.1.0"
-source = "git+https://github.com/bilelmoussaoui/gtk4?branch=bilelmoussaoui/update#15d018ad8d6cc2543a5b8de34eeb63bcd2c7052a"
+source = "git+https://github.com/gtk-rs/gtk4#e2240d0d20fef7e7a1c30012e5f77fe5d1ef4f5c"
 dependencies = [
  "atk",
  "atk-sys",
