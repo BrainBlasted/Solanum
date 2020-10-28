@@ -48,6 +48,7 @@
 .timer_label {
   font-size: 400%;
   font-weight: 300;
+  font-feature-settings: "tnum" 1;
 }
 
 .blue_text {

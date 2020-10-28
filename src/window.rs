@@ -126,10 +126,6 @@ impl ObjectImpl for SolanumWindowPriv {
         add_style_class!(lap_label, @lap_label);
 
         let timer_label = gtk::Label::new(None);
-        let attrs = pango::AttrList::new();
-        let tnum = pango::Attribute::new_font_features("tnum=1").unwrap();
-        attrs.insert(tnum);
-        timer_label.set_attributes(Some(&attrs));
         add_style_class!(timer_label, &["blinking", "timer_label"]);
 
         let hbox = gtk::Box::new(gtk::Orientation::Horizontal, 12);
