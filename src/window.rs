@@ -340,25 +340,19 @@ impl SolanumWindow {
         let skip = self.lookup_action("skip").unwrap();
 
         let widgets = self.get_widgets();
-        let timer_image = widgets
-            .timer_button
-            .get_child()
-            .unwrap()
-            .downcast::<gtk::Image>()
-            .unwrap();
         let timer = self.get_private().timer.get().unwrap();
 
         if timer_on {
             timer.start();
             self.play_sound(BEEP_URI);
-            timer_image.set_from_icon_name(Some("media-playback-pause-symbolic"));
+            widgets.timer_button.set_icon_name("media-playback-pause-symbolic");
             add_style_class!(widgets.timer_label, @blue_text);
             remove_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_button, &["suggested-action"]);
             let _ = skip.set_property("enabled", &false);
         } else {
             timer.stop();
-            timer_image.set_from_icon_name(Some("media-playback-start-symbolic"));
+            widgets.timer_button.set_icon_name("media-playback-start-symbolic");
             add_style_class!(widgets.timer_label, @blinking);
             remove_style_class!(widgets.timer_label, @blue_text);
             add_style_class!(widgets.timer_button, &["suggested-action"]);
