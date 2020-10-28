@@ -53,5 +53,3 @@
 .blue_text {
   color: @theme_selected_bg_color;
 }
-
-window:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) { border-radius: 8px; }

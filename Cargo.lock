@@ -715,6 +715,45 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2448f6066e80e3bfc792e9c98bf705b4b0fc6e8ef5b43e5889aff0eaa9c58743"
 
 [[package]]
+name = "libhandy4"
+version = "0.1.0"
+source = "git+https://gitlab.gnome.org/bilelmoussaoui/libhandy4-rs#112462f61772db7f736a3db0b5511b186e85cdc3"
+dependencies = [
+ "bitflags",
+ "gdk-pixbuf",
+ "gdk-pixbuf-sys",
+ "gdk4",
+ "gdk4-sys",
+ "gio",
+ "gio-sys",
+ "glib 0.10.0",
+ "glib-sys 0.10.0",
+ "gobject-sys 0.10.0 (git+https://github.com/gtk-rs/sys)",
+ "gtk4",
+ "gtk4-sys",
+ "lazy_static",
+ "libc",
+ "libhandy4-sys",
+ "pango",
+]
+
+[[package]]
+name = "libhandy4-sys"
+version = "0.1.0"
+source = "git+https://gitlab.gnome.org/bilelmoussaoui/libhandy4-rs#112462f61772db7f736a3db0b5511b186e85cdc3"
+dependencies = [
+ "gdk-pixbuf-sys",
+ "gdk4-sys",
+ "gio-sys",
+ "glib-sys 0.10.0",
+ "gobject-sys 0.10.0 (git+https://github.com/gtk-rs/sys)",
+ "gtk4-sys",
+ "libc",
+ "pango-sys",
+ "system-deps",
+]
+
+[[package]]
 name = "locale_config"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -953,6 +992,7 @@ dependencies = [
  "gstreamer-player",
  "gtk-macros",
  "gtk4",
+ "libhandy4",
  "once_cell",
  "pango",
  "regex",

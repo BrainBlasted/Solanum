@@ -28,6 +28,10 @@ features = ["v2_60"]
 version = "0.4.4"
 features = ["gettext-system"]
 
+[dependencies.libhandy]
+git = "https://gitlab.gnome.org/bilelmoussaoui/libhandy4-rs"
+package = "libhandy4"
+
 [dependencies.pango]
 git = "https://github.com/gtk-rs/pango"
 features = ["v1_44"]

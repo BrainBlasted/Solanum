@@ -27,6 +27,7 @@ use glib::subclass::prelude::*;
 use glib::translate::*;
 use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
+use libhandy::subclass::prelude as hdy;
 
 use once_cell::unsync::OnceCell;
 
@@ -65,7 +66,7 @@ pub struct SolanumWindowPriv {
 
 impl ObjectSubclass for SolanumWindowPriv {
     const NAME: &'static str = "SolanumWindow";
-    type ParentType = gtk::ApplicationWindow;
+    type ParentType = libhandy::ApplicationWindow;
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
@@ -90,9 +91,6 @@ impl ObjectImpl for SolanumWindowPriv {
         let builder = gtk::Builder::from_resource("/org/gnome/Solanum/menu.ui");
 
         let count = self.pomodoro_count.clone().into_inner();
-
-        let dummy_titlebar = gtk::Box::new(gtk::Orientation::Horizontal, 0);
-        dummy_titlebar.set_visible(false);
 
         let vbox = gtk::Box::new(gtk::Orientation::Vertical, 6);
         vbox.set_vexpand(true);
@@ -180,14 +178,10 @@ impl ObjectImpl for SolanumWindowPriv {
         let handle = gtk::WindowHandle::new();
         handle.set_child(Some(&vbox2));
 
-        let window = obj.downcast_ref::<gtk::ApplicationWindow>().unwrap();
-        window.set_titlebar(Some(&dummy_titlebar));
-        window.set_child(Some(&handle));
+        let window = obj.downcast_ref::<SolanumWindow>().unwrap();
+        libhandy::ApplicationWindowExt::set_child(window, Some(&handle));
         window.set_default_size(600, 300);
-        remove_style_class!(window, &["solid-csd"]);
-
-        let w = window.downcast_ref::<SolanumWindow>().unwrap();
-        w.setup_actions();
+        window.setup_actions();
 
         // Set up (Sender, Receiver) of actions for the timer
         let (tx, rx) = glib::MainContext::channel::<TimerActions>(glib::PRIORITY_DEFAULT);
@@ -200,9 +194,9 @@ impl ObjectImpl for SolanumWindowPriv {
         // The receiver will get certain actions from the Timer and run operations on the Window
         rx.attach(
             None,
-            clone!(@weak w => @default-return glib::Continue(true), move |action| match action {
-                TimerActions::CountdownUpdate(min, sec) => w.update_countdown(min, sec),
-                TimerActions::Lap(lap_type) => w.next_lap(lap_type),
+            clone!(@weak window => @default-return glib::Continue(true), move |action| match action {
+                TimerActions::CountdownUpdate(min, sec) => window.update_countdown(min, sec),
+                TimerActions::Lap(lap_type) => window.next_lap(lap_type),
             }),
         );
 
@@ -227,13 +221,14 @@ impl ObjectImpl for SolanumWindowPriv {
 impl WidgetImpl for SolanumWindowPriv {}
 impl WindowImpl for SolanumWindowPriv {}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
+impl hdy::ApplicationWindowImpl for SolanumWindowPriv {}
 
 glib_wrapper! {
     pub struct SolanumWindow(
         Object<subclass::simple::InstanceStruct<SolanumWindowPriv>,
         subclass::simple::ClassStruct<SolanumWindowPriv>,
         SolanumWindowClass>)
-        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
+        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
 
     match fn {
         get_type => || SolanumWindowPriv::get_type().to_glib(),

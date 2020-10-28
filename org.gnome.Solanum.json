@@ -39,10 +39,17 @@
     ],
     "modules" : [
         {
+            "name" : "pango",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                }
+            ]
+        },
+        {
             "name" : "gtk4",
             "buildsystem" : "meson",
             "config-opts" : [
-                "-Dintrospection=disabled",
                 "-Ddemos=false",
                 "-Dbuild-examples=false",
                 "-Dbuild-tests=false"
@@ -52,6 +59,18 @@
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gtk.git",
                     "tag" : "3.99.3"
+                }
+            ]
+        },
+        {
+            "name" : "libhandy4",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/exalm/libhandy.git",
+                    "branch": "gtk4",
+                    "commit" : "ad8a144096f73be6493bff6f6bed2cc5c62cac37"
                 }
             ]
         },

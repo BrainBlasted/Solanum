@@ -41,6 +41,17 @@
     ],
     "modules" : [
         {
+            "name" : "libhandy4",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/exalm/libhandy.git",
+                    "branch": "gtk4"
+                }
+            ]
+        },
+        {
             "name" : "solanum",
             "builddir" : true,
             "buildsystem" : "meson",

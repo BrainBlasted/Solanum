@@ -42,6 +42,7 @@ fn main() {
     // Initiialize gtk, gstreamer, and libhandy.
     gtk::init().expect("Failed to initialize gstreamer");
     gstreamer::init().expect("Failed to initialize gstreamer");
+    libhandy::init();
 
     // Set up translations
     setlocale(LocaleCategory::LcAll, "");
