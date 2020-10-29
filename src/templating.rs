@@ -98,6 +98,28 @@ pub trait WidgetSubclass
             false as glib_sys::gboolean,
             0);
     }
+
+    unsafe fn bind_template_child_with_offset<T>(
+        klass: &mut subclass::simple::ClassStruct<Self>,
+        name: &str,
+        offset: field_offset::FieldOffset<Self, TemplateWidget<T>>,
+    )
+        where
+            T: ObjectType + FromGlibPtrNone<*mut <T as ObjectType>::GlibType>
+    {
+        let type_class = klass as *mut _ as *mut gobject_sys::GTypeClass;
+        let widget_class = gobject_sys::g_type_check_class_cast(
+            type_class,
+            gtk_sys::gtk_widget_get_type())
+            as *mut gtk_sys::GtkWidgetClass;
+        let private_offset = Self::type_data().as_ref().private_offset;
+        gtk_sys::gtk_widget_class_bind_template_child_full(
+            widget_class,
+            name.to_glib_none().0,
+            false as glib_sys::gboolean,
+            private_offset + (offset.get_byte_offset() as isize),
+        )
+    }
 }
 
 #[derive(Debug)]
@@ -123,9 +145,9 @@ impl<T> TemplateWidget<T>
         Self { ptr: std::ptr::null_mut() }
     }
 
-    fn unwrap(&self) -> T {
+    pub fn get(&self) -> Option<T> {
         unsafe {
-            Option::<T>::from_glib_none(self.ptr).unwrap()
+            Option::<T>::from_glib_none(self.ptr)
         }
     }
 }

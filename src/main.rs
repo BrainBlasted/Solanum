@@ -24,6 +24,9 @@ extern crate gtk4 as gtk;
 #[macro_use]
 extern crate gtk_macros;
 
+#[macro_use]
+extern crate field_offset;
+
 use gettextrs::*;
 use gio::prelude::*;
 

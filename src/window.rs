@@ -56,6 +56,7 @@ pub struct SolanumWindowPriv {
     lap_label: TemplateWidget<gtk::Label>,
     timer_label: TemplateWidget<gtk::Label>,
     timer_button: TemplateWidget<gtk::Button>,
+    menu_button: TemplateWidget<gtk::MenuButton>,
 }
 
 impl ObjectSubclass for SolanumWindowPriv {
@@ -75,16 +76,17 @@ impl ObjectSubclass for SolanumWindowPriv {
             lap_label: TemplateWidget::default(),
             timer_label: TemplateWidget::default(),
             timer_button: TemplateWidget::default(),
+            menu_button: TemplateWidget::default(),
         }
     }
 
     fn class_init(klass: &mut Self::Class) {
         unsafe {
             Self::set_template_from_resource(klass, WINDOW_URI);
-            Self::bind_template_child(klass, "lap_label");
-            Self::bind_template_child(klass, "timer_label");
-            Self::bind_template_child(klass, "timer_button");
-            Self::bind_template_child(klass, "menu_button");
+            Self::bind_template_child_with_offset(klass, "lap_label", offset_of!(Self => lap_label));
+            Self::bind_template_child_with_offset(klass, "timer_label", offset_of!(Self => timer_label));
+            Self::bind_template_child_with_offset(klass, "timer_button", offset_of!(Self => timer_button));
+            Self::bind_template_child_with_offset(klass, "menu_button", offset_of!(Self => menu_button));
         }
     }
 }
@@ -137,9 +139,9 @@ impl SolanumWindow {
         let priv_ = self.get_private();
         let count = priv_.pomodoro_count.clone().into_inner();
 
-        let timer_label = get_template_child::<SolanumWindow, gtk::Label>(self, "timer_label")
+        let timer_label = priv_.timer_label.get()
             .expect("Could not get timer label");
-        let lap_label = get_template_child::<SolanumWindow, gtk::Label>(self, "lap_label")
+        let lap_label = priv_.lap_label.get()
             .expect("Could not get lap label");
 
         lap_label.set_text(&i18n_f("Lap {}",&[&count.to_string()]));
@@ -170,7 +172,8 @@ impl SolanumWindow {
             self,
             "menu",
             clone!(@weak self as win => move |_, _| {
-                let menu_button = get_template_child::<SolanumWindow, gtk::MenuButton>(&win, "menu_button")
+                let priv_ = win.get_private();
+                let menu_button = priv_.menu_button.get()
                     .expect("Could not get menu button");
                 menu_button.get_popover().unwrap().popup();
             })
@@ -198,7 +201,7 @@ impl SolanumWindow {
 
     fn skip(&self) {
         let priv_ = self.get_private();
-        let label = get_template_child::<SolanumWindow, gtk::Label>(self, "lap_label")
+        let label = priv_.lap_label.get()
             .expect("Could not get lap label");
         let lap_type = priv_.lap_type.get();
         let lap_number = &priv_.pomodoro_count;
@@ -239,7 +242,8 @@ impl SolanumWindow {
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
-        let label = get_template_child::<SolanumWindow, gtk::Label>(self, "timer_label")
+        let priv_ = self.get_private();
+        let label = priv_.timer_label.get()
             .expect("Could not get timer label");
         label.set_label(&format!("{:>02}∶{:>02}", min, sec));
         glib::Continue(true)
@@ -247,6 +251,7 @@ impl SolanumWindow {
 
     // Callback to run whenever the timer is toggled - by button or action
     fn on_timer_toggled(&self, action: &gio::SimpleAction, _variant: Option<&glib::Variant>) {
+        let priv_ = self.get_private();
         let action_state: bool = action.get_state().unwrap().get().unwrap();
         let timer_on = !action_state;
         action.set_state(&timer_on.to_variant());
@@ -254,9 +259,9 @@ impl SolanumWindow {
         let skip = self.lookup_action("skip").unwrap();
 
         let timer = self.get_private().timer.get().unwrap();
-        let timer_label = get_template_child::<SolanumWindow, gtk::Label>(self, "timer_label")
+        let timer_label = priv_.timer_label.get()
             .expect("Could not get timer label");
-        let timer_button = get_template_child::<SolanumWindow, gtk::Button>(self, "timer_button")
+        let timer_button = priv_.timer_button.get()
             .expect("Could not get timer button");
 
         if timer_on {
@@ -279,7 +284,8 @@ impl SolanumWindow {
 
     // Util for initializing the timer based on the contants at the top
     fn set_timer_label_from_secs(&self, secs: u64) {
-        let label = get_template_child::<SolanumWindow, gtk::Label>(self, "timer_label")
+        let priv_ = self.get_private();
+        let label = priv_.timer_label.get()
             .expect("Could not get timer label");
         let min = secs / 60;
         let secs = secs % 60;
