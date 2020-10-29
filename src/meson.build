@@ -25,6 +25,7 @@ rust_sources = files(
   'i18n.rs',
   'main.rs',
   'macros.rs',
+  'templating.rs',
   'timer.rs',
   'window.rs',
 )

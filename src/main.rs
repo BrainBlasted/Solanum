@@ -32,6 +32,7 @@ mod config;
 mod i18n;
 #[macro_use]
 mod macros;
+mod templating;
 mod timer;
 mod window;
 
