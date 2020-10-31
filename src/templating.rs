@@ -115,6 +115,7 @@ where
 }
 
 #[derive(Debug)]
+#[repr(transparent)]
 pub struct TemplateWidget<T>
 where
     T: ObjectType + FromGlibPtrNone<*mut <T as ObjectType>::GlibType>,
@@ -144,7 +145,11 @@ where
         }
     }
 
-    pub fn get(&self) -> Option<T> {
-        unsafe { Option::<T>::from_glib_none(self.ptr) }
+    #[track_caller]
+    pub fn get(&self) -> T {
+        unsafe {
+            Option::<T>::from_glib_none(self.ptr)
+                .expect("Failed to retrieve template child. Please check that it has been bound.")
+        }
     }
 }

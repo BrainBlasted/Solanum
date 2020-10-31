@@ -155,8 +155,8 @@ impl SolanumWindow {
         let priv_ = self.get_private();
         let count = priv_.pomodoro_count.clone().into_inner();
 
-        let timer_label = priv_.timer_label.get().expect("Could not get timer label");
-        let lap_label = priv_.lap_label.get().expect("Could not get lap label");
+        let timer_label = priv_.timer_label.get();
+        let lap_label = priv_.lap_label.get();
 
         lap_label.set_text(&i18n_f("Lap {}", &[&count.to_string()]));
 
@@ -187,8 +187,7 @@ impl SolanumWindow {
             "menu",
             clone!(@weak self as win => move |_, _| {
                 let priv_ = win.get_private();
-                let menu_button = priv_.menu_button.get()
-                    .expect("Could not get menu button");
+                let menu_button = priv_.menu_button.get();
                 menu_button.get_popover().unwrap().popup();
             })
         );
@@ -215,7 +214,7 @@ impl SolanumWindow {
 
     fn skip(&self) {
         let priv_ = self.get_private();
-        let label = priv_.lap_label.get().expect("Could not get lap label");
+        let label = priv_.lap_label.get();
         let lap_type = priv_.lap_type.get();
         let lap_number = &priv_.pomodoro_count;
         let timer = priv_.timer.get().unwrap();
@@ -256,7 +255,7 @@ impl SolanumWindow {
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
         let priv_ = self.get_private();
-        let label = priv_.timer_label.get().expect("Could not get timer label");
+        let label = priv_.timer_label.get();
         label.set_label(&format!("{:>02}∶{:>02}", min, sec));
         glib::Continue(true)
     }
@@ -271,11 +270,8 @@ impl SolanumWindow {
         let skip = self.lookup_action("skip").unwrap();
 
         let timer = self.get_private().timer.get().unwrap();
-        let timer_label = priv_.timer_label.get().expect("Could not get timer label");
-        let timer_button = priv_
-            .timer_button
-            .get()
-            .expect("Could not get timer button");
+        let timer_label = priv_.timer_label.get();
+        let timer_button = priv_.timer_button.get();
 
         if timer_on {
             timer.start();
@@ -298,7 +294,7 @@ impl SolanumWindow {
     // Util for initializing the timer based on the contants at the top
     fn set_timer_label_from_secs(&self, secs: u64) {
         let priv_ = self.get_private();
-        let label = priv_.timer_label.get().expect("Could not get timer label");
+        let label = priv_.timer_label.get();
         let min = secs / 60;
         let secs = secs % 60;
         label.set_label(&format!("{:>02}∶{:>02}", min, secs));
