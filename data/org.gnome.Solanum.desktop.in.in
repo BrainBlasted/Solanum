@@ -9,4 +9,6 @@ Categories=GTK;GNOME;Utility;
 StartupNotify=true
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 Keywords=Pomodoro;Timer;Productivity;
+# Translators: Do NOT translate or transliterate this text (these are enum types)!
+X-Purism-FormFactor=Workstation;Mobile;
 
