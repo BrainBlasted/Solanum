@@ -83,6 +83,18 @@ impl ObjectSubclass for SolanumWindowPriv {
     fn class_init(klass: &mut Self::Class) {
         unsafe {
             Self::set_template_from_resource(klass, WINDOW_URI);
+        }
+        Self::bind_template_children(klass);
+    }
+}
+
+// Set up widget subclass for binding templates
+impl WidgetSubclass for SolanumWindowPriv {}
+
+// Set up composite templates
+impl CompositeTemplate for SolanumWindowPriv {
+    fn bind_template_children(klass: &mut Self::Class) {
+        unsafe {
             Self::bind_template_child_with_offset(
                 klass,
                 "lap_label",
@@ -106,9 +118,6 @@ impl ObjectSubclass for SolanumWindowPriv {
         }
     }
 }
-
-// Set up widget subclass for binding templates
-impl WidgetSubclass for SolanumWindowPriv {}
 
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls
