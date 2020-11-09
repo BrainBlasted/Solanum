@@ -1,7 +1,7 @@
 # Solanum
 
 <p align="center">
-<img src="https://gitlab.gnome.org/BrainBlasted/Solanum/-/raw/main/data/screenshots/screenshot-1.png" alt="Screenshot of Solanum"/>
+<img src="https://gitlab.gnome.org/World/Solanum/-/raw/main/data/screenshots/screenshot-1.png" alt="Screenshot of Solanum"/>
 </p>
 
 Solanum is a [pomodoro timer](https://en.wikipedia.org/wiki/Pomodoro_Technique) for the GNOME desktop. It keeps you on track, with frequent short breaks, and a long break after sessions of productivity.
@@ -15,8 +15,8 @@ application. It can use Flatpak manifests to create a consistent building and ru
 recommended you use it.
 
 1. Download [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder).
-2. In Builder, click the "Clone Repository" button at the bottom, using `git@gitlab.gnome.org/BrainBlasted/Solanum.git`
-or `https://gitlab.gnome.org/BrainBlasted/Solanum.git` as the URL.
+2. In Builder, click the "Clone Repository" button at the bottom, using `git@gitlab.gnome.org/World/Solanum.git`
+or `https://gitlab.gnome.org/World/Solanum.git` as the URL.
 3. Click the build button at the top once the project is loaded.
 
 **Note: Solanum must be installed on the system for notifications to work. Please refer to the installation section below.**
@@ -27,7 +27,7 @@ If you feel at home in the terminal or would like to build outside of Builder,
 these are the commands to use:
 
 ```bash
-git clone https://gitlab.gnome.org/BrainBlasted/Solanum.git
+git clone https://gitlab.gnome.org/World/Solanum.git
 cd Solanum
 meson _build --prefix=$PREFIX_DIR  # Defaults to /usr/local
 ninja -C _build
