@@ -4,6 +4,7 @@
     <property name="default_width">600</property>
     <property name="default_height">300</property>
     <property name="width_request">360</property>
+    <property name="default_widget">timer_button</property>
     <property name="child">
       <object class="GtkWindowHandle" id="handle">
         <property name="child">

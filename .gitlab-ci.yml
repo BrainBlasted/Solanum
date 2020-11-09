@@ -24,7 +24,7 @@ check:
     script:
         # Create blank versions of our configured files
         # so rustfmt does not yell about non-existent files or completely empty files
-        - echo -e "" >> src/config.rs
+        - echo -e "" >> solanum/src/config.rs
         - rustc -Vv && cargo -Vv
         - cargo --version
         - cargo fmt --all -- --check

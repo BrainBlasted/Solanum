@@ -1043,6 +1043,7 @@ dependencies = [
  "once_cell",
  "pango",
  "regex",
+ "template-macros",
 ]
 
 [[package]]
@@ -1087,6 +1088,20 @@ dependencies = [
  "thiserror",
  "toml",
  "version-compare",
+]
+
+[[package]]
+name = "template-macros"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "heck",
+ "itertools",
+ "proc-macro-crate",
+ "proc-macro-error",
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

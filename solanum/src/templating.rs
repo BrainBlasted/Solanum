@@ -156,7 +156,7 @@ where
 
 pub trait CompositeTemplate
 where
-    Self: ObjectSubclass + WidgetSubclass,
+    Self: WidgetSubclass,
 {
     fn bind_template_children(klass: &mut Self::Class);
 }

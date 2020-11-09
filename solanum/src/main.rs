@@ -27,6 +27,9 @@ extern crate gtk_macros;
 #[macro_use]
 extern crate field_offset;
 
+#[macro_use]
+extern crate template_macros;
+
 use gettextrs::*;
 use gio::prelude::*;
 

@@ -47,15 +47,19 @@ static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
 static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
 static WINDOW_URI: &str = "/org/gnome/Solanum/window.ui";
 
-#[derive(Debug)]
+#[derive(Debug, CompositeTemplate)]
 pub struct SolanumWindowPriv {
     pomodoro_count: Cell<u32>,
     timer: OnceCell<Timer>,
     lap_type: Cell<LapType>,
     player: gstreamer_player::Player,
+    #[template_child(id = "lap_label")]
     lap_label: TemplateWidget<gtk::Label>,
+    #[template_child(id = "timer_label")]
     timer_label: TemplateWidget<gtk::Label>,
+    #[template_child(id = "timer_button")]
     timer_button: TemplateWidget<gtk::Button>,
+    #[template_child(id = "menu_button")]
     menu_button: TemplateWidget<gtk::MenuButton>,
 }
 
@@ -90,34 +94,6 @@ impl ObjectSubclass for SolanumWindowPriv {
 
 // Set up widget subclass for binding templates
 impl WidgetSubclass for SolanumWindowPriv {}
-
-// Set up composite templates
-impl CompositeTemplate for SolanumWindowPriv {
-    fn bind_template_children(klass: &mut Self::Class) {
-        unsafe {
-            Self::bind_template_child_with_offset(
-                klass,
-                "lap_label",
-                offset_of!(Self => lap_label),
-            );
-            Self::bind_template_child_with_offset(
-                klass,
-                "timer_label",
-                offset_of!(Self => timer_label),
-            );
-            Self::bind_template_child_with_offset(
-                klass,
-                "timer_button",
-                offset_of!(Self => timer_button),
-            );
-            Self::bind_template_child_with_offset(
-                klass,
-                "menu_button",
-                offset_of!(Self => menu_button),
-            );
-        }
-    }
-}
 
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls

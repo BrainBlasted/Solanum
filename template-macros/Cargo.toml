@@ -1,0 +1,18 @@
+[package]
+name = "template-macros"
+version = "0.1.0"
+authors = ["Christopher Davis <brainblasted@disroot.org>"]
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+anyhow = "1.0"
+heck = "0.3"
+itertools = "0.9"
+proc-macro-error = "1.0"
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = "1.0"
+proc-macro-crate = "0.1"
