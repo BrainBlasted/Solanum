@@ -27,6 +27,8 @@ use std::string::ToString;
 use crate::util::*;
 
 fn gen_template_child_bindings(fields: &syn::Fields) -> TokenStream {
+    let crate_ident = crate_ident_new();
+
     let recurse = fields.iter().map(|f| {
         let filtered_attrs = f
             .attrs
@@ -48,7 +50,7 @@ fn gen_template_child_bindings(fields: &syn::Fields) -> TokenStream {
                 Self::bind_template_child_with_offset(
                     klass,
                     &#value_id,
-                    offset_of!(Self => #ident),
+                    #crate_ident::offset_of!(Self => #ident),
                 );
             }
         } else {

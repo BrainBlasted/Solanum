@@ -19,6 +19,8 @@
 
 use anyhow::{bail, Result};
 use itertools::Itertools;
+use proc_macro2::{Ident, Span};
+use proc_macro_crate::crate_name;
 use syn::{Attribute, Lit, Meta, MetaList, NestedMeta};
 
 // find the #[@attr_name] attribute in @attrs
@@ -87,4 +89,13 @@ pub fn parse_template_child_attributes(
     };
 
     Ok(v)
+}
+
+pub fn crate_ident_new() -> Ident {
+    let crate_name = match crate_name("crate") {
+        Ok(x) => x,
+        Err(_) => "crate".to_owned(),
+    };
+
+    Ident::new(&crate_name, Span::call_site())
 }
