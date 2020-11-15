@@ -99,9 +99,7 @@ impl GtkApplicationImpl for SolanumApplicationPriv {}
 
 glib_wrapper! {
     pub struct SolanumApplication(
-        Object<subclass::simple::InstanceStruct<SolanumApplicationPriv>,
-        subclass::simple::ClassStruct<SolanumApplicationPriv>,
-        SolanumApplicationClass>) @extends gio::Application, gtk::Application, @implements gio::ActionGroup, gio::ActionMap;
+        Object<subclass::simple::InstanceStruct<SolanumApplicationPriv>>) @extends gio::Application, gtk::Application, @implements gio::ActionGroup, gio::ActionMap;
 
     match fn {
         get_type => || SolanumApplicationPriv::get_type().to_glib(),

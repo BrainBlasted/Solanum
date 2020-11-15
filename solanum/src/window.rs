@@ -105,9 +105,7 @@ impl hdy::ApplicationWindowImpl for SolanumWindowPriv {}
 
 glib_wrapper! {
     pub struct SolanumWindow(
-        Object<subclass::simple::InstanceStruct<SolanumWindowPriv>,
-        subclass::simple::ClassStruct<SolanumWindowPriv>,
-        SolanumWindowClass>)
+        Object<subclass::simple::InstanceStruct<SolanumWindowPriv>>)
         @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
 
     match fn {

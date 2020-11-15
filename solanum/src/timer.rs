@@ -87,9 +87,7 @@ impl ObjectImpl for TimerPriv {}
 
 glib_wrapper! {
     pub struct Timer(
-        Object<subclass::simple::InstanceStruct<TimerPriv>,
-        subclass::simple::ClassStruct<TimerPriv>,
-        TimerClass>);
+        Object<subclass::simple::InstanceStruct<TimerPriv>>);
 
     match fn {
         get_type => || TimerPriv::get_type().to_glib(),
