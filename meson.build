@@ -45,13 +45,10 @@ subdir('po')
 
 cargo_sources = files(
   'Cargo.toml',
-  'Cargo.lock',
-  'solanum/Cargo.toml',
-  'template-macros/Cargo.toml'
+  'Cargo.lock'
 )
 
-subdir('template-macros/src')
-subdir('solanum/src')
+subdir('src')
 
 meson.add_install_script('build-aux/meson/postinstall.py')
 meson.add_dist_script(

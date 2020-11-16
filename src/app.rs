@@ -27,7 +27,6 @@ use glib::WeakRef;
 use gio::ApplicationFlags;
 use glib::subclass;
 use glib::subclass::prelude::*;
-use glib::translate::*;
 use gtk::subclass::prelude::*;
 
 use once_cell::unsync::OnceCell;
@@ -45,6 +44,7 @@ pub struct SolanumApplicationPriv {
 // Definite the GObject information for SolanumApplication
 impl ObjectSubclass for SolanumApplicationPriv {
     const NAME: &'static str = "SolanumApplication";
+    type Type = SolanumApplication;
     type ParentType = gtk::Application;
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
@@ -62,7 +62,7 @@ impl ObjectSubclass for SolanumApplicationPriv {
 impl ObjectImpl for SolanumApplicationPriv {}
 
 impl ApplicationImpl for SolanumApplicationPriv {
-    fn activate(&self, _application: &gio::Application) {
+    fn activate(&self, _application: &Self::Type) {
         let window = self
             .window
             .get()
@@ -74,24 +74,20 @@ impl ApplicationImpl for SolanumApplicationPriv {
     }
 
     // Entry point for GApplication
-    fn startup(&self, application: &gio::Application) {
+    fn startup(&self, application: &Self::Type) {
         self.parent_startup(application);
 
         application.set_resource_base_path(Some("/org/gnome/Solanum/"));
 
-        let app = application
-            .clone()
-            .downcast::<SolanumApplication>()
-            .unwrap();
-        let window = SolanumWindow::new(&app);
+        let window = SolanumWindow::new(application);
         window.set_title(&i18n("Solanum"));
         window.set_icon_name(Some(&config::APP_ID.to_owned()));
         self.window
             .set(window.downgrade())
             .expect("Failed to init applciation window");
 
-        app.setup_actions();
-        app.setup_accels();
+        application.setup_actions();
+        application.setup_accels();
     }
 }
 
@@ -99,11 +95,7 @@ impl GtkApplicationImpl for SolanumApplicationPriv {}
 
 glib_wrapper! {
     pub struct SolanumApplication(
-        Object<subclass::simple::InstanceStruct<SolanumApplicationPriv>>) @extends gio::Application, gtk::Application, @implements gio::ActionGroup, gio::ActionMap;
-
-    match fn {
-        get_type => || SolanumApplicationPriv::get_type().to_glib(),
-    }
+        ObjectSubclass<SolanumApplicationPriv>) @extends gio::Application, gtk::Application, @implements gio::ActionGroup, gio::ActionMap;
 }
 
 impl SolanumApplication {

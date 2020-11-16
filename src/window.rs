@@ -24,9 +24,9 @@ use glib::clone;
 
 use glib::subclass;
 use glib::subclass::prelude::*;
-use glib::translate::*;
 use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
+use gtk::subclass::widget::*;
 use libhandy::subclass::prelude as hdy;
 
 use once_cell::unsync::OnceCell;
@@ -35,7 +35,6 @@ use std::cell::Cell;
 
 use crate::config;
 use crate::i18n::*;
-use crate::templating::*;
 use crate::timer::{LapType, Timer, TimerActions};
 
 static POMODORO_SECONDS: u64 = 1500; // == 25 Minutes
@@ -54,17 +53,18 @@ pub struct SolanumWindowPriv {
     lap_type: Cell<LapType>,
     player: gstreamer_player::Player,
     #[template_child(id = "lap_label")]
-    lap_label: TemplateWidget<gtk::Label>,
+    lap_label: TemplateChild<gtk::Label>,
     #[template_child(id = "timer_label")]
-    timer_label: TemplateWidget<gtk::Label>,
+    timer_label: TemplateChild<gtk::Label>,
     #[template_child(id = "timer_button")]
-    timer_button: TemplateWidget<gtk::Button>,
+    timer_button: TemplateChild<gtk::Button>,
     #[template_child(id = "menu_button")]
-    menu_button: TemplateWidget<gtk::MenuButton>,
+    menu_button: TemplateChild<gtk::MenuButton>,
 }
 
 impl ObjectSubclass for SolanumWindowPriv {
     const NAME: &'static str = "SolanumWindow";
+    type Type = SolanumWindow;
     type ParentType = libhandy::ApplicationWindow;
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
@@ -77,23 +77,18 @@ impl ObjectSubclass for SolanumWindowPriv {
             timer: OnceCell::new(),
             lap_type: Cell::new(LapType::Pomodoro),
             player: gstreamer_player::Player::new(None, None),
-            lap_label: TemplateWidget::default(),
-            timer_label: TemplateWidget::default(),
-            timer_button: TemplateWidget::default(),
-            menu_button: TemplateWidget::default(),
+            lap_label: TemplateChild::default(),
+            timer_label: TemplateChild::default(),
+            timer_button: TemplateChild::default(),
+            menu_button: TemplateChild::default(),
         }
     }
 
     fn class_init(klass: &mut Self::Class) {
-        unsafe {
-            Self::set_template_from_resource(klass, WINDOW_URI);
-        }
+        klass.set_template_from_resource(WINDOW_URI);
         Self::bind_template_children(klass);
     }
 }
-
-// Set up widget subclass for binding templates
-impl WidgetSubclass for SolanumWindowPriv {}
 
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls
@@ -104,13 +99,8 @@ impl ApplicationWindowImpl for SolanumWindowPriv {}
 impl hdy::ApplicationWindowImpl for SolanumWindowPriv {}
 
 glib_wrapper! {
-    pub struct SolanumWindow(
-        Object<subclass::simple::InstanceStruct<SolanumWindowPriv>>)
+    pub struct SolanumWindow(ObjectSubclass<SolanumWindowPriv>)
         @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
-
-    match fn {
-        get_type => || SolanumWindowPriv::get_type().to_glib(),
-    }
 }
 
 impl SolanumWindow {
@@ -318,8 +308,7 @@ impl SolanumWindow {
     // Pause the timer and move to the next lap
     fn next_lap(&self, lap_type: LapType) -> glib::Continue {
         let priv_ = self.get_private();
-        let label = get_template_child::<SolanumWindow, gtk::Label>(self, "lap_label")
-            .expect("Could not get lap label");
+        let label = priv_.lap_label.get();
         let timer = priv_.timer.get().unwrap();
         priv_.lap_type.set(lap_type);
 

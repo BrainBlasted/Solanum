@@ -1,4 +1,4 @@
 _build/
-solanum/src/config.rs
+src/config.rs
 target/
 data/sounds/cover.jpg

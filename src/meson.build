@@ -14,8 +14,8 @@ configure_file(
 # Copy the config.rs output to the source directory.
 run_command(
   'cp',
-  join_paths(meson.build_root(), 'solanum', 'src', 'config.rs'),
-  join_paths(meson.source_root(), 'solanum', 'src', 'config.rs'),
+  join_paths(meson.build_root(), 'src', 'config.rs'),
+  join_paths(meson.source_root(), 'src', 'config.rs'),
   check: true
 )
 
@@ -25,14 +25,12 @@ rust_sources = files(
   'i18n.rs',
   'main.rs',
   'macros.rs',
-  'templating.rs',
   'timer.rs',
   'window.rs',
 )
 
 sources = [
   cargo_sources,
-  template_rust_sources,
   rust_sources
 ]
 

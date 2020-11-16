@@ -15,6 +15,7 @@
         "--socket=pulseaudio",
         "--env=GST_DEBUG=3",
         "--env=G_ENABLE_DIAGNOSTIC=1",
+        "--env=RUST_BACKTRACE=1",
         "--talk-name=org.a11y.Bus"
     ],
     "build-options" : {

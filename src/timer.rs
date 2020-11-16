@@ -20,7 +20,6 @@
 use glib::prelude::*;
 use glib::subclass;
 use glib::subclass::prelude::*;
-use glib::translate::*;
 
 // `Arc`s are Atomic Reference Counters. They allow us to clone objects,
 // while actually referencing them across threads. A `Mutex` allows for interior
@@ -66,6 +65,7 @@ pub struct TimerPriv {
 
 impl ObjectSubclass for TimerPriv {
     const NAME: &'static str = "SolanumTimer";
+    type Type = Timer;
     type ParentType = glib::Object;
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
@@ -86,12 +86,7 @@ impl ObjectSubclass for TimerPriv {
 impl ObjectImpl for TimerPriv {}
 
 glib_wrapper! {
-    pub struct Timer(
-        Object<subclass::simple::InstanceStruct<TimerPriv>>);
-
-    match fn {
-        get_type => || TimerPriv::get_type().to_glib(),
-    }
+    pub struct Timer(ObjectSubclass<TimerPriv>);
 }
 
 impl Timer {
