@@ -1,0 +1,126 @@
+# Czech translation for solanum.
+# Copyright (C) 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Marek Černocký <marek@manet.cz>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-11-09 19:44+0000\n"
+"PO-Revision-Date: 2020-11-16 22:07+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Mějte v rovnováze čas trávený prací a přestávkami"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum je aplikace pro sledování času, která používá techniky pomodoro. "
+"Pracujte ve 4 cyklech, s přestávkami mezi každým cyklem a jednou dlouhou "
+"přestávkou po 4. cyklu."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "pomodoro;časovač;organizace času;produktivita;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Obecné"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Zobrazit hlavní nabídku"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Zobrazit klávesové zkratky"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ukončit"
+
+#: data/ui/menu.ui:8
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: data/ui/menu.ui:12
+msgid "_About Solanum"
+msgstr "O _aplikaci Solanum"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "Organizace času pomodoro pro GNOME"
+
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Marek Černocký <marek@manet.cz>"
+
+#: src/app.rs:189
+msgid "Donate on Patreon"
+msgstr "Přispět přes Patreon"
+
+#: src/window.rs:112 src/window.rs:300 src/window.rs:424
+msgid "Lap {}"
+msgstr "Cyklus {}"
+
+#: src/window.rs:307 src/window.rs:431
+msgid "Long Break"
+msgstr "Dlouhá přestávka"
+
+#: src/window.rs:312 src/window.rs:436
+msgid "Short Break"
+msgstr "Krátká přestávka"
+
+#: src/window.rs:388
+msgid "Back to Work"
+msgstr "Zpět do práce"
+
+#: src/window.rs:389
+msgid "Ready to keep working?"
+msgstr "Jste připraveni pokračovat v práci?"
+
+#: src/window.rs:390
+msgid "Start Working"
+msgstr "Začít pracovat"
+
+#: src/window.rs:393
+msgid "Break Time"
+msgstr "Čas přestávky"
+
+#: src/window.rs:394
+msgid "Stretch your legs, and drink some water."
+msgstr "Protáhněte si nohy a napijte se vody."
+
+#: src/window.rs:395
+msgid "Start Break"
+msgstr "Začít přestávku"
+
+#: src/window.rs:401
+msgid "Skip"
+msgstr "Přeskočit"
