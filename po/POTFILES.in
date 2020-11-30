@@ -2,6 +2,6 @@ data/org.gnome.Solanum.appdata.xml.in.in
 data/org.gnome.Solanum.desktop.in.in
 data/org.gnome.Solanum.gschema.xml
 data/gtk/help-overlay.ui
-data/ui/menu.ui
+data/ui/window.ui
 src/app.rs
 src/window.rs
