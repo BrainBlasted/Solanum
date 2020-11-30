@@ -62,13 +62,8 @@ impl ObjectSubclass for SolanumApplicationPriv {
 impl ObjectImpl for SolanumApplicationPriv {}
 
 impl ApplicationImpl for SolanumApplicationPriv {
-    fn activate(&self, _application: &Self::Type) {
-        let window = self
-            .window
-            .get()
-            .expect("Could not get main window")
-            .upgrade()
-            .expect("Could not upgrade main window");
+    fn activate(&self, application: &Self::Type) {
+        let window = application.get_main_window();
         window.show();
         window.present();
     }
