@@ -17,14 +17,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#[macro_use]
-extern crate glib;
-#[macro_use]
-extern crate gtk4 as gtk;
-
-#[macro_use]
-extern crate gtk_macros;
-
 use gettextrs::*;
 use gio::prelude::*;
 
@@ -63,7 +55,7 @@ fn main() {
     let provider = gtk::CssProvider::new();
     provider.load_from_resource("/org/gnome/Solanum/style.css");
     gtk::StyleContext::add_provider_for_display(
-        &gdk4::Display::get_default().unwrap(),
+        &gdk::Display::get_default().unwrap(),
         &provider,
         600,
     );

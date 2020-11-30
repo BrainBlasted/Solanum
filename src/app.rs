@@ -49,7 +49,7 @@ impl ObjectSubclass for SolanumApplicationPriv {
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
-    glib_object_subclass!();
+    glib::glib_object_subclass!();
 
     fn new() -> Self {
         Self {
@@ -88,7 +88,7 @@ impl ApplicationImpl for SolanumApplicationPriv {
 
 impl GtkApplicationImpl for SolanumApplicationPriv {}
 
-glib_wrapper! {
+glib::glib_wrapper! {
     pub struct SolanumApplication(
         ObjectSubclass<SolanumApplicationPriv>) @extends gio::Application, gtk::Application, @implements gio::ActionGroup, gio::ActionMap;
 }

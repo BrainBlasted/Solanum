@@ -17,6 +17,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+use glib::clone;
 use glib::prelude::*;
 use glib::subclass;
 use glib::subclass::prelude::*;
@@ -70,7 +71,7 @@ impl ObjectSubclass for TimerPriv {
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
-    glib_object_subclass!();
+    glib::glib_object_subclass!();
 
     fn new() -> Self {
         Self {
@@ -85,7 +86,7 @@ impl ObjectSubclass for TimerPriv {
 
 impl ObjectImpl for TimerPriv {}
 
-glib_wrapper! {
+glib::glib_wrapper! {
     pub struct Timer(ObjectSubclass<TimerPriv>);
 }
 

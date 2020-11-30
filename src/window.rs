@@ -21,6 +21,8 @@ use gio::prelude::*;
 use gtk::prelude::*;
 
 use glib::clone;
+use gtk::CompositeTemplate;
+use gtk_macros::*;
 
 use glib::subclass;
 use glib::subclass::prelude::*;
@@ -69,7 +71,7 @@ impl ObjectSubclass for SolanumWindowPriv {
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
-    glib_object_subclass!();
+    glib::glib_object_subclass!();
 
     fn new() -> Self {
         Self {
@@ -106,7 +108,7 @@ impl WindowImpl for SolanumWindowPriv {}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
 impl hdy::ApplicationWindowImpl for SolanumWindowPriv {}
 
-glib_wrapper! {
+glib::glib_wrapper! {
     pub struct SolanumWindow(ObjectSubclass<SolanumWindowPriv>)
         @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
 }
