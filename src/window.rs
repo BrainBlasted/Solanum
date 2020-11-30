@@ -90,9 +90,17 @@ impl ObjectSubclass for SolanumWindowPriv {
     }
 }
 
+impl ObjectImpl for SolanumWindowPriv {
+    fn constructed(&self, obj: &Self::Type) {
+        self.parent_constructed(obj);
+        let builder = gtk::Builder::from_resource("/org/gnome/Solanum/gtk/help-overlay.ui");
+        let help_overlay = builder.get_object("help_overlay").unwrap();
+        obj.set_help_overlay(Some(&help_overlay));
+    }
+}
+
 // We don't need to override any vfuncs here, but since they're superclasses
 // we need to declare the blank impls
-impl ObjectImpl for SolanumWindowPriv {}
 impl WidgetImpl for SolanumWindowPriv {}
 impl WindowImpl for SolanumWindowPriv {}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
