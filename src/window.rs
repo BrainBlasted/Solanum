@@ -206,6 +206,7 @@ impl SolanumWindow {
         };
 
         priv_.lap_type.replace(next_lap);
+        timer.set_lap_type(next_lap);
 
         match next_lap {
             LapType::Pomodoro => {

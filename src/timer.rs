@@ -185,6 +185,13 @@ impl Timer {
 
         println!("Timer stopped!")
     }
+
+    pub fn set_lap_type(&self, new_type: LapType) {
+        let priv_ = self.get_private();
+        let mut lap_type = priv_.lap_type.lock().unwrap();
+
+        *lap_type = new_type;
+    }
 }
 
 fn duration_to_ms(duration: Duration) -> (u32, u32) {
