@@ -136,12 +136,9 @@ impl SolanumWindow {
 
     fn init(&self) {
         let priv_ = self.get_private();
-        let count = priv_.pomodoro_count.clone().into_inner();
-
         let timer_label = priv_.timer_label.get();
-        let lap_label = priv_.lap_label.get();
 
-        lap_label.set_text(&i18n_f("Lap {}", &[&count.to_string()]));
+        self.update_lap_label();
 
         let min = POMODORO_SECONDS / 60;
         let secs = POMODORO_SECONDS % 60;
@@ -212,7 +209,7 @@ impl SolanumWindow {
 
         match next_lap {
             LapType::Pomodoro => {
-                label.set_label(&i18n_f("Lap {}", &[&lap_number.get().to_string()]));
+                self.update_lap_label();
                 timer.set_duration(POMODORO_SECONDS);
                 self.set_timer_label_from_secs(POMODORO_SECONDS);
             }
@@ -315,6 +312,19 @@ impl SolanumWindow {
         self.play_sound(CHIME_URI);
     }
 
+    fn update_lap_label(&self) {
+        let priv_ = self.get_private();
+
+        // Translators: Every pomodoro session is made of 4 laps,
+        // so {} will contain a number between 1 and 4. Lap is alway singular.
+        priv_.lap_label.get().set_label(&ni18n_f(
+            "Lap {}",
+            "Lap {}",
+            priv_.pomodoro_count.get(),
+            &[&priv_.pomodoro_count.get().to_string()],
+        ));
+    }
+
     // Pause the timer and move to the next lap
     fn next_lap(&self, lap_type: LapType) -> glib::Continue {
         let priv_ = self.get_private();
@@ -331,7 +341,7 @@ impl SolanumWindow {
 
         match lap_type {
             LapType::Pomodoro => {
-                label.set_label(&i18n_f("Lap {}", &[&lap_number.get().to_string()]));
+                self.update_lap_label();
                 timer.set_duration(POMODORO_SECONDS);
                 self.set_timer_label_from_secs(POMODORO_SECONDS);
             }
