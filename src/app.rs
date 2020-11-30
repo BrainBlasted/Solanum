@@ -169,6 +169,7 @@ impl SolanumApplication {
         dialog.set_authors(&authors);
         dialog.set_artists(&artists);
         dialog.set_comments(Some(&i18n("A pomodoro timer for GNOME")));
+        // Translators: Replace "translator-credits" with your names, one name per line
         dialog.set_translator_credits(Some(&i18n("translator-credits")));
         dialog.set_license_type(gtk::License::Gpl30);
         dialog.set_logo_icon_name(Some(config::APP_ID));
