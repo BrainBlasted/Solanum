@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-10-11 19:34+0000\n"
-"PO-Revision-Date: 2020-10-12 12:06+0300\n"
+"POT-Creation-Date: 2020-11-30 21:21+0000\n"
+"PO-Revision-Date: 2020-12-01 10:37+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 20.11.70\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:291
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -34,9 +34,9 @@ msgid ""
 "Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
 "sessions, with breaks in between each session and one long break after all 4."
 msgstr ""
-"Solanum — програма для керування робочим навантаженням за методикою"
-" «pomodoro». Робочий час буде розбито на 4 сеанси із короткими перервами та"
-" однією довгою перервою до наступної серії сеансів."
+"Solanum — програма для керування робочим навантаженням за методикою "
+"«pomodoro». Робочий час буде розбито на 4 сеанси із короткими перервами та "
+"однією довгою перервою до наступної серії сеансів."
 
 #. Translators: please do NOT translate this
 #: data/org.gnome.Solanum.appdata.xml.in.in:26
@@ -68,62 +68,68 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти"
 
-#: data/ui/menu.ui:8
+#: data/ui/window.ui:117
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: data/ui/menu.ui:12
+#: data/ui/window.ui:121
 msgid "_About Solanum"
 msgstr "_Про Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:171
 msgid "A pomodoro timer for GNOME"
 msgstr "Таймер-помідор для GNOME"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 
-#: src/app.rs:189
+#: src/app.rs:179
 msgid "Donate on Patreon"
 msgstr "Підтримати фінансово на Patreon"
 
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Оберт {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:219 src/window.rs:351
 msgid "Long Break"
 msgstr "Довга пауза"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:224 src/window.rs:356
 msgid "Short Break"
 msgstr "Коротка пауза"
 
-#: src/window.rs:388
+#: src/window.rs:295
 msgid "Back to Work"
 msgstr "Повертайтеся до роботи"
 
-#: src/window.rs:389
+#: src/window.rs:296
 msgid "Ready to keep working?"
 msgstr "Готові продовжити роботу?"
 
-#: src/window.rs:390
+#: src/window.rs:297
 msgid "Start Working"
 msgstr "Розпочати роботу"
 
-#: src/window.rs:393
+#: src/window.rs:300
 msgid "Break Time"
 msgstr "Час перерватися"
 
-#: src/window.rs:394
+#: src/window.rs:301
 msgid "Stretch your legs, and drink some water."
 msgstr "Потягніться, випийте трохи води."
 
-#: src/window.rs:395
+#: src/window.rs:302
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.rs:401
+#: src/window.rs:308
 msgid "Skip"
 msgstr "Пропустити"
+
+#: src/window.rs:321
+#| msgid "Lap {}"
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Оберт {}"
+msgstr[1] "Оберт {}"
+msgstr[2] "Оберт {}"
+msgstr[3] "Оберт {}"
