@@ -194,10 +194,7 @@ impl SolanumWindow {
 
     fn skip(&self) {
         let priv_ = self.get_private();
-        let label = priv_.lap_label.get();
         let lap_type = priv_.lap_type.get();
-        let lap_number = &priv_.pomodoro_count;
-        let timer = priv_.timer.get().unwrap();
 
         let next_lap = if lap_type == LapType::Pomodoro {
             LapType::Break
@@ -205,10 +202,31 @@ impl SolanumWindow {
             LapType::Pomodoro
         };
 
-        priv_.lap_type.replace(next_lap);
-        timer.set_lap_type(next_lap);
+        self.update_lap(next_lap);
+        if !self.is_active() {
+            self.present();
+        }
+    }
 
-        match next_lap {
+    fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
+        let priv_ = self.get_private();
+        let label = priv_.timer_label.get();
+        label.set_label(&format!("{:>02}∶{:>02}", min, sec));
+        glib::Continue(true)
+    }
+
+    fn update_lap(&self, lap_type: LapType) {
+        let priv_ = self.get_private();
+        let label = priv_.lap_label.get();
+        let timer = priv_.timer.get().unwrap();
+
+        priv_.lap_type.set(lap_type);
+        timer.set_lap_type(lap_type);
+
+        let lap_number = &priv_.pomodoro_count;
+        println!("Setting lap to {:?}", lap_type);
+
+        match lap_type {
             LapType::Pomodoro => {
                 self.update_lap_label();
                 timer.set_duration(POMODORO_SECONDS);
@@ -228,17 +246,6 @@ impl SolanumWindow {
                 }
             }
         };
-
-        if !self.is_active() {
-            self.present();
-        }
-    }
-
-    fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
-        let priv_ = self.get_private();
-        let label = priv_.timer_label.get();
-        label.set_label(&format!("{:>02}∶{:>02}", min, sec));
-        glib::Continue(true)
     }
 
     // Callback to run whenever the timer is toggled - by button or action
@@ -326,38 +333,11 @@ impl SolanumWindow {
 
     // Pause the timer and move to the next lap
     fn next_lap(&self, lap_type: LapType) -> glib::Continue {
-        let priv_ = self.get_private();
-        let label = priv_.lap_label.get();
-        let timer = priv_.timer.get().unwrap();
-        priv_.lap_type.set(lap_type);
-
         // This stops the timer and sets the styling we need
         let action = self.lookup_action("toggle-timer").unwrap();
         action.activate(None);
 
-        let lap_number = &priv_.pomodoro_count;
-        println!("Lapping with {:?}", lap_type);
-
-        match lap_type {
-            LapType::Pomodoro => {
-                self.update_lap_label();
-                timer.set_duration(POMODORO_SECONDS);
-                self.set_timer_label_from_secs(POMODORO_SECONDS);
-            }
-            LapType::Break => {
-                if lap_number.get() >= POMODOROS_UNTIL_LONG_BREAK {
-                    lap_number.set(1);
-                    label.set_label(&i18n("Long Break"));
-                    timer.set_duration(LONG_BREAK_SECONDS);
-                    self.set_timer_label_from_secs(LONG_BREAK_SECONDS);
-                } else {
-                    lap_number.set(lap_number.get() + 1);
-                    label.set_label(&i18n("Short Break"));
-                    timer.set_duration(SHORT_BREAK_SECONDS);
-                    self.set_timer_label_from_secs(SHORT_BREAK_SECONDS);
-                }
-            }
-        };
+        self.update_lap(lap_type);
         self.send_notifcation(lap_type);
         glib::Continue(true)
     }
