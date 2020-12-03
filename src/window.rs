@@ -258,16 +258,14 @@ impl SolanumWindow {
             timer.start();
             self.play_sound(BEEP_URI);
             timer_button.set_icon_name("media-playback-pause-symbolic");
-            add_style_class!(timer_label, @blue_text);
-            remove_style_class!(timer_label, @blinking);
-            remove_style_class!(timer_button, &["suggested-action"]);
+            timer_label.remove_css_class("blinking");
+            timer_button.remove_css_class("suggested-action");
             let _ = skip.set_property("enabled", &false);
         } else {
             timer.stop();
             timer_button.set_icon_name("media-playback-start-symbolic");
-            add_style_class!(timer_label, @blinking);
-            remove_style_class!(timer_label, @blue_text);
-            add_style_class!(timer_button, &["suggested-action"]);
+            timer_label.add_css_class("blinking");
+            timer_button.add_css_class("suggested-action");
             let _ = skip.set_property("enabled", &true);
         }
     }

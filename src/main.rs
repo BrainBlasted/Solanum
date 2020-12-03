@@ -23,8 +23,6 @@ use gio::prelude::*;
 mod app;
 mod config;
 mod i18n;
-#[macro_use]
-mod macros;
 mod timer;
 mod window;
 
