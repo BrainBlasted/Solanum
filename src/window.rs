@@ -255,7 +255,12 @@ impl SolanumWindow {
         let timer_on = !action_state;
         action.set_state(&timer_on.to_variant());
 
-        let skip = self.lookup_action("skip").unwrap();
+        let skip = self
+            .lookup_action("skip")
+            .unwrap()
+            .downcast::<gio::SimpleAction>()
+            .unwrap();
+        skip.set_enabled(!timer_on);
 
         let timer = self.get_private().timer.get().unwrap();
         let timer_label = priv_.timer_label.get();
@@ -267,13 +272,11 @@ impl SolanumWindow {
             timer_button.set_icon_name("media-playback-pause-symbolic");
             timer_label.remove_css_class("blinking");
             timer_button.remove_css_class("suggested-action");
-            let _ = skip.set_property("enabled", &false);
         } else {
             timer.stop();
             timer_button.set_icon_name("media-playback-start-symbolic");
             timer_label.add_css_class("blinking");
             timer_button.add_css_class("suggested-action");
-            let _ = skip.set_property("enabled", &true);
         }
     }
 
