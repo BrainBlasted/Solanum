@@ -1,0 +1,129 @@
+# British English translation for solanum.
+# Copyright (C) 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Zander Brown <zbrown@gnome.org>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2020-12-01 08:38+0000\n"
+"PO-Revision-Date: 2020-12-01 17:27+0000\n"
+"Last-Translator: Zander Brown <zbrown@gnome.org>\n"
+"Language-Team: English - United Kingdom <en_GB@li.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 3.38.0\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:292
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Balance working time and break time"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "General Shortcuts"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Show Primary Menu"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Show Keyboard Shortcuts"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Quit"
+
+#: data/ui/window.ui:117
+msgid "_Keyboard Shortcuts"
+msgstr "_Keyboard Shortcuts"
+
+#: data/ui/window.ui:121
+msgid "_About Solanum"
+msgstr "_About Solanum"
+
+#: src/app.rs:171
+msgid "A pomodoro timer for GNOME"
+msgstr "A pomodoro timer for GNOME"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
+msgid "translator-credits"
+msgstr "Zander Brown <zbrown@gnome.org>"
+
+#: src/app.rs:179
+msgid "Donate on Patreon"
+msgstr "Donate on Patreon"
+
+#: src/window.rs:220 src/window.rs:352
+msgid "Long Break"
+msgstr "Long Break"
+
+#: src/window.rs:225 src/window.rs:357
+msgid "Short Break"
+msgstr "Short Break"
+
+#: src/window.rs:296
+msgid "Back to Work"
+msgstr "Back to Work"
+
+#: src/window.rs:297
+msgid "Ready to keep working?"
+msgstr "Ready to keep working?"
+
+#: src/window.rs:298
+msgid "Start Working"
+msgstr "Start Working"
+
+#: src/window.rs:301
+msgid "Break Time"
+msgstr "Break Time"
+
+#: src/window.rs:302
+msgid "Stretch your legs, and drink some water."
+msgstr "Stretch your legs, and drink some water."
+
+#: src/window.rs:303
+msgid "Start Break"
+msgstr "Start Break"
+
+#: src/window.rs:309
+msgid "Skip"
+msgstr "Skip"
+
+#: src/window.rs:322
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Lap {}"
+msgstr[1] "Lap {}"
