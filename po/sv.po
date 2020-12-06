@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-10-13 13:36+0000\n"
-"PO-Revision-Date: 2020-10-13 22:05+0200\n"
+"POT-Creation-Date: 2020-11-30 21:21+0000\n"
+"PO-Revision-Date: 2020-12-06 13:57+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:291
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -66,19 +66,20 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avsluta"
 
-#: data/ui/menu.ui:8
+#: data/ui/window.ui:117
 msgid "_Keyboard Shortcuts"
 msgstr "_Tangentbordsgenvägar"
 
-#: data/ui/menu.ui:12
+#: data/ui/window.ui:121
 msgid "_About Solanum"
 msgstr "_Om Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:171
 msgid "A pomodoro timer for GNOME"
 msgstr "En pomodorotidtagare för GNOME"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -86,46 +87,48 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>"
 
-#: src/app.rs:189
+#: src/app.rs:179
 msgid "Donate on Patreon"
 msgstr "Donera på Patreon"
 
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Varv {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:219 src/window.rs:351
 msgid "Long Break"
 msgstr "Lång rast"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:224 src/window.rs:356
 msgid "Short Break"
 msgstr "Kort rast"
 
-#: src/window.rs:388
+#: src/window.rs:295
 msgid "Back to Work"
 msgstr "Tillbaka till arbetet"
 
-#: src/window.rs:389
+#: src/window.rs:296
 msgid "Ready to keep working?"
 msgstr "Redo att fortsätta arbeta?"
 
-#: src/window.rs:390
+#: src/window.rs:297
 msgid "Start Working"
 msgstr "Börja arbeta"
 
-#: src/window.rs:393
+#: src/window.rs:300
 msgid "Break Time"
 msgstr "Rastdags"
 
-#: src/window.rs:394
+#: src/window.rs:301
 msgid "Stretch your legs, and drink some water."
 msgstr "Sträck på benen och drick lite vatten."
 
-#: src/window.rs:395
+#: src/window.rs:302
 msgid "Start Break"
 msgstr "Starta rast"
 
-#: src/window.rs:401
+#: src/window.rs:308
 msgid "Skip"
 msgstr "Hoppa över"
+
+#: src/window.rs:321
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Varv {}"
+msgstr[1] "Varv {}"
