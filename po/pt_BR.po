@@ -2,24 +2,25 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # Gabriel Longo <gabriel.longo.gabriel@gmail.com>, 2020.
+# Enrico Nicoletto <liverig@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-10-18 17:05+0000\n"
-"PO-Revision-Date: 2020-10-22 13:26-0300\n"
-"Last-Translator: Gabriel Longo <gabriel.longo.gabriel@gmail.com>\n"
+"POT-Creation-Date: 2020-11-30 21:21+0000\n"
+"PO-Revision-Date: 2020-12-12 09:02-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.38.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:291
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -66,63 +67,68 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Fecha"
 
-#: data/ui/menu.ui:8
+#: data/ui/window.ui:117
 msgid "_Keyboard Shortcuts"
 msgstr "_Atalhos de teclado"
 
-#: data/ui/menu.ui:12
+#: data/ui/window.ui:121
 msgid "_About Solanum"
 msgstr "_Sobre o Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:171
 msgid "A pomodoro timer for GNOME"
 msgstr "Um temporizador Pomodoro para o GNOME"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
 msgid "translator-credits"
-msgstr "Gabriel Longo <gabriel.longo.gabriel@gmail.com>"
+msgstr ""
+"Gabriel Longo <gabriel.longo.gabriel@gmail.com>\n"
+"Enrico Nicoletto <liverig@gmail.com>"
 
-#: src/app.rs:189
+#: src/app.rs:179
 msgid "Donate on Patreon"
 msgstr "Faça uma doação no Patreon"
 
-# Em uma tradução livre, "Sessão" parece se enquadrar melhor a proposta do aplicativo do que "Volta". Talvez traduzir para série ou rodada?
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Sessão {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:219 src/window.rs:351
 msgid "Long Break"
 msgstr "Intervalo longo"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:224 src/window.rs:356
 msgid "Short Break"
 msgstr "Intervalo curto"
 
-#: src/window.rs:388
+#: src/window.rs:295
 msgid "Back to Work"
 msgstr "Voltar ao trabalho"
 
-#: src/window.rs:389
+#: src/window.rs:296
 msgid "Ready to keep working?"
 msgstr "Pronto para voltar ao trabalho?"
 
-#: src/window.rs:390
+#: src/window.rs:297
 msgid "Start Working"
 msgstr "Começar a trabalhar"
 
-#: src/window.rs:393
+#: src/window.rs:300
 msgid "Break Time"
 msgstr "Intervalo"
 
-#: src/window.rs:394
+#: src/window.rs:301
 msgid "Stretch your legs, and drink some water."
 msgstr "Hidrate-se e estique suas pernas!"
 
-#: src/window.rs:395
+#: src/window.rs:302
 msgid "Start Break"
 msgstr "Começar intervalo"
 
-#: src/window.rs:401
+#: src/window.rs:308
 msgid "Skip"
 msgstr "Pular"
+
+# Em uma tradução livre, "Sessão" parece se enquadrar melhor a proposta do aplicativo do que "Volta". Talvez traduzir para série ou rodada?
+#: src/window.rs:321
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Série {}"
+msgstr[1] "Séries {}"
