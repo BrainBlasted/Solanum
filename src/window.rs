@@ -28,7 +28,6 @@ use glib::subclass;
 use glib::subclass::prelude::*;
 use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
-use gtk::subclass::widget::*;
 use libhandy::subclass::prelude as hdy;
 
 use once_cell::unsync::OnceCell;

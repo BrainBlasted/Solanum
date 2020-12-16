@@ -75,7 +75,7 @@ impl ApplicationImpl for SolanumApplicationPriv {
         application.set_resource_base_path(Some("/org/gnome/Solanum/"));
 
         let window = SolanumWindow::new(application);
-        window.set_title(&i18n("Solanum"));
+        window.set_title(Some(&i18n("Solanum")));
         window.set_icon_name(Some(&config::APP_ID.to_owned()));
         self.window
             .set(window.downgrade())
