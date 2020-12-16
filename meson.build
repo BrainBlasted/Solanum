@@ -1,11 +1,11 @@
 project('solanum',
-          version: '1.1.0',
+          version: '2.0.0',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',
                    ],
 )
 
-dependency('gtk4', version: '>= 3.92')
+dependency('gtk4', version: '>= 3.99.5')
 dependency('gstreamer-1.0', version: '>= 1.16')
 dependency('gstreamer-base-1.0', version: '>= 1.16')
 dependency('gstreamer-audio-1.0', version: '>= 1.16')

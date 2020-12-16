@@ -27,6 +27,18 @@
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
+    <release version="2.0.0" date="2020-12-16">
+      <description>
+        <p>The 2.0.0 release of Solanum brings translations, bug fixes, and a port to GTK 4.</p>
+        <ul>
+          <li>The UI has been ported to GTK 4, making Solanum one of the first GTK 4 apps.</li>
+          <li>Support for translations has been added.</li>
+          <li>Added translations for French, Spanish, Swedish, Slovenian, Italian, Indonesian, Polish, Finnish, Brazilian Portuguese, Basque, Czech, Ukranian, and British English</li>
+          <li>Fix: The timer state is properly updated when using the skip button.</li>
+        </ul>
+      </description>
+    </release>
+  <releases>
     <release version="1.1.0" date="2020-09-14">
       <description>
         <p>The second stable release of Solanum brings UI tweaks, usability improvements, and new features:</p>
