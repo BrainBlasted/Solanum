@@ -26,6 +26,10 @@
   animation: blinkingText 1.2s infinite;
 }
 
+.blinking:backdrop {
+  animation: none;
+}
+
 .transparent_headerbar {
   background-color: @theme_bg_color;
   border-bottom-width: 0px;
