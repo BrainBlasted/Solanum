@@ -2,3 +2,4 @@ _build/
 src/config.rs
 target/
 data/sounds/cover.jpg
+.flatpak
