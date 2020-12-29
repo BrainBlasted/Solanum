@@ -324,7 +324,7 @@ impl SolanumWindow {
         let priv_ = self.get_private();
 
         // Translators: Every pomodoro session is made of 4 laps,
-        // so {} will contain a number between 1 and 4. Lap is alway singular.
+        // so {} will contain a number between 1 and 4. Lap is always singular.
         priv_.lap_label.get().set_label(&ni18n_f(
             "Lap {}",
             "Lap {}",
