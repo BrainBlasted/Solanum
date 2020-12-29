@@ -159,27 +159,26 @@ impl SolanumApplication {
     // About dialog
     fn show_about(&self) {
         let window = self.get_active_window();
-        let authors = vec!["Christopher Davis <christopherdavis@gnome.org>"];
+        let authors = vec!["Christopher Davis <christopherdavis@gnome.org>".to_string()];
         let artists = vec![
-            "Tobias Bernard https://tobiasbernard.com",
-            "Miredly Sound https://soundcloud.com/mired",
+            "Tobias Bernard https://tobiasbernard.com".to_string(),
+            "Miredly Sound https://soundcloud.com/mired".to_string(),
         ];
 
-        let dialog = gtk::AboutDialog::new();
-        dialog.set_authors(&authors);
-        dialog.set_artists(&artists);
-        dialog.set_comments(Some(&i18n("A pomodoro timer for GNOME")));
-        // Translators: Replace "translator-credits" with your names, one name per line
-        dialog.set_translator_credits(Some(&i18n("translator-credits")));
-        dialog.set_license_type(gtk::License::Gpl30);
-        dialog.set_logo_icon_name(Some(config::APP_ID));
-        dialog.set_wrap_license(true);
-        dialog.set_version(Some(config::VERSION));
-        dialog.set_website(Some("https://www.patreon.com/chrisgnome"));
-        dialog.set_website_label(&i18n("Donate on Patreon"));
-        dialog.set_copyright(Some(
-            format!("\u{A9} {} Christopher Davis, et al.", config::COPYRIGHT).as_str(),
-        ));
+        let dialog = gtk::AboutDialogBuilder::new()
+            .authors(authors)
+            .artists(artists)
+            .comments(&i18n("A pomodoro timer for GNOME"))
+            // Translators: Replace "translator-credits" with your names, one name per line
+            .translator_credits(&i18n("translator-credits"))
+            .license_type(gtk::License::Gpl30)
+            .logo_icon_name(config::APP_ID)
+            .wrap_license(true)
+            .version(config::VERSION)
+            .website("https://www.patreon.com/chrisgnome")
+            .website_label(&i18n("Donate on Patreon"))
+            .copyright(format!("\u{A9} {} Christopher Davis, et al.", config::COPYRIGHT).as_str())
+            .build();
 
         if let Some(w) = window {
             dialog.set_transient_for(Some(&w));
