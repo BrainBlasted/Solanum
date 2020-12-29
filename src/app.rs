@@ -79,7 +79,7 @@ impl ApplicationImpl for SolanumApplicationPriv {
         window.set_icon_name(Some(&config::APP_ID.to_owned()));
         self.window
             .set(window.downgrade())
-            .expect("Failed to init applciation window");
+            .expect("Failed to init application window");
 
         application.setup_actions();
         application.setup_accels();
