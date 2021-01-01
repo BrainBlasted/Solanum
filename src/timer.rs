@@ -22,11 +22,11 @@ use glib::prelude::*;
 use glib::subclass;
 use glib::subclass::prelude::*;
 
-// `Arc`s are Atomic Reference Counters. They allow us to clone objects,
-// while actually referencing them across threads. A `Mutex` allows for interior
-// mutablility across threads.
-use std::sync::{Arc, Mutex};
+// `Rc`s are Reference Counters. They allow us to clone objects,
+// while actually referencing at different places.
+// A `RefCell` allows for interior mutablility.
 use std::time::{Duration, Instant};
+use std::{cell::RefCell, rc::Rc};
 
 // OnceCell allows for a "nullable" field in a simple way.
 use once_cell::sync::OnceCell;
@@ -57,11 +57,11 @@ impl Default for TimerState {
 
 #[derive(Debug)]
 pub struct TimerPriv {
-    state: Arc<Mutex<TimerState>>,
-    instant: Arc<Mutex<Option<Instant>>>,
-    duration: Arc<Mutex<Duration>>,
+    state: Rc<RefCell<TimerState>>,
+    instant: Rc<RefCell<Option<Instant>>>,
+    duration: Rc<RefCell<Duration>>,
     sender: OnceCell<glib::Sender<TimerActions>>,
-    lap_type: Arc<Mutex<LapType>>,
+    lap_type: Rc<RefCell<LapType>>,
 }
 
 impl ObjectSubclass for TimerPriv {
@@ -75,11 +75,11 @@ impl ObjectSubclass for TimerPriv {
 
     fn new() -> Self {
         Self {
-            state: Arc::new(Mutex::new(TimerState::default())),
-            instant: Arc::new(Mutex::new(None)),
-            duration: Arc::new(Mutex::new(Duration::new(0, 0))),
+            state: Rc::new(RefCell::new(TimerState::default())),
+            instant: Rc::new(RefCell::new(None)),
+            duration: Rc::new(RefCell::new(Duration::new(0, 0))),
             sender: OnceCell::new(),
-            lap_type: Arc::new(Mutex::new(LapType::Pomodoro)),
+            lap_type: Rc::new(RefCell::new(LapType::Pomodoro)),
         }
     }
 }
@@ -114,18 +114,18 @@ impl Timer {
     pub fn set_duration(&self, duration: u64) {
         let priv_ = self.get_private();
 
-        let mut i = priv_.instant.lock().unwrap();
+        let mut i = priv_.instant.borrow_mut();
         *i = Some(Instant::now());
-        let mut d = priv_.duration.lock().unwrap();
+        let mut d = priv_.duration.borrow_mut();
         *d = Duration::new(duration, 0);
     }
 
     pub fn start(&self) {
         let priv_ = self.get_private();
 
-        let mut state = priv_.state.lock().unwrap();
+        let mut state = priv_.state.borrow_mut();
         *state = TimerState::Running;
-        let mut instant = priv_.instant.lock().unwrap();
+        let mut instant = priv_.instant.borrow_mut();
         *instant = Some(Instant::now());
 
         let s = &priv_.state;
@@ -133,15 +133,15 @@ impl Timer {
         let d = &priv_.duration;
         let tx = priv_.sender.clone();
         let lt = &priv_.lap_type;
-        // Every 100 milliseconds, loop to update the timer
-        glib::timeout_add(
+        // Every 100 milliseconds, this closure gets called in order to update the timer
+        glib::timeout_add_local(
             std::time::Duration::from_millis(100),
             clone!(@weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
-                let state = s.lock().unwrap();
-                let instant = i.lock().unwrap();
-                let duration = d.lock().unwrap();
+                let state = s.borrow_mut();
+                let instant = i.borrow_mut();
+                let duration = d.borrow_mut();
                 let sender = tx.get().unwrap();
-                let mut lap_type = lt.lock().unwrap();
+                let mut lap_type = lt.borrow_mut();
 
                 if *state == TimerState::Running {
                     if let Some(instant) = *instant {
@@ -172,12 +172,12 @@ impl Timer {
     pub fn stop(&self) {
         let priv_ = self.get_private();
 
-        let mut state = priv_.state.lock().unwrap();
+        let mut state = priv_.state.borrow_mut();
         *state = TimerState::Stopped;
 
         // When paused, set the timer so that it will resume where the user left off
-        let mut duration = priv_.duration.lock().unwrap();
-        let instant = priv_.instant.lock().unwrap().unwrap();
+        let mut duration = priv_.duration.borrow_mut();
+        let instant = priv_.instant.borrow_mut().unwrap();
         let elapsed = instant.elapsed();
         if let Some(difference) = duration.checked_sub(elapsed) {
             *duration = difference;
@@ -188,7 +188,7 @@ impl Timer {
 
     pub fn set_lap_type(&self, new_type: LapType) {
         let priv_ = self.get_private();
-        let mut lap_type = priv_.lap_type.lock().unwrap();
+        let mut lap_type = priv_.lap_type.borrow_mut();
 
         *lap_type = new_type;
     }
