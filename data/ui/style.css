@@ -1,16 +1,13 @@
-.large_button > image {
-  padding: 12px;
+button.large {
+  min-width: 48px;
+  min-height: 48px;
 }
 
-.pill_button, .pill_button > button {
-  padding: 4px;
+menubutton.circular > button {
   border-radius: 9999px;
-  min-width: 24px;
-  min-height: 24px;
-}
-
-.timer_button {
-  margin-top: 48px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
 }
 
 .main_box {
@@ -25,10 +22,10 @@
   animation: none;
 }
 
-.transparent_headerbar {
-  background-color: @theme_bg_color;
-  border-bottom-width: 0px;
+headerbar.flat {
   background-image: none;
+  border: none;
+  background-color: @theme_bg_color;
 }
 
 @keyframes blinkingText {

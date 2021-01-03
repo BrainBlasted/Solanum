@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <template class="SolanumWindow" parent="HdyApplicationWindow">
-    <property name="default_width">600</property>
-    <property name="default_height">300</property>
+    <property name="default_width">396</property>
+    <property name="default_height">396</property>
     <property name="width_request">360</property>
     <property name="default_widget">timer_button</property>
     <property name="child">
@@ -12,27 +12,15 @@
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
-              <object class="GtkBox">
-                <child>
-                  <object class="GtkWindowControls">
-                    <property name="side">start</property>
-                    <property name="halign">start</property>
-                    <property name="hexpand">true</property>
-                    <property name="margin_top">6</property>
-                    <property name="margin_bottom">6</property>
-                    <property name="margin_start">6</property>
+              <object class="GtkHeaderBar">
+                <child type="title">
+                  <object class="GtkBox">
+                    <property name="visible">False</property>
                   </object>
                 </child>
-                <child>
-                  <object class="GtkWindowControls">
-                    <property name="side">end</property>
-                    <property name="halign">end</property>
-                    <property name="hexpand">true</property>
-                    <property name="margin_top">6</property>
-                    <property name="margin_bottom">6</property>
-                    <property name="margin_end">6</property>
-                  </object>
-                </child>
+                <style>
+                  <class name="flat"/>
+                </style>
               </object>
             </child>
             <child>
@@ -41,7 +29,6 @@
                 <property name="valign">center</property>
                 <property name="vexpand">True</property>
                 <property name="spacing">6</property>
-                <property name="margin_top">72</property>
                 <child>
                   <object class="GtkLabel" id="lap_label">
                     <style>
@@ -60,29 +47,47 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkBox">
-                    <property name="spacing">12</property>
+                  <object class="GtkCenterBox">
+                    <property name="margin_top">48</property>
                     <property name="halign">center</property>
-                    <child>
-                      <object class="GtkButton" id="timer_button">
-                        <property name="icon_name">media-playback-start-symbolic</property>
-                        <property name="action_name">win.toggle-timer</property>
-                        <style>
-                          <class name="timer_button"/>
-                          <class name="pill_button"/>
-                          <class name="large_button"/>
-                          <class name="suggested-action"/>
-                        </style>
+                    <child type="center">
+                      <object class="GtkBox">
+                        <property name="spacing">12</property>
+                        <property name="halign">center</property>
+                        <child>
+                          <object class="GtkButton" id="timer_button">
+                            <property name="icon_name">media-playback-start-symbolic</property>
+                            <property name="action_name">win.toggle-timer</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="circular"/>
+                              <class name="large"/>
+                              <class name="suggested-action"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="skip_button">
+                            <property name="icon_name">media-seek-forward-symbolic</property>
+                            <property name="action_name">win.skip</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="circular"/>
+                              <class name="large"/>
+                            </style>
+                          </object>
+                        </child>
                       </object>
                     </child>
-                    <child>
-                      <object class="GtkButton" id="skip_button">
-                        <property name="icon_name">media-seek-forward-symbolic</property>
-                        <property name="action_name">win.skip</property>
+                    <child type="end">
+                      <object class="GtkMenuButton" id="menu_button">
+                        <property name="menu_model">app_menu</property>
+                        <property name="icon_name">open-menu-symbolic</property>
+                        <property name="halign">end</property>
+                        <property name="valign">center</property>
+                        <property name="margin_start">12</property>
                         <style>
-                          <class name="timer_button"/>
-                          <class name="pill_button"/>
-                          <class name="large_button"/>
+                          <class name="circular"/>
                         </style>
                       </object>
                     </child>
@@ -90,21 +95,6 @@
                 </child>
                 <style>
                   <class name="main_box"/>
-                </style>
-              </object>
-            </child>
-            <child>
-              <object class="GtkMenuButton" id="menu_button">
-                <property name="menu_model">app_menu</property>
-                <property name="icon_name">open-menu-symbolic</property>
-                <property name="margin_start">24</property>
-                <property name="margin_end">24</property>
-                <property name="margin_top">24</property>
-                <property name="margin_bottom">24</property>
-                <property name="halign">end</property>
-                <property name="valign">end</property>
-                <style>
-                  <class name="pill_button"/>
                 </style>
               </object>
             </child>
