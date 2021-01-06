@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-10-18 10:48+0000\n"
-"PO-Revision-Date: 2020-10-18 20:05+0300\n"
+"POT-Creation-Date: 2020-12-16 19:50+0000\n"
+"PO-Revision-Date: 2021-01-06 11:41+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:299
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -66,62 +66,65 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Lopeta"
 
-#: data/ui/menu.ui:8
+#: data/ui/window.ui:118
 msgid "_Keyboard Shortcuts"
 msgstr "_Pikanäppäimet"
 
-#: data/ui/menu.ui:12
+#: data/ui/window.ui:122
 msgid "_About Solanum"
 msgstr "_Tietoja - Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:171
 msgid "A pomodoro timer for GNOME"
 msgstr "Pomodoro-ajastin Gnomelle"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: src/app.rs:189
+#: src/app.rs:179
 msgid "Donate on Patreon"
 msgstr "Lahjoita Patreonissa"
 
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Kierros {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:237
 msgid "Long Break"
 msgstr "Pitkä tauko"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:242
 msgid "Short Break"
 msgstr "Lyhyt tauko"
 
-#: src/window.rs:388
+#: src/window.rs:303
 msgid "Back to Work"
 msgstr "Takaisin töihin"
 
-#: src/window.rs:389
+#: src/window.rs:304
 msgid "Ready to keep working?"
 msgstr "Valmiina jatkamaan töitä?"
 
-#: src/window.rs:390
+#: src/window.rs:305
 msgid "Start Working"
 msgstr "Aloita työskentely"
 
-#: src/window.rs:393
+#: src/window.rs:308
 msgid "Break Time"
 msgstr "Tauon aika"
 
-#: src/window.rs:394
+#: src/window.rs:309
 msgid "Stretch your legs, and drink some water."
 msgstr "Venyttele jalkojasi ja ota lasillinen vettä."
 
-#: src/window.rs:395
+#: src/window.rs:310
 msgid "Start Break"
 msgstr "Aloita tauko"
 
-#: src/window.rs:401
+#: src/window.rs:316
 msgid "Skip"
 msgstr "Ohita"
+
+#: src/window.rs:329
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Kierros {}"
+msgstr[1] "Kierros {}"
