@@ -211,14 +211,14 @@ impl SolanumWindow {
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
         let priv_ = self.get_private();
-        let label = priv_.timer_label.get();
+        let label = &*priv_.timer_label;
         label.set_label(&format!("{:>02}∶{:>02}", min, sec));
         glib::Continue(true)
     }
 
     fn update_lap(&self, lap_type: LapType) {
         let priv_ = self.get_private();
-        let label = priv_.lap_label.get();
+        let label = &*priv_.lap_label;
         let timer = priv_.timer.get().unwrap();
 
         priv_.lap_type.set(lap_type);
@@ -264,8 +264,8 @@ impl SolanumWindow {
         skip.set_enabled(!timer_on);
 
         let timer = self.get_private().timer.get().unwrap();
-        let timer_label = priv_.timer_label.get();
-        let timer_button = priv_.timer_button.get();
+        let timer_label = &*priv_.timer_label;
+        let timer_button = &*priv_.timer_button;
 
         if timer_on {
             timer.start();
@@ -284,7 +284,7 @@ impl SolanumWindow {
     // Util for initializing the timer based on the contants at the top
     fn set_timer_label_from_secs(&self, secs: u64) {
         let priv_ = self.get_private();
-        let label = priv_.timer_label.get();
+        let label = &*priv_.timer_label;
         let min = secs / 60;
         let secs = secs % 60;
         label.set_label(&format!("{:>02}∶{:>02}", min, secs));
@@ -327,7 +327,7 @@ impl SolanumWindow {
 
         // Translators: Every pomodoro session is made of 4 laps,
         // so {} will contain a number between 1 and 4. Lap is always singular.
-        priv_.lap_label.get().set_label(&ni18n_f(
+        priv_.lap_label.set_label(&ni18n_f(
             "Lap {}",
             "Lap {}",
             priv_.pomodoro_count.get(),
