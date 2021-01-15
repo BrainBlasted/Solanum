@@ -70,7 +70,7 @@ impl ObjectSubclass for SolanumWindowPriv {
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
-    glib::glib_object_subclass!();
+    glib::object_subclass!();
 
     fn new() -> Self {
         Self {
@@ -107,17 +107,16 @@ impl WindowImpl for SolanumWindowPriv {}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
 impl hdy::ApplicationWindowImpl for SolanumWindowPriv {}
 
-glib::glib_wrapper! {
+glib::wrapper! {
     pub struct SolanumWindow(ObjectSubclass<SolanumWindowPriv>)
-        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow, @implements gio::ActionMap, gio::ActionGroup;
+        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow,
+        @implements gio::ActionMap, gio::ActionGroup;
 }
 
 impl SolanumWindow {
     pub fn new<P: IsA<gtk::Application> + glib::value::ToValue>(app: &P) -> Self {
-        let win = glib::Object::new(Self::static_type(), &[("application", app)])
-            .expect("Failed to create SolanumWindow")
-            .downcast::<SolanumWindow>()
-            .expect("Created SolanumWindow is of wrong type");
+        let win = glib::Object::new::<Self>(&[("application", app)])
+            .expect("Failed to create SolanumWindow");
 
         win.init_template();
         win.init();

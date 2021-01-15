@@ -18,7 +18,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 use glib::clone;
-use glib::prelude::*;
 use glib::subclass;
 use glib::subclass::prelude::*;
 
@@ -71,7 +70,7 @@ impl ObjectSubclass for TimerPriv {
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
-    glib::glib_object_subclass!();
+    glib::object_subclass!();
 
     fn new() -> Self {
         Self {
@@ -86,16 +85,13 @@ impl ObjectSubclass for TimerPriv {
 
 impl ObjectImpl for TimerPriv {}
 
-glib::glib_wrapper! {
+glib::wrapper! {
     pub struct Timer(ObjectSubclass<TimerPriv>);
 }
 
 impl Timer {
     pub fn new(duration: u64, sender: glib::Sender<TimerActions>) -> Self {
-        let obj: Self = glib::Object::new(Timer::static_type(), &[])
-            .expect("Failed to initialize Timer object")
-            .downcast()
-            .expect("Tried to cast object to wrong type");
+        let obj: Self = glib::Object::new::<Self>(&[]).expect("Failed to initialize Timer object");
         let priv_ = obj.get_private();
 
         obj.set_duration(duration);
