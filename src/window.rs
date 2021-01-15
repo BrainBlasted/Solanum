@@ -53,13 +53,13 @@ pub struct SolanumWindowPriv {
     timer: OnceCell<Timer>,
     lap_type: Cell<LapType>,
     player: gstreamer_player::Player,
-    #[template_child(id = "lap_label")]
+    #[template_child]
     lap_label: TemplateChild<gtk::Label>,
-    #[template_child(id = "timer_label")]
+    #[template_child]
     timer_label: TemplateChild<gtk::Label>,
-    #[template_child(id = "timer_button")]
+    #[template_child]
     timer_button: TemplateChild<gtk::Button>,
-    #[template_child(id = "menu_button")]
+    #[template_child]
     menu_button: TemplateChild<gtk::MenuButton>,
 }
 
