@@ -43,13 +43,12 @@
     ],
     "modules" : [
         {
-            "name" : "libhandy4",
+            "name" : "libadwaita",
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/exalm/libhandy.git",
-                    "branch": "gtk4"
+                    "url" : "https://gitlab.gnome.org/exalm/libadwaita.git"
                 }
             ]
         },

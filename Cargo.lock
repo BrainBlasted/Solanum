@@ -564,15 +564,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
-name = "libc"
-version = "0.2.81"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1482821306169ec4d07f6aca392a4681f66c75c9918aa49641a2595db64053cb"
-
-[[package]]
-name = "libhandy4"
+name = "libadwaita"
 version = "0.1.0"
-source = "git+https://gitlab.gnome.org/bilelmoussaoui/libhandy4-rs#ea059551d1e0c2f77a483f37ad83eb5b358d4c5d"
+source = "git+https://gitlab.gnome.org/bilelmoussaoui/libadwaita-rs#b898c11fb6776fc7a9a6b920222fa3173216a80c"
 dependencies = [
  "bitflags",
  "gdk-pixbuf",
@@ -581,15 +575,15 @@ dependencies = [
  "glib",
  "gtk4",
  "lazy_static",
+ "libadwaita-sys",
  "libc",
- "libhandy4-sys",
  "pango",
 ]
 
 [[package]]
-name = "libhandy4-sys"
+name = "libadwaita-sys"
 version = "0.1.0"
-source = "git+https://gitlab.gnome.org/bilelmoussaoui/libhandy4-rs#ea059551d1e0c2f77a483f37ad83eb5b358d4c5d"
+source = "git+https://gitlab.gnome.org/bilelmoussaoui/libadwaita-rs#b898c11fb6776fc7a9a6b920222fa3173216a80c"
 dependencies = [
  "gdk-pixbuf-sys",
  "gdk4-sys",
@@ -601,6 +595,12 @@ dependencies = [
  "pango-sys",
  "system-deps",
 ]
+
+[[package]]
+name = "libc"
+version = "0.2.81"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1482821306169ec4d07f6aca392a4681f66c75c9918aa49641a2595db64053cb"
 
 [[package]]
 name = "locale_config"
@@ -862,7 +862,7 @@ dependencies = [
  "gstreamer-player",
  "gtk-macros",
  "gtk4",
- "libhandy4",
+ "libadwaita",
  "once_cell",
  "pango",
  "regex",

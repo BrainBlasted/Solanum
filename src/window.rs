@@ -28,7 +28,7 @@ use glib::subclass;
 use glib::subclass::prelude::*;
 use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
-use libhandy::subclass::prelude as hdy;
+use libadwaita::subclass::prelude::*;
 
 use once_cell::unsync::OnceCell;
 
@@ -66,7 +66,7 @@ pub struct SolanumWindowPriv {
 impl ObjectSubclass for SolanumWindowPriv {
     const NAME: &'static str = "SolanumWindow";
     type Type = SolanumWindow;
-    type ParentType = libhandy::ApplicationWindow;
+    type ParentType = libadwaita::ApplicationWindow;
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
@@ -109,11 +109,11 @@ impl ObjectImpl for SolanumWindowPriv {
 impl WidgetImpl for SolanumWindowPriv {}
 impl WindowImpl for SolanumWindowPriv {}
 impl ApplicationWindowImpl for SolanumWindowPriv {}
-impl hdy::ApplicationWindowImpl for SolanumWindowPriv {}
+impl AdwApplicationWindowImpl for SolanumWindowPriv {}
 
 glib::wrapper! {
     pub struct SolanumWindow(ObjectSubclass<SolanumWindowPriv>)
-        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libhandy::ApplicationWindow,
+        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libadwaita::ApplicationWindow,
         @implements gio::ActionMap, gio::ActionGroup;
 }
 

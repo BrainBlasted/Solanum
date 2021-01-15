@@ -5,7 +5,8 @@ project('solanum',
                    ],
 )
 
-dependency('gtk4', version: '>= 3.99.5')
+dependency('gtk4', version: '>= 4.0.0')
+dependency('libadwaita-1')
 dependency('gstreamer-1.0', version: '>= 1.16')
 dependency('gstreamer-base-1.0', version: '>= 1.16')
 dependency('gstreamer-audio-1.0', version: '>= 1.16')

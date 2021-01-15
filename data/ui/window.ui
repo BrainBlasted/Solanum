@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="SolanumWindow" parent="HdyApplicationWindow">
+  <template class="SolanumWindow" parent="AdwApplicationWindow">
     <property name="default_width">396</property>
     <property name="default_height">396</property>
     <property name="width_request">360</property>

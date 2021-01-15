@@ -40,9 +40,8 @@ git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs"
 version = "0.4.4"
 features = ["gettext-system"]
 
-[dependencies.libhandy]
-git = "https://gitlab.gnome.org/bilelmoussaoui/libhandy4-rs"
-package = "libhandy4"
+[dependencies.libadwaita]
+git = "https://gitlab.gnome.org/bilelmoussaoui/libadwaita-rs"
 
 [dependencies.pango]
 git = "https://github.com/gtk-rs/gtk-rs"
