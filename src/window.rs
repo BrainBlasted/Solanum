@@ -89,6 +89,10 @@ impl ObjectSubclass for SolanumWindowPriv {
         klass.set_template_from_resource(WINDOW_URI);
         Self::bind_template_children(klass);
     }
+
+    fn instance_init(obj: &subclass::InitializingObject<Self::Type>) {
+        obj.init_template();
+    }
 }
 
 impl ObjectImpl for SolanumWindowPriv {
@@ -118,7 +122,6 @@ impl SolanumWindow {
         let win = glib::Object::new::<Self>(&[("application", app)])
             .expect("Failed to create SolanumWindow");
 
-        win.init_template();
         win.init();
         win.setup_actions();
 
