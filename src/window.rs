@@ -46,73 +46,77 @@ static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
 static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
 static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
 
-#[derive(Debug, CompositeTemplate)]
-#[template(resource = "/org/gnome/Solanum/window.ui")]
-pub struct SolanumWindowPriv {
-    pomodoro_count: Cell<u32>,
-    timer: OnceCell<Timer>,
-    lap_type: Cell<LapType>,
-    player: gstreamer_player::Player,
-    #[template_child]
-    lap_label: TemplateChild<gtk::Label>,
-    #[template_child]
-    timer_label: TemplateChild<gtk::Label>,
-    #[template_child]
-    timer_button: TemplateChild<gtk::Button>,
-    #[template_child]
-    menu_button: TemplateChild<gtk::MenuButton>,
-}
+mod imp {
+    use super::*;
 
-impl ObjectSubclass for SolanumWindowPriv {
-    const NAME: &'static str = "SolanumWindow";
-    type Type = SolanumWindow;
-    type ParentType = libadwaita::ApplicationWindow;
-    type Interfaces = ();
-    type Instance = subclass::simple::InstanceStruct<Self>;
-    type Class = subclass::simple::ClassStruct<Self>;
+    #[derive(Debug, CompositeTemplate)]
+    #[template(resource = "/org/gnome/Solanum/window.ui")]
+    pub struct SolanumWindow {
+        pub pomodoro_count: Cell<u32>,
+        pub timer: OnceCell<Timer>,
+        pub lap_type: Cell<LapType>,
+        pub player: gstreamer_player::Player,
+        #[template_child]
+        pub lap_label: TemplateChild<gtk::Label>,
+        #[template_child]
+        pub timer_label: TemplateChild<gtk::Label>,
+        #[template_child]
+        pub timer_button: TemplateChild<gtk::Button>,
+        #[template_child]
+        pub menu_button: TemplateChild<gtk::MenuButton>,
+    }
 
-    glib::object_subclass!();
+    impl ObjectSubclass for SolanumWindow {
+        const NAME: &'static str = "SolanumWindow";
+        type Type = super::SolanumWindow;
+        type ParentType = libadwaita::ApplicationWindow;
+        type Interfaces = ();
+        type Instance = subclass::simple::InstanceStruct<Self>;
+        type Class = subclass::simple::ClassStruct<Self>;
 
-    fn new() -> Self {
-        Self {
-            pomodoro_count: Cell::new(1),
-            timer: OnceCell::new(),
-            lap_type: Cell::new(LapType::Pomodoro),
-            player: gstreamer_player::Player::new(None, None),
-            lap_label: TemplateChild::default(),
-            timer_label: TemplateChild::default(),
-            timer_button: TemplateChild::default(),
-            menu_button: TemplateChild::default(),
+        glib::object_subclass!();
+
+        fn new() -> Self {
+            Self {
+                pomodoro_count: Cell::new(1),
+                timer: OnceCell::new(),
+                lap_type: Cell::new(LapType::Pomodoro),
+                player: gstreamer_player::Player::new(None, None),
+                lap_label: TemplateChild::default(),
+                timer_label: TemplateChild::default(),
+                timer_button: TemplateChild::default(),
+                menu_button: TemplateChild::default(),
+            }
+        }
+
+        fn class_init(klass: &mut Self::Class) {
+            Self::bind_template(klass);
+        }
+
+        fn instance_init(obj: &subclass::InitializingObject<Self::Type>) {
+            obj.init_template();
         }
     }
 
-    fn class_init(klass: &mut Self::Class) {
-        Self::bind_template(klass);
+    impl ObjectImpl for SolanumWindow {
+        fn constructed(&self, obj: &Self::Type) {
+            self.parent_constructed(obj);
+            let builder = gtk::Builder::from_resource("/org/gnome/Solanum/gtk/help-overlay.ui");
+            let help_overlay = builder.get_object("help_overlay").unwrap();
+            obj.set_help_overlay(Some(&help_overlay));
+        }
     }
 
-    fn instance_init(obj: &subclass::InitializingObject<Self::Type>) {
-        obj.init_template();
-    }
+    // We don't need to override any vfuncs here, but since they're superclasses
+    // we need to declare the blank impls
+    impl WidgetImpl for SolanumWindow {}
+    impl WindowImpl for SolanumWindow {}
+    impl ApplicationWindowImpl for SolanumWindow {}
+    impl AdwApplicationWindowImpl for SolanumWindow {}
 }
-
-impl ObjectImpl for SolanumWindowPriv {
-    fn constructed(&self, obj: &Self::Type) {
-        self.parent_constructed(obj);
-        let builder = gtk::Builder::from_resource("/org/gnome/Solanum/gtk/help-overlay.ui");
-        let help_overlay = builder.get_object("help_overlay").unwrap();
-        obj.set_help_overlay(Some(&help_overlay));
-    }
-}
-
-// We don't need to override any vfuncs here, but since they're superclasses
-// we need to declare the blank impls
-impl WidgetImpl for SolanumWindowPriv {}
-impl WindowImpl for SolanumWindowPriv {}
-impl ApplicationWindowImpl for SolanumWindowPriv {}
-impl AdwApplicationWindowImpl for SolanumWindowPriv {}
 
 glib::wrapper! {
-    pub struct SolanumWindow(ObjectSubclass<SolanumWindowPriv>)
+    pub struct SolanumWindow(ObjectSubclass<imp::SolanumWindow>)
         @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, libadwaita::ApplicationWindow,
         @implements gio::ActionMap, gio::ActionGroup;
 }
@@ -131,13 +135,13 @@ impl SolanumWindow {
         win
     }
 
-    fn get_private(&self) -> &SolanumWindowPriv {
-        &SolanumWindowPriv::from_instance(self)
+    fn get_private(&self) -> &imp::SolanumWindow {
+        &imp::SolanumWindow::from_instance(self)
     }
 
     fn init(&self) {
-        let priv_ = self.get_private();
-        let timer_label = priv_.timer_label.get();
+        let imp = self.get_private();
+        let timer_label = imp.timer_label.get();
 
         self.update_lap_label();
 
@@ -147,8 +151,7 @@ impl SolanumWindow {
 
         // Set up (Sender, Receiver) of actions for the timer
         let (tx, rx) = glib::MainContext::channel::<TimerActions>(glib::PRIORITY_DEFAULT);
-        priv_
-            .timer
+        imp.timer
             .set(Timer::new(POMODORO_SECONDS, tx))
             .expect("Could not initialize timer");
         // The receiver will get certain actions from the Timer and run operations on the Window
@@ -167,8 +170,8 @@ impl SolanumWindow {
             self,
             "menu",
             clone!(@weak self as win => move |_, _| {
-                let priv_ = win.get_private();
-                let menu_button = priv_.menu_button.get();
+                let imp = win.get_private();
+                let menu_button = imp.menu_button.get();
                 menu_button.get_popover().unwrap().popup();
             })
         );
@@ -194,8 +197,8 @@ impl SolanumWindow {
     }
 
     fn skip(&self) {
-        let priv_ = self.get_private();
-        let lap_type = priv_.lap_type.get();
+        let imp = self.get_private();
+        let lap_type = imp.lap_type.get();
 
         let next_lap = if lap_type == LapType::Pomodoro {
             LapType::Break
@@ -210,21 +213,21 @@ impl SolanumWindow {
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
-        let priv_ = self.get_private();
-        let label = &*priv_.timer_label;
+        let imp = self.get_private();
+        let label = &*imp.timer_label;
         label.set_label(&format!("{:>02}∶{:>02}", min, sec));
         glib::Continue(true)
     }
 
     fn update_lap(&self, lap_type: LapType) {
-        let priv_ = self.get_private();
-        let label = &*priv_.lap_label;
-        let timer = priv_.timer.get().unwrap();
+        let imp = self.get_private();
+        let label = &*imp.lap_label;
+        let timer = imp.timer.get().unwrap();
 
-        priv_.lap_type.set(lap_type);
+        imp.lap_type.set(lap_type);
         timer.set_lap_type(lap_type);
 
-        let lap_number = &priv_.pomodoro_count;
+        let lap_number = &imp.pomodoro_count;
         println!("Setting lap to {:?}", lap_type);
 
         match lap_type {
@@ -251,7 +254,7 @@ impl SolanumWindow {
 
     // Callback to run whenever the timer is toggled - by button or action
     fn on_timer_toggled(&self, action: &gio::SimpleAction, _variant: Option<&glib::Variant>) {
-        let priv_ = self.get_private();
+        let imp = self.get_private();
         let action_state: bool = action.get_state().unwrap().get().unwrap();
         let timer_on = !action_state;
         action.set_state(&timer_on.to_variant());
@@ -264,8 +267,8 @@ impl SolanumWindow {
         skip.set_enabled(!timer_on);
 
         let timer = self.get_private().timer.get().unwrap();
-        let timer_label = &*priv_.timer_label;
-        let timer_button = &*priv_.timer_button;
+        let timer_label = &*imp.timer_label;
+        let timer_button = &*imp.timer_button;
 
         if timer_on {
             timer.start();
@@ -283,8 +286,8 @@ impl SolanumWindow {
 
     // Util for initializing the timer based on the contants at the top
     fn set_timer_label_from_secs(&self, secs: u64) {
-        let priv_ = self.get_private();
-        let label = &*priv_.timer_label;
+        let imp = self.get_private();
+        let label = &*imp.timer_label;
         let min = secs / 60;
         let secs = secs % 60;
         label.set_label(&format!("{:>02}∶{:>02}", min, secs));
@@ -323,15 +326,15 @@ impl SolanumWindow {
     }
 
     fn update_lap_label(&self) {
-        let priv_ = self.get_private();
+        let imp = self.get_private();
 
         // Translators: Every pomodoro session is made of 4 laps,
         // so {} will contain a number between 1 and 4. Lap is always singular.
-        priv_.lap_label.set_label(&ni18n_f(
+        imp.lap_label.set_label(&ni18n_f(
             "Lap {}",
             "Lap {}",
-            priv_.pomodoro_count.get(),
-            &[&priv_.pomodoro_count.get().to_string()],
+            imp.pomodoro_count.get(),
+            &[&imp.pomodoro_count.get().to_string()],
         ));
     }
 
