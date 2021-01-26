@@ -141,7 +141,7 @@ impl SolanumWindow {
 
     fn init(&self) {
         let imp = self.get_private();
-        let timer_label = imp.timer_label.get();
+        let timer_label = &*imp.timer_label;
 
         self.update_lap_label();
 
@@ -171,7 +171,7 @@ impl SolanumWindow {
             "menu",
             clone!(@weak self as win => move |_, _| {
                 let imp = win.get_private();
-                let menu_button = imp.menu_button.get();
+                let menu_button = &*imp.menu_button;
                 menu_button.get_popover().unwrap().popup();
             })
         );
