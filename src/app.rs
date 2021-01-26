@@ -35,62 +35,66 @@ use crate::config;
 use crate::i18n::i18n;
 use crate::window::SolanumWindow;
 
-// Private struct for SolanumApplication, containing struct fields
-#[derive(Debug)]
-pub struct SolanumApplicationPriv {
-    window: OnceCell<WeakRef<SolanumWindow>>,
-}
+mod imp {
+    use super::*;
 
-// Definite the GObject information for SolanumApplication
-impl ObjectSubclass for SolanumApplicationPriv {
-    const NAME: &'static str = "SolanumApplication";
-    type Type = SolanumApplication;
-    type ParentType = gtk::Application;
-    type Interfaces = ();
-    type Instance = subclass::simple::InstanceStruct<Self>;
-    type Class = subclass::simple::ClassStruct<Self>;
+    // Private struct for SolanumApplication, containing struct fields
+    #[derive(Debug)]
+    pub struct SolanumApplication {
+        pub window: OnceCell<WeakRef<SolanumWindow>>,
+    }
 
-    glib::object_subclass!();
+    // Definite the GObject information for SolanumApplication
+    impl ObjectSubclass for SolanumApplication {
+        const NAME: &'static str = "SolanumApplication";
+        type Type = super::SolanumApplication;
+        type ParentType = gtk::Application;
+        type Interfaces = ();
+        type Instance = subclass::simple::InstanceStruct<Self>;
+        type Class = subclass::simple::ClassStruct<Self>;
 
-    fn new() -> Self {
-        Self {
-            window: OnceCell::new(),
+        glib::object_subclass!();
+
+        fn new() -> Self {
+            Self {
+                window: OnceCell::new(),
+            }
         }
     }
-}
 
-// *Impl traits implement any vfuncs when subclassing a GObject
-impl ObjectImpl for SolanumApplicationPriv {}
+    // *Impl traits implement any vfuncs when subclassing a GObject
+    impl ObjectImpl for SolanumApplication {}
 
-impl ApplicationImpl for SolanumApplicationPriv {
-    fn activate(&self, application: &Self::Type) {
-        let window = application.get_main_window();
-        window.show();
-        window.present();
+    impl ApplicationImpl for SolanumApplication {
+        fn activate(&self, application: &Self::Type) {
+            let window = application.get_main_window();
+            window.show();
+            window.present();
+        }
+
+        // Entry point for GApplication
+        fn startup(&self, application: &Self::Type) {
+            self.parent_startup(application);
+
+            application.set_resource_base_path(Some("/org/gnome/Solanum/"));
+
+            let window = SolanumWindow::new(application);
+            window.set_title(Some(&i18n("Solanum")));
+            window.set_icon_name(Some(&config::APP_ID.to_owned()));
+            self.window
+                .set(window.downgrade())
+                .expect("Failed to init application window");
+
+            application.setup_actions();
+            application.setup_accels();
+        }
     }
 
-    // Entry point for GApplication
-    fn startup(&self, application: &Self::Type) {
-        self.parent_startup(application);
-
-        application.set_resource_base_path(Some("/org/gnome/Solanum/"));
-
-        let window = SolanumWindow::new(application);
-        window.set_title(Some(&i18n("Solanum")));
-        window.set_icon_name(Some(&config::APP_ID.to_owned()));
-        self.window
-            .set(window.downgrade())
-            .expect("Failed to init application window");
-
-        application.setup_actions();
-        application.setup_accels();
-    }
+    impl GtkApplicationImpl for SolanumApplication {}
 }
-
-impl GtkApplicationImpl for SolanumApplicationPriv {}
 
 glib::wrapper! {
-    pub struct SolanumApplication(ObjectSubclass<SolanumApplicationPriv>)
+    pub struct SolanumApplication(ObjectSubclass<imp::SolanumApplication>)
         @extends gio::Application, gtk::Application,
         @implements gio::ActionGroup, gio::ActionMap;
 }
@@ -106,8 +110,8 @@ impl SolanumApplication {
     }
 
     fn get_main_window(&self) -> SolanumWindow {
-        let priv_ = SolanumApplicationPriv::from_instance(self);
-        priv_.window.get().unwrap().clone().upgrade().unwrap()
+        let imp = imp::SolanumApplication::from_instance(self);
+        imp.window.get().unwrap().clone().upgrade().unwrap()
     }
 
     // Sets up gio::SimpleActions for the Application
