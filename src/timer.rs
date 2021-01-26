@@ -67,6 +67,7 @@ impl ObjectSubclass for TimerPriv {
     const NAME: &'static str = "SolanumTimer";
     type Type = Timer;
     type ParentType = glib::Object;
+    type Interfaces = ();
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 

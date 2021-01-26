@@ -46,6 +46,7 @@ impl ObjectSubclass for SolanumApplicationPriv {
     const NAME: &'static str = "SolanumApplication";
     type Type = SolanumApplication;
     type ParentType = gtk::Application;
+    type Interfaces = ();
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 

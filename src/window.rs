@@ -45,9 +45,9 @@ static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
 
 static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
 static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
-static WINDOW_URI: &str = "/org/gnome/Solanum/window.ui";
 
 #[derive(Debug, CompositeTemplate)]
+#[template(resource = "/org/gnome/Solanum/window.ui")]
 pub struct SolanumWindowPriv {
     pomodoro_count: Cell<u32>,
     timer: OnceCell<Timer>,
@@ -67,6 +67,7 @@ impl ObjectSubclass for SolanumWindowPriv {
     const NAME: &'static str = "SolanumWindow";
     type Type = SolanumWindow;
     type ParentType = libadwaita::ApplicationWindow;
+    type Interfaces = ();
     type Instance = subclass::simple::InstanceStruct<Self>;
     type Class = subclass::simple::ClassStruct<Self>;
 
@@ -86,8 +87,7 @@ impl ObjectSubclass for SolanumWindowPriv {
     }
 
     fn class_init(klass: &mut Self::Class) {
-        klass.set_template_from_resource(WINDOW_URI);
-        Self::bind_template_children(klass);
+        Self::bind_template(klass);
     }
 
     fn instance_init(obj: &subclass::InitializingObject<Self::Type>) {
