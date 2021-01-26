@@ -54,82 +54,83 @@ impl Default for TimerState {
     }
 }
 
-#[derive(Debug)]
-pub struct TimerPriv {
-    state: Rc<RefCell<TimerState>>,
-    instant: Rc<RefCell<Option<Instant>>>,
-    duration: Rc<RefCell<Duration>>,
-    sender: OnceCell<glib::Sender<TimerActions>>,
-    lap_type: Rc<RefCell<LapType>>,
-}
+mod imp {
+    use super::*;
 
-impl ObjectSubclass for TimerPriv {
-    const NAME: &'static str = "SolanumTimer";
-    type Type = Timer;
-    type ParentType = glib::Object;
-    type Interfaces = ();
-    type Instance = subclass::simple::InstanceStruct<Self>;
-    type Class = subclass::simple::ClassStruct<Self>;
+    #[derive(Debug)]
+    pub struct Timer {
+        pub state: Rc<RefCell<TimerState>>,
+        pub instant: Rc<RefCell<Option<Instant>>>,
+        pub duration: Rc<RefCell<Duration>>,
+        pub sender: OnceCell<glib::Sender<TimerActions>>,
+        pub lap_type: Rc<RefCell<LapType>>,
+    }
 
-    glib::object_subclass!();
+    impl ObjectSubclass for Timer {
+        const NAME: &'static str = "SolanumTimer";
+        type Type = super::Timer;
+        type ParentType = glib::Object;
+        type Interfaces = ();
+        type Instance = subclass::simple::InstanceStruct<Self>;
+        type Class = subclass::simple::ClassStruct<Self>;
 
-    fn new() -> Self {
-        Self {
-            state: Rc::new(RefCell::new(TimerState::default())),
-            instant: Rc::new(RefCell::new(None)),
-            duration: Rc::new(RefCell::new(Duration::new(0, 0))),
-            sender: OnceCell::new(),
-            lap_type: Rc::new(RefCell::new(LapType::Pomodoro)),
+        glib::object_subclass!();
+
+        fn new() -> Self {
+            Self {
+                state: Rc::new(RefCell::new(TimerState::default())),
+                instant: Rc::new(RefCell::new(None)),
+                duration: Rc::new(RefCell::new(Duration::new(0, 0))),
+                sender: OnceCell::new(),
+                lap_type: Rc::new(RefCell::new(LapType::Pomodoro)),
+            }
         }
     }
+
+    impl ObjectImpl for Timer {}
 }
 
-impl ObjectImpl for TimerPriv {}
-
 glib::wrapper! {
-    pub struct Timer(ObjectSubclass<TimerPriv>);
+    pub struct Timer(ObjectSubclass<imp::Timer>);
 }
 
 impl Timer {
     pub fn new(duration: u64, sender: glib::Sender<TimerActions>) -> Self {
         let obj: Self = glib::Object::new::<Self>(&[]).expect("Failed to initialize Timer object");
-        let priv_ = obj.get_private();
+        let imp = obj.get_private();
 
         obj.set_duration(duration);
-        priv_
-            .sender
-            .set(sender)
-            .expect("Could not initialize sender");
+        imp.sender.set(sender).expect("Could not initialize sender");
 
         obj
     }
 
-    fn get_private(&self) -> &TimerPriv {
-        &TimerPriv::from_instance(self)
+    fn get_private(&self) -> &imp::Timer {
+        &imp::Timer::from_instance(self)
     }
 
     pub fn set_duration(&self, duration: u64) {
-        let priv_ = self.get_private();
+        let imp = self.get_private();
 
-        let mut i = priv_.instant.borrow_mut();
+        let mut i = imp.instant.borrow_mut();
         *i = Some(Instant::now());
-        let mut d = priv_.duration.borrow_mut();
+        let mut d = imp.duration.borrow_mut();
         *d = Duration::new(duration, 0);
     }
 
     pub fn start(&self) {
-        let priv_ = self.get_private();
+        let imp = self.get_private();
 
-        let mut state = priv_.state.borrow_mut();
+        let mut state = imp.state.borrow_mut();
         *state = TimerState::Running;
-        let mut instant = priv_.instant.borrow_mut();
+        let mut instant = imp.instant.borrow_mut();
         *instant = Some(Instant::now());
 
-        let s = &priv_.state;
-        let i = &priv_.instant;
-        let d = &priv_.duration;
-        let tx = priv_.sender.clone();
-        let lt = &priv_.lap_type;
+        let s = &imp.state;
+        let i = &imp.instant;
+        let d = &imp.duration;
+        let tx = imp.sender.clone();
+        let lt = &imp.lap_type;
         // Every 100 milliseconds, this closure gets called in order to update the timer
         glib::timeout_add_local(
             std::time::Duration::from_millis(100),
@@ -167,14 +168,14 @@ impl Timer {
     }
 
     pub fn stop(&self) {
-        let priv_ = self.get_private();
+        let imp = self.get_private();
 
-        let mut state = priv_.state.borrow_mut();
+        let mut state = imp.state.borrow_mut();
         *state = TimerState::Stopped;
 
         // When paused, set the timer so that it will resume where the user left off
-        let mut duration = priv_.duration.borrow_mut();
-        let instant = priv_.instant.borrow_mut().unwrap();
+        let mut duration = imp.duration.borrow_mut();
+        let instant = imp.instant.borrow_mut().unwrap();
         let elapsed = instant.elapsed();
         if let Some(difference) = duration.checked_sub(elapsed) {
             *duration = difference;
@@ -184,8 +185,8 @@ impl Timer {
     }
 
     pub fn set_lap_type(&self, new_type: LapType) {
-        let priv_ = self.get_private();
-        let mut lap_type = priv_.lap_type.borrow_mut();
+        let imp = self.get_private();
+        let mut lap_type = imp.lap_type.borrow_mut();
 
         *lap_type = new_type;
     }
