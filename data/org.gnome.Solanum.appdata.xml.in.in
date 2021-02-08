@@ -27,6 +27,16 @@
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
+    <release version="2.1.0" date="2021-02-08">
+      <description>
+        <p>The 2.1.0 release of Solanum brings translations, bug fixes, and a minor redesign.</p>
+        <ul>
+          <li>Adjust the main window's design to match new styling for applets</li>
+          <li>Updated Finnish and Serbian translations</li>
+          <li>Disable idle animation when the app is running in the background</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.0.0" date="2020-12-16">
       <description>
         <p>The 2.0.0 release of Solanum brings translations, bug fixes, and a port to GTK 4.</p>
