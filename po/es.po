@@ -1,14 +1,14 @@
 # Spanish translation for solanum.
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2020.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2020-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-10-12 09:07+0000\n"
-"PO-Revision-Date: 2020-10-13 15:36+0200\n"
+"POT-Creation-Date: 2020-12-16 19:50+0000\n"
+"PO-Revision-Date: 2021-02-16 16:46+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Gtranslator 3.38.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:299
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -66,62 +66,66 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Salir"
 
-#: data/ui/menu.ui:8
+#: data/ui/window.ui:118
 msgid "_Keyboard Shortcuts"
 msgstr "Atajos del _teclado"
 
-#: data/ui/menu.ui:12
+#: data/ui/window.ui:122
 msgid "_About Solanum"
 msgstr "_Acerca de Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:171
 msgid "A pomodoro timer for GNOME"
 msgstr "Un temporizador Pomodoro para GNOME"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
 msgid "translator-credits"
-msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2020"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2020-2021"
 
-#: src/app.rs:189
+#: src/app.rs:179
 msgid "Donate on Patreon"
 msgstr "Donar en Patreon"
 
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Tramo {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:237
 msgid "Long Break"
 msgstr "Pausa larga"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:242
 msgid "Short Break"
 msgstr "Pausa corta"
 
-#: src/window.rs:388
+#: src/window.rs:303
 msgid "Back to Work"
 msgstr "Volver al trabajo"
 
-#: src/window.rs:389
+#: src/window.rs:304
 msgid "Ready to keep working?"
 msgstr "¿Listo para seguir trabajando?"
 
-#: src/window.rs:390
+#: src/window.rs:305
 msgid "Start Working"
 msgstr "Empezar a trabajar"
 
-#: src/window.rs:393
+#: src/window.rs:308
 msgid "Break Time"
 msgstr "Tiempo de descanso"
 
-#: src/window.rs:394
+#: src/window.rs:309
 msgid "Stretch your legs, and drink some water."
 msgstr "Estire sus piernas y beba un poco de agua."
 
-#: src/window.rs:395
+#: src/window.rs:310
 msgid "Start Break"
 msgstr "Iniciar pausa"
 
-#: src/window.rs:401
+#: src/window.rs:316
 msgid "Skip"
 msgstr "Omitir"
+
+#: src/window.rs:329
+#| msgid "Lap {}"
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Tramo {}"
+msgstr[1] "Tramo {}"
