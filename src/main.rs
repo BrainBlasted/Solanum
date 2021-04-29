@@ -31,7 +31,7 @@ use crate::app::SolanumApplication;
 // Entry point for the application
 fn main() {
     // Initiialize gtk, gstreamer, and libhandy.
-    gtk::init().expect("Failed to initialize gstreamer");
+    gtk::init().expect("Failed to initialize gtk");
     gstreamer::init().expect("Failed to initialize gstreamer");
     libadwaita::init();
 
