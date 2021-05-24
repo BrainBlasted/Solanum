@@ -1,0 +1,129 @@
+# Chinese (China) translation for solanum.
+# Copyright (C) 2020-2021 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# D <damnedlies@163.com>, 2020.
+# Dingzhong Chen <wsxy162@gmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2021-05-14 12:37+0000\n"
+"PO-Revision-Date: 2021-05-24 23:44+0800\n"
+"Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
+"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:82 src/window.rs:304
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "平衡工作时间和休息时间"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum 是个时间跟踪应用，使用番茄工作法。工作分 4 个时段，在每个时段之间休"
+"息，在全部 4 个时段之后有一次长时间休息。"
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;番茄工作法;计时器;生产力;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "常规快捷键"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "显示主菜单"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "显示键盘快捷键"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#: data/ui/window.ui:109
+msgid "_Keyboard Shortcuts"
+msgstr "快捷键(_K)"
+
+#: data/ui/window.ui:113
+msgid "_About Solanum"
+msgstr "关于 Solanum(_A)"
+
+#: src/app.rs:172
+msgid "A pomodoro timer for GNOME"
+msgstr "用于 GNOME 的番茄工作法计时器"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:174
+msgid "translator-credits"
+msgstr "D <damnedlies@163.com>, 2020."
+
+#: src/app.rs:180
+msgid "Donate on Patreon"
+msgstr "在 Patreon 上捐赠"
+
+#: src/window.rs:242
+msgid "Long Break"
+msgstr "长时间休息"
+
+#: src/window.rs:247
+msgid "Short Break"
+msgstr "短时间休息"
+
+#: src/window.rs:308
+msgid "Back to Work"
+msgstr "返回工作"
+
+#: src/window.rs:309
+msgid "Ready to keep working?"
+msgstr "准备好继续工作了吗？"
+
+#: src/window.rs:310
+msgid "Start Working"
+msgstr "开始工作"
+
+#: src/window.rs:313
+msgid "Break Time"
+msgstr "休息时间"
+
+#: src/window.rs:314
+msgid "Stretch your legs, and drink some water."
+msgstr "伸伸腿，喝喝水。"
+
+#: src/window.rs:315
+msgid "Start Break"
+msgstr "开始休息"
+
+#: src/window.rs:321
+msgid "Skip"
+msgstr "跳过"
+
+#: src/window.rs:334
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "番茄钟 {}"
