@@ -45,15 +45,11 @@ mod imp {
     }
 
     // Definite the GObject information for SolanumApplication
+    #[glib::object_subclass]
     impl ObjectSubclass for SolanumApplication {
         const NAME: &'static str = "SolanumApplication";
         type Type = super::SolanumApplication;
         type ParentType = gtk::Application;
-        type Interfaces = ();
-        type Instance = subclass::simple::InstanceStruct<Self>;
-        type Class = subclass::simple::ClassStruct<Self>;
-
-        glib::object_subclass!();
 
         fn new() -> Self {
             Self {
@@ -137,7 +133,7 @@ impl SolanumApplication {
             "toggle-timer",
             clone!(@strong self as app => move |_, _| {
                 let win = app.get_main_window();
-                win.activate_action("toggle-timer", None);
+                gio::prelude::ActionGroupExt::activate_action(&win, "toggle-timer", None);
             })
         );
 
@@ -146,7 +142,7 @@ impl SolanumApplication {
             "skip",
             clone!(@strong self as app => move |_, _| {
                 let win = app.get_main_window();
-                win.activate_action("skip", None);
+                gio::prelude::ActionGroupExt::activate_action(&win, "skip", None);
             })
         );
     }
@@ -159,7 +155,7 @@ impl SolanumApplication {
 
     // About dialog
     fn show_about(&self) {
-        let window = self.get_active_window();
+        let window = self.active_window();
         let authors = vec!["Christopher Davis <christopherdavis@gnome.org>".to_string()];
         let artists = vec![
             "Tobias Bernard https://tobiasbernard.com".to_string(),

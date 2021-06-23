@@ -66,15 +66,11 @@ mod imp {
         pub menu_button: TemplateChild<gtk::MenuButton>,
     }
 
+    #[glib::object_subclass]
     impl ObjectSubclass for SolanumWindow {
         const NAME: &'static str = "SolanumWindow";
         type Type = super::SolanumWindow;
         type ParentType = libadwaita::ApplicationWindow;
-        type Interfaces = ();
-        type Instance = subclass::simple::InstanceStruct<Self>;
-        type Class = subclass::simple::ClassStruct<Self>;
-
-        glib::object_subclass!();
 
         fn new() -> Self {
             Self {
@@ -93,7 +89,7 @@ mod imp {
             Self::bind_template(klass);
         }
 
-        fn instance_init(obj: &subclass::InitializingObject<Self::Type>) {
+        fn instance_init(obj: &subclass::InitializingObject<Self>) {
             obj.init_template();
         }
     }
@@ -102,7 +98,7 @@ mod imp {
         fn constructed(&self, obj: &Self::Type) {
             self.parent_constructed(obj);
             let builder = gtk::Builder::from_resource("/org/gnome/Solanum/gtk/help-overlay.ui");
-            let help_overlay = builder.get_object("help_overlay").unwrap();
+            let help_overlay = builder.object("help_overlay").unwrap();
             obj.set_help_overlay(Some(&help_overlay));
         }
     }
@@ -172,7 +168,7 @@ impl SolanumWindow {
             clone!(@weak self as win => move |_, _| {
                 let imp = win.get_private();
                 let menu_button = &*imp.menu_button;
-                menu_button.get_popover().unwrap().popup();
+                menu_button.popover().unwrap().popup();
             })
         );
 
@@ -255,7 +251,7 @@ impl SolanumWindow {
     // Callback to run whenever the timer is toggled - by button or action
     fn on_timer_toggled(&self, action: &gio::SimpleAction, _variant: Option<&glib::Variant>) {
         let imp = self.get_private();
-        let action_state: bool = action.get_state().unwrap().get().unwrap();
+        let action_state: bool = action.state().unwrap().get().unwrap();
         let timer_on = !action_state;
         action.set_state(&timer_on.to_variant());
 
@@ -319,7 +315,7 @@ impl SolanumWindow {
             notif.set_body(Some(&body));
             notif.add_button(&button, "app.toggle-timer");
             notif.add_button(&i18n("Skip"), "app.skip");
-            let app = self.get_application().unwrap();
+            let app = self.application().unwrap();
             app.send_notification(Some("timer-notif"), &notif);
         }
         self.play_sound(CHIME_URI);

@@ -66,15 +66,11 @@ mod imp {
         pub lap_type: Rc<RefCell<LapType>>,
     }
 
+    #[glib::object_subclass]
     impl ObjectSubclass for Timer {
         const NAME: &'static str = "SolanumTimer";
         type Type = super::Timer;
         type ParentType = glib::Object;
-        type Interfaces = ();
-        type Instance = subclass::simple::InstanceStruct<Self>;
-        type Class = subclass::simple::ClassStruct<Self>;
-
-        glib::object_subclass!();
 
         fn new() -> Self {
             Self {

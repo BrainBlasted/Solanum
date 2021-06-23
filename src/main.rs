@@ -53,13 +53,13 @@ fn main() {
     let provider = gtk::CssProvider::new();
     provider.load_from_resource("/org/gnome/Solanum/style.css");
     gtk::StyleContext::add_provider_for_display(
-        &gdk::Display::get_default().unwrap(),
+        &gdk::Display::default().unwrap(),
         &provider,
-        600,
+        gtk::STYLE_PROVIDER_PRIORITY_APPLICATION,
     );
 
     let app = SolanumApplication::new();
 
-    let ret = app.run(&std::env::args().collect::<Vec<_>>());
+    let ret = app.run();
     std::process::exit(ret);
 }

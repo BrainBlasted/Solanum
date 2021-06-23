@@ -41,7 +41,7 @@
                   <object class="GtkLabel" id="timer_label">
                     <style>
                       <class name="timer_label"/>
-                      <class name="blue_text"/>
+                      <class name="accent"/>
                       <class name="blinking"/>
                     </style>
                   </object>

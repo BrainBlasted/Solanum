@@ -23,21 +23,20 @@ menubutton.circular > button {
 }
 
 headerbar.flat {
-  background-image: none;
+  background: none;
   border: none;
-  background-color: @theme_bg_color;
 }
 
 @keyframes blinkingText {
   0% {
-    color: @theme_selected_bg_color;
+    color: @accent_color;
   }
   50% {
     color: @theme_text_color;
     opacity: 0.5;
   }
   100% {
-    color: @theme_selected_bg_color;
+    color: @accent_color;
   }
 }
 
@@ -45,8 +44,4 @@ headerbar.flat {
   font-size: 400%;
   font-weight: 300;
   font-feature-settings: "tnum" 1;
-}
-
-.blue_text {
-  color: @theme_selected_bg_color;
 }
