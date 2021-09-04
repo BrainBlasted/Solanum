@@ -1,0 +1,128 @@
+# Korean translation for solanum.
+# Copyright (C) 2021 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Seong-ho Cho <shcho@gnome.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2021-08-03 10:57+0000\n"
+"PO-Revision-Date: 2021-09-02 02:44+0900\n"
+"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+msgid "Solanum"
+msgstr "솔라넘"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "업무 시간과 쉬는 시간 균형을 맞춥니다"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"솔라넘은 포모도로 기술을 활용하는 시간 관리 앱입니다. 4시간 동안 일하되, 각 "
+"시간 별로 쉬는 시간을 부여하며 4시간이 지나면 긴 쉬는 시간을 넣습니다."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;뽀모도로;포모도로;Timer;타이머;Productivity;생산성;"
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "일반 바로 가기 키"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "기본 메뉴 표시"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "키보드 바로 가기 키 표시"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "끝내기"
+
+#: data/ui/window.ui:109
+msgid "_Keyboard Shortcuts"
+msgstr "키보드 바로 가기 키(_K)"
+
+#: data/ui/window.ui:113
+msgid "_About Solanum"
+msgstr "솔라넘 정보(_A)"
+
+#: src/app.rs:168
+msgid "A pomodoro timer for GNOME"
+msgstr "그놈용 뽀모도로 타이머"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:170
+msgid "translator-credits"
+msgstr "조성호 <shcho@gnome.org>, 2021"
+
+#: src/app.rs:176
+msgid "Donate on Patreon"
+msgstr "패트리언에 기부하기"
+
+#: src/window.rs:238
+msgid "Long Break"
+msgstr "긴 쉬는 시간"
+
+#: src/window.rs:243
+msgid "Short Break"
+msgstr "짧은 쉬는 시간"
+
+#: src/window.rs:304
+msgid "Back to Work"
+msgstr "업무 복귀"
+
+#: src/window.rs:305
+msgid "Ready to keep working?"
+msgstr "계속 일할 준비가 됐나요?"
+
+#: src/window.rs:306
+msgid "Start Working"
+msgstr "업무 시작"
+
+#: src/window.rs:309
+msgid "Break Time"
+msgstr "쉬는 시간"
+
+#: src/window.rs:310
+msgid "Stretch your legs, and drink some water."
+msgstr "다리를 쭉 펴고, 물을 챙겨 드세요."
+
+#: src/window.rs:311
+msgid "Start Break"
+msgstr "휴식 시작"
+
+#: src/window.rs:317
+msgid "Skip"
+msgstr "건너뛰기"
+
+#: src/window.rs:330
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Lap {}"
