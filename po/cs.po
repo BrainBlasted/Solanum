@@ -1,14 +1,15 @@
 # Czech translation for solanum.
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# Marek Černocký <marek@manet.cz>, 2020.
+#
+# Marek Černocký <marek@manet.cz>, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-11-09 19:44+0000\n"
-"PO-Revision-Date: 2020-11-16 22:07+0100\n"
+"POT-Creation-Date: 2020-12-16 19:50+0000\n"
+"PO-Revision-Date: 2021-09-05 09:48+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:299
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -65,62 +66,66 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ukončit"
 
-#: data/ui/menu.ui:8
+#: data/ui/window.ui:118
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
 
-#: data/ui/menu.ui:12
+#: data/ui/window.ui:122
 msgid "_About Solanum"
 msgstr "O _aplikaci Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:171
 msgid "A pomodoro timer for GNOME"
 msgstr "Organizace času pomodoro pro GNOME"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:173
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: src/app.rs:189
+#: src/app.rs:179
 msgid "Donate on Patreon"
 msgstr "Přispět přes Patreon"
 
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Cyklus {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:237
 msgid "Long Break"
 msgstr "Dlouhá přestávka"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:242
 msgid "Short Break"
 msgstr "Krátká přestávka"
 
-#: src/window.rs:388
+#: src/window.rs:303
 msgid "Back to Work"
 msgstr "Zpět do práce"
 
-#: src/window.rs:389
+#: src/window.rs:304
 msgid "Ready to keep working?"
 msgstr "Jste připraveni pokračovat v práci?"
 
-#: src/window.rs:390
+#: src/window.rs:305
 msgid "Start Working"
 msgstr "Začít pracovat"
 
-#: src/window.rs:393
+#: src/window.rs:308
 msgid "Break Time"
 msgstr "Čas přestávky"
 
-#: src/window.rs:394
+#: src/window.rs:309
 msgid "Stretch your legs, and drink some water."
 msgstr "Protáhněte si nohy a napijte se vody."
 
-#: src/window.rs:395
+#: src/window.rs:310
 msgid "Start Break"
 msgstr "Začít přestávku"
 
-#: src/window.rs:401
+#: src/window.rs:316
 msgid "Skip"
 msgstr "Přeskočit"
+
+#: src/window.rs:329
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "{}. cyklus"
+msgstr[1] "{}. cyklus"
+msgstr[2] "{}. cyklus"
