@@ -25,7 +25,6 @@ use glib::clone;
 use glib::WeakRef;
 
 use gio::ApplicationFlags;
-use glib::subclass;
 use glib::subclass::prelude::*;
 use gtk::subclass::prelude::*;
 
@@ -101,6 +100,7 @@ impl SolanumApplication {
         glib::Object::new(&[
             ("application-id", &config::APP_ID.to_owned()),
             ("flags", &ApplicationFlags::empty()),
+            ("resource-base-path", &"/org/gnome/Solanum".to_owned()),
         ])
         .unwrap()
     }

@@ -18,7 +18,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 use glib::clone;
-use glib::subclass;
 use glib::subclass::prelude::*;
 
 // `Rc`s are Reference Counters. They allow us to clone objects,
