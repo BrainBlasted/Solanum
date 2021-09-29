@@ -3,13 +3,6 @@ button.large {
   min-height: 48px;
 }
 
-menubutton.circular > button {
-  border-radius: 9999px;
-  min-width: 32px;
-  min-height: 32px;
-  padding: 0;
-}
-
 .main_box {
   padding: 24px;
 }
@@ -20,11 +13,6 @@ menubutton.circular > button {
 
 .blinking:backdrop {
   animation: none;
-}
-
-headerbar.flat {
-  background: none;
-  border: none;
 }
 
 @keyframes blinkingText {
@@ -44,4 +32,8 @@ headerbar.flat {
   font-size: 400%;
   font-weight: 300;
   font-feature-settings: "tnum" 1;
+}
+
+.tool-window:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) {
+	background: alpha(@theme_bg_color, 0.96);
 }
