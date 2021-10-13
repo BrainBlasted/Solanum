@@ -17,8 +17,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-use glib::clone;
-use glib::subclass::prelude::*;
+use glib::prelude::*;
+use glib::subclass::{prelude::*, Signal};
+use glib::{clone, GEnum, StaticType};
 
 // `Rc`s are Reference Counters. They allow us to clone objects,
 // while actually referencing at different places.
@@ -26,19 +27,20 @@ use glib::subclass::prelude::*;
 use std::time::{Duration, Instant};
 use std::{cell::RefCell, rc::Rc};
 
-// OnceCell allows for a "nullable" field in a simple way.
-use once_cell::sync::OnceCell;
+// `Lazy` is a structure for Lazy loading things during runtime.
+use once_cell::sync::Lazy;
 
-#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, GEnum)]
+#[genum(type_name = "SolanumLapType")]
 pub enum LapType {
     Pomodoro,
     Break,
 }
 
-#[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub enum TimerActions {
-    CountdownUpdate(u32, u32),
-    Lap(LapType),
+impl Default for LapType {
+    fn default() -> Self {
+        Self::Pomodoro
+    }
 }
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
@@ -56,12 +58,11 @@ impl Default for TimerState {
 mod imp {
     use super::*;
 
-    #[derive(Debug)]
+    #[derive(Debug, Default)]
     pub struct Timer {
         pub state: Rc<RefCell<TimerState>>,
         pub instant: Rc<RefCell<Option<Instant>>>,
         pub duration: Rc<RefCell<Duration>>,
-        pub sender: OnceCell<glib::Sender<TimerActions>>,
         pub lap_type: Rc<RefCell<LapType>>,
     }
 
@@ -70,19 +71,29 @@ mod imp {
         const NAME: &'static str = "SolanumTimer";
         type Type = super::Timer;
         type ParentType = glib::Object;
-
-        fn new() -> Self {
-            Self {
-                state: Rc::new(RefCell::new(TimerState::default())),
-                instant: Rc::new(RefCell::new(None)),
-                duration: Rc::new(RefCell::new(Duration::new(0, 0))),
-                sender: OnceCell::new(),
-                lap_type: Rc::new(RefCell::new(LapType::Pomodoro)),
-            }
-        }
     }
 
-    impl ObjectImpl for Timer {}
+    impl ObjectImpl for Timer {
+        fn signals() -> &'static [Signal] {
+            static SIGNALS: Lazy<Vec<Signal>> = Lazy::new(|| {
+                vec![
+                    Signal::builder(
+                        "countdown-update",
+                        &[u32::static_type().into(), u32::static_type().into()],
+                        <()>::static_type().into(),
+                    )
+                    .build(),
+                    Signal::builder(
+                        "lap",
+                        &[LapType::static_type().into()],
+                        <()>::static_type().into(),
+                    )
+                    .build(),
+                ]
+            });
+            SIGNALS.as_ref()
+        }
+    }
 }
 
 glib::wrapper! {
@@ -90,14 +101,38 @@ glib::wrapper! {
 }
 
 impl Timer {
-    pub fn new(duration: u64, sender: glib::Sender<TimerActions>) -> Self {
+    pub fn new(duration: u64) -> Self {
         let obj: Self = glib::Object::new::<Self>(&[]).expect("Failed to initialize Timer object");
-        let imp = obj.get_private();
-
         obj.set_duration(duration);
-        imp.sender.set(sender).expect("Could not initialize sender");
-
         obj
+    }
+
+    pub fn connect_countdown_update<F: Fn(&Self, u32, u32) + 'static>(
+        &self,
+        f: F,
+    ) -> glib::SignalHandlerId {
+        self.connect_local("countdown-update", true, move |values| {
+            let timer = values[0].get::<Self>().unwrap();
+            let minutes = values[1].get::<u32>().unwrap();
+            let seconds = values[2].get::<u32>().unwrap();
+
+            f(&timer, minutes, seconds);
+
+            None
+        })
+        .unwrap()
+    }
+
+    pub fn connect_lap<F: Fn(&Self, LapType) + 'static>(&self, f: F) -> glib::SignalHandlerId {
+        self.connect_local("lap", true, move |values| {
+            let timer = values[0].get::<Self>().unwrap();
+            let lap_type = values[1].get::<LapType>().unwrap();
+
+            f(&timer, lap_type);
+
+            None
+        })
+        .unwrap()
     }
 
     fn get_private(&self) -> &imp::Timer {
@@ -124,39 +159,34 @@ impl Timer {
         let s = &imp.state;
         let i = &imp.instant;
         let d = &imp.duration;
-        let tx = imp.sender.clone();
         let lt = &imp.lap_type;
         // Every 100 milliseconds, this closure gets called in order to update the timer
         glib::timeout_add_local(
             std::time::Duration::from_millis(100),
-            clone!(@weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
-                let state = s.borrow_mut();
-                let instant = i.borrow_mut();
-                let duration = d.borrow_mut();
-                let sender = tx.get().unwrap();
-                let mut lap_type = lt.borrow_mut();
-
-                if *state == TimerState::Running {
-                    if let Some(instant) = *instant {
-                        let elapsed = instant.elapsed();
-                        if let Some(difference) = duration.checked_sub(elapsed) {
-                            let msm = duration_to_ms(difference);
-                            let _ = sender.send(TimerActions::CountdownUpdate(msm.0, msm.1));
-                            return glib::Continue(true);
-                        } else {
-                            let new_lt = {
-                                if *lap_type == LapType::Pomodoro {
-                                    LapType::Break
-                                } else {
-                                    LapType::Pomodoro
-                                }
-                            };
-                            *lap_type = new_lt;
-                            let _ = sender.send(TimerActions::Lap(new_lt));
-                            return glib::Continue(false);
-                        }
+            clone!(@weak self as timer, @weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
+                if *s.borrow() == TimerState::Running {
+                    if let Some(difference) = {
+                        let instant = i.borrow().expect("Timer is running, but no instant is set.");
+                        let duration = d.borrow();
+                        duration.checked_sub(instant.elapsed())
+                    } {
+                        let msm = duration_to_ms(difference);
+                        let _ = timer.emit_by_name("countdown-update", &[&msm.0, &msm.1]);
+                        return glib::Continue(true);
+                    } else {
+                        let new_lt = {
+                            if *lt.borrow() == LapType::Pomodoro {
+                                LapType::Break
+                            } else {
+                                LapType::Pomodoro
+                            }
+                        };
+                        timer.set_lap_type(new_lt);
+                        let _ = timer.emit_by_name("lap", &[&new_lt]);
+                        return glib::Continue(false);
                     }
                 }
+
                 glib::Continue(false)
             }),
         );
@@ -170,7 +200,7 @@ impl Timer {
 
         // When paused, set the timer so that it will resume where the user left off
         let mut duration = imp.duration.borrow_mut();
-        let instant = imp.instant.borrow_mut().unwrap();
+        let instant = imp.instant.borrow().unwrap();
         let elapsed = instant.elapsed();
         if let Some(difference) = duration.checked_sub(elapsed) {
             *duration = difference;

@@ -36,7 +36,7 @@ use std::cell::Cell;
 
 use crate::config;
 use crate::i18n::*;
-use crate::timer::{LapType, Timer, TimerActions};
+use crate::timer::{LapType, Timer};
 
 static POMODORO_SECONDS: u64 = 1500; // == 25 Minutes
 static SHORT_BREAK_SECONDS: u64 = 300; // == 5 minutes
@@ -137,19 +137,22 @@ impl SolanumWindow {
         let secs = POMODORO_SECONDS % 60;
         timer_label.set_label(&format!("{:>02}∶{:>02}", min, secs));
 
-        // Set up (Sender, Receiver) of actions for the timer
-        let (tx, rx) = glib::MainContext::channel::<TimerActions>(glib::PRIORITY_DEFAULT);
         imp.timer
-            .set(Timer::new(POMODORO_SECONDS, tx))
+            .set(Timer::new(POMODORO_SECONDS))
             .expect("Could not initialize timer");
-        // The receiver will get certain actions from the Timer and run operations on the Window
-        rx.attach(
-            None,
-            clone!(@weak self as win => @default-return glib::Continue(true), move |action| match action {
-                TimerActions::CountdownUpdate(min, sec) => win.update_countdown(min, sec),
-                TimerActions::Lap(lap_type) => win.next_lap(lap_type),
+
+        imp.timer.get().unwrap().connect_countdown_update(
+            clone!(@weak self as win => move |_, minutes, seconds| {
+                win.update_countdown(minutes, seconds);
             }),
         );
+
+        imp.timer
+            .get()
+            .unwrap()
+            .connect_lap(clone!(@weak self as win => move |_, lap_type| {
+                win.next_lap(lap_type);
+            }));
     }
 
     // Set up actions on the Window itself
@@ -213,7 +216,6 @@ impl SolanumWindow {
         let timer = imp.timer.get().unwrap();
 
         imp.lap_type.set(lap_type);
-        timer.set_lap_type(lap_type);
 
         let lap_number = &imp.pomodoro_count;
         println!("Setting lap to {:?}", lap_type);
