@@ -30,8 +30,6 @@ use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
 use libadwaita::subclass::prelude::*;
 
-use once_cell::unsync::OnceCell;
-
 use std::cell::Cell;
 
 use crate::config;
@@ -53,7 +51,7 @@ mod imp {
     #[template(resource = "/org/gnome/Solanum/window.ui")]
     pub struct SolanumWindow {
         pub pomodoro_count: Cell<u32>,
-        pub timer: OnceCell<Timer>,
+        pub timer: Timer,
         pub lap_type: Cell<LapType>,
         pub player: gstreamer_player::Player,
         #[template_child]
@@ -75,7 +73,7 @@ mod imp {
         fn new() -> Self {
             Self {
                 pomodoro_count: Cell::new(1),
-                timer: OnceCell::new(),
+                timer: Timer::new(POMODORO_SECONDS),
                 lap_type: Cell::new(LapType::Pomodoro),
                 player: gstreamer_player::Player::new(None, None),
                 lap_label: TemplateChild::default(),
@@ -137,19 +135,13 @@ impl SolanumWindow {
         let secs = POMODORO_SECONDS % 60;
         timer_label.set_label(&format!("{:>02}∶{:>02}", min, secs));
 
-        imp.timer
-            .set(Timer::new(POMODORO_SECONDS))
-            .expect("Could not initialize timer");
-
-        imp.timer.get().unwrap().connect_countdown_update(
+        imp.timer.connect_countdown_update(
             clone!(@weak self as win => move |_, minutes, seconds| {
                 win.update_countdown(minutes, seconds);
             }),
         );
 
         imp.timer
-            .get()
-            .unwrap()
             .connect_lap(clone!(@weak self as win => move |_, lap_type| {
                 win.next_lap(lap_type);
             }));
@@ -213,7 +205,7 @@ impl SolanumWindow {
     fn update_lap(&self, lap_type: LapType) {
         let imp = self.get_private();
         let label = &*imp.lap_label;
-        let timer = imp.timer.get().unwrap();
+        let timer = &imp.timer;
 
         imp.lap_type.set(lap_type);
 
@@ -256,7 +248,7 @@ impl SolanumWindow {
             .unwrap();
         skip.set_enabled(!timer_on);
 
-        let timer = self.get_private().timer.get().unwrap();
+        let timer = &imp.timer;
         let timer_label = &*imp.timer_label;
         let timer_button = &*imp.timer_button;
 
