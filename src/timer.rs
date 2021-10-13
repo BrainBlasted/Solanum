@@ -25,7 +25,10 @@ use glib::{clone, GEnum, StaticType};
 // while actually referencing at different places.
 // A `RefCell` allows for interior mutablility.
 use std::time::{Duration, Instant};
-use std::{cell::RefCell, rc::Rc};
+use std::{
+    cell::{Cell, RefCell},
+    rc::Rc,
+};
 
 // `Lazy` is a structure for Lazy loading things during runtime.
 use once_cell::sync::Lazy;
@@ -60,10 +63,10 @@ mod imp {
 
     #[derive(Debug, Default)]
     pub struct Timer {
-        pub state: Rc<RefCell<TimerState>>,
+        pub state: Cell<TimerState>,
         pub instant: Rc<RefCell<Option<Instant>>>,
         pub duration: Rc<RefCell<Duration>>,
-        pub lap_type: Rc<RefCell<LapType>>,
+        pub lap_type: Cell<LapType>,
     }
 
     #[glib::object_subclass]
@@ -151,23 +154,19 @@ impl Timer {
     pub fn start(&self) {
         let imp = self.get_private();
 
-        let mut state = imp.state.borrow_mut();
-        *state = TimerState::Running;
+        imp.state.set(TimerState::Running);
         let mut instant = imp.instant.borrow_mut();
         *instant = Some(Instant::now());
 
-        let s = &imp.state;
-        let i = &imp.instant;
-        let d = &imp.duration;
-        let lt = &imp.lap_type;
         // Every 100 milliseconds, this closure gets called in order to update the timer
         glib::timeout_add_local(
             std::time::Duration::from_millis(100),
-            clone!(@weak self as timer, @weak s, @weak i, @weak d, @weak lt => @default-return glib::Continue(false), move || {
-                if *s.borrow() == TimerState::Running {
+            clone!(@weak self as timer => @default-return glib::Continue(false), move || {
+                let imp = timer.get_private();
+                if imp.state.get() == TimerState::Running {
                     if let Some(difference) = {
-                        let instant = i.borrow().expect("Timer is running, but no instant is set.");
-                        let duration = d.borrow();
+                        let instant = imp.instant.borrow().expect("Timer is running, but no instant is set.");
+                        let duration = imp.duration.borrow();
                         duration.checked_sub(instant.elapsed())
                     } {
                         let msm = duration_to_ms(difference);
@@ -175,7 +174,7 @@ impl Timer {
                         return glib::Continue(true);
                     } else {
                         let new_lt = {
-                            if *lt.borrow() == LapType::Pomodoro {
+                            if imp.lap_type.get() == LapType::Pomodoro {
                                 LapType::Break
                             } else {
                                 LapType::Pomodoro
@@ -195,8 +194,7 @@ impl Timer {
     pub fn stop(&self) {
         let imp = self.get_private();
 
-        let mut state = imp.state.borrow_mut();
-        *state = TimerState::Stopped;
+        imp.state.set(TimerState::Stopped);
 
         // When paused, set the timer so that it will resume where the user left off
         let mut duration = imp.duration.borrow_mut();
@@ -211,9 +209,7 @@ impl Timer {
 
     pub fn set_lap_type(&self, new_type: LapType) {
         let imp = self.get_private();
-        let mut lap_type = imp.lap_type.borrow_mut();
-
-        *lap_type = new_type;
+        imp.lap_type.set(new_type);
     }
 }
 
