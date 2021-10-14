@@ -104,10 +104,8 @@ glib::wrapper! {
 }
 
 impl Timer {
-    pub fn new(duration: u64) -> Self {
-        let obj: Self = glib::Object::new::<Self>(&[]).expect("Failed to initialize Timer object");
-        obj.set_duration(duration);
-        obj
+    pub fn new() -> Self {
+        glib::Object::new::<Self>(&[]).expect("Failed to initialize Timer object")
     }
 
     pub fn connect_countdown_update<F: Fn(&Self, u32, u32) + 'static>(
@@ -142,13 +140,14 @@ impl Timer {
         &imp::Timer::from_instance(self)
     }
 
-    pub fn set_duration(&self, duration: u64) {
+    // Pass the duration in minutes
+    pub fn set_duration(&self, duration: u32) {
         let imp = self.get_private();
 
         let mut i = imp.instant.borrow_mut();
         *i = Some(Instant::now());
         let mut d = imp.duration.borrow_mut();
-        *d = Duration::new(duration, 0);
+        *d = Duration::new((duration * 60).into(), 0);
     }
 
     pub fn start(&self) {

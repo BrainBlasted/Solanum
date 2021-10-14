@@ -32,6 +32,7 @@ use once_cell::unsync::OnceCell;
 
 use crate::config;
 use crate::i18n::i18n;
+use crate::preferences_window::SolanumPreferencesWindow;
 use crate::window::SolanumWindow;
 
 mod imp {
@@ -41,6 +42,7 @@ mod imp {
     #[derive(Debug)]
     pub struct SolanumApplication {
         pub window: OnceCell<WeakRef<SolanumWindow>>,
+        pub settings: gio::Settings,
     }
 
     // Definite the GObject information for SolanumApplication
@@ -53,6 +55,7 @@ mod imp {
         fn new() -> Self {
             Self {
                 window: OnceCell::new(),
+                settings: gio::Settings::new("org.gnome.Solanum"),
             }
         }
     }
@@ -108,6 +111,10 @@ impl SolanumApplication {
         imp.window.get().unwrap().clone().upgrade().unwrap()
     }
 
+    pub fn gsettings(&self) -> &gio::Settings {
+        &imp::SolanumApplication::from_instance(self).settings
+    }
+
     // Sets up gio::SimpleActions for the Application
     fn setup_actions(&self) {
         action!(
@@ -115,6 +122,14 @@ impl SolanumApplication {
             "about",
             clone!(@strong self as app => move |_, _| {
                 app.show_about();
+            })
+        );
+
+        action!(
+            self,
+            "preferences",
+            clone!(@strong self as app => move |_, _| {
+                app.show_preferences();
             })
         );
 
@@ -147,6 +162,7 @@ impl SolanumApplication {
 
     // Sets up keyboard shortcuts
     fn setup_accels(&self) {
+        self.set_accels_for_action("app.preferences", &["<Primary>P"]);
         self.set_accels_for_action("app.quit", &["<Primary>q"]);
         self.set_accels_for_action("win.menu", &["F10"]);
     }
@@ -181,5 +197,12 @@ impl SolanumApplication {
         }
 
         dialog.show();
+    }
+
+    fn show_preferences(&self) {
+        let imp = imp::SolanumApplication::from_instance(self);
+        let window = self.get_main_window();
+        let preferences_window = SolanumPreferencesWindow::new(&window, &imp.settings);
+        preferences_window.show();
     }
 }

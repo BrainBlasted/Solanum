@@ -32,14 +32,10 @@ use libadwaita::subclass::prelude::*;
 
 use std::cell::Cell;
 
+use crate::app::SolanumApplication;
 use crate::config;
 use crate::i18n::*;
 use crate::timer::{LapType, Timer};
-
-static POMODORO_SECONDS: u64 = 1500; // == 25 Minutes
-static SHORT_BREAK_SECONDS: u64 = 300; // == 5 minutes
-static LONG_BREAK_SECONDS: u64 = 900; // == 15 minutes
-static POMODOROS_UNTIL_LONG_BREAK: u32 = 4;
 
 static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
 static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
@@ -73,7 +69,7 @@ mod imp {
         fn new() -> Self {
             Self {
                 pomodoro_count: Cell::new(1),
-                timer: Timer::new(POMODORO_SECONDS),
+                timer: Timer::new(),
                 lap_type: Cell::new(LapType::Pomodoro),
                 player: gstreamer_player::Player::new(None, None),
                 lap_label: TemplateChild::default(),
@@ -125,15 +121,24 @@ impl SolanumWindow {
         &imp::SolanumWindow::from_instance(self)
     }
 
+    fn application(&self) -> SolanumApplication {
+        gtk::traits::GtkWindowExt::application(self)
+            .unwrap()
+            .downcast::<SolanumApplication>()
+            .unwrap()
+    }
+
     fn init(&self) {
         let imp = self.get_private();
         let timer_label = &*imp.timer_label;
+        let app = self.application();
+        let settings = app.gsettings();
 
         self.update_lap_label();
 
-        let min = POMODORO_SECONDS / 60;
-        let secs = POMODORO_SECONDS % 60;
-        timer_label.set_label(&format!("{:>02}∶{:>02}", min, secs));
+        let min = settings.get::<u32>("lap-length");
+        imp.timer.set_duration(min);
+        timer_label.set_label(&format!("{:>02}∶00", min));
 
         imp.timer.connect_countdown_update(
             clone!(@weak self as win => move |_, minutes, seconds| {
@@ -206,6 +211,8 @@ impl SolanumWindow {
         let imp = self.get_private();
         let label = &*imp.lap_label;
         let timer = &imp.timer;
+        let app = self.application();
+        let settings = app.gsettings();
 
         imp.lap_type.set(lap_type);
 
@@ -214,21 +221,24 @@ impl SolanumWindow {
 
         match lap_type {
             LapType::Pomodoro => {
+                let length = settings.get::<u32>("lap-length");
                 self.update_lap_label();
-                timer.set_duration(POMODORO_SECONDS);
-                self.set_timer_label_from_secs(POMODORO_SECONDS);
+                timer.set_duration(length);
+                self.set_timer_label_from_secs(length * 60);
             }
             LapType::Break => {
-                if lap_number.get() >= POMODOROS_UNTIL_LONG_BREAK {
+                if lap_number.get() >= settings.get::<u32>("sessions-until-long-break") {
+                    let length = settings.get::<u32>("long-break-length");
                     lap_number.set(1);
                     label.set_label(&i18n("Long Break"));
-                    timer.set_duration(LONG_BREAK_SECONDS);
-                    self.set_timer_label_from_secs(LONG_BREAK_SECONDS);
+                    timer.set_duration(length);
+                    self.set_timer_label_from_secs(length * 60);
                 } else {
+                    let length = settings.get::<u32>("short-break-length");
                     lap_number.set(lap_number.get() + 1);
                     label.set_label(&i18n("Short Break"));
-                    timer.set_duration(SHORT_BREAK_SECONDS);
-                    self.set_timer_label_from_secs(SHORT_BREAK_SECONDS);
+                    timer.set_duration(length);
+                    self.set_timer_label_from_secs(length * 60);
                 }
             }
         };
@@ -266,8 +276,8 @@ impl SolanumWindow {
         }
     }
 
-    // Util for initializing the timer based on the contants at the top
-    fn set_timer_label_from_secs(&self, secs: u64) {
+    // Util for setting the timer label when given seconds
+    fn set_timer_label_from_secs(&self, secs: u32) {
         let imp = self.get_private();
         let label = &*imp.timer_label;
         let min = secs / 60;
@@ -301,7 +311,7 @@ impl SolanumWindow {
             notif.set_body(Some(&body));
             notif.add_button(&button, "app.toggle-timer");
             notif.add_button(&i18n("Skip"), "app.skip");
-            let app = self.application().unwrap();
+            let app = self.application();
             app.send_notification(Some("timer-notif"), &notif);
         }
         self.play_sound(CHIME_URI);

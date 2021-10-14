@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="SolanumPreferencesWindow" parent="AdwPreferencesWindow">
+    <property name="search-enabled">False</property>
+    <child>
+      <object class="AdwPreferencesPage">
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Session Length</property>
+            <property name="description" translatable="yes">The length of each session type in minutes. Changes apply to the next session of each type.</property>
+            <child>
+              <object class="AdwActionRow" id="lap_row">
+                <property name="title" translatable="yes">Lap Length</property>
+                <child>
+                  <object class="GtkSpinButton" id="lap_spin">
+                    <property name="valign">center</property>
+                    <property name="numeric">True</property>
+                    <property name="adjustment">
+                      <object  class="GtkAdjustment" id="adjustment">
+                        <property name="lower">1</property>
+                        <property name="upper">99</property>
+                        <property name="step-increment">1</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Short Break Length</property>
+                <child>
+                  <object class="GtkSpinButton" id="short_break_spin">
+                    <property name="valign">center</property>
+                    <property name="numeric">True</property>
+                    <property name="adjustment">
+                      <object  class="GtkAdjustment">
+                        <property name="lower" bind-source="adjustment" bind-property="lower" bind-flags="sync-create"/>
+                        <property name="upper" bind-source="adjustment" bind-property="upper" bind-flags="sync-create"/>
+                        <property name="step-increment" bind-source="adjustment" bind-property="step-increment" bind-flags="sync-create"/>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Long Break Length</property>
+                <child>
+                  <object class="GtkSpinButton" id="long_break_spin">
+                    <property name="valign">center</property>
+                    <property name="numeric">True</property>
+                    <property name="adjustment">
+                      <object  class="GtkAdjustment">
+                        <property name="lower" bind-source="adjustment" bind-property="lower" bind-flags="sync-create"/>
+                        <property name="upper" bind-source="adjustment" bind-property="upper" bind-flags="sync-create"/>
+                        <property name="step-increment" bind-source="adjustment" bind-property="step-increment" bind-flags="sync-create"/>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Sessions Until Long Break</property>
+                <child>
+                  <object class="GtkSpinButton" id="session_count_spin">
+                    <property name="valign">center</property>
+                    <property name="numeric">True</property>
+                    <property name="adjustment">
+                      <object  class="GtkAdjustment">
+                        <property name="lower" bind-source="adjustment" bind-property="lower" bind-flags="sync-create"/>
+                        <property name="upper" bind-source="adjustment" bind-property="upper" bind-flags="sync-create"/>
+                        <property name="step-increment" bind-source="adjustment" bind-property="step-increment" bind-flags="sync-create"/>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

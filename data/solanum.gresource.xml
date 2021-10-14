@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/org/gnome/Solanum">
     <file alias="window.ui">ui/window.ui</file>
+    <file alias="preferences-window.ui">ui/preferences-window.ui</file>
     <file alias="style.css">ui/style.css</file>
     <file>gtk/help-overlay.ui</file>
     <file alias="chime.ogg">sounds/org.gnome.Solanum-chime.ogg</file>

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="solanum">
-	<schema id="org.gnome.Solanum" path="/org/gnome/Solanum/">
-	</schema>
+  <schema id="org.gnome.Solanum" path="/org/gnome/Solanum/">
+    <key name="lap-length" type="u">
+      <default>25</default>
+      <summary>The length of a work lap in minutes.</summary>
+    </key>
+    <key name="short-break-length" type="u">
+      <default>5</default>
+      <summary>The length of a short break in minutes.</summary>
+    </key>
+    <key name="long-break-length" type="u">
+      <default>15</default>
+      <summary>The length of a long break in minutes.</summary>
+    </key>
+    <key name="sessions-until-long-break" type="u">
+      <default>4</default>
+      <summary>The number of sessions until a long break.</summary>
+    </key>
+  </schema>
 </schemalist>

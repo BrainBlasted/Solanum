@@ -23,6 +23,7 @@ use gio::prelude::*;
 mod app;
 mod config;
 mod i18n;
+mod preferences_window;
 mod timer;
 mod window;
 

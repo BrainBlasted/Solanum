@@ -24,6 +24,7 @@ rust_sources = files(
   'config.rs',
   'i18n.rs',
   'main.rs',
+  'preferences_window.rs',
   'timer.rs',
   'window.rs',
 )
