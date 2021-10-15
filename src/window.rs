@@ -134,6 +134,10 @@ impl SolanumWindow {
         let app = self.application();
         let settings = app.gsettings();
 
+        if config::APP_ID.ends_with("Devel") {
+            self.add_css_class("devel");
+        }
+
         self.update_lap_label();
 
         let min = settings.get::<u32>("lap-length");
