@@ -102,9 +102,6 @@
         </property>
       </object>
     </property>
-    <style>
-      <class name="tool-window"/>
-    </style>
   </template>
   <menu id="app_menu">
     <section>

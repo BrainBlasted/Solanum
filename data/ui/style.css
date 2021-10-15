@@ -33,7 +33,3 @@ button.large {
   font-weight: 300;
   font-feature-settings: "tnum" 1;
 }
-
-.tool-window:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):not(.tiled-bottom):not(.tiled-left):not(.tiled-right):not(.maximized) {
-	background: alpha(@theme_bg_color, 0.96);
-}
