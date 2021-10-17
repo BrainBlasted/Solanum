@@ -1,15 +1,15 @@
 # Polish translation for solanum.
-# Copyright © 2020 the solanum authors.
+# Copyright © 2020-2021 the solanum authors.
 # This file is distributed under the same license as the solanum package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2020.
-# Aviary.pl <community-poland@mozilla.org>, 2020.
+# Piotr Drąg <piotrdrag@gmail.com>, 2020-2021.
+# Aviary.pl <community-poland@mozilla.org>, 2020-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-11-30 21:21+0000\n"
-"PO-Revision-Date: 2020-12-06 13:24+0100\n"
+"POT-Creation-Date: 2021-10-15 21:56+0000\n"
+"PO-Revision-Date: 2021-10-17 13:39+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:291
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -47,6 +47,22 @@ msgstr "Christopher Davis"
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Minutnik;Timer;Czas;Produktywność;"
 
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Długość rundy roboczej w minutach."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Długość krótkiej przerwy w minutach."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Długość długiej przerwy w minutach."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Liczba sesji przed długą przerwą."
+
 #: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General Shortcuts"
@@ -67,66 +83,98 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Zakończenie działania"
 
-#: data/ui/window.ui:117
+#: data/ui/preferences-window.ui:9
+msgid "Session Length"
+msgstr "Długość sesji"
+
+#: data/ui/preferences-window.ui:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Długość każdego typu sesji w minutach. Zmiany są zastosowywane do następnej "
+"sesji danego typu."
+
+#: data/ui/preferences-window.ui:13
+msgid "Lap Length"
+msgstr "Długość rundy"
+
+#: data/ui/preferences-window.ui:31
+msgid "Short Break Length"
+msgstr "Długość krótkiej przerwy"
+
+#: data/ui/preferences-window.ui:49
+msgid "Long Break Length"
+msgstr "Długość długiej przerwy"
+
+#: data/ui/preferences-window.ui:71
+msgid "Sessions Until Long Break"
+msgstr "Sesje do długiej przerwy"
+
+#: data/ui/window.ui:109
+msgid "_Preferences"
+msgstr "_Preferencje"
+
+#: data/ui/window.ui:113
 msgid "_Keyboard Shortcuts"
 msgstr "_Skróty klawiszowe"
 
-#: data/ui/window.ui:121
+#: data/ui/window.ui:117
 msgid "_About Solanum"
 msgstr "_O programie"
 
-#: src/app.rs:171
+#: src/app.rs:182
 msgid "A pomodoro timer for GNOME"
 msgstr "Minutnik Pomodoro dla środowiska GNOME"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:173
+#: src/app.rs:184
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2020\n"
-"Aviary.pl <community-poland@mozilla.org>, 2020"
+"Piotr Drąg <piotrdrag@gmail.com>, 2020-2021\n"
+"Aviary.pl <community-poland@mozilla.org>, 2020-2021"
 
-#: src/app.rs:179
+#: src/app.rs:190
 msgid "Donate on Patreon"
 msgstr "Wspomóż na Patreonie"
 
-#: src/window.rs:219 src/window.rs:351
+#: src/window.rs:237
 msgid "Long Break"
 msgstr "Długa przerwa"
 
-#: src/window.rs:224 src/window.rs:356
+#: src/window.rs:243
 msgid "Short Break"
 msgstr "Krótka przerwa"
 
-#: src/window.rs:295
+#: src/window.rs:304
 msgid "Back to Work"
 msgstr "Powrót do pracy"
 
-#: src/window.rs:296
+#: src/window.rs:305
 msgid "Ready to keep working?"
 msgstr "Wracamy do pracy?"
 
-#: src/window.rs:297
+#: src/window.rs:306
 msgid "Start Working"
 msgstr "Zacznij pracę"
 
-#: src/window.rs:300
+#: src/window.rs:309
 msgid "Break Time"
 msgstr "Czas na przerwę"
 
-#: src/window.rs:301
+#: src/window.rs:310
 msgid "Stretch your legs, and drink some water."
 msgstr "Rozciągnij nogi i napij się wody."
 
-#: src/window.rs:302
+#: src/window.rs:311
 msgid "Start Break"
 msgstr "Zacznij przerwę"
 
-#: src/window.rs:308
+#: src/window.rs:317
 msgid "Skip"
 msgstr "Pomiń"
 
-#: src/window.rs:321
+#: src/window.rs:330
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. runda"
