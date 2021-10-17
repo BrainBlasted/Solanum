@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-12-16 19:50+0000\n"
-"PO-Revision-Date: 2021-09-05 09:48+0200\n"
+"POT-Creation-Date: 2021-10-15 21:56+0000\n"
+"PO-Revision-Date: 2021-10-17 16:46+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:299
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -46,6 +46,22 @@ msgstr "Christopher Davis"
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "pomodoro;časovač;organizace času;produktivita;"
 
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Délka pracovního cyklu v minuátch"
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Délka krátké přestávky v minutách"
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Délka dlouhé přestávky v minutách"
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Počet sezení do dlouhé přestávky"
+
 #: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General Shortcuts"
@@ -66,24 +82,56 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ukončit"
 
-#: data/ui/window.ui:118
+#: data/ui/preferences-window.ui:9
+msgid "Session Length"
+msgstr "Délka sezení"
+
+#: data/ui/preferences-window.ui:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Délka jednotlivých typů sezení v minutách. Změny se projeví u následujících "
+"sezení od každého typu."
+
+#: data/ui/preferences-window.ui:13
+msgid "Lap Length"
+msgstr "Délka cyklu"
+
+#: data/ui/preferences-window.ui:31
+msgid "Short Break Length"
+msgstr "Délka krátké přestávky"
+
+#: data/ui/preferences-window.ui:49
+msgid "Long Break Length"
+msgstr "Délka dlouhé přestávky"
+
+#: data/ui/preferences-window.ui:71
+msgid "Sessions Until Long Break"
+msgstr "Sezení do dlouhé přestávky"
+
+#: data/ui/window.ui:109
+msgid "_Preferences"
+msgstr "_Předvolby"
+
+#: data/ui/window.ui:113
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
 
-#: data/ui/window.ui:122
+#: data/ui/window.ui:117
 msgid "_About Solanum"
 msgstr "O _aplikaci Solanum"
 
-#: src/app.rs:171
+#: src/app.rs:182
 msgid "A pomodoro timer for GNOME"
 msgstr "Organizace času pomodoro pro GNOME"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:173
+#: src/app.rs:184
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
 
-#: src/app.rs:179
+#: src/app.rs:190
 msgid "Donate on Patreon"
 msgstr "Přispět přes Patreon"
 
@@ -91,39 +139,39 @@ msgstr "Přispět přes Patreon"
 msgid "Long Break"
 msgstr "Dlouhá přestávka"
 
-#: src/window.rs:242
+#: src/window.rs:243
 msgid "Short Break"
 msgstr "Krátká přestávka"
 
-#: src/window.rs:303
+#: src/window.rs:304
 msgid "Back to Work"
 msgstr "Zpět do práce"
 
-#: src/window.rs:304
+#: src/window.rs:305
 msgid "Ready to keep working?"
 msgstr "Jste připraveni pokračovat v práci?"
 
-#: src/window.rs:305
+#: src/window.rs:306
 msgid "Start Working"
 msgstr "Začít pracovat"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Break Time"
 msgstr "Čas přestávky"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Stretch your legs, and drink some water."
 msgstr "Protáhněte si nohy a napijte se vody."
 
-#: src/window.rs:310
+#: src/window.rs:311
 msgid "Start Break"
 msgstr "Začít přestávku"
 
-#: src/window.rs:316
+#: src/window.rs:317
 msgid "Skip"
 msgstr "Přeskočit"
 
-#: src/window.rs:329
+#: src/window.rs:330
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. cyklus"
