@@ -14,7 +14,7 @@
         "--socket=wayland",
         "--socket=pulseaudio",
         "--env=GST_DEBUG=3",
-        "--env=RUST_BACKTRACE=1",
+        "--env=RUST_BACKTRACE=1"
     ],
     "build-options" : {
         "append-path" : "/usr/lib/sdk/rust-stable/bin",
