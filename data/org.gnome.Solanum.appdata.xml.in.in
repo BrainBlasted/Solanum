@@ -27,6 +27,15 @@
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
+    <release version="3.0.0" date="2021-10-22">
+      <description>
+        <p>The 3.0.0 release of Solanum brings new preferences, updated translations, and minor bug fixes.</p>
+        <ul>
+          <li>Solanum now has preferences to adjust the various timer lengths, as well as how many laps to go through before a long break.</li>
+          <li>New and updated translations for the German, Spanish, Slovenian, Dutch, Romanian, Chinese (China), Korean, Galician, Brazilian Portuguese, Ukranian, Swedish, Polish, Czech, and Finish languages.</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.1.0" date="2021-02-08">
       <description>
         <p>The 2.1.0 release of Solanum brings translations, bug fixes, and a minor redesign.</p>
