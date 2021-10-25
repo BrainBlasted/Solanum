@@ -219,6 +219,7 @@ impl SolanumWindow {
         let settings = app.gsettings();
 
         imp.lap_type.set(lap_type);
+        timer.set_lap_type(lap_type);
 
         let lap_number = &imp.pomodoro_count;
         println!("Setting lap to {:?}", lap_type);
