@@ -27,6 +27,15 @@
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
+    <release version="3.0.1" date="2021-10-28">
+      <description>
+        <p>The 3.0.1 release of Solanum brings a minor bug fix.</p>
+        <ul>
+          <li>Fixed an issue where using the skip button would cause laps to repeat (fixed by @pierre-si).</li>
+          <li>Added Occitan translation.</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.0.0" date="2021-10-22">
       <description>
         <p>The 3.0.0 release of Solanum brings new preferences, updated translations, and minor bug fixes.</p>

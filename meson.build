@@ -1,5 +1,5 @@
 project('solanum',
-          version: '3.0.0',
+          version: '3.0.1',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',
                    ],
