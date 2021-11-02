@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-02-16 15:46+0000\n"
-"PO-Revision-Date: 2021-04-01 20:24+0200\n"
+"POT-Creation-Date: 2021-10-28 18:47+0000\n"
+"PO-Revision-Date: 2021-11-02 21:06+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:82 src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:301
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -49,6 +49,22 @@ msgstr "Christopher Davis"
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Timer;Productivity;Časovnik;Delo;Premori;Pavza;Počitek;"
 
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Trajanje delovnega kroga v minutah."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Trajanje kratkega premora v minutah."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Trajanje dolgega premora v minutah."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Število delov do daljšega odmora."
+
 #: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General Shortcuts"
@@ -69,64 +85,96 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Konča program"
 
+#: data/ui/preferences-window.ui:9
+msgid "Session Length"
+msgstr "Dolžina obdobja"
+
+#: data/ui/preferences-window.ui:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Dolžina vsake vrste dela v minutah. Spremembe se uveljavijo na naslednjem "
+"delu vsake vrste."
+
+#: data/ui/preferences-window.ui:13
+msgid "Lap Length"
+msgstr "Dolžina kroga"
+
+#: data/ui/preferences-window.ui:31
+msgid "Short Break Length"
+msgstr "Dolžina kratkega premora"
+
+#: data/ui/preferences-window.ui:49
+msgid "Long Break Length"
+msgstr "Dolžina dolgega premora"
+
+#: data/ui/preferences-window.ui:71
+msgid "Sessions Until Long Break"
+msgstr "Število delov do daljšega odmora"
+
 #: data/ui/window.ui:109
+msgid "_Preferences"
+msgstr "_Nastavitve"
+
+#: data/ui/window.ui:113
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice"
 
-#: data/ui/window.ui:113
+#: data/ui/window.ui:117
 msgid "_About Solanum"
 msgstr "_O programu"
 
-#: src/app.rs:172
+#: src/app.rs:182
 msgid "A pomodoro timer for GNOME"
 msgstr "Usklajevalnik časa za GNOME"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:174
+#: src/app.rs:184
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@src.gnome.org>"
 
-#: src/app.rs:180
+#: src/app.rs:190
 msgid "Donate on Patreon"
 msgstr "Podpora prek sistema Patreon"
 
-#: src/window.rs:242
+#: src/window.rs:238
 msgid "Long Break"
 msgstr "Dolg premor"
 
-#: src/window.rs:247
+#: src/window.rs:244
 msgid "Short Break"
 msgstr "Kratek premor"
 
-#: src/window.rs:308
+#: src/window.rs:305
 msgid "Back to Work"
 msgstr "Nazaj na delo"
 
-#: src/window.rs:309
+#: src/window.rs:306
 msgid "Ready to keep working?"
 msgstr "Ali ste pripravljeni nadaljevati z delom?"
 
-#: src/window.rs:310
+#: src/window.rs:307
 msgid "Start Working"
 msgstr "Začnite z delom"
 
-#: src/window.rs:313
+#: src/window.rs:310
 msgid "Break Time"
 msgstr "Čas je za premor"
 
-#: src/window.rs:314
+#: src/window.rs:311
 msgid "Stretch your legs, and drink some water."
 msgstr "Raztegnite si noge, popite kozarec vode."
 
-#: src/window.rs:315
+#: src/window.rs:312
 msgid "Start Break"
 msgstr "Začnite s premorom"
 
-#: src/window.rs:321
+#: src/window.rs:318
 msgid "Skip"
 msgstr "Preskoči"
 
-#: src/window.rs:334
+#: src/window.rs:331
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Krog {}"
