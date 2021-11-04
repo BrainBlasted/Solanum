@@ -160,8 +160,8 @@ impl Timer {
                     let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
                     let duration = imp.duration.get();
                     if let Some(difference) = duration.checked_sub(instant.elapsed()) {
-                        let msm = duration_to_ms(difference);
-                        timer.emit_by_name("countdown-update", &[&msm.0, &msm.1]).expect("Could not emit \"countdown-update\" signal on SolanumTimer");
+                        let (minutes, seconds) = duration_to_mins_and_secs(difference);
+                        timer.emit_by_name("countdown-update", &[&minutes, &seconds]).expect("Could not emit \"countdown-update\" signal on SolanumTimer");
                         return glib::Continue(true);
                     } else {
                         let new_lt = {
@@ -202,7 +202,7 @@ impl Timer {
     }
 }
 
-fn duration_to_ms(duration: Duration) -> (u32, u32) {
+fn duration_to_mins_and_secs(duration: Duration) -> (u32, u32) {
     use std::convert::TryInto;
 
     let mut seconds = duration.as_secs();
