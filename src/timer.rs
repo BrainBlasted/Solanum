@@ -163,7 +163,7 @@ impl Timer {
                         duration.checked_sub(instant.elapsed())
                     } {
                         let msm = duration_to_ms(difference);
-                        let _ = timer.emit_by_name("countdown-update", &[&msm.0, &msm.1]);
+                        timer.emit_by_name("countdown-update", &[&msm.0, &msm.1]).expect("Could not emit \"countdown-update\" signal on SolanumTimer");
                         return glib::Continue(true);
                     } else {
                         let new_lt = {
@@ -174,7 +174,7 @@ impl Timer {
                             }
                         };
                         timer.set_lap_type(new_lt);
-                        let _ = timer.emit_by_name("lap", &[&new_lt]);
+                        timer.emit_by_name("lap", &[&new_lt]).expect("Could not emit \"lap\" signal on SolanumTimer");
                         return glib::Continue(false);
                     }
                 }
