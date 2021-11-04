@@ -24,11 +24,8 @@ use glib::{clone, GEnum, StaticType};
 // `Rc`s are Reference Counters. They allow us to clone objects,
 // while actually referencing at different places.
 // A `RefCell` allows for interior mutablility.
+use std::cell::Cell;
 use std::time::{Duration, Instant};
-use std::{
-    cell::{Cell, RefCell},
-    rc::Rc,
-};
 
 // `Lazy` is a structure for Lazy loading things during runtime.
 use once_cell::sync::Lazy;
@@ -64,8 +61,8 @@ mod imp {
     #[derive(Debug, Default)]
     pub struct Timer {
         pub state: Cell<TimerState>,
-        pub instant: Rc<RefCell<Option<Instant>>>,
-        pub duration: Rc<RefCell<Duration>>,
+        pub instant: Cell<Option<Instant>>,
+        pub duration: Cell<Duration>,
         pub lap_type: Cell<LapType>,
     }
 
@@ -144,18 +141,15 @@ impl Timer {
     pub fn set_duration(&self, duration: u32) {
         let imp = self.get_private();
 
-        let mut i = imp.instant.borrow_mut();
-        *i = Some(Instant::now());
-        let mut d = imp.duration.borrow_mut();
-        *d = Duration::new((duration * 60).into(), 0);
+        imp.instant.set(Some(Instant::now()));
+        imp.duration.set(Duration::new((duration * 60).into(), 0));
     }
 
     pub fn start(&self) {
         let imp = self.get_private();
 
         imp.state.set(TimerState::Running);
-        let mut instant = imp.instant.borrow_mut();
-        *instant = Some(Instant::now());
+        imp.instant.set(Some(Instant::now()));
 
         // Every 100 milliseconds, this closure gets called in order to update the timer
         glib::timeout_add_local(
@@ -164,8 +158,8 @@ impl Timer {
                 let imp = timer.get_private();
                 if imp.state.get() == TimerState::Running {
                     if let Some(difference) = {
-                        let instant = imp.instant.borrow().expect("Timer is running, but no instant is set.");
-                        let duration = imp.duration.borrow();
+                        let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
+                        let duration = imp.duration.get();
                         duration.checked_sub(instant.elapsed())
                     } {
                         let msm = duration_to_ms(difference);
@@ -196,11 +190,9 @@ impl Timer {
         imp.state.set(TimerState::Stopped);
 
         // When paused, set the timer so that it will resume where the user left off
-        let mut duration = imp.duration.borrow_mut();
-        let instant = imp.instant.borrow().unwrap();
-        let elapsed = instant.elapsed();
-        if let Some(difference) = duration.checked_sub(elapsed) {
-            *duration = difference;
+        let elapsed = imp.instant.get().unwrap().elapsed();
+        if let Some(difference) = imp.duration.get().checked_sub(elapsed) {
+            imp.duration.set(difference);
         }
 
         println!("Timer stopped!")
