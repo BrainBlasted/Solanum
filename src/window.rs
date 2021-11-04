@@ -48,7 +48,6 @@ mod imp {
     pub struct SolanumWindow {
         pub pomodoro_count: Cell<u32>,
         pub timer: Timer,
-        pub lap_type: Cell<LapType>,
         pub player: gstreamer_player::Player,
         #[template_child]
         pub lap_label: TemplateChild<gtk::Label>,
@@ -70,7 +69,6 @@ mod imp {
             Self {
                 pomodoro_count: Cell::new(1),
                 timer: Timer::new(),
-                lap_type: Cell::new(LapType::Pomodoro),
                 player: gstreamer_player::Player::new(None, None),
                 lap_label: TemplateChild::default(),
                 timer_label: TemplateChild::default(),
@@ -190,7 +188,7 @@ impl SolanumWindow {
 
     fn skip(&self) {
         let imp = self.get_private();
-        let lap_type = imp.lap_type.get();
+        let lap_type = imp.timer.lap_type();
 
         let next_lap = if lap_type == LapType::Pomodoro {
             LapType::Break
@@ -218,7 +216,6 @@ impl SolanumWindow {
         let app = self.application();
         let settings = app.gsettings();
 
-        imp.lap_type.set(lap_type);
         timer.set_lap_type(lap_type);
 
         let lap_number = &imp.pomodoro_count;

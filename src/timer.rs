@@ -200,6 +200,11 @@ impl Timer {
         let imp = self.get_private();
         imp.lap_type.set(new_type);
     }
+
+    pub fn lap_type(&self) -> LapType {
+        let imp = self.get_private();
+        imp.lap_type.get()
+    }
 }
 
 fn duration_to_mins_and_secs(duration: Duration) -> (u32, u32) {
