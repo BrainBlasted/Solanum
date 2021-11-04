@@ -84,6 +84,10 @@ mod imp {
                 let imp = win.get_private();
                 imp.menu_button.popover().unwrap().popup();
             });
+
+            klass.install_action("win.toggle-timer", None, move |win, _, _| {
+                win.toggle_timer();
+            })
         }
 
         fn instance_init(obj: &subclass::InitializingObject<Self>) {
@@ -161,17 +165,6 @@ impl SolanumWindow {
 
     // Set up actions on the Window itself
     fn setup_actions(&self) {
-        // Stateful actions allow us to set a state each time an action is activated
-        let timer_on = false;
-        stateful_action!(
-            self,
-            "toggle-timer",
-            timer_on,
-            clone!(@weak self as win => move |a, v| {
-                win.on_timer_toggled(a, v)
-            })
-        );
-
         action!(
             self,
             "skip",
@@ -242,34 +235,25 @@ impl SolanumWindow {
     }
 
     // Callback to run whenever the timer is toggled - by button or action
-    fn on_timer_toggled(&self, action: &gio::SimpleAction, _variant: Option<&glib::Variant>) {
+    fn toggle_timer(&self) {
         let imp = self.get_private();
-        let action_state: bool = action.state().unwrap().get().unwrap();
-        let timer_on = !action_state;
-        action.set_state(&timer_on.to_variant());
 
-        let skip = self
-            .lookup_action("skip")
-            .unwrap()
-            .downcast::<gio::SimpleAction>()
-            .unwrap();
-        skip.set_enabled(!timer_on);
+        let start_timer = !imp.timer.running();
+        self.action_set_enabled("win.skip", !start_timer);
 
-        let timer = &imp.timer;
-        let timer_label = &*imp.timer_label;
-        let timer_button = &*imp.timer_button;
-
-        if timer_on {
-            timer.start();
+        if start_timer {
+            imp.timer.start();
             self.play_sound(BEEP_URI);
-            timer_button.set_icon_name("media-playback-pause-symbolic");
-            timer_label.remove_css_class("blinking");
-            timer_button.remove_css_class("suggested-action");
+            imp.timer_button
+                .set_icon_name("media-playback-pause-symbolic");
+            imp.timer_label.remove_css_class("blinking");
+            imp.timer_button.remove_css_class("suggested-action");
         } else {
-            timer.stop();
-            timer_button.set_icon_name("media-playback-start-symbolic");
-            timer_label.add_css_class("blinking");
-            timer_button.add_css_class("suggested-action");
+            imp.timer.stop();
+            imp.timer_button
+                .set_icon_name("media-playback-start-symbolic");
+            imp.timer_label.add_css_class("blinking");
+            imp.timer_button.add_css_class("suggested-action");
         }
     }
 
@@ -329,10 +313,7 @@ impl SolanumWindow {
 
     // Pause the timer and move to the next lap
     fn next_lap(&self, lap_type: LapType) -> glib::Continue {
-        // This stops the timer and sets the styling we need
-        let action = self.lookup_action("toggle-timer").unwrap();
-        action.activate(None);
-
+        self.toggle_timer();
         self.update_lap(lap_type);
         self.send_notifcation(lap_type);
         glib::Continue(true)
