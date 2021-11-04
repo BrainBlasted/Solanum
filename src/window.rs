@@ -79,6 +79,11 @@ mod imp {
 
         fn class_init(klass: &mut Self::Class) {
             Self::bind_template(klass);
+
+            klass.install_action("win.menu", None, move |win, _, _| {
+                let imp = win.get_private();
+                imp.menu_button.popover().unwrap().popup();
+            });
         }
 
         fn instance_init(obj: &subclass::InitializingObject<Self>) {
@@ -156,16 +161,6 @@ impl SolanumWindow {
 
     // Set up actions on the Window itself
     fn setup_actions(&self) {
-        action!(
-            self,
-            "menu",
-            clone!(@weak self as win => move |_, _| {
-                let imp = win.get_private();
-                let menu_button = &*imp.menu_button;
-                menu_button.popover().unwrap().popup();
-            })
-        );
-
         // Stateful actions allow us to set a state each time an action is activated
         let timer_on = false;
         stateful_action!(
