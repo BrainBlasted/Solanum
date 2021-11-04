@@ -157,11 +157,9 @@ impl Timer {
             clone!(@weak self as timer => @default-return glib::Continue(false), move || {
                 let imp = timer.get_private();
                 if imp.state.get() == TimerState::Running {
-                    if let Some(difference) = {
-                        let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
-                        let duration = imp.duration.get();
-                        duration.checked_sub(instant.elapsed())
-                    } {
+                    let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
+                    let duration = imp.duration.get();
+                    if let Some(difference) = duration.checked_sub(instant.elapsed()) {
                         let msm = duration_to_ms(difference);
                         timer.emit_by_name("countdown-update", &[&msm.0, &msm.1]).expect("Could not emit \"countdown-update\" signal on SolanumTimer");
                         return glib::Continue(true);
