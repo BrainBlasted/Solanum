@@ -43,24 +43,12 @@ impl Default for LapType {
     }
 }
 
-#[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub enum TimerState {
-    Running,
-    Stopped,
-}
-
-impl Default for TimerState {
-    fn default() -> Self {
-        TimerState::Stopped
-    }
-}
-
 mod imp {
     use super::*;
 
     #[derive(Debug, Default)]
     pub struct Timer {
-        pub state: Cell<TimerState>,
+        pub running: Cell<bool>,
         pub instant: Cell<Option<Instant>>,
         pub duration: Cell<Duration>,
         pub lap_type: Cell<LapType>,
@@ -148,7 +136,7 @@ impl Timer {
     pub fn start(&self) {
         let imp = self.get_private();
 
-        imp.state.set(TimerState::Running);
+        imp.running.set(true);
         imp.instant.set(Some(Instant::now()));
 
         // Every 100 milliseconds, this closure gets called in order to update the timer
@@ -156,7 +144,7 @@ impl Timer {
             std::time::Duration::from_millis(100),
             clone!(@weak self as timer => @default-return glib::Continue(false), move || {
                 let imp = timer.get_private();
-                if imp.state.get() == TimerState::Running {
+                if imp.running.get() {
                     let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
                     let duration = imp.duration.get();
                     if let Some(difference) = duration.checked_sub(instant.elapsed()) {
@@ -185,7 +173,7 @@ impl Timer {
     pub fn stop(&self) {
         let imp = self.get_private();
 
-        imp.state.set(TimerState::Stopped);
+        imp.running.set(false);
 
         // When paused, set the timer so that it will resume where the user left off
         let elapsed = imp.instant.get().unwrap().elapsed();
@@ -207,7 +195,7 @@ impl Timer {
     }
 
     pub fn running(&self) -> bool {
-        self.get_private().state.get() == TimerState::Running
+        self.get_private().running.get()
     }
 }
 
