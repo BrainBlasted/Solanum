@@ -1,0 +1,183 @@
+# Frisian translation for solanum.
+# Copyright (C) 2021 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Tjipke van der Heide <tjipke@tutanota.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2021-11-05 13:30+0000\n"
+"PO-Revision-Date: 2021-11-11 10:45+0100\n"
+"Last-Translator: Tjipke van der Heide <tjipke@tutanota.com>\n"
+"Language-Team: Western Frisian < >\n"
+"Language: fy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-DL-Team: fy\n"
+"X-DL-Module: solanum\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: None\n"
+"X-Generator: Gtranslator 40.0\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:301
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Fyn in balâns tusken wurktiid en skoft"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum is in applikaasje om de tiid by te hâlden neffens de pomodory "
+"technyk. Wurkje yn 4 sesjes, mei skoften tusken elke sesje en in langer "
+"skoft nei alle 4."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;Produktivens;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "De linge fan in wurk diel yn minuten."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "De lingte fan in koart skoft yn minuten."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "De lingte fan in lang skoft yn minuten."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "It oantal sesjes foar in lang skoft."
+
+#: data/gtk/help-overlay.ui:12
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Algemiene Fluchtoetsen"
+
+#: data/gtk/help-overlay.ui:16
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Primêr Menu sjen litte"
+
+#: data/gtk/help-overlay.ui:23
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Toetseboerd Fluchtoetsen sjen litte"
+
+#: data/gtk/help-overlay.ui:30
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ofslute"
+
+#: data/ui/preferences-window.ui:9
+msgid "Session Length"
+msgstr "Linge fan Sesje"
+
+#: data/ui/preferences-window.ui:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"De lingte fan elk sesje type yn minuten. Feroaringen fine plak nei de "
+"kommende sesje fan elk type."
+
+#: data/ui/preferences-window.ui:13
+msgid "Lap Length"
+msgstr "Linge per sesje diel"
+
+#: data/ui/preferences-window.ui:31
+msgid "Short Break Length"
+msgstr "Linge fan Koart Skoft"
+
+#: data/ui/preferences-window.ui:49
+msgid "Long Break Length"
+msgstr "Linge fan Lang Skoft"
+
+#: data/ui/preferences-window.ui:71
+msgid "Sessions Until Long Break"
+msgstr "Oantal Sesjes oant Lang Skoft"
+
+#: data/ui/window.ui:109
+msgid "_Preferences"
+msgstr "_Foarkarren"
+
+#: data/ui/window.ui:113
+msgid "_Keyboard Shortcuts"
+msgstr "_Toetseboerd Fluchtoetsen"
+
+#: data/ui/window.ui:117
+msgid "_About Solanum"
+msgstr "_Oer Solanum"
+
+#: src/app.rs:182
+msgid "A pomodoro timer for GNOME"
+msgstr "In pomodoro timer foar GNOME"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:184
+msgid "translator-credits"
+msgstr "Tjipke van der Heide"
+
+#: src/app.rs:190
+msgid "Donate on Patreon"
+msgstr "Donear op Patreon"
+
+#: src/window.rs:238
+msgid "Long Break"
+msgstr "Lang Skoft"
+
+#: src/window.rs:244
+msgid "Short Break"
+msgstr "Koart Skoft"
+
+#: src/window.rs:305
+msgid "Back to Work"
+msgstr "Gean wer oan it Wurk"
+
+#: src/window.rs:306
+msgid "Ready to keep working?"
+msgstr "Klear om wer te wurkjen?"
+
+#: src/window.rs:307
+msgid "Start Working"
+msgstr "Begjin mei Wurkjen"
+
+#: src/window.rs:310
+msgid "Break Time"
+msgstr "Skoft Tiid"
+
+#: src/window.rs:311
+msgid "Stretch your legs, and drink some water."
+msgstr "Doch efkes wat oars, en drink wat wetter."
+
+#: src/window.rs:312
+msgid "Start Break"
+msgstr "Start Skoft"
+
+#: src/window.rs:318
+msgid "Skip"
+msgstr "Slach oer"
+
+#: src/window.rs:331
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Sesje diel {}"
+msgstr[1] "Sesje diel {}"
