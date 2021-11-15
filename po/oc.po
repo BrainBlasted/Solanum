@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-22 10:09+0000\n"
-"PO-Revision-Date: 2021-10-24 00:58+0200\n"
+"POT-Creation-Date: 2021-10-23 22:59+0000\n"
+"PO-Revision-Date: 2021-11-15 10:25+0100\n"
+"Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Occitan <totenoc@gmail.com>\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Last-Translator: Quentin PAGÈS\n"
 "X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
@@ -32,6 +32,9 @@ msgid ""
 "Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
 "sessions, with breaks in between each session and one long break after all 4."
 msgstr ""
+"Solanum es una aplicacion de seguiment de temps qu’utiliza la tecnica de "
+"pomodoro. Trabalhatz en 4 sessions amb pausas entre cada session e una pausa "
+"longa aprèp las 4 sessions."
 
 #. Translators: please do NOT translate this
 #: data/org.gnome.Solanum.appdata.xml.in.in:26
@@ -88,22 +91,24 @@ msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
 msgstr ""
+"La longor de cada session tipe en minuta. Las modificacions s’aplicaràn a la "
+"session venenta de cada tipe."
 
 #: data/ui/preferences-window.ui:13
 msgid "Lap Length"
-msgstr ""
+msgstr "Longor d’un torn"
 
 #: data/ui/preferences-window.ui:31
 msgid "Short Break Length"
-msgstr ""
+msgstr "Longor d’una pauseta"
 
 #: data/ui/preferences-window.ui:49
 msgid "Long Break Length"
-msgstr ""
+msgstr "Longor d’una pausa longa"
 
 #: data/ui/preferences-window.ui:71
 msgid "Sessions Until Long Break"
-msgstr ""
+msgstr "Sessions abans pausa longa"
 
 #: data/ui/window.ui:109
 msgid "_Preferences"
@@ -169,5 +174,5 @@ msgstr "Ignorar"
 #: src/window.rs:330
 msgid "Lap {}"
 msgid_plural "Lap {}"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Torn {}"
+msgstr[1] "Torns {}"
