@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
+"POT-Creation-Date: 2021-11-15 09:00+0000\n"
 "PO-Revision-Date: 2021-11-15 09:59+0100\n"
 "Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Gtranslator 41.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:301
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -66,7 +66,7 @@ msgstr "El número de sesiones hasta un descanso largo."
 #: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General Shortcuts"
-msgstr "Combinaciones de teclas generales"
+msgstr "Atajos del teclado generales"
 
 #: data/gtk/help-overlay.ui:16
 msgctxt "shortcut window"
@@ -100,12 +100,10 @@ msgid "Lap Length"
 msgstr "Duración de la etapa"
 
 #: data/ui/preferences-window.ui:31
-#| msgid "Short Break"
 msgid "Short Break Length"
 msgstr "Duración de la pausa corta"
 
 #: data/ui/preferences-window.ui:49
-#| msgid "Long Break"
 msgid "Long Break Length"
 msgstr "Duración de la pausa larga"
 
@@ -138,43 +136,43 @@ msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2020-2021"
 msgid "Donate on Patreon"
 msgstr "Donar en Patreon"
 
-#: src/window.rs:237
+#: src/window.rs:238
 msgid "Long Break"
 msgstr "Pausa larga"
 
-#: src/window.rs:243
+#: src/window.rs:244
 msgid "Short Break"
 msgstr "Pausa corta"
 
-#: src/window.rs:304
+#: src/window.rs:305
 msgid "Back to Work"
 msgstr "Volver al trabajo"
 
-#: src/window.rs:305
+#: src/window.rs:306
 msgid "Ready to keep working?"
 msgstr "¿Listo para seguir trabajando?"
 
-#: src/window.rs:306
+#: src/window.rs:307
 msgid "Start Working"
 msgstr "Empezar a trabajar"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Break Time"
 msgstr "Tiempo de descanso"
 
-#: src/window.rs:310
+#: src/window.rs:311
 msgid "Stretch your legs, and drink some water."
 msgstr "Estire sus piernas y beba un poco de agua."
 
-#: src/window.rs:311
+#: src/window.rs:312
 msgid "Start Break"
 msgstr "Iniciar pausa"
 
-#: src/window.rs:317
+#: src/window.rs:318
 msgid "Skip"
 msgstr "Omitir"
 
-#: src/window.rs:330
+#: src/window.rs:331
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Tramo {}"
