@@ -71,12 +71,7 @@ mod imp {
                         <()>::static_type().into(),
                     )
                     .build(),
-                    Signal::builder(
-                        "lap",
-                        &[LapType::static_type().into()],
-                        <()>::static_type().into(),
-                    )
-                    .build(),
+                    Signal::builder("lap", &[], <()>::static_type().into()).build(),
                 ]
             });
             SIGNALS.as_ref()
@@ -109,12 +104,11 @@ impl Timer {
         .unwrap()
     }
 
-    pub fn connect_lap<F: Fn(&Self, LapType) + 'static>(&self, f: F) -> glib::SignalHandlerId {
+    pub fn connect_lap<F: Fn(&Self) + 'static>(&self, f: F) -> glib::SignalHandlerId {
         self.connect_local("lap", true, move |values| {
             let timer = values[0].get::<Self>().unwrap();
-            let lap_type = values[1].get::<LapType>().unwrap();
 
-            f(&timer, lap_type);
+            f(&timer);
 
             None
         })
@@ -160,7 +154,7 @@ impl Timer {
                             }
                         };
                         timer.set_lap_type(new_lt);
-                        timer.emit_by_name("lap", &[&new_lt]).expect("Could not emit \"lap\" signal on SolanumTimer");
+                        timer.emit_by_name("lap", &[]).expect("Could not emit \"lap\" signal on SolanumTimer");
                         return glib::Continue(false);
                     }
                 }

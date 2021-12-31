@@ -157,10 +157,10 @@ impl SolanumWindow {
             }),
         );
 
-        imp.timer
-            .connect_lap(clone!(@weak self as win => move |_, lap_type| {
-                win.next_lap(lap_type);
-            }));
+        imp.timer.connect_lap(clone!(@weak self as win => move |_| {
+            win.toggle_timer();
+            win.next_lap(true);
+        }));
     }
 
     // Set up actions on the Window itself
@@ -169,25 +169,15 @@ impl SolanumWindow {
             self,
             "skip",
             clone!(@weak self as win => move |_, _| {
-                win.skip();
+                // Since `skip` is only enabled when the timer
+                // is paused, we can safely just go to the next lap.
+                win.next_lap(false);
+
+                if !win.is_active() {
+                    win.present();
+                }
             })
         );
-    }
-
-    fn skip(&self) {
-        let imp = self.get_private();
-        let lap_type = imp.timer.lap_type();
-
-        let next_lap = if lap_type == LapType::Pomodoro {
-            LapType::Break
-        } else {
-            LapType::Pomodoro
-        };
-
-        self.update_lap(next_lap);
-        if !self.is_active() {
-            self.present();
-        }
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
@@ -311,11 +301,21 @@ impl SolanumWindow {
         ));
     }
 
-    // Pause the timer and move to the next lap
-    fn next_lap(&self, lap_type: LapType) -> glib::Continue {
-        self.toggle_timer();
-        self.update_lap(lap_type);
-        self.send_notifcation(lap_type);
-        glib::Continue(true)
+    // Move to the next lap
+    fn next_lap(&self, notify: bool) {
+        let imp = self.get_private();
+        let lap_type = imp.timer.lap_type();
+
+        let next_lap = if lap_type == LapType::Pomodoro {
+            LapType::Break
+        } else {
+            LapType::Pomodoro
+        };
+
+        self.update_lap(next_lap);
+
+        if notify {
+            self.send_notifcation(lap_type);
+        }
     }
 }
