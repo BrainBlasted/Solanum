@@ -19,7 +19,7 @@
 
 use glib::prelude::*;
 use glib::subclass::{prelude::*, Signal};
-use glib::{clone, GEnum, StaticType};
+use glib::{clone, StaticType};
 
 // `Rc`s are Reference Counters. They allow us to clone objects,
 // while actually referencing at different places.
@@ -30,19 +30,6 @@ use std::time::{Duration, Instant};
 // `Lazy` is a structure for Lazy loading things during runtime.
 use once_cell::sync::Lazy;
 
-#[derive(Copy, Clone, Debug, Eq, PartialEq, GEnum)]
-#[genum(type_name = "SolanumLapType")]
-pub enum LapType {
-    Pomodoro,
-    Break,
-}
-
-impl Default for LapType {
-    fn default() -> Self {
-        Self::Pomodoro
-    }
-}
-
 mod imp {
     use super::*;
 
@@ -51,7 +38,6 @@ mod imp {
         pub running: Cell<bool>,
         pub instant: Cell<Option<Instant>>,
         pub duration: Cell<Duration>,
-        pub lap_type: Cell<LapType>,
     }
 
     #[glib::object_subclass]
@@ -146,14 +132,6 @@ impl Timer {
                         timer.emit_by_name("countdown-update", &[&minutes, &seconds]).expect("Could not emit \"countdown-update\" signal on SolanumTimer");
                         return glib::Continue(true);
                     } else {
-                        let new_lt = {
-                            if imp.lap_type.get() == LapType::Pomodoro {
-                                LapType::Break
-                            } else {
-                                LapType::Pomodoro
-                            }
-                        };
-                        timer.set_lap_type(new_lt);
                         timer.emit_by_name("lap", &[]).expect("Could not emit \"lap\" signal on SolanumTimer");
                         return glib::Continue(false);
                     }
@@ -176,16 +154,6 @@ impl Timer {
         }
 
         println!("Timer stopped!")
-    }
-
-    pub fn set_lap_type(&self, new_type: LapType) {
-        let imp = self.get_private();
-        imp.lap_type.set(new_type);
-    }
-
-    pub fn lap_type(&self) -> LapType {
-        let imp = self.get_private();
-        imp.lap_type.get()
     }
 
     pub fn running(&self) -> bool {

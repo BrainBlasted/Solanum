@@ -20,7 +20,7 @@
 use gio::prelude::*;
 use gtk::prelude::*;
 
-use glib::clone;
+use glib::{clone, GEnum};
 use gtk::CompositeTemplate;
 use gtk_macros::*;
 
@@ -35,10 +35,23 @@ use std::cell::Cell;
 use crate::app::SolanumApplication;
 use crate::config;
 use crate::i18n::*;
-use crate::timer::{LapType, Timer};
+use crate::timer::Timer;
 
 static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
 static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
+
+#[derive(Copy, Clone, Debug, Eq, PartialEq, GEnum)]
+#[genum(type_name = "SolanumLapType")]
+pub enum LapType {
+    Pomodoro,
+    Break,
+}
+
+impl Default for LapType {
+    fn default() -> Self {
+        Self::Pomodoro
+    }
+}
 
 mod imp {
     use super::*;
@@ -49,6 +62,8 @@ mod imp {
         pub pomodoro_count: Cell<u32>,
         pub timer: Timer,
         pub player: gstreamer_player::Player,
+        pub lap_type: Cell<LapType>,
+
         #[template_child]
         pub lap_label: TemplateChild<gtk::Label>,
         #[template_child]
@@ -70,6 +85,7 @@ mod imp {
                 pomodoro_count: Cell::new(1),
                 timer: Timer::new(),
                 player: gstreamer_player::Player::new(None, None),
+                lap_type: Default::default(),
                 lap_label: TemplateChild::default(),
                 timer_label: TemplateChild::default(),
                 timer_button: TemplateChild::default(),
@@ -194,7 +210,7 @@ impl SolanumWindow {
         let app = self.application();
         let settings = app.gsettings();
 
-        timer.set_lap_type(lap_type);
+        imp.lap_type.set(lap_type);
 
         let lap_number = &imp.pomodoro_count;
         println!("Setting lap to {:?}", lap_type);
@@ -304,7 +320,7 @@ impl SolanumWindow {
     // Move to the next lap
     fn next_lap(&self, notify: bool) {
         let imp = self.get_private();
-        let lap_type = imp.timer.lap_type();
+        let lap_type = imp.lap_type.get();
 
         let next_lap = if lap_type == LapType::Pomodoro {
             LapType::Break
