@@ -22,7 +22,6 @@ use gtk::prelude::*;
 
 use glib::{clone, GEnum};
 use gtk::CompositeTemplate;
-use gtk_macros::*;
 
 use glib::subclass;
 use glib::subclass::prelude::*;
@@ -103,7 +102,15 @@ mod imp {
 
             klass.install_action("win.toggle-timer", None, move |win, _, _| {
                 win.toggle_timer();
-            })
+            });
+
+            klass.install_action("win.skip", None, move |win, _, _| {
+                win.next_lap(false);
+
+                if !win.is_active() {
+                    win.present();
+                }
+            });
         }
 
         fn instance_init(obj: &subclass::InitializingObject<Self>) {
@@ -132,7 +139,6 @@ impl SolanumWindow {
             .expect("Failed to create SolanumWindow");
 
         win.init();
-        win.setup_actions();
 
         // Set icons for shell
         gtk::Window::set_default_icon_name(config::APP_ID);
@@ -177,23 +183,6 @@ impl SolanumWindow {
             win.toggle_timer();
             win.next_lap(true);
         }));
-    }
-
-    // Set up actions on the Window itself
-    fn setup_actions(&self) {
-        action!(
-            self,
-            "skip",
-            clone!(@weak self as win => move |_, _| {
-                // Since `skip` is only enabled when the timer
-                // is paused, we can safely just go to the next lap.
-                win.next_lap(false);
-
-                if !win.is_active() {
-                    win.present();
-                }
-            })
-        );
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
