@@ -97,7 +97,7 @@ mod imp {
 
             klass.install_action("win.menu", None, move |win, _, _| {
                 let imp = win.get_private();
-                imp.menu_button.popover().unwrap().popup();
+                imp.menu_button.activate();
             });
 
             klass.install_action("win.toggle-timer", None, move |win, _, _| {
