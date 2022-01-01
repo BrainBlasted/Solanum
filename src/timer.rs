@@ -101,20 +101,20 @@ impl Timer {
         .unwrap()
     }
 
-    fn get_private(&self) -> &imp::Timer {
-        &imp::Timer::from_instance(self)
+    fn imp(&self) -> &imp::Timer {
+        imp::Timer::from_instance(self)
     }
 
     // Pass the duration in minutes
     pub fn set_duration(&self, duration: u32) {
-        let imp = self.get_private();
+        let imp = self.imp();
 
         imp.instant.set(Some(Instant::now()));
         imp.duration.set(Duration::new((duration * 60).into(), 0));
     }
 
     pub fn start(&self) {
-        let imp = self.get_private();
+        let imp = self.imp();
 
         imp.running.set(true);
         imp.instant.set(Some(Instant::now()));
@@ -123,7 +123,7 @@ impl Timer {
         glib::timeout_add_local(
             std::time::Duration::from_millis(100),
             clone!(@weak self as timer => @default-return glib::Continue(false), move || {
-                let imp = timer.get_private();
+                let imp = timer.imp();
                 if imp.running.get() {
                     let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
                     let duration = imp.duration.get();
@@ -143,7 +143,7 @@ impl Timer {
     }
 
     pub fn stop(&self) {
-        let imp = self.get_private();
+        let imp = self.imp();
 
         imp.running.set(false);
 
@@ -157,7 +157,7 @@ impl Timer {
     }
 
     pub fn running(&self) -> bool {
-        self.get_private().running.get()
+        self.imp().running.get()
     }
 }
 

@@ -96,7 +96,7 @@ mod imp {
             Self::bind_template(klass);
 
             klass.install_action("win.menu", None, move |win, _, _| {
-                let imp = win.get_private();
+                let imp = win.imp();
                 imp.menu_button.activate();
             });
 
@@ -146,8 +146,8 @@ impl SolanumWindow {
         win
     }
 
-    fn get_private(&self) -> &imp::SolanumWindow {
-        &imp::SolanumWindow::from_instance(self)
+    fn imp(&self) -> &imp::SolanumWindow {
+        imp::SolanumWindow::from_instance(self)
     }
 
     fn application(&self) -> SolanumApplication {
@@ -158,7 +158,7 @@ impl SolanumWindow {
     }
 
     fn init(&self) {
-        let imp = self.get_private();
+        let imp = self.imp();
         let timer_label = &*imp.timer_label;
         let app = self.application();
         let settings = app.gsettings();
@@ -186,14 +186,14 @@ impl SolanumWindow {
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
-        let imp = self.get_private();
+        let imp = self.imp();
         let label = &*imp.timer_label;
         label.set_label(&format!("{:>02}∶{:>02}", min, sec));
         glib::Continue(true)
     }
 
     fn update_lap(&self, lap_type: LapType) {
-        let imp = self.get_private();
+        let imp = self.imp();
         let label = &*imp.lap_label;
         let timer = &imp.timer;
         let app = self.application();
@@ -231,7 +231,7 @@ impl SolanumWindow {
 
     // Callback to run whenever the timer is toggled - by button or action
     fn toggle_timer(&self) {
-        let imp = self.get_private();
+        let imp = self.imp();
 
         let start_timer = !imp.timer.running();
         self.action_set_enabled("win.skip", !start_timer);
@@ -254,7 +254,7 @@ impl SolanumWindow {
 
     // Util for setting the timer label when given seconds
     fn set_timer_label_from_secs(&self, secs: u32) {
-        let imp = self.get_private();
+        let imp = self.imp();
         let label = &*imp.timer_label;
         let min = secs / 60;
         let secs = secs % 60;
@@ -262,7 +262,7 @@ impl SolanumWindow {
     }
 
     fn play_sound(&self, uri: &str) {
-        let player = &self.get_private().player;
+        let player = &self.imp().player;
         player.set_uri(uri);
         player.play();
     }
@@ -294,7 +294,7 @@ impl SolanumWindow {
     }
 
     fn update_lap_label(&self) {
-        let imp = self.get_private();
+        let imp = self.imp();
 
         // Translators: Every pomodoro session can range from 1-99 laps,
         // so {} will contain a number between 1 and 99. Lap is always singular.
@@ -308,7 +308,7 @@ impl SolanumWindow {
 
     // Move to the next lap
     fn next_lap(&self, notify: bool) {
-        let imp = self.get_private();
+        let imp = self.imp();
         let lap_type = imp.lap_type.get();
 
         let next_lap = if lap_type == LapType::Pomodoro {
