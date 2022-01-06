@@ -50,15 +50,6 @@ fn main() {
     glib::set_application_name("Solanum");
     glib::set_program_name(Some("solanum"));
 
-    // Set up CSS
-    let provider = gtk::CssProvider::new();
-    provider.load_from_resource("/org/gnome/Solanum/style.css");
-    gtk::StyleContext::add_provider_for_display(
-        &gdk::Display::default().unwrap(),
-        &provider,
-        gtk::STYLE_PROVIDER_PRIORITY_APPLICATION,
-    );
-
     let app = SolanumApplication::new();
 
     let ret = app.run();

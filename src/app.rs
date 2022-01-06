@@ -27,6 +27,7 @@ use glib::WeakRef;
 use gio::ApplicationFlags;
 use glib::subclass::prelude::*;
 use gtk::subclass::prelude::*;
+use libadwaita::subclass::prelude::*;
 
 use once_cell::unsync::OnceCell;
 
@@ -50,7 +51,7 @@ mod imp {
     impl ObjectSubclass for SolanumApplication {
         const NAME: &'static str = "SolanumApplication";
         type Type = super::SolanumApplication;
-        type ParentType = gtk::Application;
+        type ParentType = libadwaita::Application;
 
         fn new() -> Self {
             Self {
@@ -87,11 +88,12 @@ mod imp {
     }
 
     impl GtkApplicationImpl for SolanumApplication {}
+    impl AdwApplicationImpl for SolanumApplication {}
 }
 
 glib::wrapper! {
     pub struct SolanumApplication(ObjectSubclass<imp::SolanumApplication>)
-        @extends gio::Application, gtk::Application,
+        @extends gio::Application, gtk::Application, libadwaita::Application,
         @implements gio::ActionGroup, gio::ActionMap;
 }
 
