@@ -1,7 +1,6 @@
 desktop_conf = configuration_data()
 desktop_conf.set('APP_ID', app_id)
 desktop_file = i18n.merge_file(
-  'desktop',
   input: configure_file(
     input: 'org.gnome.Solanum.desktop.in.in',
     output: 'org.gnome.Solanum.desktop.in',
