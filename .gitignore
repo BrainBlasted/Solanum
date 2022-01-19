@@ -4,3 +4,4 @@ target/
 data/sounds/cover.jpg
 .flatpak
 .vscode
+subprojects/blueprint-compiler/

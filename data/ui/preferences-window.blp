@@ -1,0 +1,79 @@
+using Gtk 4.0;
+using Adw 1;
+
+template SolanumPreferencesWindow : Adw.PreferencesWindow {
+  search-enabled: false;
+
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+      title: _("Session Length");
+      description: _("The length of each session type in minutes. Changes apply to the next session of each type.");
+
+      Adw.ActionRow {
+        title: _("Lap Length");
+
+        [suffix]
+        Gtk.SpinButton lap_spin {
+          valign: center;
+          numeric: true;
+
+          adjustment: Gtk.Adjustment adjustment {
+            lower: 1;
+            upper: 99;
+            step-increment: 1;
+          };
+        }
+      }
+
+      Adw.ActionRow {
+        title: _("Short Break Length");
+
+        [suffix]
+        Gtk.SpinButton short_break_spin {
+          valign: center;
+          numeric: true;
+
+          adjustment: Gtk.Adjustment {
+            lower: bind adjustment.lower sync-create;
+            upper: bind adjustment.upper sync-create;
+            step-increment: bind adjustment.step-increment sync-create;
+          };
+        }
+      }
+
+      Adw.ActionRow {
+        title: _("Long Break Length");
+
+        [suffix]
+        Gtk.SpinButton long_break_spin {
+          valign: center;
+          numeric: true;
+
+          adjustment: Gtk.Adjustment {
+            lower: bind adjustment.lower sync-create;
+            upper: bind adjustment.upper sync-create;
+            step-increment: bind adjustment.step-increment sync-create;
+          };
+        }
+      }
+    }
+
+    Adw.PreferencesGroup {
+      Adw.ActionRow {
+        title: _("Sessions Until Long Break");
+
+        [suffix]
+        Gtk.SpinButton session_count_spin {
+          valign: center;
+          numeric: true;
+
+          adjustment: Gtk.Adjustment {
+            lower: bind adjustment.lower sync-create;
+            upper: bind adjustment.upper sync-create;
+            step-increment: bind adjustment.step-increment sync-create;
+          };
+        }
+      }
+    }
+  }
+}
