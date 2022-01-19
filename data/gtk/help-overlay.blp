@@ -1,0 +1,26 @@
+using Gtk 4.0;
+
+Gtk.ShortcutsWindow help_overlay {
+  modal: true;
+
+  Gtk.ShortcutsSection {
+    Gtk.ShortcutsGroup {
+      title: C_("shortcut window", "General Shortcuts");
+
+      Gtk.ShortcutsShortcut {
+        title: C_("shortcut window", "Show Primary Menu");
+        action-name: "win.menu";
+      }
+
+      Gtk.ShortcutsShortcut {
+        title: C_("shortcut window", "Show Keyboard Shortcuts");
+        action-name: "win.show-help-overlay";
+      }
+
+      Gtk.ShortcutsShortcut {
+        title: C_("shortcut window", "Quit");
+        action-name: "app.quit";
+      }
+    }
+  }
+}

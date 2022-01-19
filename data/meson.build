@@ -52,6 +52,7 @@ endif
 
 blueprints = custom_target('blueprints',
   input: files(
+    'gtk/help-overlay.blp',
     'ui/preferences-window.blp',
     'ui/window.blp',
   ),
