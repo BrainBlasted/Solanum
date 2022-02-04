@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the solanum package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Fran Dieguez <frandieguez@gnome.org>, 2021.
+# Fran Diéguez <frandieguez@gnome.org>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-09-05 07:53+0000\n"
-"PO-Revision-Date: 2021-09-06 21:17+0200\n"
-"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"POT-Creation-Date: 2021-10-15 21:56+0000\n"
+"PO-Revision-Date: 2022-02-04 15:16+0100\n"
+"Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +23,7 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 41.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
@@ -52,6 +53,22 @@ msgstr "Christopher Davis"
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Temporizador;Productividade;"
 
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "A lonxitude dunha volta de traballo en minutos."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "A lonxitude dun descanso curto en minutos."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "A lonxitude dun descanso largo en minutos."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "O número de sesións ate un descanso largo."
+
 #: data/gtk/help-overlay.ui:12
 msgctxt "shortcut window"
 msgid "General Shortcuts"
@@ -72,28 +89,62 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Saír"
 
+#: data/ui/preferences-window.ui:9
+msgid "Session Length"
+msgstr "Tempo da sesión"
+
+#: data/ui/preferences-window.ui:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"A lonxitude de cada tipo de sesión en minutos. Os cambios aplícanse á "
+"seguinte sesión de cada tipo."
+
+#: data/ui/preferences-window.ui:13
+msgid "Lap Length"
+msgstr "Lonxitude da volta"
+
+#: data/ui/preferences-window.ui:31
+#| msgid "Short Break"
+msgid "Short Break Length"
+msgstr "Lonxitude do descanso curto"
+
+#: data/ui/preferences-window.ui:49
+#| msgid "Long Break"
+msgid "Long Break Length"
+msgstr "Lonxitude do descanso largo"
+
+#: data/ui/preferences-window.ui:71
+msgid "Sessions Until Long Break"
+msgstr "Sesións ate unha pausa longa"
+
 #: data/ui/window.ui:109
+msgid "_Preferences"
+msgstr "_Preferencias"
+
+#: data/ui/window.ui:113
 msgid "_Keyboard Shortcuts"
 msgstr "_Atallos de teclado"
 
-#: data/ui/window.ui:113
+#: data/ui/window.ui:117
 msgid "_About Solanum"
 msgstr "_Sobre Solanum"
 
-#: src/app.rs:168
+#: src/app.rs:182
 msgid "A pomodoro timer for GNOME"
 msgstr "Un temporizador pomodoro para GNOME"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:170
+#: src/app.rs:184
 msgid "translator-credits"
 msgstr "Fran Diéguez <frandieguez@gnome.org>, 2021"
 
-#: src/app.rs:176
+#: src/app.rs:190
 msgid "Donate on Patreon"
 msgstr "Donar en Patreon"
 
-#: src/window.rs:238
+#: src/window.rs:237
 msgid "Long Break"
 msgstr "Descanso largo"
 
