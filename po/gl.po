@@ -138,7 +138,7 @@ msgstr "Un temporizador pomodoro para GNOME"
 #. Translators: Replace "translator-credits" with your names, one name per line
 #: src/app.rs:184
 msgid "translator-credits"
-msgstr "Fran Diéguez <frandieguez@gnome.org>, 2021"
+msgstr "Fran Diéguez <frandieguez@gnome.org>, 2021-2022."
 
 #: src/app.rs:190
 msgid "Donate on Patreon"
