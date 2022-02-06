@@ -2,24 +2,25 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # Thibault Martin <thibaultamartin@gnome.org>, 2020.
+# Charles Monzat <charles.monzat@free.fr>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2020-10-12 09:07+0000\n"
-"PO-Revision-Date: 2020-10-13 14:17+0200\n"
-"Last-Translator: Thibault Martin <thibaultamartin@gnome.org>\n"
+"POT-Creation-Date: 2022-02-02 06:18+0000\n"
+"PO-Revision-Date: 2022-02-06 16:49+0100\n"
+"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.38.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:83 src/window.rs:384
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:272
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -46,82 +47,135 @@ msgstr "Christopher Davis"
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Minuteur;Productivité;"
 
-#: data/gtk/help-overlay.ui:12
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "La durée d’un cycle de travail en minutes."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "La durée d’une pause courte en minutes."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "La durée d’une pause longue en minutes."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Le nombre de périodes avant d’effectuer une pause longue."
+
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Raccourcis généraux"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Afficher le menu principal"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Afficher les raccourcis clavier"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
 
-#: data/ui/menu.ui:8
-msgid "_Keyboard Shortcuts"
-msgstr "_Raccourcis clavier"
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Durée de période"
 
-#: data/ui/menu.ui:12
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"La durée de chaque type de période en minutes. Les modifications "
+"s’appliquent à la prochaine période de chaque type."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Durée de cycle"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "Durée de pause courte"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "Durée de pause longue"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "Périodes avant d’effectuer une pause longue"
+
+#: data/ui/window.blp:78
+msgid "_Preferences"
+msgstr "Pré_férences"
+
+#: data/ui/window.blp:79
+msgid "_Keyboard Shortcuts"
+msgstr "Raccourcis _clavier"
+
+#: data/ui/window.blp:80
 msgid "_About Solanum"
 msgstr "À _propos de Solanum"
 
-#: src/app.rs:182
+#: src/app.rs:184
 msgid "A pomodoro timer for GNOME"
 msgstr "Un minuteur Pomodoro pour GNOME"
 
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:186
 msgid "translator-credits"
-msgstr "Thibault Martin"
+msgstr ""
+"Thibault Martin\n"
+"Charles Monzat"
 
-#: src/app.rs:189
+#: src/app.rs:192
 msgid "Donate on Patreon"
 msgstr "Soutenir sur Patreon"
 
-#: src/window.rs:112 src/window.rs:300 src/window.rs:424
-msgid "Lap {}"
-msgstr "Période {}"
-
-#: src/window.rs:307 src/window.rs:431
+#: src/window.rs:218
 msgid "Long Break"
 msgstr "Pause longue"
 
-#: src/window.rs:312 src/window.rs:436
+#: src/window.rs:224
 msgid "Short Break"
 msgstr "Pause courte"
 
-#: src/window.rs:388
+#: src/window.rs:276
 msgid "Back to Work"
 msgstr "Retour au travail"
 
-#: src/window.rs:389
+#: src/window.rs:277
 msgid "Ready to keep working?"
 msgstr "Prêt à travailler ?"
 
-#: src/window.rs:390
+#: src/window.rs:278
 msgid "Start Working"
 msgstr "Commencer à travailler"
 
-#: src/window.rs:393
+#: src/window.rs:281
 msgid "Break Time"
 msgstr "Pause"
 
-#: src/window.rs:394
+#: src/window.rs:282
 msgid "Stretch your legs, and drink some water."
 msgstr "Étirez vos jambes et buvez de l’eau"
 
-#: src/window.rs:395
+#: src/window.rs:283
 msgid "Start Break"
 msgstr "Commencer la pause"
 
-#: src/window.rs:401
+#: src/window.rs:289
 msgid "Skip"
 msgstr "Passer"
+
+#: src/window.rs:302
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Cycle {}"
+msgstr[1] "Cycle {}"
