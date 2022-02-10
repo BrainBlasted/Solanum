@@ -163,6 +163,8 @@ impl SolanumWindow {
         let app = self.application();
         let settings = app.gsettings();
 
+        timer_label.set_direction(gtk::TextDirection::Ltr);
+
         if config::APP_ID.ends_with("Devel") {
             self.add_css_class("devel");
         }
