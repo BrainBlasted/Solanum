@@ -178,7 +178,7 @@ impl SolanumApplication {
             "Miredly Sound https://soundcloud.com/mired".to_string(),
         ];
 
-        let dialog = gtk::AboutDialogBuilder::new()
+        let dialog = gtk::AboutDialog::builder()
             .authors(authors)
             .artists(artists)
             .comments(&i18n("A pomodoro timer for GNOME"))

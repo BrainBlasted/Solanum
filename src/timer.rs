@@ -87,7 +87,6 @@ impl Timer {
 
             None
         })
-        .unwrap()
     }
 
     pub fn connect_lap<F: Fn(&Self) + 'static>(&self, f: F) -> glib::SignalHandlerId {
@@ -98,7 +97,6 @@ impl Timer {
 
             None
         })
-        .unwrap()
     }
 
     fn imp(&self) -> &imp::Timer {
@@ -129,10 +127,10 @@ impl Timer {
                     let duration = imp.duration.get();
                     if let Some(difference) = duration.checked_sub(instant.elapsed()) {
                         let (minutes, seconds) = duration_to_mins_and_secs(difference);
-                        timer.emit_by_name("countdown-update", &[&minutes, &seconds]).expect("Could not emit \"countdown-update\" signal on SolanumTimer");
+                        timer.emit_by_name::<()>("countdown-update", &[&minutes, &seconds]);
                         return glib::Continue(true);
                     } else {
-                        timer.emit_by_name("lap", &[]).expect("Could not emit \"lap\" signal on SolanumTimer");
+                        timer.emit_by_name::<()>("lap", &[]);
                         return glib::Continue(false);
                     }
                 }

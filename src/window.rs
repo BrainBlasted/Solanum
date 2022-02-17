@@ -20,7 +20,7 @@
 use gio::prelude::*;
 use gtk::prelude::*;
 
-use glib::{clone, GEnum};
+use glib::{clone, Enum};
 use gtk::CompositeTemplate;
 
 use glib::subclass;
@@ -39,8 +39,8 @@ use crate::timer::Timer;
 static CHIME_URI: &str = "resource:///org/gnome/Solanum/chime.ogg";
 static BEEP_URI: &str = "resource:///org/gnome/Solanum/beep.ogg";
 
-#[derive(Copy, Clone, Debug, Eq, PartialEq, GEnum)]
-#[genum(type_name = "SolanumLapType")]
+#[derive(Copy, Clone, Debug, Eq, PartialEq, Enum)]
+#[enum_type(name = "SolanumLapType")]
 pub enum LapType {
     Pomodoro,
     Break,
