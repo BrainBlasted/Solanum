@@ -931,6 +931,7 @@ dependencies = [
  "gettext-rs",
  "gio",
  "glib 0.15.5",
+ "glib-macros 0.15.3",
  "gstreamer",
  "gstreamer-player",
  "gtk-macros",

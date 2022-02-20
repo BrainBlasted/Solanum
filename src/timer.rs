@@ -20,6 +20,7 @@
 use glib::prelude::*;
 use glib::subclass::{prelude::*, Signal};
 use glib::{clone, StaticType};
+use glib_macros::closure_local;
 
 // `Rc`s are Reference Counters. They allow us to clone objects,
 // while actually referencing at different places.
@@ -78,25 +79,23 @@ impl Timer {
         &self,
         f: F,
     ) -> glib::SignalHandlerId {
-        self.connect_local("countdown-update", true, move |values| {
-            let timer = values[0].get::<Self>().unwrap();
-            let minutes = values[1].get::<u32>().unwrap();
-            let seconds = values[2].get::<u32>().unwrap();
-
-            f(&timer, minutes, seconds);
-
-            None
-        })
+        self.connect_closure(
+            "countdown-update",
+            true,
+            closure_local!(|ref timer, minutes, seconds| {
+                f(timer, minutes, seconds);
+            }),
+        )
     }
 
     pub fn connect_lap<F: Fn(&Self) + 'static>(&self, f: F) -> glib::SignalHandlerId {
-        self.connect_local("lap", true, move |values| {
-            let timer = values[0].get::<Self>().unwrap();
-
-            f(&timer);
-
-            None
-        })
+        self.connect_closure(
+            "lap",
+            true,
+            closure_local!(|timer| {
+                f(&timer);
+            }),
+        )
     }
 
     fn imp(&self) -> &imp::Timer {
