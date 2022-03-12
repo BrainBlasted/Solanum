@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
 "POT-Creation-Date: 2022-03-02 16:46+0000\n"
-"PO-Revision-Date: 2022-03-12 13:41+0100\n"
+"PO-Revision-Date: 2022-03-12 13:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -26,7 +26,7 @@ msgstr "Solanum"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:8
 msgid "Balance working time and break time"
-msgstr "Uskladite radno vrijeme i vrijeme pauze"
+msgstr "Uskladite radno vrijeme s pauzom"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:10
 msgid ""
