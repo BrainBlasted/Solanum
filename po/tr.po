@@ -1,0 +1,178 @@
+# Turkish translation for solanum.
+# Copyright (C) 2020 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+#
+# Sabri Ünal <libreajans@gmail.com>, 2022
+# Emin Tufan Çetin <etcetin@gmail.com>, 2022
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2022-03-25 15:49+0000\n"
+"PO-Revision-Date: 2022-04-17 01:36+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:272
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Çalışma ve mola zamanlarını dengele"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum, pomodoro tekniğini kullanan zaman izleme uygulamasıdır. 4 oturumda "
+"çalışın, her oturum arasında ara verin ve 4 oturumdan sonra uzun ara verin."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Zamanlayıcı;Süreölçer;Üretkenlik;Verimlilik;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Çalışma turunun dakika türünden uzunluğu."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Kısa molanın dakika türünden uzunluğu."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Uzun molanın dakika türünden uzunluğu."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Uzun molaya dek oturum sayısı."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Genel Kısayollar"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Ana Menüyü Göster"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Klavye Kısayollarını Göster"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Oturum Uzunluğu"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Her oturum türünün dakika türünden uzunluğu. Değişiklikler her türün bir "
+"sonraki oturumuna uygulanır."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Tur Uzunluğu"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "Kısa Mola Uzunluğu"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "Uzun Mola Uzunluğu"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "Uzun Molaya Dek Oturumlar"
+
+#: data/ui/window.blp:78
+msgid "_Preferences"
+msgstr "_Tercihler"
+
+#: data/ui/window.blp:79
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: data/ui/window.blp:80
+msgid "_About Solanum"
+msgstr "Solanum _Hakkında"
+
+#: src/app.rs:184
+msgid "A pomodoro timer for GNOME"
+msgstr "GNOME için pomodoro zamanlayıcısı"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:186
+msgid "translator-credits"
+msgstr "Sabri Ünal <libreajans@gmail.com>, 2022"
+
+#: src/app.rs:192
+msgid "Donate on Patreon"
+msgstr "Patreon’da Bağış Yap"
+
+#: src/window.rs:218
+msgid "Long Break"
+msgstr "Uzun Mola"
+
+#: src/window.rs:224
+msgid "Short Break"
+msgstr "Kısa Mola"
+
+#: src/window.rs:276
+msgid "Back to Work"
+msgstr "Çalışmaya Dön"
+
+#: src/window.rs:277
+msgid "Ready to keep working?"
+msgstr "Çalışmaya hazır mısın?"
+
+#: src/window.rs:278
+msgid "Start Working"
+msgstr "Çalışmaya Başla"
+
+#: src/window.rs:281
+msgid "Break Time"
+msgstr "Mola Zamanı"
+
+#: src/window.rs:282
+msgid "Stretch your legs, and drink some water."
+msgstr "Bacaklarını rahatlat ve biraz su iç."
+
+#: src/window.rs:283
+msgid "Start Break"
+msgstr "Molayı Başlat"
+
+#: src/window.rs:289
+msgid "Skip"
+msgstr "Atla"
+
+#: src/window.rs:302
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Tur {}"
