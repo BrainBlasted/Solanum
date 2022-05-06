@@ -320,7 +320,7 @@ impl SolanumWindow {
         self.update_lap(next_lap);
 
         if notify {
-            self.send_notifcation(lap_type);
+            self.send_notifcation(next_lap);
         }
     }
 }
