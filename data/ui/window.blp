@@ -75,7 +75,13 @@ template SolanumWindow : Adw.ApplicationWindow {
 }
 
 menu app_menu {
-  item (_("_Preferences"), "app.preferences")
-  item (_("_Keyboard Shortcuts"), "win.show-help-overlay")
-  item (_("_About Solanum"), "app.about")
+  section {
+    item (_("Reset Sessions"), "win.reset")
+  }
+
+  section {
+    item (_("_Preferences"), "app.preferences")
+    item (_("_Keyboard Shortcuts"), "win.show-help-overlay")
+    item (_("_About Solanum"), "app.about")
+  }
 }

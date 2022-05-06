@@ -104,6 +104,10 @@ mod imp {
                 win.toggle_timer();
             });
 
+            klass.install_action("win.reset", None, move |win, _, _| {
+                win.reset();
+            });
+
             klass.install_action("win.skip", None, move |win, _, _| {
                 win.next_lap(false);
 
@@ -252,6 +256,25 @@ impl SolanumWindow {
             imp.timer_label.add_css_class("blinking");
             imp.timer_button.add_css_class("suggested-action");
         }
+
+        // !start_timer = only allow restarting when the timer is paused
+        self.action_set_enabled("win.reset", !start_timer)
+    }
+
+    // Callback for resetting the application to the initial state.
+    fn reset(&self) {
+        println!("Resetting to the initial state");
+        let imp = self.imp();
+
+        // Reset the user interface to the stopped state.
+        imp.timer.stop();
+        imp.timer_button
+            .set_icon_name("media-playback-start-symbolic");
+        imp.timer_label.add_css_class("blinking");
+        imp.timer_button.add_css_class("suggested-action");
+
+        imp.pomodoro_count.set(1);
+        self.update_lap(LapType::Pomodoro);
     }
 
     // Util for setting the timer label when given seconds
