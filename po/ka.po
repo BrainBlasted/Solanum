@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2022-05-16 20:23+0000\n"
+"PO-Revision-Date: 2022-06-07 06:31+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:274
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "დასვენებისა და სამუშაო დროის ბალანსი"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanium-ი დროის აღრიცხვის აპლიკაციას წარმოადგენს, რომელიც პომოდოროს "
+"ტექნიკას იყენებს. იმუშავეთ 4 სესიის განმავლობაში, დაისვენეთ სესიებს შუა და "
+"ერთი დიდი დასვენება 4-ვეს შემდეგ."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr ""
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "მოკლე შესვენების დრო წუთებში."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "დიდი შესვენების დრო წუთებში."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "სესიების რაოდენობა დიდ შესვენებამდე."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "საერთო მალსახმობები"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "მენიუს ძირითადი ზოლის ჩვენება"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "კლავიატურის მალსახმობების ჩვენება"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "გასვლა"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "სესიის სიგრძე"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"თითოეული სესიის სიგრძე, წუთებში. ცვლილები თითოეული ტიპისთვის ძალაში მხოლოდ "
+"შემდეგი სესიის დროს შევა."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr ""
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "მოკლე შესვენების დრო"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "დიდი შესვენების დრო"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "სესიები დიდ შესვენებამდე"
+
+#: data/ui/window.blp:78
+msgid "_Preferences"
+msgstr "_მორგება"
+
+#: data/ui/window.blp:79
+msgid "_Keyboard Shortcuts"
+msgstr "კლავიატურის მალსახმობები"
+
+#: data/ui/window.blp:80
+msgid "_About Solanum"
+msgstr "Solanum-ის შესახებ"
+
+#: src/app.rs:184
+msgid "A pomodoro timer for GNOME"
+msgstr "პომოდორო წამმზომი GNOME-ისთვის"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:186
+msgid "translator-credits"
+msgstr "თემური დოღონაძე"
+
+#: src/app.rs:192
+msgid "Donate on Patreon"
+msgstr "შემოგვწირეთ Patreon-ზე"
+
+#: src/window.rs:220
+msgid "Long Break"
+msgstr "დიდი შესვენება"
+
+#: src/window.rs:226
+msgid "Short Break"
+msgstr "მოკლე შესვენება"
+
+#: src/window.rs:278
+msgid "Back to Work"
+msgstr "სამსახური"
+
+#: src/window.rs:279
+msgid "Ready to keep working?"
+msgstr "მზად ხართ, გააგრძელოთ მუშაობა?"
+
+#: src/window.rs:280
+msgid "Start Working"
+msgstr "მუშაობის დაწყება"
+
+#: src/window.rs:283
+msgid "Break Time"
+msgstr "შესვენების დრო"
+
+#: src/window.rs:284
+msgid "Stretch your legs, and drink some water."
+msgstr "გაიარეთ, ცოტა წყალიც დალიეთ."
+
+#: src/window.rs:285
+msgid "Start Break"
+msgstr "შესვენების დაწყება"
+
+#: src/window.rs:291
+msgid "Skip"
+msgstr "გამოტოვება"
+
+#: src/window.rs:304
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] ""
