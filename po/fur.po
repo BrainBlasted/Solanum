@@ -1,0 +1,178 @@
+# Friulian translation for solanum.
+# Copyright (C) 2022 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Fabio Tomat <f.t.public@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2022-06-07 04:34+0000\n"
+"PO-Revision-Date: 2022-07-03 10:42+0200\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
+"Language-Team: Friulian <fur@li.org>\n"
+"Language: fur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:274
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Belance il timp di lavôr e chel di pause"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum e je une aplicazion che e ten di voli il timp, e dopre la tecniche "
+"pomodoro. Lavore in 4 sessions, cun pausis tra ogni session e une pause "
+"lungje dopo di chês 4."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Temporizadôr;Produtivitât;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "La durade di un zîr di vore in minûts."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "La durade di une pause curte in minûts."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "La durade di une pause lungje in minûts."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Il numar di session prime di une pause lungje."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Scurtis gjenerâls"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Mostre menù primari"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Mostre scurtis di tastiere"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Jes"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Durade de session"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"La durade di ogni gjenar di session in minûts. Lis modifichis a vegnin "
+"aplicadis ae session sucessive di ogni gjenar."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Durade dal zîr"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "Durade de pause curte"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "Durade de pause lungje"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "Sessions prime de pause lungje"
+
+#: data/ui/window.blp:78
+msgid "_Preferences"
+msgstr "_Preferencis"
+
+#: data/ui/window.blp:79
+msgid "_Keyboard Shortcuts"
+msgstr "_Scurtis tastiere"
+
+#: data/ui/window.blp:80
+msgid "_About Solanum"
+msgstr "_Informazions su Solanum"
+
+#: src/app.rs:184
+msgid "A pomodoro timer for GNOME"
+msgstr "Un temporizadôr pomodoro par GNOME"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:186
+msgid "translator-credits"
+msgstr "Fabio Tomat <f.t.public@gmail.com>, 2022"
+
+#: src/app.rs:192
+msgid "Donate on Patreon"
+msgstr "Done su Patreon"
+
+#: src/window.rs:220
+msgid "Long Break"
+msgstr "Pause lungje"
+
+#: src/window.rs:226
+msgid "Short Break"
+msgstr "Pause curte"
+
+#: src/window.rs:278
+msgid "Back to Work"
+msgstr "Torne a vore"
+
+#: src/window.rs:279
+msgid "Ready to keep working?"
+msgstr "Pront par continuâ a lavorâ?"
+
+#: src/window.rs:280
+msgid "Start Working"
+msgstr "Scomence a lavorâ"
+
+#: src/window.rs:283
+msgid "Break Time"
+msgstr "Pause"
+
+#: src/window.rs:284
+msgid "Stretch your legs, and drink some water."
+msgstr "Distire lis gjambis e bêf un pocje di aghe."
+
+#: src/window.rs:285
+msgid "Start Break"
+msgstr "Scomence la pause"
+
+#: src/window.rs:291
+msgid "Skip"
+msgstr "Salte"
+
+#: src/window.rs:304
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Zîr {}"
+msgstr[1] "Zîrs {}"
