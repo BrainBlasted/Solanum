@@ -181,7 +181,7 @@ impl SolanumWindow {
 
         self.update_lap_label();
 
-        let min = settings.get("lap-length");
+        let min = settings.uint("lap-length");
         imp.timer.set_duration(min);
         timer_label.set_label(&format!("{:>02}∶00", min));
 
@@ -224,14 +224,14 @@ impl SolanumWindow {
                 self.set_timer_label_from_secs(length * 60);
             }
             LapType::Break => {
-                if lap_number.get() >= settings.get("sessions-until-long-break") {
-                    let length = settings.get("long-break-length");
+                if lap_number.get() >= settings.uint("sessions-until-long-break") {
+                    let length = settings.uint("long-break-length");
                     lap_number.set(1);
                     label.set_label(&i18n("Long Break"));
                     timer.set_duration(length);
                     self.set_timer_label_from_secs(length * 60);
                 } else {
-                    let length = settings.get("short-break-length");
+                    let length = settings.uint("short-break-length");
                     lap_number.set(lap_number.get() + 1);
                     label.set_label(&i18n("Short Break"));
                     timer.set_duration(length);
