@@ -1,0 +1,31 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Solanum</name>
+  <shortdesc xml:lang="en">Balance working time and break time</shortdesc>
+  <description>Solanum is a time tracking app that uses the pomodoro technique.
+  Work in 4 sessions, with breaks in between each session and one long break
+  after all 4.</description>
+  <homepage rdf:resource="https://apps.gnome.org/app/org.gnome.Solanum/" />
+  <bug-database rdf:resource="https://gitlab.gnome.org/World/Solanum/issues/" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#core" />
+  <programming-language>Rust</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Christopher Davis</foaf:name>
+      <foaf:mbox rdf:resource="mailto:christopherdavis@gnome.org" />
+      <gnome:userid>christopherdavis</gnome:userid>
+      <foaf:account>
+        <foaf:OnlineAccount>
+          <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org/"/>
+          <foaf:accountName>BrainBlasted</foaf:accountName>
+        </foaf:OnlineAccount>
+      </foaf:account>
+    </foaf:Person>
+  </maintainer>
+
+</Project>
