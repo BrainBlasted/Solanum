@@ -22,7 +22,7 @@ solanum_localedir = join_paths(solanum_prefix, get_option('localedir'))
 solanum_datadir = join_paths(solanum_prefix, get_option('datadir'))
 solanum_pkgdatadir = join_paths(solanum_datadir, meson.project_name())
 
-copyright = '2021'
+copyright = '2022'
 profile = ''
 name_suffix = ''
 version_suffix = ''
