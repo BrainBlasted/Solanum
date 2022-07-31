@@ -19,7 +19,7 @@
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">@APP_ID@.desktop</launchable>
-  <url type="homepage">https://gitlab.gnome.org/World/Solanum</url>
+  <url type="homepage">https://apps.gnome.org/apps/org.gnome.Solanum</url>
   <url type="bugtracker">https://gitlab.gnome.org/World/Solanum/-/issues</url>
   <url type="donation">https://patreon.com/chrisgnome</url>
   <!-- Translators: please do NOT translate this -->
