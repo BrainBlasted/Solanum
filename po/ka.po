@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-05-16 20:23+0000\n"
-"PO-Revision-Date: 2022-07-31 08:37+0200\n"
+"POT-Creation-Date: 2022-07-31 06:38+0000\n"
+"PO-Revision-Date: 2022-07-31 08:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:274
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:297
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -110,15 +110,19 @@ msgstr "დიდი შესვენების დრო"
 msgid "Sessions Until Long Break"
 msgstr "სესიები დიდ შესვენებამდე"
 
-#: data/ui/window.blp:78
+#: data/ui/window.blp:79
+msgid "Reset Sessions"
+msgstr "სესიების გასუფთავება"
+
+#: data/ui/window.blp:83
 msgid "_Preferences"
 msgstr "_მორგება"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "_Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახმობები"
 
-#: data/ui/window.blp:80
+#: data/ui/window.blp:85
 msgid "_About Solanum"
 msgstr "Solanum-ის შესახებ"
 
@@ -135,43 +139,43 @@ msgstr "თემური დოღონაძე"
 msgid "Donate on Patreon"
 msgstr "შემოგვწირეთ Patreon-ზე"
 
-#: src/window.rs:220
+#: src/window.rs:224
 msgid "Long Break"
 msgstr "დიდი შესვენება"
 
-#: src/window.rs:226
+#: src/window.rs:230
 msgid "Short Break"
 msgstr "მოკლე შესვენება"
 
-#: src/window.rs:278
+#: src/window.rs:301
 msgid "Back to Work"
 msgstr "სამსახური"
 
-#: src/window.rs:279
+#: src/window.rs:302
 msgid "Ready to keep working?"
 msgstr "მზად ხართ, გააგრძელოთ მუშაობა?"
 
-#: src/window.rs:280
+#: src/window.rs:303
 msgid "Start Working"
 msgstr "მუშაობის დაწყება"
 
-#: src/window.rs:283
+#: src/window.rs:306
 msgid "Break Time"
 msgstr "შესვენების დრო"
 
-#: src/window.rs:284
+#: src/window.rs:307
 msgid "Stretch your legs, and drink some water."
 msgstr "გაიარეთ, ცოტა წყალიც დალიეთ."
 
-#: src/window.rs:285
+#: src/window.rs:308
 msgid "Start Break"
 msgstr "შესვენების დაწყება"
 
-#: src/window.rs:291
+#: src/window.rs:314
 msgid "Skip"
 msgstr "გამოტოვება"
 
-#: src/window.rs:304
+#: src/window.rs:327
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "წრე {}"
