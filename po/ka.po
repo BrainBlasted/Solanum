@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
 "POT-Creation-Date: 2022-05-16 20:23+0000\n"
-"PO-Revision-Date: 2022-06-07 06:31+0200\n"
+"PO-Revision-Date: 2022-07-31 08:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:274
@@ -48,7 +48,7 @@ msgstr "Pomodoro;Timer;Productivity;"
 
 #: data/org.gnome.Solanum.gschema.xml:6
 msgid "The length of a work lap in minutes."
-msgstr ""
+msgstr "სამუშაო წრის ხანგრძლივობა წუთებში."
 
 #: data/org.gnome.Solanum.gschema.xml:10
 msgid "The length of a short break in minutes."
@@ -96,7 +96,7 @@ msgstr ""
 
 #: data/ui/preferences-window.blp:13
 msgid "Lap Length"
-msgstr ""
+msgstr "წრის ხანგრძლივობა"
 
 #: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
@@ -174,4 +174,4 @@ msgstr "გამოტოვება"
 #: src/window.rs:304
 msgid "Lap {}"
 msgid_plural "Lap {}"
-msgstr[0] ""
+msgstr[0] "წრე {}"
