@@ -45,6 +45,7 @@ template SolanumWindow : Adw.ApplicationWindow {
             halign: center;
 
             Gtk.Button timer_button {
+              tooltip-text: _("Toggle Timer");
               icon-name: "media-playback-start-symbolic";
               action-name: "win.toggle-timer";
               valign: center;
@@ -52,6 +53,7 @@ template SolanumWindow : Adw.ApplicationWindow {
             }
 
             Gtk.Button skip_button {
+              tooltip-text: _("Skip");
               icon-name: "media-seek-forward-symbolic";
               action-name: "win.skip";
               valign: center;
@@ -61,6 +63,7 @@ template SolanumWindow : Adw.ApplicationWindow {
 
           [end]
           Gtk.MenuButton menu_button {
+            tooltip-text: _("Main Menu");
             menu-model: app_menu;
             icon-name: "open-menu-symbolic";
             halign: end;
