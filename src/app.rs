@@ -171,34 +171,48 @@ impl SolanumApplication {
 
     // About dialog
     fn show_about(&self) {
-        let window = self.active_window();
-        let authors = vec!["Christopher Davis <christopherdavis@gnome.org>".to_string()];
-        let artists = vec![
-            "Tobias Bernard https://tobiasbernard.com".to_string(),
-            "Miredly Sound https://soundcloud.com/mired".to_string(),
-        ];
+        let window = self.get_main_window();
+        let developers = vec!["Christopher Davis <christopherdavis@gnome.org>".to_string()];
 
-        let dialog = gtk::AboutDialog::builder()
-            .authors(authors)
-            .artists(artists)
-            .comments(&i18n("A pomodoro timer for GNOME"))
+        let about = libadwaita::AboutWindow::builder()
+            .application_name(&i18n("Solanum"))
+            .application_icon(config::APP_ID)
+            .developer_name("Christopher Davis")
+            .developers(developers)
             // Translators: Replace "translator-credits" with your names, one name per line
             .translator_credits(&i18n("translator-credits"))
             .license_type(gtk::License::Gpl30)
-            .logo_icon_name(config::APP_ID)
-            .wrap_license(true)
             .version(config::VERSION)
-            .website("https://www.patreon.com/chrisgnome")
-            .website_label(&i18n("Donate on Patreon"))
-            .copyright(format!("\u{A9} {} Christopher Davis, et al.", config::COPYRIGHT).as_str())
+            .website("https://apps.gnome.org/app/org.gnome.Solanum")
+            .issue_url("https://gitlab.gnome.org/World/Solanum/-/issues/new")
+            .copyright(&format!(
+                "\u{A9} {} Christopher Davis, et al.",
+                config::COPYRIGHT
+            ))
             .build();
 
-        if let Some(w) = window {
-            dialog.set_transient_for(Some(&w));
-            dialog.set_modal(true);
-        }
+        about.add_link(
+            &i18n("_Donate on Patreon"),
+            "https://www.patreon.com/chrisgnome",
+        );
+        about.add_link(
+            &i18n("_Sponsor on GitHub"),
+            "https://github.com/sponsors/BrainBlasted/",
+        );
 
-        dialog.show();
+        about.add_credit_section(
+            Some(&i18n("Icon by")),
+            &["Tobias Bernard https://tobiasbernard.com"],
+        );
+        about.add_credit_section(
+            Some(&i18n("Sound by")),
+            &["Miredly Sound https://soundcloud.com/mired"],
+        );
+
+        about.set_transient_for(Some(&window));
+        about.set_modal(true);
+
+        about.show();
     }
 
     fn show_preferences(&self) {

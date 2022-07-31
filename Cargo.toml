@@ -10,7 +10,7 @@ gtk-macros = "0.2.0"
 glib-macros = "0.15"
 gstreamer = "0.17"
 gstreamer-player = "0.17"
-libadwaita = "0.1"
+libadwaita = { version = "0.2.0-alpha.2", features = ["v1_2"] }
 
 [dependencies.gtk]
 version = "0.4"
