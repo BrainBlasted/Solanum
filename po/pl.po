@@ -1,15 +1,15 @@
 # Polish translation for solanum.
-# Copyright © 2020-2021 the solanum authors.
+# Copyright © 2020-2022 the solanum authors.
 # This file is distributed under the same license as the solanum package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2020-2021.
-# Aviary.pl <community-poland@mozilla.org>, 2020-2021.
+# Piotr Drąg <piotrdrag@gmail.com>, 2020-2022.
+# Aviary.pl <community-poland@mozilla.org>, 2020-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2021-10-17 13:39+0200\n"
+"POT-Creation-Date: 2022-07-30 16:50+0000\n"
+"PO-Revision-Date: 2022-07-31 14:48+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:297
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -63,31 +63,31 @@ msgstr "Długość długiej przerwy w minutach."
 msgid "The number of sessions until a long break."
 msgstr "Liczba sesji przed długą przerwą."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Ogólne skróty"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Wyświetlenie głównego menu"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Wyświetlenie skrótów klawiszowych"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Zakończenie działania"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Długość sesji"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -95,86 +95,90 @@ msgstr ""
 "Długość każdego typu sesji w minutach. Zmiany są zastosowywane do następnej "
 "sesji danego typu."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Długość rundy"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Długość krótkiej przerwy"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Długość długiej przerwy"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Sesje do długiej przerwy"
 
-#: data/ui/window.ui:109
+#: data/ui/window.blp:79
+msgid "Reset Sessions"
+msgstr "Przywróć sesje"
+
+#: data/ui/window.blp:83
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: data/ui/window.ui:113
+#: data/ui/window.blp:84
 msgid "_Keyboard Shortcuts"
 msgstr "_Skróty klawiszowe"
 
-#: data/ui/window.ui:117
+#: data/ui/window.blp:85
 msgid "_About Solanum"
 msgstr "_O programie"
 
-#: src/app.rs:182
+#: src/app.rs:184
 msgid "A pomodoro timer for GNOME"
 msgstr "Minutnik Pomodoro dla środowiska GNOME"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
+#: src/app.rs:186
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2020-2021\n"
-"Aviary.pl <community-poland@mozilla.org>, 2020-2021"
+"Piotr Drąg <piotrdrag@gmail.com>, 2020-2022\n"
+"Aviary.pl <community-poland@mozilla.org>, 2020-2022"
 
-#: src/app.rs:190
+#: src/app.rs:192
 msgid "Donate on Patreon"
 msgstr "Wspomóż na Patreonie"
 
-#: src/window.rs:237
+#: src/window.rs:224
 msgid "Long Break"
 msgstr "Długa przerwa"
 
-#: src/window.rs:243
+#: src/window.rs:230
 msgid "Short Break"
 msgstr "Krótka przerwa"
 
-#: src/window.rs:304
+#: src/window.rs:301
 msgid "Back to Work"
 msgstr "Powrót do pracy"
 
-#: src/window.rs:305
+#: src/window.rs:302
 msgid "Ready to keep working?"
 msgstr "Wracamy do pracy?"
 
-#: src/window.rs:306
+#: src/window.rs:303
 msgid "Start Working"
 msgstr "Zacznij pracę"
 
-#: src/window.rs:309
+#: src/window.rs:306
 msgid "Break Time"
 msgstr "Czas na przerwę"
 
-#: src/window.rs:310
+#: src/window.rs:307
 msgid "Stretch your legs, and drink some water."
 msgstr "Rozciągnij nogi i napij się wody."
 
-#: src/window.rs:311
+#: src/window.rs:308
 msgid "Start Break"
 msgstr "Zacznij przerwę"
 
-#: src/window.rs:317
+#: src/window.rs:314
 msgid "Skip"
 msgstr "Pomiń"
 
-#: src/window.rs:330
+#: src/window.rs:327
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. runda"
