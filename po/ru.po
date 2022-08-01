@@ -7,20 +7,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-01-06 09:57+0000\n"
-"PO-Revision-Date: 2022-01-10 10:05+1000\n"
+"POT-Creation-Date: 2022-07-31 21:59+0000\n"
+"PO-Revision-Date: 2022-08-01 11:04+0300\n"
+"Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Last-Translator: Ser82-png\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:272
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:297
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -63,31 +64,31 @@ msgstr "Продолжительность длинного перерыва в 
 msgid "The number of sessions until a long break."
 msgstr "Количество сеансов до длинного перерыва."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Главные комбинации клавиш"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Показать главное меню"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Показать комбинации клавиш"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Выход"
+msgstr "Выйти"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Продолжительность сеанса"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -95,86 +96,109 @@ msgstr ""
 "Продолжительность каждого типа сеанса в минутах. Изменения применяются к "
 "следующему сеансу каждого типа."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Продолжительность круга"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Продолжительность короткого перерыва"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Продолжительность длинного перерыва"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Сеансов до длинного перерыва"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Параметры"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Переключить таймер"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "_Комбинации клавиш"
-
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "_О приложении Solanum"
-
-#: src/app.rs:184
-msgid "A pomodoro timer for GNOME"
-msgstr "Таймер-помидор для GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:186
-msgid "translator-credits"
-msgstr "Ser82-png"
-
-#: src/app.rs:192
-msgid "Donate on Patreon"
-msgstr "Помогите финансово на Patreon"
-
-#: src/window.rs:218
-msgid "Long Break"
-msgstr "Длинный перерыв"
-
-#: src/window.rs:224
-msgid "Short Break"
-msgstr "Короткий перерыв"
-
-#: src/window.rs:276
-msgid "Back to Work"
-msgstr "Вернуться к работе"
-
-#: src/window.rs:277
-msgid "Ready to keep working?"
-msgstr "Готовы продолжить работу?"
-
-#: src/window.rs:278
-msgid "Start Working"
-msgstr "Начать работать"
-
-#: src/window.rs:281
-msgid "Break Time"
-msgstr "Время перерыва"
-
-#: src/window.rs:282
-msgid "Stretch your legs, and drink some water."
-msgstr "Вытяните ноги и выпейте немного воды."
-
-#: src/window.rs:283
-msgid "Start Break"
-msgstr "Начать перерыв"
-
-#: src/window.rs:289
+#: data/ui/window.blp:56 src/window.rs:314
 msgid "Skip"
 msgstr "Пропустить"
 
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Перезагрузить сеансы"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Параметры"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбинации клавиш"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_О Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Ser82-png"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Пожертвовать на Patreon"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Поддержать на GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Значок"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Звук"
+
+#: src/window.rs:224
+msgid "Long Break"
+msgstr "Длинный перерыв"
+
+#: src/window.rs:230
+msgid "Short Break"
+msgstr "Короткий перерыв"
+
+#: src/window.rs:301
+msgid "Back to Work"
+msgstr "Вернуться к работе"
+
 #: src/window.rs:302
+msgid "Ready to keep working?"
+msgstr "Готовы продолжить работу?"
+
+#: src/window.rs:303
+msgid "Start Working"
+msgstr "Начать работать"
+
+#: src/window.rs:306
+msgid "Break Time"
+msgstr "Время перерыва"
+
+#: src/window.rs:307
+msgid "Stretch your legs, and drink some water."
+msgstr "Вытяните ноги и выпейте немного воды."
+
+#: src/window.rs:308
+msgid "Start Break"
+msgstr "Начать перерыв"
+
+#: src/window.rs:327
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Круг {}"
 msgstr[1] "Круг {}"
 msgstr[2] "Круг {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Таймер pomodoro для GNOME"
