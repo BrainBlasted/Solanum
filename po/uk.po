@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-07-30 16:50+0000\n"
-"PO-Revision-Date: 2022-07-30 22:22+0300\n"
+"POT-Creation-Date: 2022-07-31 21:59+0000\n"
+"PO-Revision-Date: 2022-08-01 14:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,7 +20,8 @@ msgstr ""
 "X-Generator: Lokalize 20.12.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:297
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:297
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -112,34 +113,55 @@ msgstr "Тривалість довгої перерви"
 msgid "Sessions Until Long Break"
 msgstr "Сеансів до довгої перерви"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Перемкнути таймер"
+
+#: data/ui/window.blp:56 src/window.rs:314
+msgid "Skip"
+msgstr "Пропустити"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: data/ui/window.blp:82
 msgid "Reset Sessions"
 msgstr "Скинути сеанси"
 
-#: data/ui/window.blp:83
+#: data/ui/window.blp:86
 msgid "_Preferences"
 msgstr "_Налаштування"
 
-#: data/ui/window.blp:84
+#: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: data/ui/window.blp:85
+#: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "_Про Solanum"
 
-#: src/app.rs:184
-msgid "A pomodoro timer for GNOME"
-msgstr "Таймер-помідор для GNOME"
-
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:186
+#: src/app.rs:183
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 
-#: src/app.rs:192
-msgid "Donate on Patreon"
-msgstr "Підтримати фінансово на Patreon"
+#: src/app.rs:195
+#| msgid "Donate on Patreon"
+msgid "_Donate on Patreon"
+msgstr "Під_тримати фінансово на Patreon"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "С_понсорувати на GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Автор піктограми"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Автор звукових даних"
 
 #: src/window.rs:224
 msgid "Long Break"
@@ -173,10 +195,6 @@ msgstr "Потягніться, випийте трохи води."
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.rs:314
-msgid "Skip"
-msgstr "Пропустити"
-
 #: src/window.rs:327
 msgid "Lap {}"
 msgid_plural "Lap {}"
@@ -184,3 +202,6 @@ msgstr[0] "Коло {}"
 msgstr[1] "Коло {}"
 msgstr[2] "Коло {}"
 msgstr[3] "Коло {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Таймер-помідор для GNOME"
