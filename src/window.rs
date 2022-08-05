@@ -122,9 +122,15 @@ mod imp {
         }
     }
 
+    impl ObjectImpl for SolanumWindow {
+        fn constructed(&self, obj: &Self::Type) {
+            self.parent_constructed(obj);
+            self.player.connect_end_of_stream(|p| p.stop());
+        }
+    }
+
     // We don't need to override any vfuncs here, but since they're superclasses
     // we need to declare the blank impls
-    impl ObjectImpl for SolanumWindow {}
     impl WidgetImpl for SolanumWindow {}
     impl WindowImpl for SolanumWindow {}
     impl ApplicationWindowImpl for SolanumWindow {}
