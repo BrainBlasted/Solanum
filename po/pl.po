@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-07-30 16:50+0000\n"
-"PO-Revision-Date: 2022-07-31 14:48+0200\n"
+"POT-Creation-Date: 2022-07-31 21:59+0000\n"
+"PO-Revision-Date: 2022-08-07 15:22+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,7 +20,8 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:297
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:297
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -111,36 +112,56 @@ msgstr "Długość długiej przerwy"
 msgid "Sessions Until Long Break"
 msgstr "Sesje do długiej przerwy"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Przełącza minutnik"
+
+#: data/ui/window.blp:56 src/window.rs:314
+msgid "Skip"
+msgstr "Pomiń"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Menu główne"
+
+#: data/ui/window.blp:82
 msgid "Reset Sessions"
 msgstr "Przywróć sesje"
 
-#: data/ui/window.blp:83
+#: data/ui/window.blp:86
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: data/ui/window.blp:84
+#: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
 msgstr "_Skróty klawiszowe"
 
-#: data/ui/window.blp:85
+#: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "_O programie"
 
-#: src/app.rs:184
-msgid "A pomodoro timer for GNOME"
-msgstr "Minutnik Pomodoro dla środowiska GNOME"
-
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:186
+#: src/app.rs:183
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2020-2022\n"
 "Aviary.pl <community-poland@mozilla.org>, 2020-2022"
 
-#: src/app.rs:192
-msgid "Donate on Patreon"
-msgstr "Wspomóż na Patreonie"
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Wspomóż na Patreonie"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Sponsoruj na GitHubie"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Ikona"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Dźwięki"
 
 #: src/window.rs:224
 msgid "Long Break"
@@ -173,10 +194,6 @@ msgstr "Rozciągnij nogi i napij się wody."
 #: src/window.rs:308
 msgid "Start Break"
 msgstr "Zacznij przerwę"
-
-#: src/window.rs:314
-msgid "Skip"
-msgstr "Pomiń"
 
 #: src/window.rs:327
 msgid "Lap {}"
