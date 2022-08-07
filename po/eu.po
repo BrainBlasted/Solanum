@@ -1,13 +1,13 @@
 # Basque translation for solanum.
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2020, 2021.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2020, 2021, 2022.
 #
 msgid ""
 msgstr "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2021-11-28 10:00+0100\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-08-07 10:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -17,7 +17,8 @@ msgstr "Project-Id-Version: solanum main\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -57,115 +58,138 @@ msgstr "Eten luze baten iraupena minututan."
 msgid "The number of sessions until a long break."
 msgstr "Saio kopurua eten luze bat arte."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Lasterbide orokorrak"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Erakutsi menu nagusia"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Erakutsi laster-teklak"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Irten"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Saioaren iraupena"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
 msgstr "Saio mota bakoitzaren iraupena minututan. Aldaketak mota bakoitzeko hurrengo saioan aplikatuko dira."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Itzuliaren iraupena"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Eten laburraren iraupena"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Eten luzearen iraupena"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Saioak eten luzea egin arte"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Hobespenak"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Txandakatu tenporizadorea"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "Las_ter-teklak"
-
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "Solanum aplikazioari _buruz"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Pomodoro tenporizadorea GNOMErako"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr "translator-credits"
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Lagundu diruz Patreon-en"
-
-#: src/window.rs:237
-msgid "Long Break"
-msgstr "Etenaldi luzea"
-
-#: src/window.rs:243
-msgid "Short Break"
-msgstr "Etenaldi laburra"
-
-#: src/window.rs:304
-msgid "Back to Work"
-msgstr "Bueltan lanera"
-
-#: src/window.rs:305
-msgid "Ready to keep working?"
-msgstr "Lanean jarraitzeko pres?"
-
-#: src/window.rs:306
-msgid "Start Working"
-msgstr "Hasi lanean"
-
-#: src/window.rs:309
-msgid "Break Time"
-msgstr "Etenaldia"
-
-#: src/window.rs:310
-msgid "Stretch your legs, and drink some water."
-msgstr "Luzatu hankak eta edan ur apur bat."
-
-#: src/window.rs:311
-msgid "Start Break"
-msgstr "Hasi etenaldia"
-
-#: src/window.rs:317
+#: data/ui/window.blp:56 src/window.rs:320
 msgid "Skip"
 msgstr "Saltatu"
 
-#: src/window.rs:330
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Menu nagusia"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Berrezarri saioak"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Hobespenak"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "Las_ter-teklak"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "Solanum aplikazioari _buruz"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "translator-credits"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Lagundu diruz Patreon gunean"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "L_agundu GitHub gunean"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Ikonoa:"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Soinua:"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "Etenaldi luzea"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "Etenaldi laburra"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "Bueltan lanera"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "Lanean jarraitzeko pres?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "Hasi lanean"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "Etenaldia"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "Luzatu hankak eta edan ur apur bat."
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "Hasi etenaldia"
+
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. itzulia"
 msgstr[1] "{}. itzulia"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Pomodoro tenporizadorea GNOMErako"
