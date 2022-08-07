@@ -9,19 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-03-25 15:49+0000\n"
-"PO-Revision-Date: 2022-04-17 01:36+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2022-07-31 21:59+0000\n"
+"PO-Revision-Date: 2022-08-05 20:19+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:272
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:297
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -111,68 +112,88 @@ msgstr "Uzun Mola Uzunluğu"
 msgid "Sessions Until Long Break"
 msgstr "Uzun Molaya Dek Oturumlar"
 
-#: data/ui/window.blp:78
-msgid "_Preferences"
-msgstr "_Tercihler"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Zamanlayıcıyı Aç/Kapat"
 
-#: data/ui/window.blp:79
-msgid "_Keyboard Shortcuts"
-msgstr "_Klavye Kısayolları"
-
-#: data/ui/window.blp:80
-msgid "_About Solanum"
-msgstr "Solanum _Hakkında"
-
-#: src/app.rs:184
-msgid "A pomodoro timer for GNOME"
-msgstr "GNOME için pomodoro zamanlayıcısı"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:186
-msgid "translator-credits"
-msgstr "Sabri Ünal <libreajans@gmail.com>, 2022"
-
-#: src/app.rs:192
-msgid "Donate on Patreon"
-msgstr "Patreon’da Bağış Yap"
-
-#: src/window.rs:218
-msgid "Long Break"
-msgstr "Uzun Mola"
-
-#: src/window.rs:224
-msgid "Short Break"
-msgstr "Kısa Mola"
-
-#: src/window.rs:276
-msgid "Back to Work"
-msgstr "Çalışmaya Dön"
-
-#: src/window.rs:277
-msgid "Ready to keep working?"
-msgstr "Çalışmaya hazır mısın?"
-
-#: src/window.rs:278
-msgid "Start Working"
-msgstr "Çalışmaya Başla"
-
-#: src/window.rs:281
-msgid "Break Time"
-msgstr "Mola Zamanı"
-
-#: src/window.rs:282
-msgid "Stretch your legs, and drink some water."
-msgstr "Bacaklarını rahatlat ve biraz su iç."
-
-#: src/window.rs:283
-msgid "Start Break"
-msgstr "Molayı Başlat"
-
-#: src/window.rs:289
+#: data/ui/window.blp:56 src/window.rs:314
 msgid "Skip"
 msgstr "Atla"
 
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Ana Menü"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Oturumları Sıfırla"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Tercihler"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "Solanum _Hakkında"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Sabri Ünal <libreajans@gmail.com>"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "Patreon’da _Bağış Yap"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "GitHub’da Sponsor Ol"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Simge"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Ses"
+
+#: src/window.rs:224
+msgid "Long Break"
+msgstr "Uzun Mola"
+
+#: src/window.rs:230
+msgid "Short Break"
+msgstr "Kısa Mola"
+
+#: src/window.rs:301
+msgid "Back to Work"
+msgstr "Çalışmaya Dön"
+
 #: src/window.rs:302
+msgid "Ready to keep working?"
+msgstr "Çalışmaya hazır mısın?"
+
+#: src/window.rs:303
+msgid "Start Working"
+msgstr "Çalışmaya Başla"
+
+#: src/window.rs:306
+msgid "Break Time"
+msgstr "Mola Zamanı"
+
+#: src/window.rs:307
+msgid "Stretch your legs, and drink some water."
+msgstr "Bacaklarını rahatlat ve biraz su iç."
+
+#: src/window.rs:308
+msgid "Start Break"
+msgstr "Molayı Başlat"
+
+#: src/window.rs:327
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Tur {}"
