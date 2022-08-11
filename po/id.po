@@ -2,25 +2,26 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # Andika Triwidada <atriwidada@gnome.org>, 2020.
-# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2021-11-03 16:53+0700\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-08-11 11:08+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -45,7 +46,7 @@ msgstr "Christopher Davis"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
-msgstr "Pomodoro;Timer;Produktivitas;"
+msgstr "Pomodoro;Pewaktu;Produktivitas;"
 
 #: data/org.gnome.Solanum.gschema.xml:6
 msgid "The length of a work lap in minutes."
@@ -63,31 +64,31 @@ msgstr "Panjang istirahat panjang dalam hitungan menit."
 msgid "The number of sessions until a long break."
 msgstr "Jumlah sesi sampai istirahat panjang."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Pintasan Umum"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Perlihatkan Menu Utama"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Tampilkan Pintasan Papan Tik"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Keluar"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Panjang Sesi"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -95,86 +96,109 @@ msgstr ""
 "Panjang setiap sesi mengetik dalam hitungan menit. Perubahan berlaku untuk "
 "sesi berikutnya dari setiap jenis."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Panjang Putaran"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Panjang Istirahat Pendek"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Panjang Istirahat Panjang"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Sesi Sampai Istirahat Panjang"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Preferensi"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Jungkitkan Pewaktu"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "Pintasan Papan Ti_k"
-
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "Tent_ang Solanum"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Timer pomodoro untuk GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr ""
-"Andika Triwidada <andika@gmail.com>, 2020.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021."
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Donasi di Patreon"
-
-#: src/window.rs:237
-msgid "Long Break"
-msgstr "Rehat Panjang"
-
-#: src/window.rs:243
-msgid "Short Break"
-msgstr "Rehat Pendek"
-
-#: src/window.rs:304
-msgid "Back to Work"
-msgstr "Kembali Bekerja"
-
-#: src/window.rs:305
-msgid "Ready to keep working?"
-msgstr "Siap untuk terus bekerja?"
-
-#: src/window.rs:306
-msgid "Start Working"
-msgstr "Mulai Bekerja"
-
-#: src/window.rs:309
-msgid "Break Time"
-msgstr "Waktu Istirahat"
-
-#: src/window.rs:310
-msgid "Stretch your legs, and drink some water."
-msgstr "Regangkan kakimu, dan minumlah air."
-
-#: src/window.rs:311
-msgid "Start Break"
-msgstr "Mulai Istirahat"
-
-#: src/window.rs:317
+#: data/ui/window.blp:56 src/window.rs:320
 msgid "Skip"
 msgstr "Lewati"
 
-#: src/window.rs:330
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Menu Utama"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Setel Ulang Sesi"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Preferensi"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "Pintasan Papan Ti_k"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "Tent_ang Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr ""
+"Andika Triwidada <andika@gmail.com>, 2020.\n"
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2022."
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Donasi di Patreon"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Sponsor di GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Ikon oleh"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Suara oleh"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "Rehat Panjang"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "Rehat Pendek"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "Kembali Bekerja"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "Siap untuk terus bekerja?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "Mulai Bekerja"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "Waktu Istirahat"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "Regangkan kakimu, dan minumlah air."
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "Mulai Istirahat"
+
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Putaran {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Timer pomodoro untuk GNOME"
