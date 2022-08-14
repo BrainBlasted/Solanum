@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-03-02 16:46+0000\n"
-"PO-Revision-Date: 2022-03-12 13:43+0100\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-08-14 15:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -17,10 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:272
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -111,72 +112,95 @@ msgstr "Duljina kruga duže pauze"
 msgid "Sessions Until Long Break"
 msgstr "Sesija do duže pauze"
 
-#: data/ui/window.blp:78
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Uklj/Isklj odborjavanje"
+
+#: data/ui/window.blp:56 src/window.rs:320
+msgid "Skip"
+msgstr "Preskoči"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Glavni izbornik"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Vrati izvorne sesije"
+
+#: data/ui/window.blp:86
 msgid "_Preferences"
 msgstr "_Osobitosti"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
 msgstr "_Prečaci tipkovnice"
 
-#: data/ui/window.blp:80
+#: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "_O Solanumu"
 
-#: src/app.rs:184
-msgid "A pomodoro timer for GNOME"
-msgstr "Pomodoro odborjavanje za GNOME"
-
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:186
+#: src/app.rs:183
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  gogo https://launchpad.net/~trebelnik-stefina"
 
-#: src/app.rs:192
-msgid "Donate on Patreon"
-msgstr "Donirajte na Patreonu"
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Donirajte na Patreonu"
 
-#: src/window.rs:218
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Sponzorirajte na GitHubu"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Ikone"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Zvuk"
+
+#: src/window.rs:230
 msgid "Long Break"
 msgstr "Duža pauza"
 
-#: src/window.rs:224
+#: src/window.rs:236
 msgid "Short Break"
 msgstr "Kratka pauza"
 
-#: src/window.rs:276
+#: src/window.rs:307
 msgid "Back to Work"
 msgstr "Natrag na posao"
 
-#: src/window.rs:277
+#: src/window.rs:308
 msgid "Ready to keep working?"
 msgstr "Spremni ste nastaviti raditi?"
 
-#: src/window.rs:278
+#: src/window.rs:309
 msgid "Start Working"
 msgstr "Započnite s radom"
 
-#: src/window.rs:281
+#: src/window.rs:312
 msgid "Break Time"
 msgstr "Pauza"
 
-#: src/window.rs:282
+#: src/window.rs:313
 msgid "Stretch your legs, and drink some water."
 msgstr "Protegnite noge i popijte malo vode."
 
-#: src/window.rs:283
+#: src/window.rs:314
 msgid "Start Break"
 msgstr "Započnite pauzu"
 
-#: src/window.rs:289
-msgid "Skip"
-msgstr "Preskoči"
-
-#: src/window.rs:302
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{} krug"
 msgstr[1] "{} krug"
 msgstr[2] "{} krug"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Pomodoro odborjavanje za GNOME"
