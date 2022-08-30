@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2021-10-19 12:51+0300\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-08-30 19:43+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -16,10 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -62,31 +63,31 @@ msgstr "Pitkän tauon pituus minuuteissa."
 msgid "The number of sessions until a long break."
 msgstr "Istuntojen määrä ennen pitkää taukoa."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Yleiset pikanäppäimet"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Näytä ensisijainen valikko"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Näytä pikanäppäimet"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Lopeta"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Istunnon pituus"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -94,85 +95,108 @@ msgstr ""
 "Jokaisen istuntotyypin pituus minuuteissa. Muutokset tulevat voimaan "
 "jokaisen tyypin seuraavaan istuntoon."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Kierroksen pituus"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Lyhyen tauon pituus"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Pitkän tauon pituus"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Istunnot ennen pitkää taukoa"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Asetukset"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Laskuri päällä/pois"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "_Pikanäppäimet"
-
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "_Tietoja - Solanum"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Pomodoro-ajastin Gnomelle"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr "Jiri Grönroos"
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Lahjoita Patreonissa"
-
-#: src/window.rs:237
-msgid "Long Break"
-msgstr "Pitkä tauko"
-
-#: src/window.rs:243
-msgid "Short Break"
-msgstr "Lyhyt tauko"
-
-#: src/window.rs:304
-msgid "Back to Work"
-msgstr "Takaisin töihin"
-
-#: src/window.rs:305
-msgid "Ready to keep working?"
-msgstr "Valmiina jatkamaan töitä?"
-
-#: src/window.rs:306
-msgid "Start Working"
-msgstr "Aloita työskentely"
-
-#: src/window.rs:309
-msgid "Break Time"
-msgstr "Tauon aika"
-
-#: src/window.rs:310
-msgid "Stretch your legs, and drink some water."
-msgstr "Venyttele jalkojasi ja ota lasillinen vettä."
-
-#: src/window.rs:311
-msgid "Start Break"
-msgstr "Aloita tauko"
-
-#: src/window.rs:317
+#: data/ui/window.blp:56 src/window.rs:320
 msgid "Skip"
 msgstr "Ohita"
 
-#: src/window.rs:330
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Nollaa istunnot"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Asetukset"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_Tietoja - Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Lahjoita Patreonissa"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Sponsoroi GitHubissa"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Kuvakkeen teki"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Äänitoteutus"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "Pitkä tauko"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "Lyhyt tauko"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "Takaisin töihin"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "Valmiina jatkamaan töitä?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "Aloita työskentely"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "Tauon aika"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "Venyttele jalkojasi ja ota lasillinen vettä."
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "Aloita tauko"
+
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Kierros {}"
 msgstr[1] "Kierros {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Pomodoro-ajastin Gnomelle"
