@@ -1,26 +1,27 @@
 # Brazilian Portuguese translation for solanum.
-# Copyright (C) 2021 solanum's COPYRIGHT HOLDER
+# Copyright (C) 2022 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # Gabriel Longo <gabriel.longo.gabriel@gmail.com>, 2020.
-# Enrico Nicoletto <liverig@gmail.com>, 2020-2021.
+# Enrico Nicoletto <hiko@duck.com>, 2020-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2021-10-15 19:38-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-09-06 22:14-0300\n"
+"Last-Translator: Enrico Nicoletto <hiko@duck.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -63,31 +64,31 @@ msgstr "O comprimento de um intervalo longo em minutos."
 msgid "The number of sessions until a long break."
 msgstr "O número de sessões até chegar o intervalo longo."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Atalhos gerais"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Exibe o menu principal"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Exibe os atalhos de teclado"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Fecha"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Comprimento da sessão"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -95,87 +96,107 @@ msgstr ""
 "O comprimento de cada tipo de sessão em minutos. As alterações se aplicam à "
 "próxima sessão de cada tipo."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Comprimento da série"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Comprimento do intervalo curto"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Comprimento do intervalo longo"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Sessões até o intervalo longo"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Preferências"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Alternar temporizador"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "_Atalhos de teclado"
-
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "_Sobre o Solanum"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Um temporizador Pomodoro para o GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr ""
-"Gabriel Longo <gabriel.longo.gabriel@gmail.com>\n"
-"Enrico Nicoletto <liverig@gmail.com>"
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Faça uma doação no Patreon"
-
-#: src/window.rs:237
-msgid "Long Break"
-msgstr "Intervalo longo"
-
-#: src/window.rs:243
-msgid "Short Break"
-msgstr "Intervalo curto"
-
-#: src/window.rs:304
-msgid "Back to Work"
-msgstr "Voltar ao trabalho"
-
-#: src/window.rs:305
-msgid "Ready to keep working?"
-msgstr "Pronto para voltar ao trabalho?"
-
-#: src/window.rs:306
-msgid "Start Working"
-msgstr "Começar a trabalhar"
-
-#: src/window.rs:309
-msgid "Break Time"
-msgstr "Intervalo"
-
-#: src/window.rs:310
-msgid "Stretch your legs, and drink some water."
-msgstr "Hidrate-se e estique suas pernas!"
-
-#: src/window.rs:311
-msgid "Start Break"
-msgstr "Começar intervalo"
-
-#: src/window.rs:317
+#: data/ui/window.blp:56 src/window.rs:320
 msgid "Skip"
 msgstr "Pular"
 
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Menu Principal"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Restaurar sessões"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Preferências"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "_Atalhos de teclado"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_Sobre o Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr ""
+"Gabriel Longo <gabriel.longo.gabriel@gmail.com>\n"
+"Enrico Nicoletto <hiko@duck.com>"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Doar no Patreon"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "Pa_trocínio no GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Ícones por"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Sons por"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "Intervalo longo"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "Intervalo curto"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "Voltar ao trabalho"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "Pronto para voltar ao trabalho?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "Começar a trabalhar"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "Intervalo"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "Hidrate-se e estique suas pernas!"
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "Começar intervalo"
+
 # Em uma tradução livre, "Sessão" parece se enquadrar melhor a proposta do aplicativo do que "Volta". Talvez traduzir para série ou rodada?
-#: src/window.rs:330
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Série {}"
