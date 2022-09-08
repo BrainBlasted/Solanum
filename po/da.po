@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2022-02-20 15:40+0100\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-09-08 19:38+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -17,10 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -45,7 +46,7 @@ msgstr "Christopher Davis"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
-msgstr "Pomodoro;Timer;Produktivitet;"
+msgstr "Pomodoro;Timer;Tidtager;Produktivitet;"
 
 #: data/org.gnome.Solanum.gschema.xml:6
 msgid "The length of a work lap in minutes."
@@ -63,33 +64,33 @@ msgstr "Længden på en lang pause i minutter."
 msgid "The number of sessions until a long break."
 msgstr "Antal sessioner før en lang pause."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Generelle genveje"
 
 # scootergrisen: kan vel både være "primære menu" or "primær menu"
 # scootergrisen: "en primær menu" "den primære menu"
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Vis primære menu"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Vis tastaturgenveje"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Afslut"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Sessionslængde"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -97,87 +98,110 @@ msgstr ""
 "Længden på hver sessionstype i minutter. Ændringer får virkning fra næste "
 "session af hver type."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Længde på runde"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Længde på kort pause"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Længde på lang pause"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Antal sessioner før lang pause"
 
-#: data/ui/window.ui:109
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Slå timer til/fra"
+
+#: data/ui/window.blp:56 src/window.rs:320
+msgid "Skip"
+msgstr "Spring over"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Hovedmenu"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Nulstil sessioner"
+
+#: data/ui/window.blp:86
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: data/ui/window.ui:113
+#: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastaturgenveje"
 
-#: data/ui/window.ui:117
+#: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "_Om Solanum"
 
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "En pomodorotimer til GNOME"
-
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
+#: src/app.rs:183
 msgid "translator-credits"
 msgstr "scootergrisen"
 
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Donér på Patreon"
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Donér på Patreon"
 
-#: src/window.rs:237
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Sponsorér på GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Ikon af"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Lyd af"
+
+#: src/window.rs:230
 msgid "Long Break"
 msgstr "Lang pause"
 
-#: src/window.rs:243
+#: src/window.rs:236
 msgid "Short Break"
 msgstr "Kort pause"
 
-#: src/window.rs:304
+#: src/window.rs:307
 msgid "Back to Work"
 msgstr "Tilbage til arbejdet"
 
-#: src/window.rs:305
+#: src/window.rs:308
 msgid "Ready to keep working?"
 msgstr "Klar til at fortsætte arbejdet?"
 
 # scootergrisen: tjek at oversættelsen er god. "Start Working" "Start Break"
-#: src/window.rs:306
+#: src/window.rs:309
 msgid "Start Working"
 msgstr "Arbejd"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Break Time"
 msgstr "Pausetid"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Stretch your legs, and drink some water."
 msgstr "Stræk benene og drik noget vand."
 
 # scootergrisen: tjek at oversættelsen er god. "Start Working" "Start Break"
-#: src/window.rs:311
+#: src/window.rs:314
 msgid "Start Break"
 msgstr "Hold pause"
 
-#: src/window.rs:317
-msgid "Skip"
-msgstr "Spring over"
-
-#: src/window.rs:330
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Omgang {}"
 msgstr[1] "Omgang {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "En pomodorotimer til GNOME"
