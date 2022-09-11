@@ -9,19 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2022-02-01 13:33+0800\n"
+"POT-Creation-Date: 2022-08-07 13:24+0000\n"
+"PO-Revision-Date: 2022-09-11 10:53+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 41.0\n"
+"X-Generator: Gtranslator 42.0\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "番茄闹钟"
 
@@ -63,118 +64,139 @@ msgstr "以分钟为单位的较长休息时长。"
 msgid "The number of sessions until a long break."
 msgstr "较长休息前的会话数量。"
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "常规快捷键"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "显示主菜单"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "显示键盘快捷键"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "退出"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "会话长度"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
 msgstr "以分钟为单位的每个会话类型时长。更改将应用到每个类型的下次会话。"
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "周期时长"
 
-#: data/ui/preferences-window.ui:31
-#| msgid "Short Break"
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "短休息时长"
 
-#: data/ui/preferences-window.ui:49
-#| msgid "Long Break"
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "长休息时长"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "长休息前的会话"
 
-#: data/ui/window.ui:109
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "切换计时器"
+
+#: data/ui/window.blp:56 src/window.rs:320
+msgid "Skip"
+msgstr "跳过"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "重置会话"
+
+#: data/ui/window.blp:86
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: data/ui/window.ui:113
+#: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
 msgstr "快捷键(_K)"
 
-#: data/ui/window.ui:117
+#: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "关于番茄闹钟(_A)"
 
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "用于 GNOME 的番茄工作法计时器"
-
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
+#: src/app.rs:183
 msgid "translator-credits"
 msgstr ""
 "D <damnedlies@163.com>, 2020.\n"
 "lumingzh <lumingzh@qq.com>, 2022."
 
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "在 Patreon 上捐赠"
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "在 Patreon 上捐赠(_D)"
 
-#: src/window.rs:237
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "在 GitHub 上赞助(_S)"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "图标作者"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "音频作者"
+
+#: src/window.rs:230
 msgid "Long Break"
 msgstr "长时间休息"
 
-#: src/window.rs:243
+#: src/window.rs:236
 msgid "Short Break"
 msgstr "短时间休息"
 
-#: src/window.rs:304
+#: src/window.rs:307
 msgid "Back to Work"
 msgstr "返回工作"
 
-#: src/window.rs:305
+#: src/window.rs:308
 msgid "Ready to keep working?"
 msgstr "准备好继续工作了吗？"
 
-#: src/window.rs:306
+#: src/window.rs:309
 msgid "Start Working"
 msgstr "开始工作"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Break Time"
 msgstr "休息时间"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Stretch your legs, and drink some water."
 msgstr "伸伸腿，喝喝水。"
 
-#: src/window.rs:311
+#: src/window.rs:314
 msgid "Start Break"
 msgstr "开始休息"
 
-#: src/window.rs:317
-msgid "Skip"
-msgstr "跳过"
-
-#: src/window.rs:330
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "番茄钟 {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "用于 GNOME 的番茄工作法计时器"
