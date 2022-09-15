@@ -8,19 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-02-02 06:18+0000\n"
-"PO-Revision-Date: 2022-02-06 16:49+0100\n"
-"Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
+"POT-Creation-Date: 2022-08-05 22:10+0000\n"
+"PO-Revision-Date: 2022-08-06 11:11+0200\n"
+"Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/window.rs:272
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -111,71 +112,95 @@ msgstr "Durée de pause longue"
 msgid "Sessions Until Long Break"
 msgstr "Périodes avant d’effectuer une pause longue"
 
-#: data/ui/window.blp:78
-msgid "_Preferences"
-msgstr "Pré_férences"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Basculer le minuteur"
 
-#: data/ui/window.blp:79
-msgid "_Keyboard Shortcuts"
-msgstr "Raccourcis _clavier"
-
-#: data/ui/window.blp:80
-msgid "_About Solanum"
-msgstr "À _propos de Solanum"
-
-#: src/app.rs:184
-msgid "A pomodoro timer for GNOME"
-msgstr "Un minuteur Pomodoro pour GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:186
-msgid "translator-credits"
-msgstr ""
-"Thibault Martin\n"
-"Charles Monzat"
-
-#: src/app.rs:192
-msgid "Donate on Patreon"
-msgstr "Soutenir sur Patreon"
-
-#: src/window.rs:218
-msgid "Long Break"
-msgstr "Pause longue"
-
-#: src/window.rs:224
-msgid "Short Break"
-msgstr "Pause courte"
-
-#: src/window.rs:276
-msgid "Back to Work"
-msgstr "Retour au travail"
-
-#: src/window.rs:277
-msgid "Ready to keep working?"
-msgstr "Prêt à travailler ?"
-
-#: src/window.rs:278
-msgid "Start Working"
-msgstr "Commencer à travailler"
-
-#: src/window.rs:281
-msgid "Break Time"
-msgstr "Pause"
-
-#: src/window.rs:282
-msgid "Stretch your legs, and drink some water."
-msgstr "Étirez vos jambes et buvez de l’eau"
-
-#: src/window.rs:283
-msgid "Start Break"
-msgstr "Commencer la pause"
-
-#: src/window.rs:289
+#: data/ui/window.blp:56 src/window.rs:320
 msgid "Skip"
 msgstr "Passer"
 
-#: src/window.rs:302
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Réinitialiser les sessions"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "Pré_férences"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "Raccourcis _clavier"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "À _propos de Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr ""
+"Thibault Martin\n"
+"Charles Monzat\n"
+"Irénée Thirion <irenee.thirion@e.email>"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "Faire un _don sur Patreon"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Sponsoriser sur GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Icône par"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Son par"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "Pause longue"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "Pause courte"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "Retour au travail"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "Prêt à travailler ?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "Commencer à travailler"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "Pause"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "Étirez vos jambes et buvez de l’eau"
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "Commencer la pause"
+
+#: src/window.rs:333
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Cycle {}"
 msgstr[1] "Cycle {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Un minuteur Pomodoro pour GNOME"
