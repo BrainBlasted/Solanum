@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-08-18 17:26+0300\n"
+"POT-Creation-Date: 2022-08-18 14:28+0000\n"
+"PO-Revision-Date: 2022-10-23 19:39+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <>\n"
 "Language: he\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3)\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
@@ -124,7 +124,7 @@ msgstr "תפריט ראשי"
 
 #: data/ui/window.blp:82
 msgid "Reset Sessions"
-msgstr "איפה הפעלה"
+msgstr "איפוס הפעלה"
 
 #: data/ui/window.blp:86
 msgid "_Preferences"
@@ -143,11 +143,9 @@ msgstr "_על אודות Solanum"
 msgid "translator-credits"
 msgstr ""
 "יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
-"\n"
-"<a href=\"https://l10n.gnome.org/teams/he/\">מיזם תרגום GNOME לעברית</a>"
+"מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he"
 
 #: src/app.rs:195
-#| msgid "Donate on Patreon"
 msgid "_Donate on Patreon"
 msgstr "_תרומה ב־Patreon"
 
