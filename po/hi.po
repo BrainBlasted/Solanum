@@ -1,0 +1,202 @@
+# Hindi translation for solanum main.
+# Copyright (C) 2022 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Translators:
+# Hemish <hemish04082005@gmail.com>, 2022
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2022-11-02 18:40+0000\n"
+"PO-Revision-Date: 2022-11-12 14:46+0530\n"
+"Last-Translator: Hemish <hemish04082005@gmail.com>\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net> https://indlinux.org/hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
+msgid "Solanum"
+msgstr "सोलेनम"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "काम करने के समय और ब्रेक के समय को संतुलित करें"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all "
+"4."
+msgstr ""
+"सोलनम स्वयं का समय नियंत्रित करने के लिए एक एप है जो पोमोडोरो तकनीक का उपयोग करता है। 4 "
+"सत्रों में काम करें, जहाँ प्रत्येक सत्र के बीच में एक विश्राम सत्र होगा और सभी सत्रों के बाद एक लंबा विश्राम सत्र होगा।"
+"होगा।"
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "क्रिस्टोफर डेविस"
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;पोमोडोरो;टाइमर;उत्पादकता;समय"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "एक काम करने के सत्र की लंबाई (मिनटों में)"
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "एक छोटे विश्राम सत्र की लंबाई (मिनटों में)"
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "लम्बे विश्राम सत्र की लंबाई (मिनटों में)"
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "लंबे विश्राम सत्र तक काम करने के सत्रों की संख्या"
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "सामान्य शॉर्टकट"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "प्राथमिक मेनू दिखाएं"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "कुंजीपटल शॉर्टकट दिखाएँ"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "बंद करें"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "काम करने के सत्र की लंबाई"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"प्रत्येक सत्र की लंबाई मिनटों में है। परिवर्तन हर प्रकार के अगले "
+"सत्र में लागू होंगे।"
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "काम करने के सत्र की लंबाई"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "छोटे विश्राम सत्र की लंबाई"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "लम्बे विश्राम सत्र की लंबाई"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "लंबे विश्राम सत्र तक काम करने के सत्रों की संख्या"
+
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "टाइमर को टॉगल करें"
+
+#: data/ui/window.blp:56 src/window.rs:320
+msgid "Skip"
+msgstr "छोड़कर आगे बढें"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "मुख्य मेन्यू"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "सभी सत्र रीसेट करें"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "वरीयताएँ (_P)"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "कुंजीपटल शॉर्टकट (_K)"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "सोलनम का परिचय (_A)"
+
+#. Translators: Replace "translator-credits" with your names, one name per
+#. line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Hemish <hemish04082005@gmail.com>"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "पैट्रियन पर दान करें (_D)"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "गिटहब पर प्रायोजक बनें (_S)"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "आइकॉन प्रदानकर्ता"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "ध्वनि प्रदानकर्ता"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "लंबा विश्राम सत्र"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "छोटा विश्राम सत्र"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "काम पर वापस लौटें"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "क्या आप काम करते रहने के लिए तैयार हैं?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "काम करना शुरू करें"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "विश्राम का समय"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "अपने पैरों को फैलाएं, और थोड़ा पानी पिएँ।"
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "विश्राम शुरू करें"
+
+#: src/window.rs:333
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "सत्र {}"
+msgstr[1] "सत्र {}"
