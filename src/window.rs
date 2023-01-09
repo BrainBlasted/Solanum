@@ -316,6 +316,7 @@ impl SolanumWindow {
             };
             notif.set_title(&title);
             notif.set_body(Some(&body));
+            notif.set_priority(gio::NotificationPriority::Urgent);
             notif.add_button(&button, "app.toggle-timer");
             notif.add_button(&i18n("Skip"), "app.skip");
             let app = self.application();
