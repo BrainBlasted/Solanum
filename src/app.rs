@@ -164,7 +164,7 @@ impl SolanumApplication {
 
     // Sets up keyboard shortcuts
     fn setup_accels(&self) {
-        self.set_accels_for_action("app.preferences", &["<Primary>P"]);
+        self.set_accels_for_action("app.preferences", &["<Primary>comma"]);
         self.set_accels_for_action("app.quit", &["<Primary>q"]);
         self.set_accels_for_action("win.menu", &["F10"]);
     }
