@@ -9,18 +9,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-09-19 09:35+0200\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-01-26 19:06+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
@@ -79,10 +79,15 @@ msgstr "Pokaže osnovni meni"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Pokaži nastavitve"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Pokaže tipkovne bližnjice"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Konča program"
@@ -119,7 +124,7 @@ msgstr "Število delov do daljšega odmora"
 msgid "Toggle Timer"
 msgstr "Preklopi časovnik"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Preskoči"
 
@@ -197,7 +202,7 @@ msgstr "Raztegnite si noge, popite kozarec vode."
 msgid "Start Break"
 msgstr "Začnite s premorom"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Krog {}"
