@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the solanum package.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2020-2022.
 # Tim Sabsch <tim@sabsch.com>, 2021.
-# Jürgen Benvenuti <gastornis@posteo.org>, 2022.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-09-16 11:08+0000\n"
-"PO-Revision-Date: 2022-09-17 10:54+0200\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-01-26 11:25+0100\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -77,10 +77,15 @@ msgstr "Hauptmenü anzeigen"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Einstellungen anzeigen"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Tastenkürzel anzeigen"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Beenden"
@@ -117,7 +122,7 @@ msgstr "Sitzungen bis zur langen Pause"
 msgid "Toggle Timer"
 msgstr "Timer ein-/ausschalten"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Überspringen"
 
@@ -146,7 +151,7 @@ msgstr "_Info zu Solanum"
 msgid "translator-credits"
 msgstr ""
 "Philipp Kiemle <philipp.kiemle@gmail.com>, 2020, 2022.\n"
-"Jürgen Benvenuti <gastornis@posteo.org>, 2022"
+"Jürgen Benvenuti <gastornis@posteo.org>, 2022, 2023."
 
 #: src/app.rs:195
 msgid "_Donate on Patreon"
@@ -196,7 +201,7 @@ msgstr "Strecken Sie Ihre Beine aus und trinken Sie etwas Wasser."
 msgid "Start Break"
 msgstr "Pause starten"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Abschnitt {}"
