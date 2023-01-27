@@ -2,14 +2,14 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # Andika Triwidada <atriwidada@gnome.org>, 2020.
-# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2022.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-08-11 11:08+0700\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-01-27 10:03+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
@@ -76,10 +76,15 @@ msgstr "Perlihatkan Menu Utama"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Tampilkan Preferensi"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Tampilkan Pintasan Papan Tik"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Keluar"
@@ -116,7 +121,7 @@ msgstr "Sesi Sampai Istirahat Panjang"
 msgid "Toggle Timer"
 msgstr "Jungkitkan Pewaktu"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Lewati"
 
@@ -145,7 +150,7 @@ msgstr "Tent_ang Solanum"
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2020.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2022."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2023."
 
 #: src/app.rs:195
 msgid "_Donate on Patreon"
@@ -195,7 +200,7 @@ msgstr "Regangkan kakimu, dan minumlah air."
 msgid "Start Break"
 msgstr "Mulai Istirahat"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Putaran {}"
