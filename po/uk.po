@@ -2,13 +2,13 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-07-31 21:59+0000\n"
-"PO-Revision-Date: 2022-08-01 14:27+0300\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-01-27 15:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:297
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -76,11 +76,17 @@ msgid "Show Primary Menu"
 msgstr "Показати панель меню"
 
 #: data/gtk/help-overlay.blp:16
+#| msgid "_Preferences"
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Показати налаштування"
+
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Показати клавіатурні скорочення"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти"
@@ -117,7 +123,7 @@ msgstr "Сеансів до довгої перерви"
 msgid "Toggle Timer"
 msgstr "Перемкнути таймер"
 
-#: data/ui/window.blp:56 src/window.rs:314
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Пропустити"
 
@@ -147,7 +153,6 @@ msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 
 #: src/app.rs:195
-#| msgid "Donate on Patreon"
 msgid "_Donate on Patreon"
 msgstr "Під_тримати фінансово на Patreon"
 
@@ -163,39 +168,39 @@ msgstr "Автор піктограми"
 msgid "Sound by"
 msgstr "Автор звукових даних"
 
-#: src/window.rs:224
+#: src/window.rs:230
 msgid "Long Break"
 msgstr "Довга перерва"
 
-#: src/window.rs:230
+#: src/window.rs:236
 msgid "Short Break"
 msgstr "Коротка перерва"
 
-#: src/window.rs:301
+#: src/window.rs:307
 msgid "Back to Work"
 msgstr "Повертайтеся до роботи"
 
-#: src/window.rs:302
+#: src/window.rs:308
 msgid "Ready to keep working?"
 msgstr "Готові продовжити роботу?"
 
-#: src/window.rs:303
+#: src/window.rs:309
 msgid "Start Working"
 msgstr "Розпочати роботу"
 
-#: src/window.rs:306
+#: src/window.rs:312
 msgid "Break Time"
 msgstr "Час перерватися"
 
-#: src/window.rs:307
+#: src/window.rs:313
 msgid "Stretch your legs, and drink some water."
 msgstr "Потягніться, випийте трохи води."
 
-#: src/window.rs:308
+#: src/window.rs:314
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.rs:327
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Коло {}"
