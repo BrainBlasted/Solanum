@@ -1,14 +1,14 @@
 # Korean translation for solanum.
 # Copyright (C) 2021 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# Seong-ho Cho <shcho@gnome.org>, 2021, 2022.
+# Seong-ho Cho <shcho@gnome.org>, 2021-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-08-29 22:05+0900\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-01-27 02:55+0900\n"
 "Last-Translator: Seong-ho Cho <shcho@gnome.org>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -74,10 +74,15 @@ msgstr "기본 메뉴 표시"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "기본 설정 표시"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "키보드 바로 가기 키 표시"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "끝내기"
@@ -114,7 +119,7 @@ msgstr "긴 휴식 이전 세션"
 msgid "Toggle Timer"
 msgstr "타이머 전환"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "건너뛰기"
 
@@ -191,7 +196,7 @@ msgstr "다리를 쭉 펴고, 물을 챙겨 드세요."
 msgid "Start Break"
 msgstr "휴식 시작"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Lap {}"
