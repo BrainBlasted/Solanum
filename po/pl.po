@@ -1,15 +1,15 @@
 # Polish translation for solanum.
-# Copyright © 2020-2022 the solanum authors.
+# Copyright © 2020-2023 the solanum authors.
 # This file is distributed under the same license as the solanum package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2020-2022.
-# Aviary.pl <community-poland@mozilla.org>, 2020-2022.
+# Piotr Drąg <piotrdrag@gmail.com>, 2020-2023.
+# Aviary.pl <community-poland@mozilla.org>, 2020-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-07-31 21:59+0000\n"
-"PO-Revision-Date: 2022-08-07 15:22+0200\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-02-05 13:52+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:297
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -76,10 +76,15 @@ msgstr "Wyświetlenie głównego menu"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Wyświetlenie preferencji"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Wyświetlenie skrótów klawiszowych"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Zakończenie działania"
@@ -116,7 +121,7 @@ msgstr "Sesje do długiej przerwy"
 msgid "Toggle Timer"
 msgstr "Przełącza minutnik"
 
-#: data/ui/window.blp:56 src/window.rs:314
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Pomiń"
 
@@ -144,8 +149,8 @@ msgstr "_O programie"
 #: src/app.rs:183
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2020-2022\n"
-"Aviary.pl <community-poland@mozilla.org>, 2020-2022"
+"Piotr Drąg <piotrdrag@gmail.com>, 2020-2023\n"
+"Aviary.pl <community-poland@mozilla.org>, 2020-2023"
 
 #: src/app.rs:195
 msgid "_Donate on Patreon"
@@ -163,39 +168,39 @@ msgstr "Ikona"
 msgid "Sound by"
 msgstr "Dźwięki"
 
-#: src/window.rs:224
+#: src/window.rs:230
 msgid "Long Break"
 msgstr "Długa przerwa"
 
-#: src/window.rs:230
+#: src/window.rs:236
 msgid "Short Break"
 msgstr "Krótka przerwa"
 
-#: src/window.rs:301
+#: src/window.rs:307
 msgid "Back to Work"
 msgstr "Powrót do pracy"
 
-#: src/window.rs:302
+#: src/window.rs:308
 msgid "Ready to keep working?"
 msgstr "Wracamy do pracy?"
 
-#: src/window.rs:303
+#: src/window.rs:309
 msgid "Start Working"
 msgstr "Zacznij pracę"
 
-#: src/window.rs:306
+#: src/window.rs:312
 msgid "Break Time"
 msgstr "Czas na przerwę"
 
-#: src/window.rs:307
+#: src/window.rs:313
 msgid "Stretch your legs, and drink some water."
 msgstr "Rozciągnij nogi i napij się wody."
 
-#: src/window.rs:308
+#: src/window.rs:314
 msgid "Start Break"
 msgstr "Zacznij przerwę"
 
-#: src/window.rs:327
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. runda"
