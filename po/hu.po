@@ -1,14 +1,14 @@
 # Hungarian translation for solanum.
-# Copyright (C) 2022 Free Software Foundation, Inc.
+# Copyright (C) 2022, 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the solanum package.
 #
-# Balázs Úr <ur.balazs at fsf dot hu>, 2022.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-09-06 00:42+0200\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-02-21 01:45+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
@@ -74,11 +74,17 @@ msgid "Show Primary Menu"
 msgstr "Elsődleges menü megjelenítése"
 
 #: data/gtk/help-overlay.blp:16
+#| msgid "_Preferences"
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Beállítások megjelenítése"
+
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Gyorsbillentyűk megjelenítése"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Kilépés"
@@ -115,7 +121,7 @@ msgstr "Munkamenetek a hosszú szünetig"
 msgid "Toggle Timer"
 msgstr "Időzítő be- és kikapcsolása"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Kihagyás"
 
@@ -145,7 +151,6 @@ msgid "translator-credits"
 msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2022."
 
 #: src/app.rs:195
-#| msgid "Donate on Patreon"
 msgid "_Donate on Patreon"
 msgstr "_Adományozás Patreonon"
 
@@ -193,7 +198,7 @@ msgstr "Nyújtsa ki a lábát, és igyon egy kis vizet."
 msgid "Start Break"
 msgstr "Kezdje meg a szünetet"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. munkavégzés"
