@@ -2,14 +2,14 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # scootergrisen, 2020.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2022.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2022-23.
 # scootergrisen: oversættelsen mangler at blive afprøvet
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-09-08 19:38+0200\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-03-11 16:29+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -78,10 +78,15 @@ msgstr "Vis primære menu"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Vis indstillinger"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Vis tastaturgenveje"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Afslut"
@@ -118,7 +123,7 @@ msgstr "Antal sessioner før lang pause"
 msgid "Toggle Timer"
 msgstr "Slå timer til/fra"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Spring over"
 
@@ -197,7 +202,7 @@ msgstr "Stræk benene og drik noget vand."
 msgid "Start Break"
 msgstr "Hold pause"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Omgang {}"
