@@ -41,7 +41,7 @@
         <p>The 3.0.0 release of Solanum brings new preferences, updated translations, and minor bug fixes.</p>
         <ul>
           <li>Solanum now has preferences to adjust the various timer lengths, as well as how many laps to go through before a long break.</li>
-          <li>New and updated translations for the German, Spanish, Slovenian, Dutch, Romanian, Chinese (China), Korean, Galician, Brazilian Portuguese, Ukranian, Swedish, Polish, Czech, and Finish languages.</li>
+          <li>New and updated translations for the German, Spanish, Slovenian, Dutch, Romanian, Chinese (China), Korean, Galician, Brazilian Portuguese, Ukrainian, Swedish, Polish, Czech, and Finish languages.</li>
         </ul>
       </description>
     </release>
@@ -61,7 +61,7 @@
         <ul>
           <li>The UI has been ported to GTK 4, making Solanum one of the first GTK 4 apps.</li>
           <li>Support for translations has been added.</li>
-          <li>Added translations for French, Spanish, Swedish, Slovenian, Italian, Indonesian, Polish, Finnish, Brazilian Portuguese, Basque, Czech, Ukranian, and British English</li>
+          <li>Added translations for French, Spanish, Swedish, Slovenian, Italian, Indonesian, Polish, Finnish, Brazilian Portuguese, Basque, Czech, Ukrainian, and British English</li>
           <li>Fix: The timer state is properly updated when using the skip button.</li>
         </ul>
       </description>

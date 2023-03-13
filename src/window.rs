@@ -298,7 +298,7 @@ impl SolanumWindow {
         player.play();
     }
 
-    fn send_notifcation(&self, lap_type: LapType) {
+    fn send_notification(&self, lap_type: LapType) {
         if !self.is_active() {
             let notif = gio::Notification::new(&i18n("Solanum"));
             // Set notification text based on lap type
@@ -352,7 +352,7 @@ impl SolanumWindow {
         self.update_lap(next_lap);
 
         if notify {
-            self.send_notifcation(next_lap);
+            self.send_notification(next_lap);
         }
     }
 }
