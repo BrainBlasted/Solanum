@@ -1,26 +1,26 @@
 # Spanish translation for solanum.
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2020-2021.
-# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2021.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2021-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-11-15 09:00+0000\n"
-"PO-Revision-Date: 2021-11-15 09:59+0100\n"
-"Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-03-16 09:55+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 41.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:301
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
+#: src/window.rs:303
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -63,31 +63,36 @@ msgstr "La duración de descanso largo, en minutos."
 msgid "The number of sessions until a long break."
 msgstr "El número de sesiones hasta un descanso largo."
 
-#: data/gtk/help-overlay.ui:12
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Atajos del teclado generales"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Mostrar el menú principal"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Mostrar las preferencias"
+
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Mostrar los atajos del teclado"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Salir"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Duración de la sesión"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -95,85 +100,108 @@ msgstr ""
 "La duración de cada tipo de sesión, en minutos. Los cambios se aplican en la "
 "siguiente sesión de cada tipo."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Duración de la etapa"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:29
 msgid "Short Break Length"
 msgstr "Duración de la pausa corta"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:45
 msgid "Long Break Length"
 msgstr "Duración de la pausa larga"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
 msgstr "Sesiones hasta el descanso largo"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "Prefere_ncias"
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Conmutar temporizador"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "Atajos del _teclado"
-
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "_Acerca de Solanum"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Un temporizador Pomodoro para GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2020-2021"
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Donar en Patreon"
-
-#: src/window.rs:238
-msgid "Long Break"
-msgstr "Pausa larga"
-
-#: src/window.rs:244
-msgid "Short Break"
-msgstr "Pausa corta"
-
-#: src/window.rs:305
-msgid "Back to Work"
-msgstr "Volver al trabajo"
-
-#: src/window.rs:306
-msgid "Ready to keep working?"
-msgstr "¿Listo para seguir trabajando?"
-
-#: src/window.rs:307
-msgid "Start Working"
-msgstr "Empezar a trabajar"
-
-#: src/window.rs:310
-msgid "Break Time"
-msgstr "Tiempo de descanso"
-
-#: src/window.rs:311
-msgid "Stretch your legs, and drink some water."
-msgstr "Estire sus piernas y beba un poco de agua."
-
-#: src/window.rs:312
-msgid "Start Break"
-msgstr "Iniciar pausa"
-
-#: src/window.rs:318
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "Omitir"
 
-#: src/window.rs:331
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Restablecer sesiones"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "Prefere_ncias"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "Atajos del _teclado"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_Acerca de Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:183
+msgid "translator-credits"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2020-2021"
+
+#: src/app.rs:195
+msgid "_Donate on Patreon"
+msgstr "_Donar en Patreon"
+
+#: src/app.rs:199
+msgid "_Sponsor on GitHub"
+msgstr "_Patrocinar en GitHub"
+
+#: src/app.rs:204
+msgid "Icon by"
+msgstr "Icono por"
+
+#: src/app.rs:208
+msgid "Sound by"
+msgstr "Sonido por"
+
+#: src/window.rs:230
+msgid "Long Break"
+msgstr "Pausa larga"
+
+#: src/window.rs:236
+msgid "Short Break"
+msgstr "Pausa corta"
+
+#: src/window.rs:307
+msgid "Back to Work"
+msgstr "Volver al trabajo"
+
+#: src/window.rs:308
+msgid "Ready to keep working?"
+msgstr "¿Listo para seguir trabajando?"
+
+#: src/window.rs:309
+msgid "Start Working"
+msgstr "Empezar a trabajar"
+
+#: src/window.rs:312
+msgid "Break Time"
+msgstr "Tiempo de descanso"
+
+#: src/window.rs:313
+msgid "Stretch your legs, and drink some water."
+msgstr "Estire sus piernas y beba un poco de agua."
+
+#: src/window.rs:314
+msgid "Start Break"
+msgstr "Iniciar pausa"
+
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Tramo {}"
 msgstr[1] "Tramo {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Un temporizador Pomodoro para GNOME"
