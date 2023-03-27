@@ -83,7 +83,10 @@ mod imp {
             Self {
                 pomodoro_count: Cell::new(1),
                 timer: Timer::new(),
-                player: gstreamer_player::Player::new(None, None),
+                player: gstreamer_player::Player::new(
+                    None::<gstreamer_player::PlayerVideoRenderer>,
+                    None::<gstreamer_player::PlayerSignalDispatcher>,
+                ),
                 lap_type: Default::default(),
                 lap_label: TemplateChild::default(),
                 timer_label: TemplateChild::default(),
@@ -123,8 +126,8 @@ mod imp {
     }
 
     impl ObjectImpl for SolanumWindow {
-        fn constructed(&self, obj: &Self::Type) {
-            self.parent_constructed(obj);
+        fn constructed(&self) {
+            self.parent_constructed();
             self.player.connect_end_of_stream(|p| p.stop());
         }
     }
@@ -145,8 +148,9 @@ glib::wrapper! {
 
 impl SolanumWindow {
     pub fn new<P: IsA<gtk::Application> + glib::value::ToValue>(app: &P) -> Self {
-        let win = glib::Object::new::<Self>(&[("application", app)])
-            .expect("Failed to create SolanumWindow");
+        let win = glib::Object::builder::<Self>()
+            .property("application", app)
+            .build();
 
         win.init();
 
@@ -154,10 +158,6 @@ impl SolanumWindow {
         gtk::Window::set_default_icon_name(config::APP_ID);
 
         win
-    }
-
-    fn imp(&self) -> &imp::SolanumWindow {
-        imp::SolanumWindow::from_instance(self)
     }
 
     fn application(&self) -> SolanumApplication {
@@ -294,7 +294,7 @@ impl SolanumWindow {
 
     fn play_sound(&self, uri: &str) {
         let player = &self.imp().player;
-        player.set_uri(uri);
+        player.set_uri(Some(uri));
         player.play();
     }
 

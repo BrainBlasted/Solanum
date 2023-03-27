@@ -24,7 +24,6 @@ use gtk_macros::*;
 use glib::clone;
 use glib::WeakRef;
 
-use gio::ApplicationFlags;
 use glib::subclass::prelude::*;
 use gtk::subclass::prelude::*;
 use libadwaita::subclass::prelude::*;
@@ -65,17 +64,20 @@ mod imp {
     impl ObjectImpl for SolanumApplication {}
 
     impl ApplicationImpl for SolanumApplication {
-        fn activate(&self, application: &Self::Type) {
+        fn activate(&self) {
+            let application = self.obj();
             let window = application.get_main_window();
             window.show();
             window.present();
         }
 
         // Entry point for GApplication
-        fn startup(&self, application: &Self::Type) {
-            self.parent_startup(application);
+        fn startup(&self) {
+            self.parent_startup();
 
-            let window = SolanumWindow::new(application);
+            let application = self.obj();
+
+            let window = SolanumWindow::new(&*application);
             window.set_title(Some(&i18n("Solanum")));
             window.set_icon_name(Some(&config::APP_ID.to_owned()));
             self.window
@@ -100,21 +102,18 @@ glib::wrapper! {
 impl SolanumApplication {
     // Create the finalized, subclassed SolanumApplication
     pub fn new() -> Self {
-        glib::Object::new(&[
-            ("application-id", &config::APP_ID.to_owned()),
-            ("flags", &ApplicationFlags::empty()),
-            ("resource-base-path", &"/org/gnome/Solanum".to_owned()),
-        ])
-        .unwrap()
+        glib::Object::builder()
+            .property("application-id", config::APP_ID)
+            .property("resource-base-path", "/org/gnome/Solanum")
+            .build()
     }
 
     fn get_main_window(&self) -> SolanumWindow {
-        let imp = imp::SolanumApplication::from_instance(self);
-        imp.window.get().unwrap().clone().upgrade().unwrap()
+        self.imp().window.get().unwrap().clone().upgrade().unwrap()
     }
 
     pub fn gsettings(&self) -> &gio::Settings {
-        &imp::SolanumApplication::from_instance(self).settings
+        &self.imp().settings
     }
 
     // Sets up gio::SimpleActions for the Application
@@ -216,7 +215,7 @@ impl SolanumApplication {
     }
 
     fn show_preferences(&self) {
-        let imp = imp::SolanumApplication::from_instance(self);
+        let imp = self.imp();
         let window = self.get_main_window();
         let preferences_window = SolanumPreferencesWindow::new(&window, &imp.settings);
         preferences_window.show();

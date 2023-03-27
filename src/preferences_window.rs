@@ -72,9 +72,11 @@ glib::wrapper! {
 
 impl SolanumPreferencesWindow {
     pub fn new<W: glib::IsA<gtk::Window>>(parent: &W, settings: &gio::Settings) -> Self {
-        let obj = glib::Object::new::<Self>(&[("transient-for", &Some(parent))]).unwrap();
+        let obj = glib::Object::builder::<Self>()
+            .property("transient-for", Some(parent))
+            .build();
 
-        let imp = imp::SolanumPreferencesWindow::from_instance(&obj);
+        let imp = obj.imp();
 
         settings.bind("lap-length", &*imp.lap_spin, "value").build();
         settings

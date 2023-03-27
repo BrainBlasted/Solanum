@@ -30,7 +30,7 @@ mod window;
 use crate::app::SolanumApplication;
 
 // Entry point for the application
-fn main() {
+fn main() -> glib::ExitCode {
     // Initiialize gtk, gstreamer, and libhandy.
     gtk::init().expect("Failed to initialize gtk");
     gstreamer::init().expect("Failed to initialize gstreamer");
@@ -52,6 +52,5 @@ fn main() {
 
     let app = SolanumApplication::new();
 
-    let ret = app.run();
-    std::process::exit(ret);
+    app.run()
 }

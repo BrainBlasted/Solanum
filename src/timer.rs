@@ -52,13 +52,10 @@ mod imp {
         fn signals() -> &'static [Signal] {
             static SIGNALS: Lazy<Vec<Signal>> = Lazy::new(|| {
                 vec![
-                    Signal::builder(
-                        "countdown-update",
-                        &[u32::static_type().into(), u32::static_type().into()],
-                        <()>::static_type().into(),
-                    )
-                    .build(),
-                    Signal::builder("lap", &[], <()>::static_type().into()).build(),
+                    Signal::builder("countdown-update")
+                        .param_types([u32::static_type(), u32::static_type()])
+                        .build(),
+                    Signal::builder("lap").build(),
                 ]
             });
             SIGNALS.as_ref()
@@ -72,7 +69,7 @@ glib::wrapper! {
 
 impl Timer {
     pub fn new() -> Self {
-        glib::Object::new::<Self>(&[]).expect("Failed to initialize Timer object")
+        glib::Object::new()
     }
 
     pub fn connect_countdown_update<F: Fn(&Self, u32, u32) + 'static>(
@@ -96,10 +93,6 @@ impl Timer {
                 f(&timer);
             }),
         )
-    }
-
-    fn imp(&self) -> &imp::Timer {
-        imp::Timer::from_instance(self)
     }
 
     // Pass the duration in minutes
@@ -159,8 +152,6 @@ impl Timer {
 }
 
 fn duration_to_mins_and_secs(duration: Duration) -> (u32, u32) {
-    use std::convert::TryInto;
-
     let mut seconds = duration.as_secs();
     let minutes = seconds / 60;
     seconds %= 60;
