@@ -47,7 +47,6 @@ fn main() -> glib::ExitCode {
 
     // Set the name shown in desktop environments
     glib::set_application_name("Solanum");
-    glib::set_program_name(Some("solanum"));
 
     let app = SolanumApplication::new();
 
