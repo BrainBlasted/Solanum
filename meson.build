@@ -44,11 +44,6 @@ solanum_version = meson.project_version() + version_suffix
 subdir('data')
 subdir('po')
 
-cargo_sources = files(
-  'Cargo.toml',
-  'Cargo.lock'
-)
-
 subdir('src')
 
 meson.add_dist_script(
