@@ -17,8 +17,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-use gio::prelude::*;
 use gtk::prelude::*;
+use gtk::{gio, glib};
 use gtk_macros::*;
 
 use glib::clone;

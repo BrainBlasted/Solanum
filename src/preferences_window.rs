@@ -20,6 +20,7 @@
 use gtk::prelude::*;
 use gtk::subclass::prelude::*;
 use gtk::CompositeTemplate;
+use gtk::{gio, glib};
 use libadwaita::subclass::prelude::*;
 
 use once_cell::unsync::OnceCell;

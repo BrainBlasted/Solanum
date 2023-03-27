@@ -16,22 +16,6 @@ libadwaita = { version = "0.3.0", features = ["v1_2"] }
 version = "0.6"
 package ="gtk4"
 
-[dependencies.gdk]
-version = "0.6"
-package = "gdk4"
-
-[dependencies.gio]
-version = "0.17"
-features = ["v2_60"]
-
-[dependencies.glib]
-version = "0.17"
-features = ["v2_60"]
-
 [dependencies.gettext-rs]
 version = "0.7.0"
 features = ["gettext-system"]
-
-[dependencies.pango]
-version = "0.17"
-features = ["v1_44"]

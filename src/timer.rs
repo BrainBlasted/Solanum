@@ -17,10 +17,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-use glib::prelude::*;
 use glib::subclass::{prelude::*, Signal};
 use glib::{clone, StaticType};
 use glib_macros::closure_local;
+use gtk::glib;
+use gtk::prelude::*;
 
 // `Rc`s are Reference Counters. They allow us to clone objects,
 // while actually referencing at different places.

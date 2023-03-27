@@ -17,7 +17,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-use gio::prelude::*;
+use gtk::gio;
+use gtk::glib;
 use gtk::prelude::*;
 
 use glib::{clone, Enum};
