@@ -1,6 +1,6 @@
 project('solanum', 'rust',
           version: '3.0.1',
-    meson_version: '>= 0.50.0',
+    meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2',
                    ],
 )
@@ -51,10 +51,14 @@ cargo_sources = files(
 
 subdir('src')
 
-meson.add_install_script('build-aux/meson/postinstall.py')
 meson.add_dist_script(
   'build-aux/meson/dist-vendor.sh',
-  join_paths(meson.build_root(), 'meson-dist', meson.project_name() + '-' + meson.project_version()),
-  meson.source_root()
+  join_paths(meson.project_build_root(), 'meson-dist', meson.project_name() + '-' + meson.project_version()),
+  meson.project_source_root()
 )
 
+gnome.post_install(
+  gtk_update_icon_cache: true,
+  glib_compile_schemas: true,
+  update_desktop_database: true,
+)
