@@ -67,7 +67,6 @@ mod imp {
         fn activate(&self) {
             let application = self.obj();
             let window = application.get_main_window();
-            window.show();
             window.present();
         }
 
@@ -211,13 +210,13 @@ impl SolanumApplication {
         about.set_transient_for(Some(&window));
         about.set_modal(true);
 
-        about.show();
+        about.present();
     }
 
     fn show_preferences(&self) {
         let imp = self.imp();
         let window = self.get_main_window();
         let preferences_window = SolanumPreferencesWindow::new(&window, &imp.settings);
-        preferences_window.show();
+        preferences_window.present();
     }
 }
