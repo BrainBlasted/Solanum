@@ -37,8 +37,8 @@ fn main() -> glib::ExitCode {
 
     // Set up translations
     setlocale(LocaleCategory::LcAll, "");
-    bindtextdomain("solanum", config::LOCALEDIR);
-    textdomain("solanum");
+    bindtextdomain("solanum", config::LOCALEDIR).unwrap();
+    textdomain("solanum").unwrap();
 
     // Register resources so we can integrate things like UI files, CSS, and icons
     let res = gio::Resource::load(config::PKGDATADIR.to_owned() + "/solanum.gresource")
