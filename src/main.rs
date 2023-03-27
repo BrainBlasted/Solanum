@@ -32,10 +32,8 @@ use crate::app::SolanumApplication;
 
 // Entry point for the application
 fn main() -> glib::ExitCode {
-    // Initiialize gtk, gstreamer, and libhandy.
-    gtk::init().expect("Failed to initialize gtk");
+    // Initiialize gstreamer
     gstreamer::init().expect("Failed to initialize gstreamer");
-    libadwaita::init();
 
     // Set up translations
     setlocale(LocaleCategory::LcAll, "");
