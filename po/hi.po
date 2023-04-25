@@ -2,21 +2,23 @@
 # Copyright (C) 2022 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # Translators:
-# Hemish <hemish04082005@gmail.com>, 2022
+# Hemish <hemish04082005@gmail.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-11-02 18:40+0000\n"
-"PO-Revision-Date: 2022-11-12 14:46+0530\n"
+"POT-Creation-Date: 2023-01-25 22:06+0000\n"
+"PO-Revision-Date: 2023-02-26 22:15+0530\n"
 "Last-Translator: Hemish <hemish04082005@gmail.com>\n"
-"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net> https://indlinux.org/hindi\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net https://indlinux."
+"org/hindi>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
@@ -31,20 +33,18 @@ msgstr "काम करने के समय और ब्रेक के �
 #: data/org.gnome.Solanum.appdata.xml.in.in:10
 msgid ""
 "Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
-"sessions, with breaks in between each session and one long break after all "
-"4."
+"sessions, with breaks in between each session and one long break after all 4."
 msgstr ""
-"सोलनम स्वयं का समय नियंत्रित करने के लिए एक एप है जो पोमोडोरो तकनीक का उपयोग करता है। 4 "
-"सत्रों में काम करें, जहाँ प्रत्येक सत्र के बीच में एक विश्राम सत्र होगा और सभी सत्रों के बाद एक लंबा विश्राम सत्र होगा।"
-"होगा।"
+"सोलनम स्वयं का समय नियंत्रित करने के लिए एक एप है जो पोमोडोरो तकनीक का उपयोग करता "
+"है। 4 सत्रों में काम करें, जहाँ प्रत्येक सत्र के बीच में एक विश्राम सत्र होगा और सभी सत्रों के "
+"बाद एक लंबा विश्राम सत्र होगा।होगा।"
 
 #. Translators: please do NOT translate this
 #: data/org.gnome.Solanum.appdata.xml.in.in:26
 msgid "Christopher Davis"
 msgstr "क्रिस्टोफर डेविस"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Timer;Productivity;पोमोडोरो;टाइमर;उत्पादकता;समय"
@@ -77,10 +77,15 @@ msgstr "प्राथमिक मेनू दिखाएं"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
-msgid "Show Keyboard Shortcuts"
-msgstr "कुंजीपटल शॉर्टकट दिखाएँ"
+msgid "Show Preferences"
+msgstr "सेटिंग्स दिखाएँ (_P)"
 
 #: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "कुंजीपट शॉर्टकट दिखाएँ"
+
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "बंद करें"
@@ -93,9 +98,7 @@ msgstr "काम करने के सत्र की लंबाई"
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
-msgstr ""
-"प्रत्येक सत्र की लंबाई मिनटों में है। परिवर्तन हर प्रकार के अगले "
-"सत्र में लागू होंगे।"
+msgstr "प्रत्येक सत्र की लंबाई मिनटों में है। परिवर्तन हर प्रकार के अगले सत्र में लागू होंगे।"
 
 #: data/ui/preferences-window.blp:13
 msgid "Lap Length"
@@ -117,7 +120,7 @@ msgstr "लंबे विश्राम सत्र तक काम कर�
 msgid "Toggle Timer"
 msgstr "टाइमर को टॉगल करें"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:321
 msgid "Skip"
 msgstr "छोड़कर आगे बढें"
 
@@ -135,17 +138,16 @@ msgstr "वरीयताएँ (_P)"
 
 #: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
-msgstr "कुंजीपटल शॉर्टकट (_K)"
+msgstr "कुंजीपट शॉर्टकट (_K)"
 
 #: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "सोलनम का परिचय (_A)"
 
-#. Translators: Replace "translator-credits" with your names, one name per
-#. line
+#. Translators: Replace "translator-credits" with your names, one name per line
 #: src/app.rs:183
 msgid "translator-credits"
-msgstr "Hemish <hemish04082005@gmail.com>"
+msgstr "Hemish (हेमिश) <hemish04082005@gmail.com>"
 
 #: src/app.rs:195
 msgid "_Donate on Patreon"
@@ -195,7 +197,7 @@ msgstr "अपने पैरों को फैलाएं, और थोड
 msgid "Start Break"
 msgstr "विश्राम शुरू करें"
 
-#: src/window.rs:333
+#: src/window.rs:334
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "सत्र {}"
