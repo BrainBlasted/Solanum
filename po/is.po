@@ -1,0 +1,205 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ingirafn <ingirafn@this.is>, 2023.
+# Sveinn í Felli <sv1@fellsnet.is>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2023-04-04 23:14+0000\n"
+"PO-Revision-Date: 2023-05-14 20:15+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Haltu jafnvægi milli verkefna og frítíma"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solarum er tímatökuforrit sem byggist á pomodoro-tækninni. Vinna í "
+"fjórum lotum, með stuttu hléi á milli og langa hvíld eftir vinnuloturnar "
+"fjórar."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Tímavaki;Framleiðni;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Lengd vinnulotu í mínútum."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Lengd stutts hlés í mínútum."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Lengd lengri hvíldar í mínútum."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Hve margar lotur til vinnuhlés."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Almennir flýtilyklar"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Birta aðalvalmynd"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Sýna kjörstillingar"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Birta flýtilykla"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Hætta"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Lengd lotu"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Lengd hverrar lotu fyrir sig í mínútum. Vistaðar breytingar taka gildi þegar "
+"ný vinnulota hefst."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Lengd lotu"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "Lengd stutts hlés"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "Lengd lengri hvíldar"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "Hve margar lotur fyrir lengri hvíld"
+
+# Ég sé ekki þennan texta birtast nein staðar þergar ég nota forritið í tölvunni minni.
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Virkja tímavaka"
+
+#: data/ui/window.blp:56 src/window.rs:322
+msgid "Skip"
+msgstr "Sleppa"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Aðalvalmynd"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Endursetja lotur"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "K_jörstillingar"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "Almennir _flýtilyklar"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_Um Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:181
+msgid "translator-credits"
+msgstr "Ingirafn, ingirafn at this dot is ,2023"
+
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "_Styrkja á Patreon"
+
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "S_tuðningsaðili á GitHub"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr "Táknmynd eftir"
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr "Hjóðmynd eftir"
+
+#: src/window.rs:231
+msgid "Long Break"
+msgstr "Löng hvíld"
+
+#: src/window.rs:237
+msgid "Short Break"
+msgstr "Stutt hlé"
+
+#: src/window.rs:308
+msgid "Back to Work"
+msgstr "Aftur í vinnuna"
+
+#: src/window.rs:309
+msgid "Ready to keep working?"
+msgstr "Tilbúin að halda áfram?"
+
+#: src/window.rs:310
+msgid "Start Working"
+msgstr "Byrjaðu að vinna"
+
+#: src/window.rs:313
+msgid "Break Time"
+msgstr "Hvíldartími"
+
+#: src/window.rs:314
+msgid "Stretch your legs, and drink some water."
+msgstr "Teygðu úr skönkunum þínum og drekktu dálítið vatn."
+
+#: src/window.rs:315
+msgid "Start Break"
+msgstr "Hefja hvíld"
+
+#: src/window.rs:335
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Lota {}"
+msgstr[1] "Lota {}"
