@@ -207,6 +207,16 @@ impl SolanumApplication {
             &["Miredly Sound https://soundcloud.com/mired"],
         );
 
+        about.add_acknowledgement_section(
+            Some(&i18n("Supported by")),
+            &[
+                "Willo Vincent",
+                "Sage Rosen",
+                "refi64",
+                "Patrons and GitHub Sponsors"
+            ],
+        );
+
         about.set_transient_for(Some(&window));
         about.set_modal(true);
 

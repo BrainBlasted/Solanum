@@ -27,6 +27,19 @@
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
+    <release version="4.0.0" date="2023-06-08">
+      <description>
+        <p>Solanum 4.0.0 brings major updates to the backend and fixes some long-standing bugs.</p>
+        <ul>
+          <li>Added the ability to restart a session from the beginning (Dani Rodrígues)</li>
+          <li>Raised the priority of notifications so they show with GNOME's Do Not Disturb enabled (Rekai Musuka)</li>
+          <li>Fixed timer direction in RTL languages (Yosef Or Boczko)</li>
+          <li>Fixed incorrect shortcut being displayed for Preferences in the Keyboard Shorcuts window (Subri Ünal)</li>
+          <li>Fixed session noises playing randomly (Christopher Davis)</li>
+          <li>Miscellaneous translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.0.1" date="2021-10-28">
       <description>
         <p>The 3.0.1 release of Solanum brings a minor bug fix.</p>
