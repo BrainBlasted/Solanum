@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-01-25 22:06+0000\n"
-"PO-Revision-Date: 2023-01-26 14:45+0000\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-06-23 17:34+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.gnome.org/teams/pt/>\n"
 "Language: pt\n"
@@ -23,11 +23,11 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -127,7 +127,7 @@ msgstr "Sessões até a longa pausa"
 msgid "Toggle Timer"
 msgstr "Alternar temporizador"
 
-#: data/ui/window.blp:56 src/window.rs:321
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "Ignorar"
 
@@ -152,49 +152,53 @@ msgid "_About Solanum"
 msgstr "A_cerca do Solanum"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr ""
 "Juliano de Souza Camargo <julianosc@pm.me>\n"
 "Hugo Carvalho <hugokarvalho@hotmail.com>"
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "_Doar através do Patreon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "_Patrocinar através do GitHub"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Ícone por"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Som por"
 
-#: src/window.rs:230
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Com o apoio de"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Pausa longa"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Pausa breve"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "Volte a trabalhar"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "Pronto para voltar a trabalhar?"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "Comece a trabalhar"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "Intervalo"
 
@@ -203,15 +207,15 @@ msgstr "Intervalo"
 #
 # Caminhos:
 # src/window.rs:311
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "Estique as pernas e beba um pouco de água."
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "Comece a pausa"
 
-#: src/window.rs:334
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Volta {}"
