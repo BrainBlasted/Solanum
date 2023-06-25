@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-01-25 22:06+0000\n"
-"PO-Revision-Date: 2023-01-27 15:49+0200\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-06-25 16:14+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: Lokalize 20.12.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -76,7 +76,6 @@ msgid "Show Primary Menu"
 msgstr "Показати панель меню"
 
 #: data/gtk/help-overlay.blp:16
-#| msgid "_Preferences"
 msgctxt "shortcut window"
 msgid "Show Preferences"
 msgstr "Показати налаштування"
@@ -123,7 +122,7 @@ msgstr "Сеансів до довгої перерви"
 msgid "Toggle Timer"
 msgstr "Перемкнути таймер"
 
-#: data/ui/window.blp:56 src/window.rs:321
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "Пропустити"
 
@@ -148,59 +147,64 @@ msgid "_About Solanum"
 msgstr "_Про Solanum"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "Під_тримати фінансово на Patreon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "С_понсорувати на GitHub"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Автор піктограми"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Автор звукових даних"
 
-#: src/window.rs:230
+#: src/app.rs:211
+#| msgid "Sound by"
+msgid "Supported by"
+msgstr "Підтримано"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Довга перерва"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Коротка перерва"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "Повертайтеся до роботи"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "Готові продовжити роботу?"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "Розпочати роботу"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "Час перерватися"
 
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "Потягніться, випийте трохи води."
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.rs:334
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Коло {}"
