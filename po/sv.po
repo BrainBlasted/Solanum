@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-01-25 22:06+0000\n"
-"PO-Revision-Date: 2023-01-25 23:30+0100\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-06-20 10:30+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -120,7 +120,7 @@ msgstr "Sessioner innan lång rast"
 msgid "Toggle Timer"
 msgstr "Aktivera/inaktivera tidtagare"
 
-#: data/ui/window.blp:56 src/window.rs:321
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "Hoppa över"
 
@@ -145,7 +145,7 @@ msgid "_About Solanum"
 msgstr "_Om Solanum"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr ""
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
@@ -153,55 +153,59 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>"
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "_Donera på Patreon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "_Sponsra på GitHub"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Ikon av"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Ljud av"
 
-#: src/window.rs:230
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Stöds av"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Lång rast"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Kort rast"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "Tillbaka till arbetet"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "Redo att fortsätta arbeta?"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "Börja arbeta"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "Rastdags"
 
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "Sträck på benen och drick lite vatten."
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "Starta rast"
 
-#: src/window.rs:334
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Varv {}"
