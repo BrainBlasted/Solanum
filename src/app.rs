@@ -213,7 +213,7 @@ impl SolanumApplication {
                 "Willo Vincent",
                 "Sage Rosen",
                 "refi64",
-                "Patrons and GitHub Sponsors"
+                "Patrons and GitHub Sponsors",
             ],
         );
 
