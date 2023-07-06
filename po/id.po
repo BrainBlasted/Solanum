@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-01-25 22:06+0000\n"
-"PO-Revision-Date: 2023-01-27 10:03+0700\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-07-06 19:25+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -121,7 +121,7 @@ msgstr "Sesi Sampai Istirahat Panjang"
 msgid "Toggle Timer"
 msgstr "Jungkitkan Pewaktu"
 
-#: data/ui/window.blp:56 src/window.rs:321
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "Lewati"
 
@@ -146,61 +146,65 @@ msgid "_About Solanum"
 msgstr "Tent_ang Solanum"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2020.\n"
 "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2023."
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "_Donasi di Patreon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "_Sponsor di GitHub"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Ikon oleh"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Suara oleh"
 
-#: src/window.rs:230
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Didukung oleh"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Rehat Panjang"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Rehat Pendek"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "Kembali Bekerja"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "Siap untuk terus bekerja?"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "Mulai Bekerja"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "Waktu Istirahat"
 
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "Regangkan kakimu, dan minumlah air."
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "Mulai Istirahat"
 
-#: src/window.rs:334
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Putaran {}"
