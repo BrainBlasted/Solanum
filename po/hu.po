@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-01-25 22:06+0000\n"
-"PO-Revision-Date: 2023-02-21 01:45+0100\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-07-26 01:16+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -74,7 +74,6 @@ msgid "Show Primary Menu"
 msgstr "Elsődleges menü megjelenítése"
 
 #: data/gtk/help-overlay.blp:16
-#| msgid "_Preferences"
 msgctxt "shortcut window"
 msgid "Show Preferences"
 msgstr "Beállítások megjelenítése"
@@ -121,7 +120,7 @@ msgstr "Munkamenetek a hosszú szünetig"
 msgid "Toggle Timer"
 msgstr "Időzítő be- és kikapcsolása"
 
-#: data/ui/window.blp:56 src/window.rs:321
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "Kihagyás"
 
@@ -146,59 +145,64 @@ msgid "_About Solanum"
 msgstr "A Solanum _névjegye"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2022."
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "_Adományozás Patreonon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "_Támogatás GitHubon"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Ikon:"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Hang:"
 
-#: src/window.rs:230
+#: src/app.rs:211
+#| msgid "Sound by"
+msgid "Supported by"
+msgstr "Támogatás:"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Hosszú szünet"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Rövid szünet"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "Vissza a munkába"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "Készen áll a további munkára?"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "Kezdjen el dolgozni"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "Szünet"
 
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "Nyújtsa ki a lábát, és igyon egy kis vizet."
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "Kezdje meg a szünetet"
 
-#: src/window.rs:334
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "{}. munkavégzés"
