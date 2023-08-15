@@ -1,0 +1,213 @@
+# Greek translation for solanum.
+# Copyright (C) 2023 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Efstathios Iosifidis <eiosifidis@gnome.org>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2023-08-13 14:27+0000\n"
+"PO-Revision-Date: 2023-08-15 21:40+0300\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"Language-Team: Greek <gnome-el-list@gnome.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Ισορροπία χρόνου εργασίας και διαλείμματος"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Το Solanum είναι μια εφαρμογή παρακολούθησης χρόνου που χρησιμοποιεί την "
+"τεχνική pomodoro. Εργαστείτε σε 4 συνεδρίες, με διαλείμματα μεταξύ κάθε "
+"συνεδρίας και ένα μεγάλο διάλειμμα μετά τις 4."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Χρονόμετρο;Παραγωγικότητα;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Η διάρκεια ενός γύρου εργασίας σε λεπτά."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Η διάρκεια ενός σύντομου διαλείμματος σε λεπτά."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Η διάρκεια ενός μεγάλου διαλείμματος σε λεπτά."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Ο αριθμός των συνεδριών μέχρι ένα μεγάλο διάλειμμα."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Γενικές συντομεύσεις"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Εμφάνιση κυρίως μενού"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Εμφάνιση προτιμήσεων"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Εμφάνιση συντομεύσεων πληκτρολογίου"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr ""
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Η διάρκεια κάθε τύπου συνεδρίας σε λεπτά. Οι αλλαγές ισχύουν για την επόμενη "
+"συνεδρία κάθε τύπου."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr ""
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr ""
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr ""
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr ""
+
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Εναλλαγή χρονοδιακόπτη"
+
+#: data/ui/window.blp:56 src/window.rs:322
+msgid "Skip"
+msgstr "Προσπέραση"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Κυρίως μενού"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr ""
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Προτιμήσεις"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "Συντομεύσεις _πληκτρολογίου"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_Περί Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:181
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
+" Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
+"\n"
+"Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
+"http://gnome.gr/"
+
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "_Δωρεά στο Patreon"
+
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "_Χορηγός στο GitHub"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr ""
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr ""
+
+#: src/app.rs:211
+msgid "Supported by"
+msgstr ""
+
+#: src/window.rs:231
+msgid "Long Break"
+msgstr "Μεγάλο διάλειμμα"
+
+#: src/window.rs:237
+msgid "Short Break"
+msgstr "Μικρό διάλειμμα"
+
+#: src/window.rs:308
+msgid "Back to Work"
+msgstr "Πίσω στην εργασία"
+
+#: src/window.rs:309
+msgid "Ready to keep working?"
+msgstr "Είστε έτοιμοι να συνεχίσετε να εργάζεστε;"
+
+#: src/window.rs:310
+msgid "Start Working"
+msgstr ""
+
+#: src/window.rs:313
+msgid "Break Time"
+msgstr ""
+
+#: src/window.rs:314
+msgid "Stretch your legs, and drink some water."
+msgstr "Τεντώστε τα πόδια σας και πιείτε λίγο νερό."
+
+#: src/window.rs:315
+msgid "Start Break"
+msgstr ""
+
+#: src/window.rs:335
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] ""
+msgstr[1] ""
