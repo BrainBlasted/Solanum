@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the solanum package.
 # D <damnedlies@163.com>, 2020.
 # Dingzhong Chen <wsxy162@gmail.com>, 2021.
-# lumingzh <lumingzh@qq.com>, 2022.
+# lumingzh <lumingzh@qq.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-09-11 10:53+0800\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-09-02 11:36+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "番茄闹钟"
 
@@ -76,10 +76,15 @@ msgstr "显示主菜单"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "显示首选项"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "显示键盘快捷键"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "退出"
@@ -114,7 +119,7 @@ msgstr "长休息前的会话"
 msgid "Toggle Timer"
 msgstr "切换计时器"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "跳过"
 
@@ -139,61 +144,65 @@ msgid "_About Solanum"
 msgstr "关于番茄闹钟(_A)"
 
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr ""
 "D <damnedlies@163.com>, 2020.\n"
-"lumingzh <lumingzh@qq.com>, 2022."
+"lumingzh <lumingzh@qq.com>, 2022-2023."
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "在 Patreon 上捐赠(_D)"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "在 GitHub 上赞助(_S)"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "图标作者"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "音频作者"
 
-#: src/window.rs:230
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "支持者"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "长时间休息"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "短时间休息"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "返回工作"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "准备好继续工作了吗？"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "开始工作"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "休息时间"
 
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "伸伸腿，喝喝水。"
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "开始休息"
 
-#: src/window.rs:333
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "番茄钟 {}"
