@@ -22,6 +22,8 @@
   <url type="homepage">https://apps.gnome.org/apps/org.gnome.Solanum</url>
   <url type="bugtracker">https://gitlab.gnome.org/World/Solanum/-/issues</url>
   <url type="donation">https://patreon.com/chrisgnome</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/World/Solanum/</url>
+  <url type="translate">https://l10n.gnome.org/module/Solanum/</url>
   <!-- Translators: please do NOT translate this -->
   <developer_name>Christopher Davis</developer_name>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
