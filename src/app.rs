@@ -181,7 +181,7 @@ impl SolanumApplication {
             .translator_credits(&i18n("translator-credits"))
             .license_type(gtk::License::Gpl30)
             .version(config::VERSION)
-            .website("https://apps.gnome.org/app/org.gnome.Solanum")
+            .website("https://apps.gnome.org/Solanum")
             .issue_url("https://gitlab.gnome.org/World/Solanum/-/issues/new")
             .copyright(&format!(
                 "\u{A9} {} Christopher Davis, et al.",

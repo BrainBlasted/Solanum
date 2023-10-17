@@ -9,7 +9,7 @@
   <description>Solanum is a time tracking app that uses the pomodoro technique.
   Work in 4 sessions, with breaks in between each session and one long break
   after all 4.</description>
-  <homepage rdf:resource="https://apps.gnome.org/app/org.gnome.Solanum/" />
+  <homepage rdf:resource="https://apps.gnome.org/Solanum/" />
   <bug-database rdf:resource="https://gitlab.gnome.org/World/Solanum/issues/" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#core" />
   <programming-language>Rust</programming-language>
