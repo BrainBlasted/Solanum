@@ -7,8 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-04-02 10:41+0000\n"
-"PO-Revision-Date: 2021-05-14 15:37+0300\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2023-10-11 13:32+0300\n"
+"Last-Translator: Florentina Mușat <florentina [dot] musat [dot] 28 [at] "
+"gmail [dot] com>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -16,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);\n"
-"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.4\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:82 src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -47,53 +49,135 @@ msgstr "Christopher Davis"
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Timer;Productivity;Cronometru;Productivitate;"
 
-#: data/gtk/help-overlay.ui:12
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Durata unei ture de lucru în minute."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Durata unei pauze scurte în minute."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Durata unei pauze lungi în minute."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Numărul de sesiuni până la o pauză lungă."
+
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Scurtături generale"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Arată meniul principal"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Arată preferințele"
+
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Arată scurtăturile de tastatură"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ieșire"
 
-#: data/ui/window.ui:109
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Durata sesiunii"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Durata fiecărui tip de sesiune în minute. Modificările se aplică următoarei "
+"sesiuni de fiecare tip."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Durata turei"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "Durată pauză scurtă"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "Durată pauză lungă"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "Sesiuni până la pauza lungă"
+
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Comută temporizatorul"
+
+#: data/ui/window.blp:56 src/window.rs:322
+msgid "Skip"
+msgstr "Omite"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Meniu principal"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Restabilește sesiunile"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Preferințe"
+
+#: data/ui/window.blp:87
 msgid "_Keyboard Shortcuts"
 msgstr "S_curtături de tastatură"
 
-#: data/ui/window.ui:113
+#: data/ui/window.blp:88
 msgid "_About Solanum"
 msgstr "_Despre Solanum"
 
-#: src/app.rs:172
-msgid "A pomodoro timer for GNOME"
-msgstr "Un cronometru pomodoro pentru GNOME"
-
 #. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:174
+#: src/app.rs:181
 msgid "translator-credits"
 msgstr ""
-"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, 2021"
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
+"2021, 2023"
 
-#: src/app.rs:180
-msgid "Donate on Patreon"
-msgstr "Donează pe Patreon"
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "_Donează pe Patreon"
 
-#: src/window.rs:242
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "_Sponsorizează pe GitHub"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr "Iconiță de"
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr "Sunet de"
+
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Suportat de"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Pauză lungă"
 
-#: src/window.rs:247
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Pauză scurtă"
 
@@ -121,13 +205,12 @@ msgstr "Întindeți-vă picioarele și beți puțină apă."
 msgid "Start Break"
 msgstr "Începe pauza"
 
-#: src/window.rs:321
-msgid "Skip"
-msgstr "Omite"
-
-#: src/window.rs:334
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Etapa {}"
 msgstr[1] "Etapa {}"
 msgstr[2] "Etapa {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Un cronometru pomodoro pentru GNOME"
