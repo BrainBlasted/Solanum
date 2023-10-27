@@ -1,0 +1,210 @@
+# Belarusian translation for solanum.
+# Copyright (C) 2023 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Yahor Haurylenka <k1llo2810@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2023-10-19 16:56+0000\n"
+"PO-Revision-Date: 2023-10-27 18:25+0300\n"
+"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
+"Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Аптымальнае размеркаванне часу паміж працай і перапынкамі"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum – гэта праграма для кіравання працоўным часам, якая выкарыстоўвае "
+"метад памідора. Праца падзяляецца на сеансы, чатыры сеансы з кароткімі "
+"перапынкамі паміж імі, затым ідзе доўгі перапынак."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:26
+msgid "Christopher Davis"
+msgstr "Крыстафер Дэвіс (Christopher Davis)"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;памідор;памадора;таймер;прадуктыўнасць;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Працягласць перыяду працы ў хвілінах."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Працягласць кароткага перапынку ў хвілінах."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Працягласць доўгага перапынку ў хвілінах."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Колькасць сеансаў да доўгага перапынку."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Агульныя спалучэнні клавіш"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Паказаць галоўнае меню"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Паказаць параметры"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Паказаць спалучэнні клавіш"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Закрыць"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Працягласць сеанса"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Працягласць кожнага тыпу сеанса ў хвілінах. Змены ўжываюцца да наступнага "
+"сеанса кожнага тыпу."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Працягласць перыяду працы"
+
+#: data/ui/preferences-window.blp:29
+msgid "Short Break Length"
+msgstr "Працягласць кароткага перапынку"
+
+#: data/ui/preferences-window.blp:45
+msgid "Long Break Length"
+msgstr "Працягласць доўгага перапынку"
+
+#: data/ui/preferences-window.blp:63
+msgid "Sessions Until Long Break"
+msgstr "Сеансаў да доўгага перапынку"
+
+#: data/ui/window.blp:48
+msgid "Toggle Timer"
+msgstr "Пераключыць таймер"
+
+#: data/ui/window.blp:56 src/window.rs:322
+msgid "Skip"
+msgstr "Прапусціць"
+
+#: data/ui/window.blp:66
+msgid "Main Menu"
+msgstr "Галоўнае меню"
+
+#: data/ui/window.blp:82
+msgid "Reset Sessions"
+msgstr "Скінуць сеансы"
+
+#: data/ui/window.blp:86
+msgid "_Preferences"
+msgstr "_Параметры"
+
+#: data/ui/window.blp:87
+msgid "_Keyboard Shortcuts"
+msgstr "_Спалучэнні клавіш"
+
+#: data/ui/window.blp:88
+msgid "_About Solanum"
+msgstr "_Пра Solanum"
+
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:181
+msgid "translator-credits"
+msgstr "Yahor Haurylenka <k1llo2810@gmail.com>"
+
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "_Ахвяраваць на Patreon"
+
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "_Падтрымаць на Github"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr "Значок"
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr "Гук"
+
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Падтрымліваецца"
+
+#: src/window.rs:231
+msgid "Long Break"
+msgstr "Доўгі перапынак"
+
+#: src/window.rs:237
+msgid "Short Break"
+msgstr "Кароткі перапынак"
+
+#: src/window.rs:308
+msgid "Back to Work"
+msgstr "Вяртанне да працы"
+
+#: src/window.rs:309
+msgid "Ready to keep working?"
+msgstr "Гатовы працягваць працу?"
+
+#: src/window.rs:310
+msgid "Start Working"
+msgstr "Пачаць працаваць"
+
+#: src/window.rs:313
+msgid "Break Time"
+msgstr "Перапынак"
+
+#: src/window.rs:314
+msgid "Stretch your legs, and drink some water."
+msgstr "Выцягніце ногі і выпіце вады."
+
+#: src/window.rs:315
+msgid "Start Break"
+msgstr "Пачаць перапынак"
+
+#: src/window.rs:335
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Перыяд {}"
+msgstr[1] "Перыяд {}"
+msgstr[2] "Перыяд {}"
