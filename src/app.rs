@@ -145,8 +145,8 @@ impl SolanumApplication {
             self,
             "toggle-timer",
             clone!(@strong self as app => move |_, _| {
-                let win = app.get_main_window();
-                gio::prelude::ActionGroupExt::activate_action(&win, "toggle-timer", None);
+                let win: gtk::Widget = app.get_main_window().upcast();
+                let _ = win.activate_action("win.toggle-timer", None);
             })
         );
 
@@ -154,8 +154,8 @@ impl SolanumApplication {
             self,
             "skip",
             clone!(@strong self as app => move |_, _| {
-                let win = app.get_main_window();
-                gio::prelude::ActionGroupExt::activate_action(&win, "skip", None);
+                let win: gtk::Widget = app.get_main_window().upcast();
+                let _ = win.activate_action("win.skip", None);
             })
         );
     }
