@@ -1,5 +1,5 @@
 {
-    "app-id" : "org.gnome.Solanum.Devel",
+    "id" : "org.gnome.Solanum.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
