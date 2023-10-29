@@ -2,75 +2,66 @@ using Gtk 4.0;
 using Adw 1;
 
 template $SolanumWindow : Adw.ApplicationWindow {
-  default-width: 396;
-  default-height: 396;
+  default-width: 360;
+  default-height: 360;
   width-request: 360;
   default-widget: timer_button;
-  content: Gtk.WindowHandle {
-    child: Gtk.Box {
-      orientation: vertical;
-      spacing: 6;
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      show-title: false;
+    }
 
-      Gtk.HeaderBar {
-        styles ["flat"]
-        // A hidden title is needed if we don't want a title label
-        [title]
-        Gtk.Box {
-          visible: false;
-        }
+    content: Gtk.Box {
+      orientation: vertical;
+      valign: center;
+      vexpand: true;
+      spacing: 6;
+      styles ["main-box"]
+
+      Gtk.Label lap_label {
+        styles ["heading", "dim-label"]
       }
 
-      Gtk.Box {
-        orientation: vertical;
-        valign: center;
-        vexpand: true;
-        spacing: 6;
-        styles ["main-box"]
+      Gtk.Label timer_label {
+        styles ["timer_label", "accent", "blinking"]
+      }
 
-        Gtk.Label lap_label {
-          styles ["heading", "dim-label"]
-        }
+      Gtk.CenterBox {
+        margin-bottom: 48;
+        halign: center;
 
-        Gtk.Label timer_label {
-          styles ["timer_label", "accent", "blinking"]
-        }
-
-        Gtk.CenterBox {
-          margin-top: 48;
+        [center]
+        Gtk.Box {
+          spacing: 12;
           halign: center;
 
-          [center]
-          Gtk.Box {
-            spacing: 12;
-            halign: center;
-
-            Gtk.Button timer_button {
-              tooltip-text: _("Toggle Timer");
-              icon-name: "media-playback-start-symbolic";
-              action-name: "win.toggle-timer";
-              valign: center;
-              styles ["circular", "large", "suggested-action"]
-            }
-
-            Gtk.Button skip_button {
-              tooltip-text: _("Skip");
-              icon-name: "media-seek-forward-symbolic";
-              action-name: "win.skip";
-              valign: center;
-              styles ["circular", "large"]
-            }
-          }
-
-          [end]
-          Gtk.MenuButton menu_button {
-            tooltip-text: _("Main Menu");
-            menu-model: app_menu;
-            icon-name: "open-menu-symbolic";
-            halign: end;
+          Gtk.Button timer_button {
+            tooltip-text: _("Toggle Timer");
+            icon-name: "media-playback-start-symbolic";
+            action-name: "win.toggle-timer";
             valign: center;
-            margin-start: 12;
-            styles ["circular"]
+            styles ["circular", "large", "suggested-action"]
           }
+
+          Gtk.Button skip_button {
+            tooltip-text: _("Skip");
+            icon-name: "media-seek-forward-symbolic";
+            action-name: "win.skip";
+            valign: center;
+            styles ["circular", "large"]
+          }
+        }
+
+        [end]
+        Gtk.MenuButton menu_button {
+          tooltip-text: _("Main Menu");
+          menu-model: app_menu;
+          icon-name: "open-menu-symbolic";
+          halign: end;
+          valign: center;
+          margin-start: 12;
+          styles ["circular"]
         }
       }
     };
