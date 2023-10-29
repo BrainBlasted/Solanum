@@ -113,7 +113,7 @@ impl Timer {
         // Every 100 milliseconds, this closure gets called in order to update the timer
         glib::timeout_add_local(
             std::time::Duration::from_millis(100),
-            clone!(@weak self as timer => @default-return glib::Continue(false), move || {
+            clone!(@weak self as timer => @default-return glib::ControlFlow::Break, move || {
                 let imp = timer.imp();
                 if imp.running.get() {
                     let instant = imp.instant.get().expect("Timer is running, but no instant is set.");
@@ -121,14 +121,14 @@ impl Timer {
                     if let Some(difference) = duration.checked_sub(instant.elapsed()) {
                         let (minutes, seconds) = duration_to_mins_and_secs(difference);
                         timer.emit_by_name::<()>("countdown-update", &[&minutes, &seconds]);
-                        return glib::Continue(true);
+                        return glib::ControlFlow::Continue;
                     } else {
                         timer.emit_by_name::<()>("lap", &[]);
-                        return glib::Continue(false);
+                        return glib::ControlFlow::Break;
                     }
                 }
 
-                glib::Continue(false)
+                glib::ControlFlow::Break
             }),
         );
     }

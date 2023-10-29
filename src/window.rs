@@ -198,11 +198,11 @@ impl SolanumWindow {
         }));
     }
 
-    fn update_countdown(&self, min: u32, sec: u32) -> glib::Continue {
+    fn update_countdown(&self, min: u32, sec: u32) -> glib::ControlFlow {
         let imp = self.imp();
         let label = &*imp.timer_label;
         label.set_label(&format!("{:>02}∶{:>02}", min, sec));
-        glib::Continue(true)
+        glib::ControlFlow::Continue
     }
 
     fn update_lap(&self, lap_type: LapType) {
