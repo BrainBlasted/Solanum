@@ -17,10 +17,10 @@ i18n = import('i18n')
 gnome = import('gnome')
 
 solanum_prefix = get_option('prefix')
-solanum_bindir = join_paths(solanum_prefix, get_option('bindir'))
-solanum_localedir = join_paths(solanum_prefix, get_option('localedir'))
-solanum_datadir = join_paths(solanum_prefix, get_option('datadir'))
-solanum_pkgdatadir = join_paths(solanum_datadir, meson.project_name())
+solanum_bindir = solanum_prefix / get_option('bindir')
+solanum_localedir = solanum_prefix / get_option('localedir')
+solanum_datadir = solanum_prefix / get_option('datadir')
+solanum_pkgdatadir = solanum_datadir / meson.project_name()
 
 copyright = '2022'
 profile = ''
@@ -48,7 +48,7 @@ subdir('src')
 
 meson.add_dist_script(
   'build-aux/meson/dist-vendor.sh',
-  join_paths(meson.project_build_root(), 'meson-dist', meson.project_name() + '-' + meson.project_version()),
+  meson.project_build_root() / 'meson-dist' / meson.project_name() + '-' + meson.project_version(),
   meson.project_source_root()
 )
 
