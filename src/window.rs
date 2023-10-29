@@ -61,7 +61,7 @@ mod imp {
     pub struct SolanumWindow {
         pub pomodoro_count: Cell<u32>,
         pub timer: Timer,
-        pub player: gstreamer_player::Player,
+        pub player: gstreamer_play::Play,
         pub lap_type: Cell<LapType>,
 
         #[template_child]
@@ -84,10 +84,7 @@ mod imp {
             Self {
                 pomodoro_count: Cell::new(1),
                 timer: Timer::new(),
-                player: gstreamer_player::Player::new(
-                    None::<gstreamer_player::PlayerVideoRenderer>,
-                    None::<gstreamer_player::PlayerSignalDispatcher>,
-                ),
+                player: gstreamer_play::Play::new(None::<gstreamer_play::PlayVideoRenderer>),
                 lap_type: Default::default(),
                 lap_label: TemplateChild::default(),
                 timer_label: TemplateChild::default(),
@@ -129,7 +126,6 @@ mod imp {
     impl ObjectImpl for SolanumWindow {
         fn constructed(&self) {
             self.parent_constructed();
-            self.player.connect_end_of_stream(|p| p.stop());
         }
     }
 

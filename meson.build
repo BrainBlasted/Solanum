@@ -7,11 +7,11 @@ project('solanum', 'rust',
 
 dependency('gtk4', version: '>= 4.0.0')
 dependency('libadwaita-1')
-dependency('gstreamer-1.0', version: '>= 1.16')
-dependency('gstreamer-base-1.0', version: '>= 1.16')
-dependency('gstreamer-audio-1.0', version: '>= 1.16')
-dependency('gstreamer-player-1.0', version: '>= 1.16')
-dependency('gstreamer-plugins-base-1.0', version: '>= 1.16')
+dependency('gstreamer-1.0', version: '>= 1.20')
+dependency('gstreamer-base-1.0', version: '>= 1.20')
+dependency('gstreamer-audio-1.0', version: '>= 1.20')
+dependency('gstreamer-play-1.0', version: '>= 1.20')
+dependency('gstreamer-plugins-base-1.0', version: '>= 1.20')
 
 i18n = import('i18n')
 gnome = import('gnome')
