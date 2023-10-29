@@ -29,6 +29,17 @@
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
+    <release version="5.0.0" date="2023-10-29">
+      <description>
+        <p>Solanum 5.0.0 brings a minor visual refresh and a few other changes:</p>
+        <ul>
+          <li>Added the ability to view the release notes for the latest version</li>
+          <li>Swapped to a new audio player</li>
+          <li>Fixed the notification buttons doing nothing</li>
+          <li>Miscellaneous translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.0.0" date="2023-06-08">
       <description>
         <p>Solanum 4.0.0 brings major updates to the backend and fixes some long-standing bugs.</p>
