@@ -32,13 +32,13 @@ mod imp {
     #[template(resource = "/org/gnome/Solanum/preferences-window.ui")]
     pub struct SolanumPreferencesWindow {
         #[template_child]
-        pub lap_spin: TemplateChild<gtk::SpinButton>,
+        pub lap_spin: TemplateChild<libadwaita::SpinRow>,
         #[template_child]
-        pub short_break_spin: TemplateChild<gtk::SpinButton>,
+        pub short_break_spin: TemplateChild<libadwaita::SpinRow>,
         #[template_child]
-        pub long_break_spin: TemplateChild<gtk::SpinButton>,
+        pub long_break_spin: TemplateChild<libadwaita::SpinRow>,
         #[template_child]
-        pub session_count_spin: TemplateChild<gtk::SpinButton>,
+        pub session_count_spin: TemplateChild<libadwaita::SpinRow>,
         pub settings: OnceCell<gio::Settings>,
     }
 

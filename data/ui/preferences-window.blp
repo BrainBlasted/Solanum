@@ -9,70 +9,46 @@ template $SolanumPreferencesWindow : Adw.PreferencesWindow {
       title: _("Session Length");
       description: _("The length of each session type in minutes. Changes apply to the next session of each type.");
 
-      Adw.ActionRow {
+      Adw.SpinRow lap_spin {
         title: _("Lap Length");
-
-        [suffix]
-        Gtk.SpinButton lap_spin {
-          valign: center;
-          numeric: true;
-
-          adjustment: Gtk.Adjustment adjustment {
-            lower: 1;
-            upper: 99;
-            step-increment: 1;
-          };
-        }
+        numeric: true;
+        adjustment: Gtk.Adjustment adjustment {
+          lower: 1;
+          upper: 99;
+          step-increment: 1;
+        };
       }
 
-      Adw.ActionRow {
+      Adw.SpinRow short_break_spin {
         title: _("Short Break Length");
-
-        [suffix]
-        Gtk.SpinButton short_break_spin {
-          valign: center;
-          numeric: true;
-
-          adjustment: Gtk.Adjustment {
-            lower: bind adjustment.lower;
-            upper: bind adjustment.upper;
-            step-increment: bind adjustment.step-increment;
-          };
-        }
+        numeric: true;
+        adjustment: Gtk.Adjustment {
+          lower: bind adjustment.lower;
+          upper: bind adjustment.upper;
+          step-increment: bind adjustment.step-increment;
+        };
       }
 
-      Adw.ActionRow {
+      Adw.SpinRow long_break_spin {
         title: _("Long Break Length");
-
-        [suffix]
-        Gtk.SpinButton long_break_spin {
-          valign: center;
-          numeric: true;
-
-          adjustment: Gtk.Adjustment {
-            lower: bind adjustment.lower;
-            upper: bind adjustment.upper;
-            step-increment: bind adjustment.step-increment;
-          };
-        }
+        numeric: true;
+        adjustment: Gtk.Adjustment {
+          lower: bind adjustment.lower;
+          upper: bind adjustment.upper;
+          step-increment: bind adjustment.step-increment;
+        };
       }
     }
 
     Adw.PreferencesGroup {
-      Adw.ActionRow {
+      Adw.SpinRow session_count_spin {
         title: _("Sessions Until Long Break");
-
-        [suffix]
-        Gtk.SpinButton session_count_spin {
-          valign: center;
-          numeric: true;
-
-          adjustment: Gtk.Adjustment {
-            lower: bind adjustment.lower;
-            upper: bind adjustment.upper;
-            step-increment: bind adjustment.step-increment;
-          };
-        }
+        numeric: true;
+        adjustment: Gtk.Adjustment {
+          lower: bind adjustment.lower;
+          upper: bind adjustment.upper;
+          step-increment: bind adjustment.step-increment;
+        };
       }
     }
   }
