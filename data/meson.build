@@ -62,8 +62,12 @@ blueprints = custom_target('blueprints',
 
 resources = gnome.compile_resources(
   'solanum',
-  'solanum.gresource.xml',
-  dependencies: blueprints,
+  configure_file(
+    input: 'solanum.gresource.xml.in',
+    output: 'solanum.gresource.xml',
+    configuration: desktop_conf,
+  ),
+  dependencies: [ blueprints, appstream_file ],
   gresource_bundle: true,
   install: true,
   install_dir: solanum_pkgdatadir,

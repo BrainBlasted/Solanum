@@ -5,8 +5,8 @@ project('solanum', 'rust',
                    ],
 )
 
-dependency('gtk4', version: '>= 4.0.0')
-dependency('libadwaita-1')
+dependency('gtk4', version: '>= 4.11.3')
+dependency('libadwaita-1', version: '>= 1.4.0')
 dependency('gstreamer-1.0', version: '>= 1.20')
 dependency('gstreamer-base-1.0', version: '>= 1.20')
 dependency('gstreamer-audio-1.0', version: '>= 1.20')

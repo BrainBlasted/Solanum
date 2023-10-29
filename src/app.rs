@@ -170,24 +170,24 @@ impl SolanumApplication {
     // About dialog
     fn show_about(&self) {
         let window = self.get_main_window();
-        let developers = vec!["Christopher Davis <christopherdavis@gnome.org>".to_string()];
+        let developers = &["Christopher Davis <christopherdavis@gnome.org>"];
 
-        let about = libadwaita::AboutWindow::builder()
-            .application_name(&i18n("Solanum"))
-            .application_icon(config::APP_ID)
-            .developer_name("Christopher Davis")
-            .developers(developers)
-            // Translators: Replace "translator-credits" with your names, one name per line
-            .translator_credits(&i18n("translator-credits"))
-            .license_type(gtk::License::Gpl30)
-            .version(config::VERSION)
-            .website("https://apps.gnome.org/Solanum")
-            .issue_url("https://gitlab.gnome.org/World/Solanum/-/issues/new")
-            .copyright(&format!(
-                "\u{A9} {} Christopher Davis, et al.",
-                config::COPYRIGHT
-            ))
-            .build();
+        let about = libadwaita::AboutWindow::from_appdata(
+            &format!("/org/gnome/Solanum/{}.appdata.xml", config::APP_ID),
+            if !config::APP_ID.ends_with("Devel") {
+                Some(config::VERSION)
+            } else {
+                None
+            },
+        );
+
+        about.set_translator_credits(&i18n("translator-credits"));
+        about.set_version(config::VERSION);
+        about.set_copyright(&format!(
+            "\u{A9} {} Christopher Davis, et al.",
+            config::COPYRIGHT
+        ));
+        about.set_developers(developers);
 
         about.add_link(
             &i18n("_Donate on Patreon"),
