@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template SolanumPreferencesWindow : Adw.PreferencesWindow {
+template $SolanumPreferencesWindow : Adw.PreferencesWindow {
   search-enabled: false;
 
   Adw.PreferencesPage {
@@ -34,9 +34,9 @@ template SolanumPreferencesWindow : Adw.PreferencesWindow {
           numeric: true;
 
           adjustment: Gtk.Adjustment {
-            lower: bind adjustment.lower sync-create;
-            upper: bind adjustment.upper sync-create;
-            step-increment: bind adjustment.step-increment sync-create;
+            lower: bind adjustment.lower;
+            upper: bind adjustment.upper;
+            step-increment: bind adjustment.step-increment;
           };
         }
       }
@@ -50,9 +50,9 @@ template SolanumPreferencesWindow : Adw.PreferencesWindow {
           numeric: true;
 
           adjustment: Gtk.Adjustment {
-            lower: bind adjustment.lower sync-create;
-            upper: bind adjustment.upper sync-create;
-            step-increment: bind adjustment.step-increment sync-create;
+            lower: bind adjustment.lower;
+            upper: bind adjustment.upper;
+            step-increment: bind adjustment.step-increment;
           };
         }
       }
@@ -68,9 +68,9 @@ template SolanumPreferencesWindow : Adw.PreferencesWindow {
           numeric: true;
 
           adjustment: Gtk.Adjustment {
-            lower: bind adjustment.lower sync-create;
-            upper: bind adjustment.upper sync-create;
-            step-increment: bind adjustment.step-increment sync-create;
+            lower: bind adjustment.lower;
+            upper: bind adjustment.upper;
+            step-increment: bind adjustment.step-increment;
           };
         }
       }

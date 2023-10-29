@@ -57,6 +57,7 @@ blueprints = custom_target('blueprints',
     'ui/window.blp',
   ),
   output: '.',
+  build_always_stale: true,
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
