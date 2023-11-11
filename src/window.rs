@@ -241,6 +241,8 @@ impl SolanumWindow {
         self.action_set_enabled("win.skip", !start_timer);
 
         if start_timer {
+            let app = self.application();
+            app.withdraw_notification("timer-notif");
             imp.timer.start();
             self.play_sound(BEEP_URI);
             imp.timer_button
