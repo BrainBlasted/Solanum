@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2023-11-11 03:26+0000\n"
+"PO-Revision-Date: 2023-11-28 21:46+0800\n"
+"Last-Translator: Cheng-Chia Tseng <zerngjia@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/window.rs:300
+msgid "Solanum"
+msgstr "番茄鐘"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "平衡分配工作與休息時間"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"《番茄鐘》是使用 Pomodoro 番茄工作法的時間追蹤程式。工作分為 4 段作業時間，每"
+"個作業時段之間皆有休息時間；而 4 個工作時段完成後，會有一個較長的休息時間。"
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:28
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;番茄鐘;計時器;生產力;提高效率;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "工作時段的時間長度（分鐘）。"
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "短休息的時間長度（分鐘）。"
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "長休息的時間長度（分鐘）。"
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "可以長休息之前的工作時段數目。"
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "通用快捷建"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "顯示主選單"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "顯示偏好設定"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "顯示鍵盤快捷鍵"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "作業時段長度"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr "各種作業時段類型的長度（分鐘）。變更後將套用至各類型的下一次作業時段。"
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "時段長度"
+
+#: data/ui/preferences-window.blp:23
+msgid "Short Break Length"
+msgstr "短休息時間"
+
+#: data/ui/preferences-window.blp:33
+msgid "Long Break Length"
+msgstr "長休息時間"
+
+#: data/ui/preferences-window.blp:45
+msgid "Sessions Until Long Break"
+msgstr "長休息前時段數"
+
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "切換計時器"
+
+#: data/ui/window.blp:48 src/window.rs:318
+msgid "Skip"
+msgstr "跳過"
+
+#: data/ui/window.blp:58
+msgid "Main Menu"
+msgstr "主選單"
+
+#: data/ui/window.blp:73
+msgid "Reset Sessions"
+msgstr "重設作業時段"
+
+#: data/ui/window.blp:77
+msgid "_Preferences"
+msgstr "偏好設定(_P)"
+
+#: data/ui/window.blp:78
+msgid "_Keyboard Shortcuts"
+msgstr "鍵盤快捷鍵(_K)"
+
+#: data/ui/window.blp:79
+msgid "_About Solanum"
+msgstr "關於番茄鐘(_A)"
+
+#: src/app.rs:184
+msgid "translator-credits"
+msgstr ""
+"Kenneth Cho <code.kenneth.cho@outlook.com>, 2023.\n"
+"Cheng-Chia Tseng <zerngjia@gmail.com>, 2023."
+
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "到 Patreon 捐款(_D)"
+
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "到 GitHub 贊助(_S)"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr "圖示提供"
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr "音效提供"
+
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "支援提供"
+
+#: src/window.rs:227
+msgid "Long Break"
+msgstr "長休息"
+
+#: src/window.rs:233
+msgid "Short Break"
+msgstr "短休息"
+
+#: src/window.rs:304
+msgid "Back to Work"
+msgstr "回到工作"
+
+#: src/window.rs:305
+msgid "Ready to keep working?"
+msgstr "準備好繼續工作了嗎？"
+
+#: src/window.rs:306
+msgid "Start Working"
+msgstr "開始工作"
+
+#: src/window.rs:309
+msgid "Break Time"
+msgstr "休息時間"
+
+#: src/window.rs:310
+msgid "Stretch your legs, and drink some water."
+msgstr "伸展雙腿，喝杯水。"
+
+#: src/window.rs:311
+msgid "Start Break"
+msgstr "開始休息"
+
+#: src/window.rs:331
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "時段 {}"
