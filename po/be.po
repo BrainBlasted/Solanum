@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-10-19 16:56+0000\n"
-"PO-Revision-Date: 2023-10-27 18:25+0300\n"
+"POT-Creation-Date: 2023-11-28 13:49+0000\n"
+"PO-Revision-Date: 2023-11-30 03:45+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -17,11 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/window.rs:300
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -35,11 +34,11 @@ msgid ""
 "sessions, with breaks in between each session and one long break after all 4."
 msgstr ""
 "Solanum – гэта праграма для кіравання працоўным часам, якая выкарыстоўвае "
-"метад памідора. Праца падзяляецца на сеансы, чатыры сеансы з кароткімі "
+"метад памідора. Праца падзяляецца на сеансы: чатыры сеансы з кароткімі "
 "перапынкамі паміж імі, затым ідзе доўгі перапынак."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:28
 msgid "Christopher Davis"
 msgstr "Крыстафер Дэвіс (Christopher Davis)"
 
@@ -72,7 +71,7 @@ msgstr "Агульныя спалучэнні клавіш"
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
-msgstr "Паказаць галоўнае меню"
+msgstr "Паказаць меню"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
@@ -105,48 +104,47 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Працягласць перыяду працы"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Працягласць кароткага перапынку"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Працягласць доўгага перапынку"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Сеансаў да доўгага перапынку"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Пераключыць таймер"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:318
 msgid "Skip"
 msgstr "Прапусціць"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:58
 msgid "Main Menu"
 msgstr "Галоўнае меню"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:73
 msgid "Reset Sessions"
 msgstr "Скінуць сеансы"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:77
 msgid "_Preferences"
 msgstr "_Параметры"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:78
 msgid "_Keyboard Shortcuts"
 msgstr "_Спалучэнні клавіш"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:79
 msgid "_About Solanum"
 msgstr "_Пра Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:184
 msgid "translator-credits"
 msgstr "Yahor Haurylenka <k1llo2810@gmail.com>"
 
@@ -170,39 +168,39 @@ msgstr "Гук"
 msgid "Supported by"
 msgstr "Падтрымліваецца"
 
-#: src/window.rs:231
+#: src/window.rs:227
 msgid "Long Break"
 msgstr "Доўгі перапынак"
 
-#: src/window.rs:237
+#: src/window.rs:233
 msgid "Short Break"
 msgstr "Кароткі перапынак"
 
-#: src/window.rs:308
+#: src/window.rs:304
 msgid "Back to Work"
 msgstr "Вяртанне да працы"
 
-#: src/window.rs:309
+#: src/window.rs:305
 msgid "Ready to keep working?"
 msgstr "Гатовы працягваць працу?"
 
-#: src/window.rs:310
+#: src/window.rs:306
 msgid "Start Working"
 msgstr "Пачаць працаваць"
 
-#: src/window.rs:313
+#: src/window.rs:309
 msgid "Break Time"
 msgstr "Перапынак"
 
-#: src/window.rs:314
+#: src/window.rs:310
 msgid "Stretch your legs, and drink some water."
 msgstr "Выцягніце ногі і выпіце вады."
 
-#: src/window.rs:315
+#: src/window.rs:311
 msgid "Start Break"
 msgstr "Пачаць перапынак"
 
-#: src/window.rs:335
+#: src/window.rs:331
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Перыяд {}"
