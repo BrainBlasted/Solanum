@@ -1,0 +1,204 @@
+# Persian translation for solanum.
+# Copyright (C) 2023 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2023-11-30 00:46+0000\n"
+"PO-Revision-Date: 2023-12-27 05:35+0330\n"
+"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
+"Language-Team: Persian <fa@li.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.1\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/window.rs:300
+msgid "Solanum"
+msgstr "بادنجان"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "تعادل زمان کار و استراحت"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"بادنجام کارهٔ ردیابی زمانی به روش پومودور است. کار در ۴ نشست با استراحت‌هایی "
+"بین هر نشست و یک استراحت بلند پس از هر ۴ نشست انجام می‌شود."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:28
+msgid "Christopher Davis"
+msgstr "کریستوفر دیویس"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Timer;Productivity;زمان;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "درازای دور کار به دقیقه."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "درازای دور استراحت کوتاه به دقیقه."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "درازای دور استراحت بلند به دقیقه."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "تعداد نشست‌ها پیش از استراحت بلند."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "میان‌برهای عمومی"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "نمایش فهرست اصلی"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "نمایش ترجیحات"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "نمایش میان‌برهای صفحه‌کلید"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "خروج"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "درازای نشست"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"درازای هر گونه نشست به دقیقه. تغییرات به نشست بعدی از هر گونه اعمال می‌شوند."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "درازی دور"
+
+#: data/ui/preferences-window.blp:23
+msgid "Short Break Length"
+msgstr "درازای استراحت کوتاه"
+
+#: data/ui/preferences-window.blp:33
+msgid "Long Break Length"
+msgstr "درازای استراحت بلند"
+
+#: data/ui/preferences-window.blp:45
+msgid "Sessions Until Long Break"
+msgstr "نشست‌ها تا استراحت بلند"
+
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "تغییر حالت شمارش معکوس"
+
+#: data/ui/window.blp:48 src/window.rs:318
+msgid "Skip"
+msgstr "پرش"
+
+#: data/ui/window.blp:58
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: data/ui/window.blp:73
+msgid "Reset Sessions"
+msgstr "بازنشانی نشست‌ها"
+
+#: data/ui/window.blp:77
+msgid "_Preferences"
+msgstr "_ترجیحات"
+
+#: data/ui/window.blp:78
+msgid "_Keyboard Shortcuts"
+msgstr "_میان‌برهای صفحه‌کلید"
+
+#: data/ui/window.blp:79
+msgid "_About Solanum"
+msgstr "_دربارهٔ بادنجان"
+
+#: src/app.rs:184
+msgid "translator-credits"
+msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
+
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "_اعانه روی پاتریون"
+
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "_حمایت روی گیت‌هاب"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr "نقشک به دست"
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr "صدا به دست"
+
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "پشتیبانی شده به دست"
+
+#: src/window.rs:227
+msgid "Long Break"
+msgstr "استراحت بلند"
+
+#: src/window.rs:233
+msgid "Short Break"
+msgstr "استراحت کوتاه"
+
+#: src/window.rs:304
+msgid "Back to Work"
+msgstr "بازگشت به کار"
+
+#: src/window.rs:305
+msgid "Ready to keep working?"
+msgstr "آماده برای ادامهٔ کار؟"
+
+#: src/window.rs:306
+msgid "Start Working"
+msgstr "آغاز کار کردن"
+
+#: src/window.rs:309
+msgid "Break Time"
+msgstr "زمان کار و استراحت"
+
+#: src/window.rs:310
+msgid "Stretch your legs, and drink some water."
+msgstr "کشیدن پاهایتان و آشامیدن آب."
+
+#: src/window.rs:311
+msgid "Start Break"
+msgstr "آغاز استراحت"
+
+#: src/window.rs:331
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "دور {}"
+msgstr[1] "دور {}"
