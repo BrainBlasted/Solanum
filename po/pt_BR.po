@@ -8,20 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-09-06 22:14-0300\n"
-"Last-Translator: Enrico Nicoletto <hiko@duck.com>\n"
+"POT-Creation-Date: 2023-10-29 19:41+0000\n"
+"PO-Revision-Date: 2023-06-01 12:22-0300\n"
+"Last-Translator: Leônidas Araújo <leorusvellt@hotmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/window.rs:300
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -39,7 +38,7 @@ msgstr ""
 "delas e um intervalo longo depois um ciclo completo."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:28
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -76,10 +75,15 @@ msgstr "Exibe o menu principal"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Mostra preferências"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Exibe os atalhos de teclado"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Fecha"
@@ -100,103 +104,107 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Comprimento da série"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Comprimento do intervalo curto"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Comprimento do intervalo longo"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Sessões até o intervalo longo"
 
-#: data/ui/window.blp:48
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Alternar temporizador"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:48 src/window.rs:318
 msgid "Skip"
 msgstr "Pular"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:58
 msgid "Main Menu"
 msgstr "Menu Principal"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:73
 msgid "Reset Sessions"
 msgstr "Restaurar sessões"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:77
 msgid "_Preferences"
 msgstr "_Preferências"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:78
 msgid "_Keyboard Shortcuts"
 msgstr "_Atalhos de teclado"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:79
 msgid "_About Solanum"
 msgstr "_Sobre o Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:183
+#: src/app.rs:184
 msgid "translator-credits"
 msgstr ""
 "Gabriel Longo <gabriel.longo.gabriel@gmail.com>\n"
-"Enrico Nicoletto <hiko@duck.com>"
+"Enrico Nicoletto <hiko@duck.com>\n"
+"Leônidas Araújo <leorusvellt@hotmail.com>"
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "_Doar no Patreon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "Pa_trocínio no GitHub"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Ícones por"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Sons por"
 
-#: src/window.rs:230
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Suportado por"
+
+#: src/window.rs:227
 msgid "Long Break"
 msgstr "Intervalo longo"
 
-#: src/window.rs:236
+#: src/window.rs:233
 msgid "Short Break"
 msgstr "Intervalo curto"
 
-#: src/window.rs:307
+#: src/window.rs:304
 msgid "Back to Work"
 msgstr "Voltar ao trabalho"
 
-#: src/window.rs:308
+#: src/window.rs:305
 msgid "Ready to keep working?"
 msgstr "Pronto para voltar ao trabalho?"
 
-#: src/window.rs:309
+#: src/window.rs:306
 msgid "Start Working"
 msgstr "Começar a trabalhar"
 
-#: src/window.rs:312
+#: src/window.rs:309
 msgid "Break Time"
 msgstr "Intervalo"
 
-#: src/window.rs:313
+#: src/window.rs:310
 msgid "Stretch your legs, and drink some water."
-msgstr "Hidrate-se e estique suas pernas!"
+msgstr "Estique as pernas e beba um pouco de água."
 
-#: src/window.rs:314
+#: src/window.rs:311
 msgid "Start Break"
 msgstr "Começar intervalo"
 
 # Em uma tradução livre, "Sessão" parece se enquadrar melhor a proposta do aplicativo do que "Volta". Talvez traduzir para série ou rodada?
-#: src/window.rs:333
+#: src/window.rs:331
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Série {}"
