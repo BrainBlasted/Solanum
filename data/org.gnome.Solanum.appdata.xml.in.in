@@ -13,8 +13,10 @@
     </p>
   </description>
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image type="source">https://gitlab.gnome.org/World/Solanum/-/raw/main/data/screenshots/screenshot-1.png</image>
+    </screenshot>
+    <screenshot>
       <image type="source">https://gitlab.gnome.org/World/Solanum/-/raw/main/data/screenshots/screenshot-2.png</image>
     </screenshot>
   </screenshots>
