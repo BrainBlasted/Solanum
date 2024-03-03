@@ -28,6 +28,9 @@
   <url type="translate">https://l10n.gnome.org/module/Solanum/</url>
   <!-- Translators: please do NOT translate this -->
   <developer_name>Christopher Davis</developer_name>
+  <developer id="io.gitlab.brainblasted">
+    <name>Christopher Davis</name>
+  </developer>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
   <releases>
