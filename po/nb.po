@@ -1,0 +1,208 @@
+# Norwegian Bokmål translation for solanum.
+# Copyright (C) 2024 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Brage Fuglseth <bragefuglseth@gnome.org>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2024-02-18 14:10+0000\n"
+"PO-Revision-Date: 2024-03-07 10:46+0100\n"
+"Last-Translator: Brage <bragefuglseth@gnome.org>\n"
+"Language-Team: Norwegian Bokmål <nb@li.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/window.rs:300
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Skap balanse mellom arbeid og pauser"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum er en tidtaker som bruker den berømte Pomodoro-teknikken. Jobb i "
+"fire runder, med en pause på fem minutter mellom hver, og en lang pause "
+"etter alle."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:28
+msgid "Christopher Davis"
+msgstr "Cristopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr ""
+"Pomodoro;Tidtaker;Nedtelling;Produktivitet;Arbeid;Pause;Jobb;Fritid;"
+"Effektivitet;Balanse;Klokke;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Lengden på en arbeidsrunde i minutter"
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Lengden på en kort pause i minutter"
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Lengden på en lang pause i minutter"
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Antall runder mellom hver lange pause"
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Generelt"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Vis hovedmeny"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Innstillinger"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Vis tastatursnarveier"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avslutt"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Varighet"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Lengdene på arbeidsrunder og pauser i minutter. Endringer vil tas i bruk ved "
+"neste runde eller pause."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Arbeidsrunde"
+
+#: data/ui/preferences-window.blp:23
+msgid "Short Break Length"
+msgstr "Kort pause"
+
+#: data/ui/preferences-window.blp:33
+msgid "Long Break Length"
+msgstr "Lang pause"
+
+#: data/ui/preferences-window.blp:45
+msgid "Sessions Until Long Break"
+msgstr "Runder mellom lange pauser"
+
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "Nedtelling"
+
+#: data/ui/window.blp:48 src/window.rs:318
+msgid "Skip"
+msgstr "Hopp over"
+
+#: data/ui/window.blp:58
+msgid "Main Menu"
+msgstr "Hovedmeny"
+
+#: data/ui/window.blp:73
+msgid "Reset Sessions"
+msgstr "Tilbakestill runder"
+
+#: data/ui/window.blp:77
+msgid "_Preferences"
+msgstr "_Innstillinger"
+
+#: data/ui/window.blp:78
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastatursnarveier"
+
+#: data/ui/window.blp:79
+msgid "_About Solanum"
+msgstr "_Om Solanum"
+
+#: src/app.rs:184
+msgid "translator-credits"
+msgstr "Brage Fuglseth https://bragefuglseth.dev"
+
+#: src/app.rs:193
+msgid "_Donate on Patreon"
+msgstr "_Doner på Patreon"
+
+#: src/app.rs:197
+msgid "_Sponsor on GitHub"
+msgstr "_Spons på GitHub"
+
+#: src/app.rs:202
+msgid "Icon by"
+msgstr "Utsmykket av"
+
+#: src/app.rs:206
+msgid "Sound by"
+msgstr "Lydgitt av"
+
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Støttet av"
+
+#: src/window.rs:227
+msgid "Long Break"
+msgstr "Lang pause"
+
+#: src/window.rs:233
+msgid "Short Break"
+msgstr "Kort pause"
+
+#: src/window.rs:304
+msgid "Back to Work"
+msgstr "Pause over"
+
+#: src/window.rs:305
+msgid "Ready to keep working?"
+msgstr "Klar for en ny arbeidsrunde?"
+
+#: src/window.rs:306
+msgid "Start Working"
+msgstr "Start runde"
+
+#: src/window.rs:309
+msgid "Break Time"
+msgstr "Pause"
+
+#: src/window.rs:310
+msgid "Stretch your legs, and drink some water."
+msgstr "Ta en strekk og drikk litt vann"
+
+#: src/window.rs:311
+msgid "Start Break"
+msgstr "Start pause"
+
+#: src/window.rs:331
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Runde {}"
+msgstr[1] "Runde {}"
