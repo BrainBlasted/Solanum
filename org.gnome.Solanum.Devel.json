@@ -61,7 +61,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/BrainBlasted/Solanum.git",
+                    "url" : "https://gitlab.gnome.org/World/Solanum.git",
                     "branch" : "main"
                 }
             ]
