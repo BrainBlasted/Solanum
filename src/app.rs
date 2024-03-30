@@ -19,9 +19,7 @@
 
 use gtk::prelude::*;
 use gtk::{gio, glib};
-use gtk_macros::*;
 
-use glib::clone;
 use glib::WeakRef;
 
 use glib::subclass::prelude::*;
@@ -117,47 +115,31 @@ impl SolanumApplication {
 
     // Sets up gio::SimpleActions for the Application
     fn setup_actions(&self) {
-        action!(
-            self,
-            "about",
-            clone!(@strong self as app => move |_, _| {
-                app.show_about();
-            })
-        );
+        let actions = [
+            gio::ActionEntryBuilder::new("about")
+                .activate(|app: &Self, _, _| app.show_about())
+                .build(),
+            gio::ActionEntryBuilder::new("preferences")
+                .activate(|app: &Self, _, _| app.show_preferences())
+                .build(),
+            gio::ActionEntryBuilder::new("quit")
+                .activate(|app: &Self, _, _| app.quit())
+                .build(),
+            gio::ActionEntryBuilder::new("toggle-timer")
+                .activate(|app: &Self, _, _| {
+                    let win: gtk::Widget = app.get_main_window().upcast();
+                    let _ = win.activate_action("win.toggle-timer", None);
+                })
+                .build(),
+            gio::ActionEntryBuilder::new("skip")
+                .activate(|app: &Self, _, _| {
+                    let win: gtk::Widget = app.get_main_window().upcast();
+                    let _ = win.activate_action("win.skip", None);
+                })
+                .build(),
+        ];
 
-        action!(
-            self,
-            "preferences",
-            clone!(@strong self as app => move |_, _| {
-                app.show_preferences();
-            })
-        );
-
-        action!(
-            self,
-            "quit",
-            clone!(@strong self as app => move |_, _| {
-                app.quit();
-            })
-        );
-
-        action!(
-            self,
-            "toggle-timer",
-            clone!(@strong self as app => move |_, _| {
-                let win: gtk::Widget = app.get_main_window().upcast();
-                let _ = win.activate_action("win.toggle-timer", None);
-            })
-        );
-
-        action!(
-            self,
-            "skip",
-            clone!(@strong self as app => move |_, _| {
-                let win: gtk::Widget = app.get_main_window().upcast();
-                let _ = win.activate_action("win.skip", None);
-            })
-        );
+        self.add_action_entries(actions);
     }
 
     // Sets up keyboard shortcuts
