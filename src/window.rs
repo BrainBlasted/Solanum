@@ -158,7 +158,7 @@ impl SolanumWindow {
     }
 
     fn application(&self) -> SolanumApplication {
-        gtk::traits::GtkWindowExt::application(self)
+        gtk::prelude::GtkWindowExt::application(self)
             .unwrap()
             .downcast::<SolanumApplication>()
             .unwrap()

@@ -17,8 +17,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+use glib::clone;
 use glib::subclass::{prelude::*, Signal};
-use glib::{clone, StaticType};
 use glib_macros::closure_local;
 use gtk::glib;
 use gtk::prelude::*;

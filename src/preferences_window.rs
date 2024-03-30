@@ -72,7 +72,7 @@ glib::wrapper! {
 }
 
 impl SolanumPreferencesWindow {
-    pub fn new<W: glib::IsA<gtk::Window>>(parent: &W, settings: &gio::Settings) -> Self {
+    pub fn new<W: IsA<gtk::Window>>(parent: &W, settings: &gio::Settings) -> Self {
         let obj = glib::Object::builder::<Self>()
             .property("transient-for", Some(parent))
             .build();
