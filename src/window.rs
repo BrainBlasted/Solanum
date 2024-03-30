@@ -96,11 +96,6 @@ mod imp {
         fn class_init(klass: &mut Self::Class) {
             Self::bind_template(klass);
 
-            klass.install_action("win.menu", None, move |win, _, _| {
-                let imp = win.imp();
-                imp.menu_button.activate();
-            });
-
             klass.install_action("win.toggle-timer", None, move |win, _, _| {
                 win.toggle_timer();
             });
