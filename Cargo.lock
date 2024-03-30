@@ -981,7 +981,7 @@ checksum = "942b4a808e05215192e39f4ab80813e599068285906cc91aa64f923db842bd5a"
 
 [[package]]
 name = "solanum"
-version = "4.0.0"
+version = "6.0.0"
 dependencies = [
  "gettext-rs",
  "glib-macros 0.17.10",
