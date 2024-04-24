@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2022-08-07 13:24+0000\n"
-"PO-Revision-Date: 2022-12-30 22:44+0000\n"
+"POT-Creation-Date: 2023-06-20 07:07+0000\n"
+"PO-Revision-Date: 2024-04-24 22:00+0200\n"
 "Last-Translator: Fabio T. <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Editor: HaiPO 1.4 beta\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:79 src/app.rs:178
-#: src/window.rs:303
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
+#: src/window.rs:304
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -32,8 +32,7 @@ msgstr "Belance il timp di lavôr e chel di pause"
 #: data/org.gnome.Solanum.appdata.xml.in.in:10
 msgid ""
 "Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
-"sessions, with breaks in between each session and one long break after all "
-"4."
+"sessions, with breaks in between each session and one long break after all 4."
 msgstr ""
 "Solanum e je une aplicazion che e ten di voli il timp, e dopre la tecniche "
 "pomodoro. Lavore in 4 sessions, cun pausis tra ogni session e une pause "
@@ -44,8 +43,7 @@ msgstr ""
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Timer;Temporizadôr;Produtivitât;"
@@ -78,10 +76,15 @@ msgstr "Mostre menù primari"
 
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Mostre preferencis"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Mostre scurtis di tastiere"
 
-#: data/gtk/help-overlay.blp:21
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Jes"
@@ -118,7 +121,7 @@ msgstr "Sessions prime de pause lungje"
 msgid "Toggle Timer"
 msgstr "Comute temporizadôr"
 
-#: data/ui/window.blp:56 src/window.rs:320
+#: data/ui/window.blp:56 src/window.rs:322
 msgid "Skip"
 msgstr "Salte"
 
@@ -142,61 +145,64 @@ msgstr "_Scurtis tastiere"
 msgid "_About Solanum"
 msgstr "_Informazions su Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per
-#. line
-#: src/app.rs:183
+#. Translators: Replace "translator-credits" with your names, one name per line
+#: src/app.rs:181
 msgid "translator-credits"
-msgstr "Fabio Tomat <f.t.public@gmail.com>, 2022"
+msgstr "Fabio Tomat <f.t.public@gmail.com>, 2024"
 
-#: src/app.rs:195
+#: src/app.rs:193
 msgid "_Donate on Patreon"
 msgstr "_Done su Patreon"
 
-#: src/app.rs:199
+#: src/app.rs:197
 msgid "_Sponsor on GitHub"
 msgstr "_Patrocinadôr su GitHub"
 
-#: src/app.rs:204
+#: src/app.rs:202
 msgid "Icon by"
 msgstr "Icone di"
 
-#: src/app.rs:208
+#: src/app.rs:206
 msgid "Sound by"
 msgstr "Suns di"
 
-#: src/window.rs:230
+#: src/app.rs:211
+msgid "Supported by"
+msgstr "Supuartât di"
+
+#: src/window.rs:231
 msgid "Long Break"
 msgstr "Pause lungje"
 
-#: src/window.rs:236
+#: src/window.rs:237
 msgid "Short Break"
 msgstr "Pause curte"
 
-#: src/window.rs:307
+#: src/window.rs:308
 msgid "Back to Work"
 msgstr "Torne a vore"
 
-#: src/window.rs:308
+#: src/window.rs:309
 msgid "Ready to keep working?"
 msgstr "Pront par continuâ a lavorâ?"
 
-#: src/window.rs:309
+#: src/window.rs:310
 msgid "Start Working"
 msgstr "Scomence a lavorâ"
 
-#: src/window.rs:312
+#: src/window.rs:313
 msgid "Break Time"
 msgstr "Pause"
 
-#: src/window.rs:313
+#: src/window.rs:314
 msgid "Stretch your legs, and drink some water."
 msgstr "Distire lis gjambis e bêf un pocje di aghe."
 
-#: src/window.rs:314
+#: src/window.rs:315
 msgid "Start Break"
 msgstr "Scomence la pause"
 
-#: src/window.rs:333
+#: src/window.rs:335
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Zîr {}"
