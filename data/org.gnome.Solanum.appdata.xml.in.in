@@ -33,6 +33,10 @@
   </developer>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">solanum</translation>
+  <branding>
+    <color type="primary" scheme_preference="light">#f66151</color>
+    <color type="primary" scheme_preference="dark">#771414</color>
+  </branding>
   <releases>
     <release version="5.0.0" date="2023-10-29">
       <description>
