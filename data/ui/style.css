@@ -17,14 +17,14 @@ button.large {
 
 @keyframes blinkingText {
   0% {
-    color: @accent_color;
+    color: var(--accent-color);
   }
   50% {
-    color: @theme_text_color;
+    color: var(--view-fg-color);
     opacity: 0.5;
   }
   100% {
-    color: @accent_color;
+    color: var(--accent-color);
   }
 }
 
