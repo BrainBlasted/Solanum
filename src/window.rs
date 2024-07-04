@@ -236,6 +236,9 @@ impl SolanumWindow {
     // Callback to run whenever the timer is toggled - by button or action
     fn toggle_timer(&self) {
         let imp = self.imp();
+        let app = self.application();
+        let settings = app.gsettings();
+        let fullscreen = settings.boolean("fullscreen-break");
 
         let start_timer = !imp.timer.running();
         self.action_set_enabled("win.skip", !start_timer);
@@ -249,6 +252,13 @@ impl SolanumWindow {
                 .set_icon_name("media-playback-pause-symbolic");
             imp.timer_label.remove_css_class("blinking");
             imp.timer_button.remove_css_class("suggested-action");
+            if fullscreen {
+                if imp.lap_type.get() == LapType::Break {
+                    self.fullscreen();
+                } else {
+                    self.unfullscreen();
+                }
+            }
         } else {
             imp.timer.stop();
             imp.timer_button

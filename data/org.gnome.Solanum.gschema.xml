@@ -17,5 +17,9 @@
       <default>4</default>
       <summary>The number of sessions until a long break.</summary>
     </key>
+    <key name="fullscreen-break" type="b">
+      <default>false</default>
+      <summary>Whether the window should fullscreen during breaks.</summary>
+    </key>
   </schema>
 </schemalist>
