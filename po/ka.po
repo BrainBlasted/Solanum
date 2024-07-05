@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2023.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-06-20 16:16+0200\n"
+"POT-Creation-Date: 2024-07-04 12:00+0000\n"
+"PO-Revision-Date: 2024-07-05 05:50+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <(nothing)>\n"
 "Language: ka\n"
@@ -16,11 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:307
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -38,7 +37,7 @@ msgstr ""
 "ერთი დიდი დასვენება 4-ვეს შემდეგ."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -62,6 +61,10 @@ msgstr "დიდი შესვენების დრო წუთებშ
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "სესიების რაოდენობა დიდ შესვენებამდე."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "უნდა გავიდეს თუ არა ფანჯარა სრულ ეკრანზე შესვენებების დროს."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -104,104 +107,107 @@ msgstr ""
 msgid "Lap Length"
 msgstr "წრის ხანგრძლივობა"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "მოკლე შესვენების დრო"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "დიდი შესვენების დრო"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "სესიები დიდ შესვენებამდე"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "სრულ ეკრანზე შესვენებებისას"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "წამმზომის გადართვა"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:325
 msgid "Skip"
 msgstr "გამოტოვება"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:74
 msgid "Reset Sessions"
 msgstr "სესიების გასუფთავება"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:78
 msgid "_Preferences"
 msgstr "_მორგება"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:79
 msgid "_Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახმობები"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:80
 msgid "_About Solanum"
 msgstr "Solanum-ის შესახებ"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr "თემური დოღონაძე"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "შემოგვწირეთ Patreon-ზე"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "GitHub-ზე _დასპონსორება"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "ხატულის ავტორი"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "ხმის ავტორი"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "მხარდაჭერილია"
 
-#: src/window.rs:231
+#: src/window.rs:222
 msgid "Long Break"
 msgstr "დიდი შესვენება"
 
-#: src/window.rs:237
+#: src/window.rs:228
 msgid "Short Break"
 msgstr "მოკლე შესვენება"
 
-#: src/window.rs:308
+#: src/window.rs:311
 msgid "Back to Work"
 msgstr "სამსახური"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Ready to keep working?"
 msgstr "მზად ხართ, გააგრძელოთ მუშაობა?"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Start Working"
 msgstr "მუშაობის დაწყება"
 
-#: src/window.rs:313
+#: src/window.rs:316
 msgid "Break Time"
 msgstr "შესვენების დრო"
 
-#: src/window.rs:314
+#: src/window.rs:317
 msgid "Stretch your legs, and drink some water."
 msgstr "გაიარეთ, ცოტა წყალიც დალიეთ."
 
-#: src/window.rs:315
+#: src/window.rs:318
 msgid "Start Break"
 msgstr "შესვენების დაწყება"
 
-#: src/window.rs:335
+#: src/window.rs:338
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "წრე {}"
