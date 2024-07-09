@@ -3,26 +3,25 @@
 # This file is distributed under the same license as the solanum package.
 # D <damnedlies@163.com>, 2020.
 # Dingzhong Chen <wsxy162@gmail.com>, 2021.
-# lumingzh <lumingzh@qq.com>, 2022-2023.
+# lumingzh <lumingzh@qq.com>, 2022-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-09-02 11:36+0800\n"
+"POT-Creation-Date: 2024-07-04 12:00+0000\n"
+"PO-Revision-Date: 2024-07-09 19:08+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
-"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 42.0\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:307
 msgid "Solanum"
 msgstr "番茄闹钟"
 
@@ -39,7 +38,7 @@ msgstr ""
 "息，在全部 4 个时段之后有一次长时间休息。"
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -63,6 +62,10 @@ msgstr "以分钟为单位的较长休息时长。"
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "较长休息前的会话数量。"
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "在休息期间窗口是否应全屏。"
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -103,106 +106,110 @@ msgstr "以分钟为单位的每个会话类型时长。更改将应用到每个
 msgid "Lap Length"
 msgstr "周期时长"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "短休息时长"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "长休息时长"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "长休息前的会话"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "休息时全屏"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "切换计时器"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:325
 msgid "Skip"
 msgstr "跳过"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:74
 msgid "Reset Sessions"
 msgstr "重置会话"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:78
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:79
 msgid "_Keyboard Shortcuts"
 msgstr "快捷键(_K)"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:80
 msgid "_About Solanum"
 msgstr "关于番茄闹钟(_A)"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
 "D <damnedlies@163.com>, 2020.\n"
-"lumingzh <lumingzh@qq.com>, 2022-2023."
+"Dingzhong Chen <wsxy162@gmail.com>, 2021.\n"
+"lumingzh <lumingzh@qq.com>, 2022-2024."
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "在 Patreon 上捐赠(_D)"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "在 GitHub 上赞助(_S)"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "图标作者"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "音频作者"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "支持者"
 
-#: src/window.rs:231
+#: src/window.rs:222
 msgid "Long Break"
 msgstr "长时间休息"
 
-#: src/window.rs:237
+#: src/window.rs:228
 msgid "Short Break"
 msgstr "短时间休息"
 
-#: src/window.rs:308
+#: src/window.rs:311
 msgid "Back to Work"
 msgstr "返回工作"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Ready to keep working?"
 msgstr "准备好继续工作了吗？"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Start Working"
 msgstr "开始工作"
 
-#: src/window.rs:313
+#: src/window.rs:316
 msgid "Break Time"
 msgstr "休息时间"
 
-#: src/window.rs:314
+#: src/window.rs:317
 msgid "Stretch your legs, and drink some water."
 msgstr "伸伸腿，喝喝水。"
 
-#: src/window.rs:315
+#: src/window.rs:318
 msgid "Start Break"
 msgstr "开始休息"
 
-#: src/window.rs:335
+#: src/window.rs:338
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "番茄钟 {}"
