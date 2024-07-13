@@ -1,7 +1,6 @@
 # Hindi translation for solanum main.
 # Copyright (C) 2022 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# Translators:
 # Hemish <hemish04082005@gmail.com>, 2022-2023.
 # Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
 #
@@ -9,20 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2024-03-29 20:11+0530\n"
+"POT-Creation-Date: 2024-07-04 12:00+0000\n"
+"PO-Revision-Date: 2024-07-04 21:29+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
-"Language-Team: Hindi\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 46.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:307
 msgid "Solanum"
 msgstr "सोलेनम"
 
@@ -40,14 +38,14 @@ msgstr ""
 "बाद एक लंबा विश्राम सत्र होगा।होगा।"
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "क्रिस्टोफर डेविस"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
-msgstr "Pomodoro;Timer;Productivity;पोमोडोरो;टाइमर;उत्पादकता;"
+msgstr "पोमोडोरो;टाइमर;उत्पादकता;"
 
 #: data/org.gnome.Solanum.gschema.xml:6
 msgid "The length of a work lap in minutes."
@@ -65,6 +63,10 @@ msgstr "लम्बे विश्राम सत्र की लंबा�
 msgid "The number of sessions until a long break."
 msgstr "लंबे विश्राम सत्र तक काम करने के सत्रों की संख्या"
 
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "क्या विश्राम के दौरान विंडो को पूर्णस्क्रीन होना चाहिए।"
+
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
@@ -78,7 +80,7 @@ msgstr "प्राथमिक मेनू दिखाएं"
 #: data/gtk/help-overlay.blp:16
 msgctxt "shortcut window"
 msgid "Show Preferences"
-msgstr "प्राथमिकताएँ दिखाएँ"
+msgstr "प्राथमिकताएं दिखाएं"
 
 #: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
@@ -104,107 +106,110 @@ msgstr "प्रत्येक सत्र की लंबाई मिन�
 msgid "Lap Length"
 msgstr "कार्य सत्र की लंबाई"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "छोटे विश्राम की लंबाई"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "लंबे विश्राम की लंबाई"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "लंबे विश्राम तक सत्रों की संख्या"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "विश्राम के दौरान पूर्णस्क्रीन"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "टाइमर को टॉगल करें"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:325
 msgid "Skip"
-msgstr "छोड़कर आगे बढें"
+msgstr "छोड़ें"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
-msgstr "मुख्य मेन्यू"
+msgstr "मुख्य मेनू"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:74
 msgid "Reset Sessions"
-msgstr "सभी सत्र रीसेट करें"
+msgstr "सत्रों को रीसेट करें"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:78
 msgid "_Preferences"
-msgstr "प्राथमिकताएँ (_P)"
+msgstr "प्राथमिकताएं (_P)"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:79
 msgid "_Keyboard Shortcuts"
 msgstr "कीबोर्ड शॉर्टकट (_K)"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:80
 msgid "_About Solanum"
 msgstr "सोलेनम के बारे में (_A)"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
 "Hemish (हेमिश) <hemish04082005@gmail.com>\n"
 "Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "Patreon पर दान करें (_D)"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "GitHub पर प्रायोजक बनें (_S)"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "आइकॉन प्रदानकर्ता"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "ध्वनि प्रदानकर्ता"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "इनके द्वारा समर्थित"
 
-#: src/window.rs:231
+#: src/window.rs:222
 msgid "Long Break"
 msgstr "लंबा विश्राम सत्र"
 
-#: src/window.rs:237
+#: src/window.rs:228
 msgid "Short Break"
 msgstr "छोटा विश्राम सत्र"
 
-#: src/window.rs:308
+#: src/window.rs:311
 msgid "Back to Work"
 msgstr "काम पर वापस लौटें"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Ready to keep working?"
 msgstr "कार्य करते रहने के लिए तैयार हैं?"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Start Working"
 msgstr "कार्य शुरू करें"
 
-#: src/window.rs:313
+#: src/window.rs:316
 msgid "Break Time"
 msgstr "विश्राम का समय"
 
-#: src/window.rs:314
+#: src/window.rs:317
 msgid "Stretch your legs, and drink some water."
-msgstr "अपने पैरों को फैलाएं, और थोड़ा पानी पिएँ।"
+msgstr "अपने पैरों को फैलाएं, और थोड़ा पानी पिएं।"
 
-#: src/window.rs:315
+#: src/window.rs:318
 msgid "Start Break"
 msgstr "विश्राम शुरू करें"
 
-#: src/window.rs:335
+#: src/window.rs:338
 msgid "Lap {}"
 msgid_plural "Lap {}"
-msgstr[0] "सत्र {}"
-msgstr[1] "सत्र {}"
+msgstr[0] "लैप {}"
+msgstr[1] "लैप {}"
