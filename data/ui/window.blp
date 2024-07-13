@@ -67,6 +67,10 @@ template $SolanumWindow : Adw.ApplicationWindow {
       }
     };
   };
+
+  Adw.Breakpoint large_text_bp {
+    condition ("min-width: 800sp and min-height: 800sp")
+  }
 }
 
 menu app_menu {

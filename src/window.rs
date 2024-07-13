@@ -72,6 +72,8 @@ mod imp {
         pub timer_button: TemplateChild<gtk::Button>,
         #[template_child]
         pub menu_button: TemplateChild<gtk::MenuButton>,
+        #[template_child]
+        pub large_text_bp: TemplateChild<libadwaita::Breakpoint>,
     }
 
     #[glib::object_subclass]
@@ -90,6 +92,7 @@ mod imp {
                 timer_label: TemplateChild::default(),
                 timer_button: TemplateChild::default(),
                 menu_button: TemplateChild::default(),
+                large_text_bp: TemplateChild::default(),
             }
         }
 
@@ -121,6 +124,24 @@ mod imp {
     impl ObjectImpl for SolanumWindow {
         fn constructed(&self) {
             self.parent_constructed();
+
+            let timer_label = &*self.timer_label;
+            let lap_label = &*self.lap_label;
+            self.large_text_bp.connect_apply(
+                clone!(@weak timer_label, @weak lap_label => move |_| {
+                    timer_label.add_css_class("large-timer");
+                    lap_label.remove_css_class("heading");
+                    lap_label.add_css_class("title-4");
+                }),
+            );
+
+            self.large_text_bp.connect_unapply(
+                clone!(@weak timer_label, @weak lap_label => move |_| {
+                    timer_label.remove_css_class("large-timer");
+                    lap_label.remove_css_class("title-4");
+                    lap_label.add_css_class("heading");
+                }),
+            );
         }
     }
 
