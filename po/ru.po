@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-07-07 20:07+1000\n"
+"POT-Creation-Date: 2024-07-04 12:00+0000\n"
+"PO-Revision-Date: 2024-07-07 08:20+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -20,8 +20,7 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:307
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -39,7 +38,7 @@ msgstr ""
 "длинным перерывом до следующей серии сеансов."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Кристофер Дэвис (Christopher Davis)"
 
@@ -63,6 +62,10 @@ msgstr "Продолжительность длинного перерыва в 
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Количество сеансов до длинного перерыва."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Оставлять ли окно раскрытым во весь экран во время перерывов."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -105,104 +108,107 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Продолжительность круга"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Продолжительность короткого перерыва"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Продолжительность длинного перерыва"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Сеансов до длинного перерыва"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Полноэкранный режим во время перерывов"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Переключить таймер"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:325
 msgid "Skip"
 msgstr "Пропустить"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:74
 msgid "Reset Sessions"
 msgstr "Перезагрузить сеансы"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:78
 msgid "_Preferences"
 msgstr "_Параметры"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:79
 msgid "_Keyboard Shortcuts"
 msgstr "_Комбинации клавиш"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:80
 msgid "_About Solanum"
 msgstr "_О приложении"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr "Ser82-png"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Пожертвовать на Patreon"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
-msgstr "_Поддержать на GitHub"
+msgstr "Под_держать на GitHub"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Значок"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Звук"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Поддерживается"
 
-#: src/window.rs:231
+#: src/window.rs:222
 msgid "Long Break"
 msgstr "Длинный перерыв"
 
-#: src/window.rs:237
+#: src/window.rs:228
 msgid "Short Break"
 msgstr "Короткий перерыв"
 
-#: src/window.rs:308
+#: src/window.rs:311
 msgid "Back to Work"
 msgstr "Вернуться к работе"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Ready to keep working?"
 msgstr "Готовы продолжить работу?"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Start Working"
 msgstr "Начать работать"
 
-#: src/window.rs:313
+#: src/window.rs:316
 msgid "Break Time"
 msgstr "Время перерыва"
 
-#: src/window.rs:314
+#: src/window.rs:317
 msgid "Stretch your legs, and drink some water."
 msgstr "Вытяните ноги и выпейте немного воды."
 
-#: src/window.rs:315
+#: src/window.rs:318
 msgid "Start Break"
 msgstr "Начать перерыв"
 
-#: src/window.rs:335
+#: src/window.rs:338
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Круг {}"
