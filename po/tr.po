@@ -9,20 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-01-27 23:41+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"POT-Creation-Date: 2024-07-13 21:04+0000\n"
+"PO-Revision-Date: 2024-07-30 00:08+0300\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4.3\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -39,14 +38,15 @@ msgstr ""
 "çalışın, her oturum arasında ara verin ve 4 oturumdan sonra uzun ara verin."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
-msgstr "Pomodoro;Zamanlayıcı;Süreölçer;Üretkenlik;Verimlilik;"
+msgstr ""
+"Pomodoro;Timer;Productivity;Zamanlayıcı;Süreölçer;Üretkenlik;Verimlilik;"
 
 #: data/org.gnome.Solanum.gschema.xml:6
 msgid "The length of a work lap in minutes."
@@ -63,6 +63,10 @@ msgstr "Uzun molanın dakika türünden uzunluğu."
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Uzun molaya dek oturum sayısı."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Molalar sırasında pencerenin tam ekran olma durumu."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -105,106 +109,109 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Tur Uzunluğu"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Kısa Mola Uzunluğu"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Uzun Mola Uzunluğu"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Uzun Molaya Dek Oturumlar"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Molalar Sırasında Tam Ekran"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Zamanlayıcıyı Aç/Kapat"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Atla"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:78
 msgid "Reset Sessions"
 msgstr "Oturumları Sıfırla"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:82
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:84
 msgid "_About Solanum"
 msgstr "Solanum _Hakkında"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
 "Sabri Ünal <libreajans@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "Patreon’da _Bağış Yap"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "GitHub’da Sponsor Ol"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Simge"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Ses"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Destekleyen"
 
-#: src/window.rs:231
+#: src/window.rs:243
 msgid "Long Break"
 msgstr "Uzun Mola"
 
-#: src/window.rs:237
+#: src/window.rs:249
 msgid "Short Break"
 msgstr "Kısa Mola"
 
-#: src/window.rs:308
+#: src/window.rs:332
 msgid "Back to Work"
 msgstr "Çalışmaya Dön"
 
-#: src/window.rs:309
+#: src/window.rs:333
 msgid "Ready to keep working?"
 msgstr "Çalışmaya hazır mısın?"
 
-#: src/window.rs:310
+#: src/window.rs:334
 msgid "Start Working"
 msgstr "Çalışmaya Başla"
 
-#: src/window.rs:313
+#: src/window.rs:337
 msgid "Break Time"
 msgstr "Mola Zamanı"
 
-#: src/window.rs:314
+#: src/window.rs:338
 msgid "Stretch your legs, and drink some water."
 msgstr "Bacaklarını rahatlat ve biraz su iç."
 
-#: src/window.rs:315
+#: src/window.rs:339
 msgid "Start Break"
 msgstr "Molayı Başlat"
 
-#: src/window.rs:335
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Tur {}"
