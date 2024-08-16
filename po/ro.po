@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-10-11 13:32+0300\n"
+"POT-Creation-Date: 2024-08-09 14:58+0000\n"
+"PO-Revision-Date: 2024-08-15 19:34+0300\n"
 "Last-Translator: Florentina Mușat <florentina [dot] musat [dot] 28 [at] "
 "gmail [dot] com>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -18,11 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -40,7 +39,7 @@ msgstr ""
 "lungă după toate cele 4."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -64,6 +63,11 @@ msgstr "Durata unei pauze lungi în minute."
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Numărul de sesiuni până la o pauză lungă."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr ""
+"Dacă fereastra ar trebui să fie în modul ecran complet în timpul pauzelor."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -106,106 +110,109 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Durata turei"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Durată pauză scurtă"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Durată pauză lungă"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Sesiuni până la pauza lungă"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Ecran complet în timpul pauzelor"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Comută temporizatorul"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Omite"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Meniu principal"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:78
 msgid "Reset Sessions"
 msgstr "Restabilește sesiunile"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:82
 msgid "_Preferences"
 msgstr "_Preferințe"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
 msgstr "S_curtături de tastatură"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:84
 msgid "_About Solanum"
 msgstr "_Despre Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
 "Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
-"2021, 2023"
+"2021, 2023-2024"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Donează pe Patreon"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "_Sponsorizează pe GitHub"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Iconiță de"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Sunet de"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Suportat de"
 
-#: src/window.rs:231
+#: src/window.rs:243
 msgid "Long Break"
 msgstr "Pauză lungă"
 
-#: src/window.rs:237
+#: src/window.rs:249
 msgid "Short Break"
 msgstr "Pauză scurtă"
 
-#: src/window.rs:308
+#: src/window.rs:332
 msgid "Back to Work"
 msgstr "Înapoi la lucru"
 
-#: src/window.rs:309
+#: src/window.rs:333
 msgid "Ready to keep working?"
 msgstr "Sunteți gata să continuați să lucrați?"
 
-#: src/window.rs:310
+#: src/window.rs:334
 msgid "Start Working"
 msgstr "Începe lucrul"
 
-#: src/window.rs:313
+#: src/window.rs:337
 msgid "Break Time"
 msgstr "Pauză"
 
-#: src/window.rs:314
+#: src/window.rs:338
 msgid "Stretch your legs, and drink some water."
 msgstr "Întindeți-vă picioarele și beți puțină apă."
 
-#: src/window.rs:315
+#: src/window.rs:339
 msgid "Start Break"
 msgstr "Începe pauza"
 
-#: src/window.rs:335
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Etapa {}"
