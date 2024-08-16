@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the solanum package.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2020-2022.
 # Tim Sabsch <tim@sabsch.com>, 2021.
-# Jürgen Benvenuti <gastornis@posteo.org>, 2022, 2023.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2022-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-06-20 16:45+0200\n"
+"POT-Creation-Date: 2024-07-04 12:00+0000\n"
+"PO-Revision-Date: 2024-07-09 16:07+0200\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -18,11 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:307
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -40,7 +39,7 @@ msgstr ""
 "vier Arbeitsrunden gibt es eine lange Pause."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -64,6 +63,12 @@ msgstr "Die Länge einer langen Pause in Minuten."
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Die Anzahl an Sitzungen bis zu einer langen Pause."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr ""
+"Legt fest, ob das Fenster während der Pausen im Vollbild angezeigt werden "
+"soll."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -106,106 +111,109 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Abschnittslänge"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Länge der kurzen Pause"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Länge der langen Pause"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Sitzungen bis zur langen Pause"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Vollbild während Pausen"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Timer ein-/ausschalten"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:325
 msgid "Skip"
 msgstr "Überspringen"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Hauptmenü"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:74
 msgid "Reset Sessions"
 msgstr "Sitzungen zurücksetzen"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:78
 msgid "_Preferences"
 msgstr "_Einstellungen"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:79
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastenkürzel"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:80
 msgid "_About Solanum"
 msgstr "_Info zu Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
 "Philipp Kiemle <philipp.kiemle@gmail.com>, 2020, 2022.\n"
-"Jürgen Benvenuti <gastornis@posteo.org>, 2022, 2023."
+"Jürgen Benvenuti <gastornis@posteo.org>, 2022-2024."
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Auf Patreon spenden"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "_Auf GitHub sponsern"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Symbol von"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Klang von"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Unterstützt von"
 
-#: src/window.rs:231
+#: src/window.rs:222
 msgid "Long Break"
 msgstr "Lange Pause"
 
-#: src/window.rs:237
+#: src/window.rs:228
 msgid "Short Break"
 msgstr "Kurze Pause"
 
-#: src/window.rs:308
+#: src/window.rs:311
 msgid "Back to Work"
 msgstr "Zurück an die Arbeit"
 
-#: src/window.rs:309
+#: src/window.rs:312
 msgid "Ready to keep working?"
 msgstr "Bereit, weiterzuarbeiten?"
 
-#: src/window.rs:310
+#: src/window.rs:313
 msgid "Start Working"
 msgstr "Arbeit starten"
 
-#: src/window.rs:313
+#: src/window.rs:316
 msgid "Break Time"
 msgstr "Pausenzeit"
 
-#: src/window.rs:314
+#: src/window.rs:317
 msgid "Stretch your legs, and drink some water."
 msgstr "Strecken Sie Ihre Beine aus und trinken Sie etwas Wasser."
 
-#: src/window.rs:315
+#: src/window.rs:318
 msgid "Start Break"
 msgstr "Pause starten"
 
-#: src/window.rs:335
+#: src/window.rs:338
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Abschnitt {}"
