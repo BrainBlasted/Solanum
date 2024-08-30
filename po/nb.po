@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2024-02-18 14:10+0000\n"
-"PO-Revision-Date: 2024-03-07 10:46+0100\n"
+"POT-Creation-Date: 2024-08-09 14:58+0000\n"
+"PO-Revision-Date: 2024-08-31 01:46+0200\n"
 "Last-Translator: Brage <bragefuglseth@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <nb@li.org>\n"
 "Language: nb\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -37,7 +37,7 @@ msgstr ""
 "etter alle."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:28
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Cristopher Davis"
 
@@ -50,19 +50,23 @@ msgstr ""
 
 #: data/org.gnome.Solanum.gschema.xml:6
 msgid "The length of a work lap in minutes."
-msgstr "Lengden på en arbeidsrunde i minutter"
+msgstr "Lengden på en arbeidsrunde i minutter."
 
 #: data/org.gnome.Solanum.gschema.xml:10
 msgid "The length of a short break in minutes."
-msgstr "Lengden på en kort pause i minutter"
+msgstr "Lengden på en kort pause i minutter."
 
 #: data/org.gnome.Solanum.gschema.xml:14
 msgid "The length of a long break in minutes."
-msgstr "Lengden på en lang pause i minutter"
+msgstr "Lengden på en lang pause i minutter."
 
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
-msgstr "Antall runder mellom hver lange pause"
+msgstr "Antall runder mellom hver lange pause."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Om vinduet skal maksimeres under pauser."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -117,91 +121,95 @@ msgstr "Lang pause"
 msgid "Sessions Until Long Break"
 msgstr "Runder mellom lange pauser"
 
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Fullskjerm under pauser"
+
 #: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Nedtelling"
 
-#: data/ui/window.blp:48 src/window.rs:318
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Hopp over"
 
-#: data/ui/window.blp:58
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Hovedmeny"
 
-#: data/ui/window.blp:73
+#: data/ui/window.blp:78
 msgid "Reset Sessions"
 msgstr "Tilbakestill runder"
 
-#: data/ui/window.blp:77
+#: data/ui/window.blp:82
 msgid "_Preferences"
 msgstr "_Innstillinger"
 
-#: data/ui/window.blp:78
+#: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastatursnarveier"
 
-#: data/ui/window.blp:79
+#: data/ui/window.blp:84
 msgid "_About Solanum"
 msgstr "_Om Solanum"
 
-#: src/app.rs:184
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr "Brage Fuglseth https://bragefuglseth.dev"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Doner på Patreon"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "_Spons på GitHub"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Utsmykket av"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Lydgitt av"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Støttet av"
 
-#: src/window.rs:227
+#: src/window.rs:243
 msgid "Long Break"
 msgstr "Lang pause"
 
-#: src/window.rs:233
+#: src/window.rs:249
 msgid "Short Break"
 msgstr "Kort pause"
 
-#: src/window.rs:304
+#: src/window.rs:332
 msgid "Back to Work"
 msgstr "Pause over"
 
-#: src/window.rs:305
+#: src/window.rs:333
 msgid "Ready to keep working?"
 msgstr "Klar for en ny arbeidsrunde?"
 
-#: src/window.rs:306
+#: src/window.rs:334
 msgid "Start Working"
 msgstr "Start runde"
 
-#: src/window.rs:309
+#: src/window.rs:337
 msgid "Break Time"
 msgstr "Pause"
 
-#: src/window.rs:310
+#: src/window.rs:338
 msgid "Stretch your legs, and drink some water."
-msgstr "Ta en strekk og drikk litt vann"
+msgstr "Ta en strekk og drikk litt vann."
 
-#: src/window.rs:311
+#: src/window.rs:339
 msgid "Start Break"
 msgstr "Start pause"
 
-#: src/window.rs:331
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Runde {}"
