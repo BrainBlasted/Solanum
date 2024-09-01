@@ -1,15 +1,15 @@
 # Turkish translation for solanum.
-# Copyright (C) 2020-2023 solanum's COPYRIGHT HOLDER
+# Copyright (C) 2020-2024 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 #
-# Sabri Ünal <libreajans@gmail.com>, 2022, 2023.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2022, 2023.
+# Sabri Ünal <yakushabb@gmail.com>, 2022-2024.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2022-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2024-07-13 21:04+0000\n"
+"POT-Creation-Date: 2024-08-09 19:33+0000\n"
 "PO-Revision-Date: 2024-07-30 00:08+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -156,7 +156,7 @@ msgstr "Solanum _Hakkında"
 #: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
-"Sabri Ünal <libreajans@gmail.com>\n"
+"Sabri Ünal <yakushabb@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
 #: src/app.rs:174
@@ -165,7 +165,7 @@ msgstr "Patreon’da _Bağış Yap"
 
 #: src/app.rs:178
 msgid "_Sponsor on GitHub"
-msgstr "GitHub’da Sponsor Ol"
+msgstr "GitHub’da _Sponsor Ol"
 
 #: src/app.rs:183
 msgid "Icon by"
