@@ -2,14 +2,14 @@
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
 # scootergrisen, 2020.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2022-23.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2022-24.
 # scootergrisen: oversættelsen mangler at blive afprøvet
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-09-11 17:19+0200\n"
+"POT-Creation-Date: 2024-08-09 14:58+0000\n"
+"PO-Revision-Date: 2024-08-22 19:56+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -17,11 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -39,7 +38,7 @@ msgstr ""
 "sessioner med pauser mellem hver session og en lang pause efter alle 4."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -63,6 +62,10 @@ msgstr "Længden på en lang pause i minutter."
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Antal sessioner før en lang pause."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Om vinduet skal være i fuldskærmstilstand under pauser."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -107,106 +110,109 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Længde på runde"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Længde på kort pause"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Længde på lang pause"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Antal sessioner før lang pause"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Fuldskærm under pauser"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Slå timer til/fra"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Spring over"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Hovedmenu"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:78
 msgid "Reset Sessions"
 msgstr "Nulstil sessioner"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:82
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
 msgstr "_Tastaturgenveje"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:84
 msgid "_About Solanum"
 msgstr "_Om Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr "scootergrisen"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Donér på Patreon"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "_Sponsorér på GitHub"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Ikon af"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Lyd af"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Understøttet af"
 
-#: src/window.rs:231
+#: src/window.rs:243
 msgid "Long Break"
 msgstr "Lang pause"
 
-#: src/window.rs:237
+#: src/window.rs:249
 msgid "Short Break"
 msgstr "Kort pause"
 
-#: src/window.rs:308
+#: src/window.rs:332
 msgid "Back to Work"
 msgstr "Tilbage til arbejdet"
 
-#: src/window.rs:309
+#: src/window.rs:333
 msgid "Ready to keep working?"
 msgstr "Klar til at fortsætte arbejdet?"
 
 # scootergrisen: tjek at oversættelsen er god. "Start Working" "Start Break"
-#: src/window.rs:310
+#: src/window.rs:334
 msgid "Start Working"
 msgstr "Arbejd"
 
-#: src/window.rs:313
+#: src/window.rs:337
 msgid "Break Time"
 msgstr "Pausetid"
 
-#: src/window.rs:314
+#: src/window.rs:338
 msgid "Stretch your legs, and drink some water."
 msgstr "Stræk benene og drik noget vand."
 
 # scootergrisen: tjek at oversættelsen er god. "Start Working" "Start Break"
-#: src/window.rs:315
+#: src/window.rs:339
 msgid "Start Break"
 msgstr "Hold pause"
 
-#: src/window.rs:335
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Omgang {}"
