@@ -29,7 +29,7 @@ appstream_file = i18n.merge_file(
   output: '@0@.appdata.xml'.format(app_id),
   po_dir: '../po',
   install: true,
-  install_dir: solanum_datadir / 'appdata'
+  install_dir: solanum_datadir / 'metainfo'
 )
 
 appstreamcli = find_program('appstreamcli', required: false)
