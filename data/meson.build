@@ -22,11 +22,11 @@ endif
 
 appstream_file = i18n.merge_file(
   input: configure_file(
-    input: 'org.gnome.Solanum.appdata.xml.in.in',
-    output: 'org.gnome.Solanum.appdata.xml.in',
+    input: 'org.gnome.Solanum.metainfo.xml.in.in',
+    output: 'org.gnome.Solanum.metainfo.xml.in',
     configuration: desktop_conf,
   ),
-  output: '@0@.appdata.xml'.format(app_id),
+  output: '@0@.metainfo.xml'.format(app_id),
   po_dir: '../po',
   install: true,
   install_dir: solanum_datadir / 'metainfo'

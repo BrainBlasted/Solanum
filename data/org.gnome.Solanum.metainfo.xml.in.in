@@ -32,6 +32,15 @@
     <name>Christopher Davis</name>
   </developer>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
+  <requires>
+    <display_length compare="ge">360</display_length>
+    <internet>offline-only</internet>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
   <translation type="gettext">solanum</translation>
   <branding>
     <color type="primary" scheme_preference="light">#f66151</color>
@@ -115,14 +124,5 @@
     <release version="1.0.1" date="2020-09-09"/>
     <release version="1.0.0" date="2020-09-05"/>
   </releases>
-  <kudos>
-    <kudo>ModernToolkit</kudo>
-    <kudo>HiDpiIcon</kudo>
-    <kudo>Notifications</kudo>
-  </kudos>
   <content_rating type="oars-1.1" />
-  <provides>org.gnome.Solanum.desktop</provides>
-  <custom>
-    <value key="Purism::form_factor">mobile</value>
-  </custom>
 </component>
