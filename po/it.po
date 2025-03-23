@@ -1,26 +1,26 @@
 # Italian translation for solanum.
 # Copyright (C) 2020 solanum's COPYRIGHT HOLDER
 # This file is distributed under the same license as the solanum package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Federico Bruni <fede@inventati.org>, 2020-2021.
+# Davide Ferracin <davide.ferracin@protonmail.com>, 2024-2025
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-15 21:56+0000\n"
-"PO-Revision-Date: 2021-10-17 00:21+0200\n"
-"Last-Translator: Federico Bruni <fede@inventati.org>\n"
-"Language-Team: Italian <gnome-it-list@gnome.org>\n"
+"POT-Creation-Date: 2024-07-13 21:04+0000\n"
+"PO-Revision-Date: 2025-03-22 13:34+0100\n"
+"Last-Translator: Davide Ferracin <davide.ferracin@protonmail.com>\n"
 "Language: it\n"
+"Language-Team: Italian <gnome-it-list@gnome.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 41.0\n"
+"Generated-By: Babel 2.15.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:300
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -30,19 +30,21 @@ msgstr "Bilancia il tempo di lavoro e le pause"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:10
 msgid ""
-"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
-"sessions, with breaks in between each session and one long break after all 4."
+"Solanum is a time tracking app that uses the pomodoro technique. Work in "
+"4 sessions, with breaks in between each session and one long break after "
+"all 4."
 msgstr ""
 "Solanum è un'applicazione per la gestione del tempo che usa la tecnica "
 "pomodoro. Funziona in 4 sessioni, con pause tra ciascuna sessione e una "
 "lunga pausa al termine di tutte e 4."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Solanum.desktop.in.in:12
 msgid "Pomodoro;Timer;Productivity;"
 msgstr "Pomodoro;Orologio;Contaminuti;Timer;Produttività;"
@@ -63,120 +65,163 @@ msgstr "La durata di una pausa lunga in minuti."
 msgid "The number of sessions until a long break."
 msgstr "Il numero di sessioni prima di una pausa lunga."
 
-#: data/gtk/help-overlay.ui:12
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Se la finestra deve essere a schermo intero durante le pause."
+
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
 msgstr "Scorciatoie generali"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
-msgstr "Mostra menù principale"
+msgstr "Mostra il menù principale"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Mostra le preferenze"
+
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
-msgstr "Mostra scorciatoie da tastiera"
+msgstr "Mostra le scorciatoie da tastiera"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Esci"
+msgstr "Esce"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Durata della sessione"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
 msgstr ""
-"La durata di ciascun tipo di sessione in minuti. Le modifiche si applicano "
-"alla sessione successiva di ciascun tipo."
+"La durata di ciascun tipo di sessione in minuti. Le modifiche si "
+"applicano alla sessione successiva di ciascun tipo."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Durata del giro"
 
-#: data/ui/preferences-window.ui:31
-#| msgid "Short Break"
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Durata della pausa breve"
 
-#: data/ui/preferences-window.ui:49
-#| msgid "Long Break"
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Durata della pausa lunga"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Sessioni prima della pausa lunga"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Preferenze"
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Schermo intero durante le pause"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "_Scorciatoie da tastiera"
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "Aziona il cronometro"
 
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "_Informazioni su Solanum"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Un timer pomodoro per GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr "Federico Bruni <fede@inventati.org>"
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Dona su Patreon"
-
-#: src/window.rs:237
-msgid "Long Break"
-msgstr "Pausa lunga"
-
-#: src/window.rs:243
-msgid "Short Break"
-msgstr "Pausa breve"
-
-#: src/window.rs:304
-msgid "Back to Work"
-msgstr "Riprendi il lavoro"
-
-#: src/window.rs:305
-msgid "Ready to keep working?"
-msgstr "Pronto a proseguire il lavoro?"
-
-#: src/window.rs:306
-msgid "Start Working"
-msgstr "Inizia a lavorare"
-
-#: src/window.rs:309
-msgid "Break Time"
-msgstr "Pausa"
-
-#: src/window.rs:310
-msgid "Stretch your legs, and drink some water."
-msgstr "Stira le gambe e bevi un po' d'acqua."
-
-#: src/window.rs:311
-msgid "Start Break"
-msgstr "Inizia la pausa"
-
-#: src/window.rs:317
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Salta"
 
-#: src/window.rs:330
-#| msgid "Lap {}"
+#: data/ui/window.blp:59
+msgid "Main Menu"
+msgstr "Menù principale"
+
+#: data/ui/window.blp:78
+msgid "Reset Sessions"
+msgstr "Ripristina sessioni"
+
+#: data/ui/window.blp:82
+msgid "_Preferences"
+msgstr "_Preferenze"
+
+#: data/ui/window.blp:83
+msgid "_Keyboard Shortcuts"
+msgstr "_Scorciatoie da tastiera"
+
+#: data/ui/window.blp:84
+msgid "_About Solanum"
+msgstr "_Informazioni su Solanum"
+
+#: src/app.rs:165
+msgid "translator-credits"
+msgstr ""
+"Federico Bruni <fede@inventati.org>\n"
+"Davide Ferracin <davide.ferracin@protonmail.com>"
+
+#: src/app.rs:174
+msgid "_Donate on Patreon"
+msgstr "_Dona su Patreon"
+
+#: src/app.rs:178
+msgid "_Sponsor on GitHub"
+msgstr "Diventa _sponsor su GitHub"
+
+#: src/app.rs:183
+msgid "Icon by"
+msgstr "Icona a cura di"
+
+#: src/app.rs:187
+msgid "Sound by"
+msgstr "Audio a cura di"
+
+#: src/app.rs:192
+msgid "Supported by"
+msgstr "Sostenuto da"
+
+#: src/window.rs:243
+msgid "Long Break"
+msgstr "Pausa lunga"
+
+#: src/window.rs:249
+msgid "Short Break"
+msgstr "Pausa breve"
+
+#: src/window.rs:332
+msgid "Back to Work"
+msgstr "Riprendi il lavoro"
+
+#: src/window.rs:333
+msgid "Ready to keep working?"
+msgstr "Pronto a proseguire il lavoro?"
+
+#: src/window.rs:334
+msgid "Start Working"
+msgstr "Inizia a lavorare"
+
+#: src/window.rs:337
+msgid "Break Time"
+msgstr "Pausa"
+
+#: src/window.rs:338
+msgid "Stretch your legs, and drink some water."
+msgstr "Stira le gambe e bevi un po' d'acqua."
+
+#: src/window.rs:339
+msgid "Start Break"
+msgstr "Inizia la pausa"
+
+# Translators: Every pomodoro session can range from 1-99 laps,
+# so {} will contain a number between 1 and 99. Lap is always singular.
+# [DF] La stringa indica il numero di giro corrente, "Giro 1",
+# "Giro 2", eccetera, non quanti giri ci sono.
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Giro {}"
-msgstr[1] "Giri {}"
+msgstr[1] "Giro {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Un timer pomodoro per GNOME"
+
