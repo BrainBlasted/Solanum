@@ -127,21 +127,29 @@ mod imp {
 
             let timer_label = &*self.timer_label;
             let lap_label = &*self.lap_label;
-            self.large_text_bp.connect_apply(
-                clone!(@weak timer_label, @weak lap_label => move |_| {
+            self.large_text_bp.connect_apply(clone!(
+                #[weak]
+                timer_label,
+                #[weak]
+                lap_label,
+                move |_| {
                     timer_label.add_css_class("large-timer");
                     lap_label.remove_css_class("heading");
                     lap_label.add_css_class("title-4");
-                }),
-            );
+                }
+            ));
 
-            self.large_text_bp.connect_unapply(
-                clone!(@weak timer_label, @weak lap_label => move |_| {
+            self.large_text_bp.connect_unapply(clone!(
+                #[weak]
+                timer_label,
+                #[weak]
+                lap_label,
+                move |_| {
                     timer_label.remove_css_class("large-timer");
                     lap_label.remove_css_class("title-4");
                     lap_label.add_css_class("heading");
-                }),
-            );
+                }
+            ));
         }
     }
 
@@ -198,16 +206,22 @@ impl SolanumWindow {
         imp.timer.set_duration(min);
         timer_label.set_label(&format!("{:>02}∶00", min));
 
-        imp.timer.connect_countdown_update(
-            clone!(@weak self as win => move |_, minutes, seconds| {
+        imp.timer.connect_countdown_update(clone!(
+            #[weak(rename_to = win)]
+            self,
+            move |_, minutes, seconds| {
                 win.update_countdown(minutes, seconds);
-            }),
-        );
+            }
+        ));
 
-        imp.timer.connect_lap(clone!(@weak self as win => move |_| {
-            win.toggle_timer();
-            win.next_lap(true);
-        }));
+        imp.timer.connect_lap(clone!(
+            #[weak(rename_to = win)]
+            self,
+            move |_| {
+                win.toggle_timer();
+                win.next_lap(true);
+            }
+        ));
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::ControlFlow {
