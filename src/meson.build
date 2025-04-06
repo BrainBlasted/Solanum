@@ -1,24 +1,3 @@
-conf = configuration_data()
-conf.set_quoted('APP_ID', app_id)
-conf.set_quoted('COPYRIGHT', copyright)
-conf.set_quoted('VERSION', solanum_version)
-conf.set_quoted('LOCALEDIR', solanum_localedir)
-conf.set_quoted('PKGDATADIR', solanum_pkgdatadir)
-
-configure_file(
-    input: 'config.rs.in',
-    output: 'config.rs',
-    configuration: conf
-)
-
-# Copy the config.rs output to the source directory.
-run_command(
-  'cp',
-  meson.project_build_root() / 'src' / 'config.rs',
-  meson.project_source_root() / 'src' / 'config.rs',
-  check: true
-)
-
 cargo = find_program('cargo', required: true)
 
 cargo_options = [ '--manifest-path', meson.project_source_root() / 'Cargo.toml' ]
@@ -33,7 +12,13 @@ else
   message('Building in debug mode')
 endif
 
-cargo_env = [ 'CARGO_HOME=' + meson.project_build_root() / 'cargo-home' ]
+cargo_env = environment()
+cargo_env.set('CARGO_HOME', meson.project_build_root() / 'cargo-home')
+cargo_env.set('APP_ID', app_id)
+cargo_env.set('COPYRIGHT', copyright)
+cargo_env.set('VERSION', solanum_version)
+cargo_env.set('LOCALEDIR', solanum_localedir)
+cargo_env.set('PKGDATADIR', solanum_pkgdatadir)
 
 cargo_build = custom_target(
   'cargo-build',
@@ -44,9 +29,8 @@ cargo_build = custom_target(
   install: true,
   install_dir: solanum_bindir,
   depends: resources,
+  env: cargo_env,
   command: [
-    'env',
-    cargo_env,
     cargo, 'build',
     cargo_options,
     '&&',
