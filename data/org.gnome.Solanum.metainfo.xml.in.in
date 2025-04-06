@@ -47,6 +47,20 @@
     <color type="primary" scheme_preference="dark">#771414</color>
   </branding>
   <releases>
+    <release version="6.0.0" date="2025-04-06">
+      <description>
+        <p>Solanum 6.0.0 brings the following changes</p>
+        <ul>
+          <li>The timer's text now scales with window size. You should now see larger text at larger window sizes.</li>
+          <li>You now have the option to make Solanum go fullscreen when a break starts. (Josiah Fu)</li>
+          <li>Notifications are now appropriately dismissed when resuming the timer. (Douglas Deslauriers)</li>
+          <li>We now ship branding colors in our app data (Tobias Bernard)</li>
+          <li>Miscellaneous metainfo improvements (Brage Fuglseth and Maximiliano)</li>
+          <li>Various code modernization updates.</li>
+          <li>Miscellaneous translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.0.0" date="2023-10-29">
       <description>
         <p>Solanum 5.0.0 brings a minor visual refresh and a few other changes:</p>
