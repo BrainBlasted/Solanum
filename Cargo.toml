@@ -5,14 +5,14 @@ edition = "2021"
 
 [dependencies]
 once_cell = "1.19.0"
-regex = "1.10.4"
+regex = "1.11"
 glib-macros = "0.19"
-gstreamer = "0.22"
-gstreamer-play = "0.22"
-libadwaita = { version = "0.6", features = ["v1_5"] }
+gstreamer = "0.23"
+gstreamer-play = "0.23"
+libadwaita = { version = "0.7", features = ["v1_5"] }
 
 [dependencies.gtk]
-version = "0.8"
+version = "0.9"
 package ="gtk4"
 
 [dependencies.gettext-rs]
