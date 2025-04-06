@@ -29,8 +29,8 @@ use gtk::prelude::*;
 use std::cell::Cell;
 use std::time::{Duration, Instant};
 
-// `Lazy` is a structure for Lazy loading things during runtime.
-use once_cell::sync::Lazy;
+// `LazyLock` is a structure for Lazy loading things during runtime.
+use std::sync::LazyLock;
 
 mod imp {
     use super::*;
@@ -51,7 +51,7 @@ mod imp {
 
     impl ObjectImpl for Timer {
         fn signals() -> &'static [Signal] {
-            static SIGNALS: Lazy<Vec<Signal>> = Lazy::new(|| {
+            static SIGNALS: LazyLock<Vec<Signal>> = LazyLock::new(|| {
                 vec![
                     Signal::builder("countdown-update")
                         .param_types([u32::static_type(), u32::static_type()])

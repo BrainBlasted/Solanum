@@ -26,7 +26,7 @@ use glib::subclass::prelude::*;
 use gtk::subclass::prelude::*;
 use libadwaita::subclass::prelude::*;
 
-use once_cell::unsync::OnceCell;
+use std::cell::OnceCell;
 
 use crate::config;
 use crate::i18n::i18n;
