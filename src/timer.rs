@@ -68,6 +68,12 @@ glib::wrapper! {
     pub struct Timer(ObjectSubclass<imp::Timer>);
 }
 
+impl Default for Timer {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Timer {
     pub fn new() -> Self {
         glib::Object::new()

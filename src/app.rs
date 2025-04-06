@@ -76,7 +76,7 @@ mod imp {
 
             let window = SolanumWindow::new(&*application);
             window.set_title(Some(&i18n("Solanum")));
-            window.set_icon_name(Some(&config::APP_ID.to_owned()));
+            window.set_icon_name(Some(config::APP_ID));
             self.window
                 .set(window.downgrade())
                 .expect("Failed to init application window");
@@ -94,6 +94,12 @@ glib::wrapper! {
     pub struct SolanumApplication(ObjectSubclass<imp::SolanumApplication>)
         @extends gio::Application, gtk::Application, libadwaita::Application,
         @implements gio::ActionGroup, gio::ActionMap;
+}
+
+impl Default for SolanumApplication {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl SolanumApplication {
