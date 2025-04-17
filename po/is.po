@@ -1,26 +1,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Ingirafn <ingirafn@this.is>, 2023.
+# Ingirafn <ingirafn@this.is>, 2023, 2025.
 # Sveinn í Felli <sv1@fellsnet.is>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-06-20 07:07+0000\n"
-"PO-Revision-Date: 2023-05-14 20:15+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"POT-Creation-Date: 2024-08-09 14:58+0000\n"
+"PO-Revision-Date: 2025-04-16 22:35+0000\n"
+"Last-Translator: Ingir <ingirafn@this.is>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -37,7 +36,7 @@ msgstr ""
 "lotum, með stuttu hléi á milli og langa hvíld eftir vinnuloturnar fjórar."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -61,6 +60,10 @@ msgstr "Lengd lengri hvíldar í mínútum."
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Hve margar lotur til vinnuhlés."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Hvort glugginn eigi að fylla í skjáinn í hléi."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -103,104 +106,107 @@ msgstr ""
 msgid "Lap Length"
 msgstr "Lengd lotu"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Lengd stutts hlés"
 
-#: data/ui/preferences-window.blp:45
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Lengd lengri hvíldar"
 
-#: data/ui/preferences-window.blp:63
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
 msgstr "Hve margar lotur fyrir lengri hvíld"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Heilskjár virkur í hléi"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Virkja tímavaka"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Sleppa"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Aðalvalmynd"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:78
 msgid "Reset Sessions"
 msgstr "Endursetja lotur"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:82
 msgid "_Preferences"
 msgstr "K_jörstillingar"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
 msgstr "Almennir _flýtilyklar"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:84
 msgid "_About Solanum"
 msgstr "_Um Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr "Ingirafn, ingirafn at this dot is ,2023"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Styrkja á Patreon"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "S_tuðningsaðili á GitHub"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
 msgstr "Táknmynd eftir"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
 msgstr "Hjóðmynd eftir"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
 msgstr "Styrkt af"
 
-#: src/window.rs:231
+#: src/window.rs:243
 msgid "Long Break"
 msgstr "Löng hvíld"
 
-#: src/window.rs:237
+#: src/window.rs:249
 msgid "Short Break"
 msgstr "Stutt hlé"
 
-#: src/window.rs:308
+#: src/window.rs:332
 msgid "Back to Work"
 msgstr "Aftur í vinnuna"
 
-#: src/window.rs:309
+#: src/window.rs:333
 msgid "Ready to keep working?"
 msgstr "Tilbúin að halda áfram?"
 
-#: src/window.rs:310
+#: src/window.rs:334
 msgid "Start Working"
 msgstr "Byrjaðu að vinna"
 
-#: src/window.rs:313
+#: src/window.rs:337
 msgid "Break Time"
 msgstr "Hvíldartími"
 
-#: src/window.rs:314
+#: src/window.rs:338
 msgid "Stretch your legs, and drink some water."
 msgstr "Teygðu úr skönkunum þínum og drekktu dálítið vatn."
 
-#: src/window.rs:315
+#: src/window.rs:339
 msgid "Start Break"
 msgstr "Hefja hvíld"
 
-#: src/window.rs:335
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Lota {}"
