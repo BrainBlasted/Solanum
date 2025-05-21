@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2024-10-28 22:16+0000\n"
-"PO-Revision-Date: 2025-02-01 21:48-0300\n"
+"POT-Creation-Date: 2025-02-02 00:49+0000\n"
+"PO-Revision-Date: 2025-05-20 20:25-0400\n"
 "Last-Translator: Emilio Sepúlveda <emism.translations@gmail.com>\n"
 "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
 "Language: ia\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Gtranslator 47.1\n"
+"X-Generator: Gtranslator 48.0\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
 #: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
@@ -76,7 +76,7 @@ msgstr "Si le fenestra deberea esser in schermo plen durante le pausas."
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
-msgstr "Commandos curte general"
+msgstr "Vias breve general"
 
 #: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -91,7 +91,7 @@ msgstr "Monstrar preferentias"
 #: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
-msgstr "Monstrar commandos curte de claviero"
+msgstr "Monstrar vias breve de claviero"
 
 #: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
@@ -152,7 +152,7 @@ msgstr "_Preferentias"
 
 #: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
-msgstr "_Commandos curte de claviero"
+msgstr "Vias breve de _claviero"
 
 #: data/ui/window.blp:84
 msgid "_About Solanum"
