@@ -7,37 +7,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2021-10-28 18:47+0000\n"
-"PO-Revision-Date: 2021-11-02 15:53+0100\n"
+"POT-Creation-Date: 2025-03-11 02:29+0000\n"
+"PO-Revision-Date: 2025-11-15 17:00+0100\n"
+"Last-Translator: maite guix <maite.guix@me.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: maite guix <maite.guix@me.com>\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:301
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:8
 msgid "Balance working time and break time"
-msgstr "Equilibrar el temps de treball i el de descans"
+msgstr "Equilibreu el temps de treball i el de descans"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:10
 msgid ""
 "Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
 "sessions, with breaks in between each session and one long break after all 4."
 msgstr ""
-"Solanum és una aplicació de seguiment de temps que utilitza la tècnica "
+"El Solanum és una aplicació de seguiment de temps que utilitza la tècnica "
 "pomodoro. Treballar en 4 sessions, amb pauses entre cada sessió i una llarga "
 "pausa després de les 4."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -62,31 +62,40 @@ msgstr "La durada d'una pausa llarga en minuts."
 msgid "The number of sessions until a long break."
 msgstr "Nombre de sessions fins a un descans llarg."
 
-#: data/gtk/help-overlay.ui:12
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Si la finestra ha de fer-se pantalla completa durant els descansos."
+
+#: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
 msgid "General Shortcuts"
-msgstr "Dreceres generals"
+msgstr "Dreceres de teclat generals"
 
-#: data/gtk/help-overlay.ui:16
+#: data/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Show Primary Menu"
 msgstr "Mostra el menú principal"
 
-#: data/gtk/help-overlay.ui:23
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Mostra els paràmetres"
+
+#: data/gtk/help-overlay.blp:21
 msgctxt "shortcut window"
 msgid "Show Keyboard Shortcuts"
 msgstr "Mostra les dreceres de teclat"
 
-#: data/gtk/help-overlay.ui:30
+#: data/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Surt"
 
-#: data/ui/preferences-window.ui:9
+#: data/ui/preferences-window.blp:9
 msgid "Session Length"
 msgstr "Durada de la sessió"
 
-#: data/ui/preferences-window.ui:10
+#: data/ui/preferences-window.blp:10
 msgid ""
 "The length of each session type in minutes. Changes apply to the next "
 "session of each type."
@@ -94,88 +103,118 @@ msgstr ""
 "La durada de cada sessió en minuts. Els canvis s'apliquen a la següent "
 "sessió de cada tipus."
 
-#: data/ui/preferences-window.ui:13
+#: data/ui/preferences-window.blp:13
 msgid "Lap Length"
 msgstr "Durada de la volta"
 
-#: data/ui/preferences-window.ui:31
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
 msgstr "Durada del descans curt"
 
-#: data/ui/preferences-window.ui:49
+#: data/ui/preferences-window.blp:33
 msgid "Long Break Length"
 msgstr "Durada de la pausa llarga"
 
-#: data/ui/preferences-window.ui:71
+#: data/ui/preferences-window.blp:45
 msgid "Sessions Until Long Break"
-msgstr "Sessions fins a descans llarg"
+msgstr "Sessions fins a un descans llarg"
 
-#: data/ui/window.ui:109
-msgid "_Preferences"
-msgstr "_Preferències"
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Pantalla completa durant els descansos"
 
-#: data/ui/window.ui:113
-msgid "_Keyboard Shortcuts"
-msgstr "_Dreceres de teclat"
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "Commuta el temporitzador"
 
-#: data/ui/window.ui:117
-msgid "_About Solanum"
-msgstr "_Quant a Solanum"
-
-#: src/app.rs:182
-msgid "A pomodoro timer for GNOME"
-msgstr "Un temporitzador Pomodoro per al GNOME"
-
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:184
-msgid "translator-credits"
-msgstr ""
-"equip de traducció:\n"
-"Marc Riera <marcriera@softcatala.org>\n"
-"Maite Guix <maite.guix@me.com>"
-
-#: src/app.rs:190
-msgid "Donate on Patreon"
-msgstr "Donació a Patreon"
-
-#: src/window.rs:238
-msgid "Long Break"
-msgstr "Pausa llarga"
-
-#: src/window.rs:244
-msgid "Short Break"
-msgstr "Descans curt"
-
-#: src/window.rs:305
-msgid "Back to Work"
-msgstr "Torna a Work"
-
-#: src/window.rs:306
-msgid "Ready to keep working?"
-msgstr "Preparats per seguir treballant?"
-
-#: src/window.rs:307
-msgid "Start Working"
-msgstr "Comença a treballar"
-
-#: src/window.rs:310
-msgid "Break Time"
-msgstr "Hora de ruptura"
-
-#: src/window.rs:311
-msgid "Stretch your legs, and drink some water."
-msgstr "Estirar les cames i beure una mica d'aigua."
-
-#: src/window.rs:312
-msgid "Start Break"
-msgstr "Comença el descans"
-
-#: src/window.rs:318
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Omet"
 
-#: src/window.rs:331
+#: data/ui/window.blp:59
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: data/ui/window.blp:78
+msgid "Reset Sessions"
+msgstr "Restaura les sessions"
+
+#: data/ui/window.blp:82
+msgid "_Preferences"
+msgstr "_Paràmetres"
+
+#: data/ui/window.blp:83
+msgid "_Keyboard Shortcuts"
+msgstr "_Dreceres de teclat"
+
+#: data/ui/window.blp:84
+msgid "_About Solanum"
+msgstr "_Quant al Solanum"
+
+#: src/app.rs:165
+msgid "translator-credits"
+msgstr ""
+"Marc Riera <marcriera@softcatala.org>\n"
+"Maite Guix <maite.guix@me.com>\n"
+"Victor Dargallo <victordargallo@disroot.org>"
+
+#: src/app.rs:174
+msgid "_Donate on Patreon"
+msgstr "_Donació a Patreon"
+
+#: src/app.rs:178
+msgid "_Sponsor on GitHub"
+msgstr "_Patrocina al GitHub"
+
+#: src/app.rs:183
+msgid "Icon by"
+msgstr "Icona per"
+
+#: src/app.rs:187
+msgid "Sound by"
+msgstr "So per"
+
+#: src/app.rs:192
+msgid "Supported by"
+msgstr "Patrocinat per"
+
+#: src/window.rs:243
+msgid "Long Break"
+msgstr "Pausa llarga"
+
+#: src/window.rs:249
+msgid "Short Break"
+msgstr "Descans curt"
+
+#: src/window.rs:332
+msgid "Back to Work"
+msgstr "Torna a treballar"
+
+#: src/window.rs:333
+msgid "Ready to keep working?"
+msgstr "Esteu preparat per seguir treballant?"
+
+#: src/window.rs:334
+msgid "Start Working"
+msgstr "Comença a treballar"
+
+#: src/window.rs:337
+msgid "Break Time"
+msgstr "Temps de descans"
+
+#: src/window.rs:338
+msgid "Stretch your legs, and drink some water."
+msgstr "Estireu les cames i beveu una mica d'aigua."
+
+#: src/window.rs:339
+msgid "Start Break"
+msgstr "Comença el descans"
+
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
 msgstr[0] "Volta {}"
 msgstr[1] "Voltes {}"
+
+#~ msgid "A pomodoro timer for GNOME"
+#~ msgstr "Un temporitzador Pomodoro per al GNOME"
