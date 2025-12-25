@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: solanum main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
-"POT-Creation-Date: 2023-08-13 14:27+0000\n"
+"POT-Creation-Date: 2025-03-11 02:29+0000\n"
 "PO-Revision-Date: 2023-08-15 21:40+0300\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Greek <gnome-el-list@gnome.org>\n"
@@ -19,8 +19,7 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Solanum.appdata.xml.in.in:7
-#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:80 src/app.rs:176
-#: src/window.rs:304
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
 msgid "Solanum"
 msgstr "Solanum"
 
@@ -38,7 +37,7 @@ msgstr ""
 "συνεδρίας και ένα μεγάλο διάλειμμα μετά τις 4."
 
 #. Translators: please do NOT translate this
-#: data/org.gnome.Solanum.appdata.xml.in.in:26
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
 msgid "Christopher Davis"
 msgstr "Christopher Davis"
 
@@ -62,6 +61,10 @@ msgstr "Η διάρκεια ενός μεγάλου διαλείμματος σ�
 #: data/org.gnome.Solanum.gschema.xml:18
 msgid "The number of sessions until a long break."
 msgstr "Ο αριθμός των συνεδριών μέχρι ένα μεγάλο διάλειμμα."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Αν το παράθυρο πρέπει να γεμίζει την οθόνη κατά τη διάρκεια των διαλειμμάτων."
 
 #: data/gtk/help-overlay.blp:8
 msgctxt "shortcut window"
@@ -90,7 +93,7 @@ msgstr "Έξοδος"
 
 #: data/ui/preferences-window.blp:9
 msgid "Session Length"
-msgstr ""
+msgstr "Διάρκεια Συνεδρίας"
 
 #: data/ui/preferences-window.blp:10
 msgid ""
@@ -102,50 +105,53 @@ msgstr ""
 
 #: data/ui/preferences-window.blp:13
 msgid "Lap Length"
-msgstr ""
+msgstr "Διάρκεια Γύρου"
 
-#: data/ui/preferences-window.blp:29
+#: data/ui/preferences-window.blp:23
 msgid "Short Break Length"
-msgstr ""
+msgstr "Διάρκεια Σύντομου Διαλείμματος"
+
+#: data/ui/preferences-window.blp:33
+msgid "Long Break Length"
+msgstr "Διάρκεια Μεγάλου Διαλείμματος"
 
 #: data/ui/preferences-window.blp:45
-msgid "Long Break Length"
-msgstr ""
-
-#: data/ui/preferences-window.blp:63
 msgid "Sessions Until Long Break"
-msgstr ""
+msgstr "Συνεδρίες Μέχρι Μεγάλο Διάλειμμα"
 
-#: data/ui/window.blp:48
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Πλήρης Οθόνη Κατά Τα Διαλείμματα"
+
+#: data/ui/window.blp:40
 msgid "Toggle Timer"
 msgstr "Εναλλαγή χρονοδιακόπτη"
 
-#: data/ui/window.blp:56 src/window.rs:322
+#: data/ui/window.blp:48 src/window.rs:346
 msgid "Skip"
 msgstr "Προσπέραση"
 
-#: data/ui/window.blp:66
+#: data/ui/window.blp:59
 msgid "Main Menu"
 msgstr "Κυρίως μενού"
 
-#: data/ui/window.blp:82
+#: data/ui/window.blp:78
 msgid "Reset Sessions"
-msgstr ""
+msgstr "Επαναφορά Συνεδριών"
 
-#: data/ui/window.blp:86
+#: data/ui/window.blp:82
 msgid "_Preferences"
 msgstr "_Προτιμήσεις"
 
-#: data/ui/window.blp:87
+#: data/ui/window.blp:83
 msgid "_Keyboard Shortcuts"
 msgstr "Συντομεύσεις _πληκτρολογίου"
 
-#: data/ui/window.blp:88
+#: data/ui/window.blp:84
 msgid "_About Solanum"
 msgstr "_Περί Solanum"
 
-#. Translators: Replace "translator-credits" with your names, one name per line
-#: src/app.rs:181
+#: src/app.rs:165
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -154,60 +160,60 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/app.rs:193
+#: src/app.rs:174
 msgid "_Donate on Patreon"
 msgstr "_Δωρεά στο Patreon"
 
-#: src/app.rs:197
+#: src/app.rs:178
 msgid "_Sponsor on GitHub"
 msgstr "_Χορηγός στο GitHub"
 
-#: src/app.rs:202
+#: src/app.rs:183
 msgid "Icon by"
-msgstr ""
+msgstr "Εικονίδιο από"
 
-#: src/app.rs:206
+#: src/app.rs:187
 msgid "Sound by"
-msgstr ""
+msgstr "Ήχος από"
 
-#: src/app.rs:211
+#: src/app.rs:192
 msgid "Supported by"
-msgstr ""
+msgstr "Υποστηρίζεται από"
 
-#: src/window.rs:231
+#: src/window.rs:243
 msgid "Long Break"
 msgstr "Μεγάλο διάλειμμα"
 
-#: src/window.rs:237
+#: src/window.rs:249
 msgid "Short Break"
 msgstr "Μικρό διάλειμμα"
 
-#: src/window.rs:308
+#: src/window.rs:332
 msgid "Back to Work"
 msgstr "Πίσω στην εργασία"
 
-#: src/window.rs:309
+#: src/window.rs:333
 msgid "Ready to keep working?"
 msgstr "Είστε έτοιμοι να συνεχίσετε να εργάζεστε;"
 
-#: src/window.rs:310
+#: src/window.rs:334
 msgid "Start Working"
-msgstr ""
+msgstr "Έναρξη Εργασίας"
 
-#: src/window.rs:313
+#: src/window.rs:337
 msgid "Break Time"
-msgstr ""
+msgstr "Ώρα Διαλείμματος"
 
-#: src/window.rs:314
+#: src/window.rs:338
 msgid "Stretch your legs, and drink some water."
 msgstr "Τεντώστε τα πόδια σας και πιείτε λίγο νερό."
 
-#: src/window.rs:315
+#: src/window.rs:339
 msgid "Start Break"
-msgstr ""
+msgstr "Έναρξη Διαλείμματος"
 
-#: src/window.rs:335
+#: src/window.rs:359
 msgid "Lap {}"
 msgid_plural "Lap {}"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Γύρος {}"
+msgstr[1] "Γύρος {}"
