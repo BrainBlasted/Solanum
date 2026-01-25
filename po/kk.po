@@ -1,0 +1,215 @@
+# Kazakh translation for solanum.
+# Copyright (C) 2026 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2025-03-11 02:29+0000\n"
+"PO-Revision-Date: 2026-01-25 22:37+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Жұмыс пен үзіліс уақытын теңестіру"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all "
+"4."
+msgstr ""
+"Solanum — pomodoro техникасын пайдаланатын уақытты бақылау қосымшасы. 4 "
+"сессияда жұмыс істеңіз, әр сессия арасында үзілістер және барлық 4-тен "
+"кейін бір ұзақ үзіліс болады."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Таймер;Өнімділік;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "Минутпен есептелген жұмыс кезеңінің ұзақтығы."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "Минутпен есептелген қысқа үзілістің ұзақтығы."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "Минутпен есептелген ұзақ үзілістің ұзақтығы."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "Ұзақ үзіліске дейінгі сессиялар саны."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Үзілістер кезінде терезенің толық экранды болу-болмауы."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Жалпы жарлықтар"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Негізгі мәзірді көрсету"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Қалауларды көрсету"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Пернетақта жарлықтарын көрсету"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Шығу"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Сессия ұзақтығы"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"Әрбір сессия түрінің минутпен есептелген ұзақтығы. Өзгерістер әр түрдің "
+"келесі сессиясына іске асырылады."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Кезең ұзақтығы"
+
+#: data/ui/preferences-window.blp:23
+msgid "Short Break Length"
+msgstr "Қысқа үзіліс ұзақтығы"
+
+#: data/ui/preferences-window.blp:33
+msgid "Long Break Length"
+msgstr "Ұзақ үзіліс ұзақтығы"
+
+#: data/ui/preferences-window.blp:45
+msgid "Sessions Until Long Break"
+msgstr "Ұзақ үзіліске дейінгі сессиялар"
+
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Үзілістер кезінде толық экранда"
+
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "Таймерді қосу/өшіру"
+
+#: data/ui/window.blp:48 src/window.rs:346
+msgid "Skip"
+msgstr "Өткізіп жіберу"
+
+#: data/ui/window.blp:59
+msgid "Main Menu"
+msgstr "Басты мәзір"
+
+#: data/ui/window.blp:78
+msgid "Reset Sessions"
+msgstr "Сессияларды тастау"
+
+#: data/ui/window.blp:82
+msgid "_Preferences"
+msgstr "Қа_лаулар"
+
+#: data/ui/window.blp:83
+msgid "_Keyboard Shortcuts"
+msgstr "_Пернетақта жарлықтары"
+
+#: data/ui/window.blp:84
+msgid "_About Solanum"
+msgstr "_Solanum туралы"
+
+#: src/app.rs:165
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: src/app.rs:174
+msgid "_Donate on Patreon"
+msgstr "Patreon-да _демеушілік ету"
+
+#: src/app.rs:178
+msgid "_Sponsor on GitHub"
+msgstr "GitHub-та де_меуші болу"
+
+#: src/app.rs:183
+msgid "Icon by"
+msgstr "Таңбаша авторы"
+
+#: src/app.rs:187
+msgid "Sound by"
+msgstr "Дыбыс авторы"
+
+#: src/app.rs:192
+msgid "Supported by"
+msgstr "Қолдау көрсеткендер"
+
+#: src/window.rs:243
+msgid "Long Break"
+msgstr "Ұзақ үзіліс"
+
+#: src/window.rs:249
+msgid "Short Break"
+msgstr "Қысқа үзіліс"
+
+#: src/window.rs:332
+msgid "Back to Work"
+msgstr "Жұмысқа оралу"
+
+#: src/window.rs:333
+msgid "Ready to keep working?"
+msgstr "Жұмысты жалғастыруға дайынсыз ба?"
+
+#: src/window.rs:334
+msgid "Start Working"
+msgstr "Жұмысты бастау"
+
+#: src/window.rs:337
+msgid "Break Time"
+msgstr "Үзіліс уақыты"
+
+#: src/window.rs:338
+msgid "Stretch your legs, and drink some water."
+msgstr "Аяқтарыңызды созып, су ішіңіз."
+
+#: src/window.rs:339
+msgid "Start Break"
+msgstr "Үзілісті бастау"
+
+#: src/window.rs:359
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "{} кезең"
