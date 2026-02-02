@@ -1,0 +1,220 @@
+# Cornish translation for solanum.
+# Copyright (C) 2026 solanum's COPYRIGHT HOLDER
+# This file is distributed under the same license as the solanum package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: solanum main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Solanum/issues\n"
+"POT-Creation-Date: 2025-03-11 02:29+0000\n"
+"PO-Revision-Date: 2026-02-02 18:15+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/World/Solanum\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: solanum\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:7
+#: data/org.gnome.Solanum.desktop.in.in:3 src/app.rs:78 src/window.rs:328
+msgid "Solanum"
+msgstr "Solanum"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:8
+msgid "Balance working time and break time"
+msgstr "Omberthi termyn ober ha termyn powes"
+
+#: data/org.gnome.Solanum.appdata.xml.in.in:10
+msgid ""
+"Solanum is a time tracking app that uses the pomodoro technique. Work in 4 "
+"sessions, with breaks in between each session and one long break after all 4."
+msgstr ""
+"Solanum yw app ow helerghi termyn ow devnydhya an teknek pomodoro. Oberi yn "
+"4 esedhogow, gans powesow tredh pub esedhek hag unn powes hir wosa oll 4."
+
+#. Translators: please do NOT translate this
+#: data/org.gnome.Solanum.appdata.xml.in.in:30
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Solanum.desktop.in.in:12
+msgid "Pomodoro;Timer;Productivity;"
+msgstr "Pomodoro;Termyador;Askorruster;"
+
+#: data/org.gnome.Solanum.gschema.xml:6
+msgid "The length of a work lap in minutes."
+msgstr "An hirder a'n barrlen ober yn mynysennow."
+
+#: data/org.gnome.Solanum.gschema.xml:10
+msgid "The length of a short break in minutes."
+msgstr "An hirder a'n powes berr yn mynysennow."
+
+#: data/org.gnome.Solanum.gschema.xml:14
+msgid "The length of a long break in minutes."
+msgstr "An hirder a'n powes hir yn mynysennow."
+
+#: data/org.gnome.Solanum.gschema.xml:18
+msgid "The number of sessions until a long break."
+msgstr "An niver a esedhogow erna powes hir."
+
+#: data/org.gnome.Solanum.gschema.xml:22
+msgid "Whether the window should fullscreen during breaks."
+msgstr "Mar an fenester kodh leun-skrinya dres powesow."
+
+#: data/gtk/help-overlay.blp:8
+msgctxt "shortcut window"
+msgid "General Shortcuts"
+msgstr "Kesunyansow Ollgemmyn"
+
+#: data/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Show Primary Menu"
+msgstr "Diskwedhes Rol Kynsa"
+
+#: data/gtk/help-overlay.blp:16
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Diskwedhes Settyansow"
+
+#: data/gtk/help-overlay.blp:21
+msgctxt "shortcut window"
+msgid "Show Keyboard Shortcuts"
+msgstr "Diskwedhes Kesunyansow Bysowek"
+
+#: data/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Kwytya"
+
+#: data/ui/preferences-window.blp:9
+msgid "Session Length"
+msgstr "Hirder Esedhek"
+
+#: data/ui/preferences-window.blp:10
+msgid ""
+"The length of each session type in minutes. Changes apply to the next "
+"session of each type."
+msgstr ""
+"An hirder a pub eghen esedhek yn mynysennow. Chanjyow a wra happya dhe'n "
+"esedhek nessa a pub eghen."
+
+#: data/ui/preferences-window.blp:13
+msgid "Lap Length"
+msgstr "Hirder Barrlen"
+
+#: data/ui/preferences-window.blp:23
+msgid "Short Break Length"
+msgstr "Hirder Powes Berr"
+
+#: data/ui/preferences-window.blp:33
+msgid "Long Break Length"
+msgstr "Hirder Powes Hir"
+
+#: data/ui/preferences-window.blp:45
+msgid "Sessions Until Long Break"
+msgstr "Esedhogow Erna Powes Hir"
+
+#: data/ui/preferences-window.blp:57
+msgid "Fullscreen During Breaks"
+msgstr "Leun-Skrif Dres Powesow"
+
+#: data/ui/window.blp:40
+msgid "Toggle Timer"
+msgstr "Dewis Termynador"
+
+#: data/ui/window.blp:48 src/window.rs:346
+msgid "Skip"
+msgstr "Skyppya"
+
+#: data/ui/window.blp:59
+msgid "Main Menu"
+msgstr "Rol Chif"
+
+#: data/ui/window.blp:78
+msgid "Reset Sessions"
+msgstr "Dasgorra Esedhogow"
+
+#: data/ui/window.blp:82
+msgid "_Preferences"
+msgstr "_Settyansow"
+
+#: data/ui/window.blp:83
+msgid "_Keyboard Shortcuts"
+msgstr "_Kesunyansow Bysowek"
+
+#: data/ui/window.blp:84
+msgid "_About Solanum"
+msgstr "_A-dro Solanum"
+
+#: src/app.rs:165
+msgid "translator-credits"
+msgstr "Flynn"
+
+#: src/app.rs:174
+msgid "_Donate on Patreon"
+msgstr "_Argevri war Patreon"
+
+#: src/app.rs:178
+msgid "_Sponsor on GitHub"
+msgstr "_Arghasa war GitHubs"
+
+#: src/app.rs:183
+msgid "Icon by"
+msgstr "Arwodhik gans"
+
+#: src/app.rs:187
+msgid "Sound by"
+msgstr "Son gans"
+
+#: src/app.rs:192
+msgid "Supported by"
+msgstr "Skoodhys gans"
+
+#: src/window.rs:243
+msgid "Long Break"
+msgstr "Powes Hir"
+
+#: src/window.rs:249
+msgid "Short Break"
+msgstr "Powes Berr"
+
+#: src/window.rs:332
+msgid "Back to Work"
+msgstr "Tre dhe Ober"
+
+#: src/window.rs:333
+msgid "Ready to keep working?"
+msgstr "Bysi rag pesya owth oberi?"
+
+#: src/window.rs:334
+msgid "Start Working"
+msgstr "Dalleth Owth Oberi"
+
+#: src/window.rs:337
+msgid "Break Time"
+msgstr "Termyn Powes"
+
+#: src/window.rs:338
+msgid "Stretch your legs, and drink some water."
+msgstr "Ystyn dha garrow, hag eva nebes dowr."
+
+#: src/window.rs:339
+msgid "Start Break"
+msgstr "Dalleth Powes"
+
+#: src/window.rs:359
+msgid "Lap {}"
+msgid_plural "Lap {}"
+msgstr[0] "Barrlen {}"
+msgstr[1] "Barrlen {}"
