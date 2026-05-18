@@ -21,5 +21,9 @@
       <default>false</default>
       <summary>Whether the window should fullscreen during breaks.</summary>
     </key>
+    <key name="auto-start-next" type="b">
+      <default>false</default>
+      <summary>Whether the next session should start automatically when the current one ends.</summary>
+    </key>
   </schema>
 </schemalist>

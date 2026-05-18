@@ -220,6 +220,10 @@ impl SolanumWindow {
             move |_| {
                 win.toggle_timer();
                 win.next_lap(true);
+
+                if win.application().gsettings().boolean("auto-start-next") {
+                    win.toggle_timer();
+                }
             }
         ));
     }

@@ -53,6 +53,11 @@ template $SolanumPreferencesWindow : Adw.PreferencesWindow {
     }
 
     Adw.PreferencesGroup {
+      Adw.SwitchRow auto_start_switch {
+        title: _("Auto-Start Next Session");
+        subtitle: _("Automatically start the next session when the current one ends.");
+      }
+
       Adw.SwitchRow fullscreen_switch {
         title: _("Fullscreen During Breaks");
       }
