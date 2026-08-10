@@ -254,6 +254,10 @@ impl SolanumWindow {
                 }
             ));
         }
+
+        if settings.boolean("auto-start-timer") {
+            self.toggle_timer();
+        }
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::ControlFlow {

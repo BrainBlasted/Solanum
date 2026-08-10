@@ -43,6 +43,8 @@ mod imp {
         pub fullscreen_switch: TemplateChild<libadwaita::SwitchRow>,
         #[template_child]
         pub auto_start_break_switch: TemplateChild<libadwaita::SwitchRow>,
+        #[template_child]
+        pub auto_start_timer_switch: TemplateChild<libadwaita::SwitchRow>,
         pub settings: OnceCell<gio::Settings>,
     }
 
@@ -102,6 +104,9 @@ impl SolanumPreferencesWindow {
             .build();
         settings
             .bind("auto-start-break", &*imp.auto_start_break_switch, "active")
+            .build();
+        settings
+            .bind("auto-start-timer", &*imp.auto_start_timer_switch, "active")
             .build();
 
         obj

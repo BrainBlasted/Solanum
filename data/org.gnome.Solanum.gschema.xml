@@ -25,5 +25,9 @@
       <default>false</default>
       <summary>Whether breaks should start automatically when a work session ends.</summary>
     </key>
+    <key name="auto-start-timer" type="b">
+      <default>false</default>
+      <summary>Whether the timer should start automatically when the application opens.</summary>
+    </key>
   </schema>
 </schemalist>
