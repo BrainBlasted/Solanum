@@ -27,9 +27,9 @@
   <url type="vcs-browser">https://gitlab.gnome.org/World/Solanum/</url>
   <url type="translate">https://l10n.gnome.org/module/Solanum/</url>
   <!-- Translators: please do NOT translate this -->
-  <developer_name>Christopher Davis</developer_name>
+  <developer_name>Christopher Davis, Yash Yadav</developer_name>
   <developer id="io.gitlab.brainblasted">
-    <name>Christopher Davis</name>
+    <name>Christopher Davis, Yash Yadav</name>
   </developer>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <requires>
@@ -47,6 +47,16 @@
     <color type="primary" scheme_preference="dark">#771414</color>
   </branding>
   <releases>
+    <release version="7.0.0" date="2026-08-10">
+      <description>
+        <p>Solanum 7.0.0 brings the following changes:</p>
+        <ul>
+          <li>Added multi-monitor fullscreen break support (Yash Yadav)</li>
+          <li>Added preference to auto-start break sessions (Yash Yadav)</li>
+          <li>Added build and installation documentation (Yash Yadav)</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.0.0" date="2025-04-06">
       <description>
         <p>Solanum 6.0.0 brings the following changes</p>

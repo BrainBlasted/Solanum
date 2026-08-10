@@ -27,5 +27,11 @@
       </foaf:account>
     </foaf:Person>
   </maintainer>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Yash Yadav</foaf:name>
+      <foaf:mbox rdf:resource="mailto:yashyadav.710@outlook.com" />
+    </foaf:Person>
+  </maintainer>
 
 </Project>

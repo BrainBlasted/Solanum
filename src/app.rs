@@ -157,7 +157,10 @@ impl SolanumApplication {
     // About dialog
     fn show_about(&self) {
         let window = self.get_main_window();
-        let developers = &["Christopher Davis <christopherdavis@gnome.org>"];
+        let developers = &[
+            "Christopher Davis <christopherdavis@gnome.org>",
+            "Yash Yadav <yashyadav.710@outlook.com>",
+        ];
 
         let about = libadwaita::AboutWindow::from_appdata(
             &format!("/org/gnome/Solanum/{}.appdata.xml", config::APP_ID),
