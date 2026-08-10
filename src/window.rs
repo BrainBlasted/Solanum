@@ -114,6 +114,11 @@ mod imp {
             klass.install_action("win.skip", None, move |win, _, _| {
                 win.next_lap(false);
 
+                if win.imp().lap_type.get() == LapType::Pomodoro {
+                    win.unfullscreen();
+                    win.clear_break_overlays();
+                }
+
                 if !win.is_active() {
                     win.present();
                 }
@@ -271,11 +276,6 @@ impl SolanumWindow {
         let app = self.application();
         let settings = app.gsettings();
 
-        if lap_type == LapType::Pomodoro {
-            self.unfullscreen();
-            self.clear_break_overlays();
-        }
-
         imp.lap_type.set(lap_type);
 
         let lap_number = &imp.pomodoro_count;
@@ -325,14 +325,12 @@ impl SolanumWindow {
                 .set_icon_name("media-playback-pause-symbolic");
             imp.timer_label.remove_css_class("blinking");
             imp.timer_button.remove_css_class("suggested-action");
-            if fullscreen {
-                if imp.lap_type.get() == LapType::Break {
-                    self.fullscreen();
-                    self.show_break_overlays();
-                } else {
-                    self.unfullscreen();
-                    self.clear_break_overlays();
-                }
+            if fullscreen && imp.lap_type.get() == LapType::Break {
+                self.fullscreen();
+                self.show_break_overlays();
+            } else {
+                self.unfullscreen();
+                self.clear_break_overlays();
             }
         } else {
             imp.timer.stop();
@@ -340,8 +338,6 @@ impl SolanumWindow {
                 .set_icon_name("media-playback-start-symbolic");
             imp.timer_label.add_css_class("blinking");
             imp.timer_button.add_css_class("suggested-action");
-            self.unfullscreen();
-            self.clear_break_overlays();
         }
 
         // !start_timer = only allow restarting when the timer is paused
