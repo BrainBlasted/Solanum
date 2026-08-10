@@ -37,3 +37,8 @@ button.large {
 .large-timer {
   font-size:  600%;
 }
+
+.break-overlay {
+  background-color: var(--window-bg-color, #1e1e1e);
+}
+

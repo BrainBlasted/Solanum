@@ -30,7 +30,9 @@ use gtk::prelude::IsA;
 use gtk::subclass::prelude::*;
 use libadwaita::subclass::prelude::*;
 
+use gtk::gdk;
 use std::cell::Cell;
+use std::cell::RefCell;
 
 use crate::app::SolanumApplication;
 use crate::config;
@@ -63,6 +65,7 @@ mod imp {
         pub timer: Timer,
         pub player: gstreamer_play::Play,
         pub lap_type: Cell<LapType>,
+        pub break_overlays: RefCell<Vec<(gtk::Window, gtk::Label)>>,
 
         #[template_child]
         pub lap_label: TemplateChild<gtk::Label>,
@@ -88,6 +91,7 @@ mod imp {
                 timer: Timer::new(),
                 player: gstreamer_play::Play::new(None::<gstreamer_play::PlayVideoRenderer>),
                 lap_type: Default::default(),
+                break_overlays: RefCell::new(Vec::new()),
                 lap_label: TemplateChild::default(),
                 timer_label: TemplateChild::default(),
                 timer_button: TemplateChild::default(),
@@ -229,12 +233,34 @@ impl SolanumWindow {
                 }
             }
         ));
+
+        if let Some(display) = gdk::Display::default() {
+            let monitors = display.monitors();
+            monitors.connect_items_changed(clone!(
+                #[weak(rename_to = win)]
+                self,
+                move |_, _, _, _| {
+                    let imp = win.imp();
+                    let app = win.application();
+                    let fullscreen = app.gsettings().boolean("fullscreen-break");
+                    if fullscreen && imp.timer.running() && imp.lap_type.get() == LapType::Break {
+                        win.show_break_overlays();
+                    }
+                }
+            ));
+        }
     }
 
     fn update_countdown(&self, min: u32, sec: u32) -> glib::ControlFlow {
         let imp = self.imp();
         let label = &*imp.timer_label;
-        label.set_label(&format!("{:>02}∶{:>02}", min, sec));
+        let time_str = format!("{:>02}∶{:>02}", min, sec);
+        label.set_label(&time_str);
+
+        for (_, overlay_label) in imp.break_overlays.borrow().iter() {
+            overlay_label.set_label(&time_str);
+        }
+
         glib::ControlFlow::Continue
     }
 
@@ -244,6 +270,11 @@ impl SolanumWindow {
         let timer = &imp.timer;
         let app = self.application();
         let settings = app.gsettings();
+
+        if lap_type == LapType::Pomodoro {
+            self.unfullscreen();
+            self.clear_break_overlays();
+        }
 
         imp.lap_type.set(lap_type);
 
@@ -297,8 +328,10 @@ impl SolanumWindow {
             if fullscreen {
                 if imp.lap_type.get() == LapType::Break {
                     self.fullscreen();
+                    self.show_break_overlays();
                 } else {
                     self.unfullscreen();
+                    self.clear_break_overlays();
                 }
             }
         } else {
@@ -307,6 +340,8 @@ impl SolanumWindow {
                 .set_icon_name("media-playback-start-symbolic");
             imp.timer_label.add_css_class("blinking");
             imp.timer_button.add_css_class("suggested-action");
+            self.unfullscreen();
+            self.clear_break_overlays();
         }
 
         // !start_timer = only allow restarting when the timer is paused
@@ -317,6 +352,9 @@ impl SolanumWindow {
     fn reset(&self) {
         println!("Resetting to the initial state");
         let imp = self.imp();
+
+        self.unfullscreen();
+        self.clear_break_overlays();
 
         // Reset the user interface to the stopped state.
         imp.timer.stop();
@@ -400,5 +438,108 @@ impl SolanumWindow {
         if notify {
             self.send_notifcation(next_lap);
         }
+    }
+
+    fn show_break_overlays(&self) {
+        let imp = self.imp();
+        self.clear_break_overlays();
+
+        let display = match gdk::Display::default() {
+            Some(d) => d,
+            None => return,
+        };
+
+        let main_surface = self.native().and_then(|n| n.surface());
+        let main_monitor = main_surface
+            .as_ref()
+            .and_then(|s| display.monitor_at_surface(s));
+
+        let monitors = display.monitors();
+        let app = self.application();
+
+        for i in 0..monitors.n_items() {
+            let item = match monitors.item(i) {
+                Some(it) => it,
+                None => continue,
+            };
+            let monitor = match item.downcast::<gdk::Monitor>() {
+                Ok(m) => m,
+                Err(_) => continue,
+            };
+
+            // Skip the monitor that displays the main SolanumWindow
+            if let Some(ref mm) = main_monitor {
+                if mm == &monitor {
+                    continue;
+                }
+            }
+
+            let (overlay_win, overlay_label) = self.create_break_overlay_window(&app, &monitor);
+            overlay_win.present();
+            imp.break_overlays
+                .borrow_mut()
+                .push((overlay_win, overlay_label));
+        }
+    }
+
+    fn clear_break_overlays(&self) {
+        let imp = self.imp();
+        let mut overlays = imp.break_overlays.borrow_mut();
+        for (window, _) in overlays.drain(..) {
+            window.close();
+        }
+    }
+
+    fn create_break_overlay_window(
+        &self,
+        app: &SolanumApplication,
+        monitor: &gdk::Monitor,
+    ) -> (gtk::Window, gtk::Label) {
+        let window = gtk::Window::builder()
+            .application(app)
+            .title(&i18n("Solanum - Break"))
+            .css_classes(vec!["break-overlay".to_string()])
+            .build();
+
+        let main_box = gtk::Box::builder()
+            .orientation(gtk::Orientation::Vertical)
+            .valign(gtk::Align::Center)
+            .halign(gtk::Align::Center)
+            .spacing(16)
+            .build();
+
+        let icon = gtk::Image::builder()
+            .icon_name("preferences-system-time-symbolic")
+            .pixel_size(96)
+            .css_classes(vec!["accent".to_string()])
+            .build();
+
+        let title_label = gtk::Label::builder()
+            .label(&i18n("Take a Break"))
+            .css_classes(vec!["display-1".to_string(), "accent".to_string()])
+            .build();
+
+        let subtitle_label = gtk::Label::builder()
+            .label(&i18n("Stretch your legs and relax."))
+            .css_classes(vec!["title-3".to_string(), "dim-label".to_string()])
+            .build();
+
+        let imp = self.imp();
+        let current_time = imp.timer_label.label();
+        let timer_label = gtk::Label::builder()
+            .label(current_time.as_str())
+            .css_classes(vec!["large-timer".to_string(), "accent".to_string()])
+            .build();
+
+        main_box.append(&icon);
+        main_box.append(&title_label);
+        main_box.append(&subtitle_label);
+        main_box.append(&timer_label);
+
+        window.set_child(Some(&main_box));
+
+        window.fullscreen_on_monitor(monitor);
+
+        (window, timer_label)
     }
 }
