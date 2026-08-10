@@ -220,6 +220,13 @@ impl SolanumWindow {
             move |_| {
                 win.toggle_timer();
                 win.next_lap(true);
+
+                let app = win.application();
+                if app.gsettings().boolean("auto-start-break")
+                    && win.imp().lap_type.get() == LapType::Break
+                {
+                    win.toggle_timer();
+                }
             }
         ));
     }

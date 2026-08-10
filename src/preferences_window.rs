@@ -41,6 +41,8 @@ mod imp {
         pub session_count_spin: TemplateChild<libadwaita::SpinRow>,
         #[template_child]
         pub fullscreen_switch: TemplateChild<libadwaita::SwitchRow>,
+        #[template_child]
+        pub auto_start_break_switch: TemplateChild<libadwaita::SwitchRow>,
         pub settings: OnceCell<gio::Settings>,
     }
 
@@ -97,6 +99,9 @@ impl SolanumPreferencesWindow {
             .build();
         settings
             .bind("fullscreen-break", &*imp.fullscreen_switch, "active")
+            .build();
+        settings
+            .bind("auto-start-break", &*imp.auto_start_break_switch, "active")
             .build();
 
         obj

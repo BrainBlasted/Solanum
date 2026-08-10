@@ -53,6 +53,11 @@ template $SolanumPreferencesWindow : Adw.PreferencesWindow {
     }
 
     Adw.PreferencesGroup {
+      Adw.SwitchRow auto_start_break_switch {
+        title: _("Auto-Start Breaks");
+        subtitle: _("Automatically start a break when a work session ends.");
+      }
+
       Adw.SwitchRow fullscreen_switch {
         title: _("Fullscreen During Breaks");
       }
